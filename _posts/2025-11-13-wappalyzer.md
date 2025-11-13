@@ -6,7 +6,7 @@ tags: [etc, chrome extensions]     # TAG names should always be lowercase
 ---
 
 
-# Identify technologies on websites
+## Identify technologies on websites
 
 크롬 확장프로그램 Wappalyzer를 사용하면 현재 접속한 사이트가 어떤 프레임워크(Framework)나 언어를 사용해 만들어졌는지 파악할 수 있다.   
 
@@ -23,6 +23,5 @@ tags: [etc, chrome extensions]     # TAG names should always be lowercase
 
 <br>
 
-###### 참고   
+#### 참고   
 [웹사이트를 뭘로 만들었는지 알 수 있게 해주는 크롬 확장 프로그램 Wappalyzer](https://this-programmer.tistory.com/231)
-
