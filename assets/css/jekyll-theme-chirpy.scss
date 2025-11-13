@@ -14,6 +14,7 @@
   html:not([data-mode]),
   html[data-mode='light'] {
     --sidebar-hover-bg: rgba(223, 227, 231, 0.6);
+    --fs-point: #4167d9;
   }
 }
 
@@ -23,6 +24,7 @@
     --card-hover-bg: #2d2f34;
     --card-bg: #00000000;
     --avatar-border-color: rgba(0, 0, 0, 0.9);
+    --fs-point: #4167d9;
   }
 }
 
@@ -91,6 +93,26 @@ search {
 
 .post-preview {
   box-shadow: none;
+
+  &:hover {
+    &::before {
+      opacity: 0;
+    }
+  }
+}
+
+#post-list {
+  .card {
+    .post-preview {
+      &:hover {
+        .card-body {
+          .card-title {
+            color: var(--fs-point) !important;
+          }
+        }
+      }
+    }
+  }
 }
 
 #post-list {
