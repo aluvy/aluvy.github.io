@@ -9,3 +9,56 @@
 ';
 
 /* append your custom style below */
+
+@media (prefers-color-scheme: light) {
+  html:not([data-mode]),
+  html[data-mode='light'] {
+    --sidebar-hover-bg: rgba(223, 227, 231, 0.6);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html[data-mode='dark'] {
+    --sidebar-hover-bg: #2d2f34;
+    --card-hover-bg: #2d2f34;
+    --card-bg: #00000000;
+    --avatar-border-color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+#sidebar {
+  background: none;
+
+  ul {
+    li.nav-item {
+      a.nav-link {
+        border-radius: 0;
+
+        i {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .sidebar-bottom {
+    justify-content: center;
+
+    // delete twitter button
+    [aria-label='twitter'] {
+      display: none;
+    }
+  }
+}
+
+.post-tail-wrapper {
+  .share-wrapper {
+    .share-icons {
+      [aria-label='Twitter'],
+      [aria-label='Facebook'],
+      [aria-label='Telegram'] {
+        display: none;
+      }
+    }
+  }
+}
