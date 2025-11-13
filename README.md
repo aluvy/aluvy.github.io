@@ -41,3 +41,30 @@ This work is published under [MIT][mit] License.
 [chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
 [CD]: https://en.wikipedia.org/wiki/Continuous_deployment
 [mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+
+
+---
+
+<br>
+
+# Settings
+
+- Run Docker
+- Launch VS Code
+- Copy the GitHub clone URL
+- Press F1 and select “Dev Container: Clone Repository in Container Volume...”
+- Clone the GitHub repository
+
+```shell
+$ bundle install
+$ bundle exec jekyll serve  # or $ jeckyll serve
+```
+
+## Tutorial
+- [Getting Started](https://chirpy.cotes.page/posts/getting-started/)
+- [Customize the Favicon](https://chirpy.cotes.page/posts/customize-the-favicon/)
+- [Writing a New Post](https://chirpy.cotes.page/posts/write-a-new-post/)
+
+## Showcase
+
+- [Text and Typography](https://chirpy.cotes.page/posts/text-and-typography/)
