@@ -8,7 +8,6 @@ tail_includes:
 script_includes:
   - comment
 ---
-
 {% include lang.html %}
 
 {% include toc-status.html %}
@@ -74,7 +73,7 @@ script_includes:
                 {% unless forloop.last %}{{ '</em>, <em>' }}{% endunless %}
               {% endfor %}
             {% else %}
-              <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>
+              <a href="{{ site.social.links[0] }}" target="_blank">{{ site.social.name }}</a>
             {% endif %}
           </em>
         </span>
