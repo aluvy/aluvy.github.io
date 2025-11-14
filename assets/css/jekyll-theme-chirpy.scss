@@ -228,6 +228,14 @@ footer a:hover,
   }
 }
 
+#back-to-top {
+  &:hover {
+    i::before {
+      color: #fff;
+    }
+  }
+}
+
 @media (min-width: 768px) {
   #post-list {
     .card {
