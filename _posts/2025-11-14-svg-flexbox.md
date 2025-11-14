@@ -129,7 +129,7 @@ _flex-wrap_
 
 container 안에 있는 item들을 수평방향으로 정렬하는 방법을 지정한다. (주축, main-axis의 정렬방법 설정)
 
-![justify-content](/assets/images//posts/2025/1114/flexbox-3.png)
+![justify-content](/assets/images/posts/2025/1114/flexbox-3.png)
 _justify-content_
 
 ```css
@@ -164,7 +164,7 @@ _justify-content_
 
 container안에 있는 item들을 수직방향으로 정렬하는 방법을 지정한다. (교차축, cross-axis 정렬 방법 설정, item이 1줄일 경우에만 사용된다)
 
-![align-items](/assets/images//posts/2025/1114/flexbox-4.png)
+![align-items](/assets/images/posts/2025/1114/flexbox-4.png)
 _align-items_
 
 ```css
@@ -196,7 +196,7 @@ _align-items_
 
 container안에 있는 item들이 여러줄로 표시될 때 수직방향으로 정렬하는 방법을 지정한다.
 
-![align-content](/assets/images//posts/2025/1114/flexbox-5.png)
+![align-content](/assets/images/posts/2025/1114/flexbox-5.png)
 _align-content_
 
 
@@ -263,7 +263,7 @@ item들의 대한 설정으로, item의 넓이, 순서 등 item의 개별적인 
 
 items의 순서를 설정한다. 음수값도 사용할 수 있으며 숫자가 작을수록 왼쪽에, 큭수록 오른쪽에 위치한다.
 
-![order](/assets/images//posts/2025/1114/flexbox-6.png)
+![order](/assets/images/posts/2025/1114/flexbox-6.png)
 _order_
 
 ```css
@@ -277,7 +277,7 @@ _order_
 
 각 item의 넓이를 배수로 지정 합니다. item1의 flex-grow가 1이고 item2의 flex-grow가 2라면 item2는 item1보다 2배가 크게 됩니다. 기본값은 0이며, 음수는 사용하지 않습니다.
 
-![flex-grow](/assets/images//posts/2025/1114/flexbox-7.png)
+![flex-grow](/assets/images/posts/2025/1114/flexbox-7.png)
 _flex-grow_
 
 ```css
@@ -292,7 +292,7 @@ _flex-grow_
 
 flex-grow와 반대로 각 item의 넓이를 배수로 줄여줍니다. item1이 flex-shrink가 1이고 item2 flex-shrink가 2라면 item2는 item1보다 2배가 작게 됩니다. 기본값은 1이며, 음수는 사용하지 않습니다.
 
-![flex-shrink](/assets/images//posts/2025/1114/flexbox-8.png)
+![flex-shrink](/assets/images/posts/2025/1114/flexbox-8.png)
 _flex-shrink_
 
 ```css
@@ -326,7 +326,7 @@ item의 기본 크기값을 지정한다.
 
 지정된 item의 독자적인 수직방향 정렬을 지정한다. container 속성의 align-item의 속성과 동일하게 지정된다.
 
-![align-self](/assets/images//posts/2025/1114/flexbox-9.png)
+![align-self](/assets/images/posts/2025/1114/flexbox-9.png)
 _align-self_
 
 ```css
