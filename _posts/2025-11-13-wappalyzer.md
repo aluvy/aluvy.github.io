@@ -1,7 +1,7 @@
 ---
 title: 웹사이트를 뭘로 만들었는지 알 수 있게 해주는 크롬 확장 프로그램 Wappalyzer
 date: 2025-11-13 14:00:00 +0900
-categories: [ETC]
+categories: [ETC, extentions]
 tags: [etc, chrome extensions]     # TAG names should always be lowercase
 ---
 
@@ -12,7 +12,7 @@ tags: [etc, chrome extensions]     # TAG names should always be lowercase
 
 아래 이미지는 Wappalyzer 공식 사이트의 상태 값이다.
 
-![](/assets/images/2025/1113/wappalyzer.png){:width="498"}
+![](/assets/images/posts/2025/1113/wappalyzer.png){:width="498"}
 
 
 ## LINK

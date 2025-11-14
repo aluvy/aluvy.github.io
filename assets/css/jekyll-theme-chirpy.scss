@@ -128,29 +128,40 @@ search {
 }
 
 main {
-  .content {
-    h1 {
-      font-size: 2.5rem;
-    }
+  h1 {
+    font-size: 2.5rem;
+  }
 
-    h2 {
-      font-size: 2rem;
-    }
+  h2 {
+    font-size: 2rem;
+    margin-top: 4rem;
+  }
 
-    h3 {
-      font-size: 1.75rem;
-    }
+  h3 {
+    font-size: 1.75rem;
+  }
 
-    h4 {
-      font-size: 1.5rem;
-    }
+  h4 {
+    font-size: 1.5rem;
+  }
 
-    h5 {
-      font-size: 1.25rem;
-    }
+  h5 {
+    font-size: 1.25rem;
+  }
 
-    h6 {
-      font-size: 1.03rem;
+  h6 {
+    font-size: 1.03rem;
+  }
+}
+
+#toc-wrapper {
+  ul {
+    ul {
+      padding-left: 1rem;
+
+      ul {
+        padding-left: 1rem;
+      }
     }
   }
 }
