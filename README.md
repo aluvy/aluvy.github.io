@@ -57,7 +57,7 @@ This work is published under [MIT][mit] License.
 
 ```shell
 $ bundle install
-$ bundle exec jekyll serve  # or $ jeckyll serve
+$ bundle exec jekyll serve  # or $ jekyll serve
 ```
 
 ## Tutorial
