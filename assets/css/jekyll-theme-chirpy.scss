@@ -68,3 +68,33 @@ body {
     }
   }
 }
+
+#sidebar {
+  background: none;
+
+  .site-title {
+    color: #444;
+    font-size: 1.55rem;
+  }
+
+  ul {
+    li.nav-item {
+      a.nav-link {
+        border-radius: 0;
+
+        i {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .sidebar-bottom {
+    justify-content: center;
+
+    // delete twitter button
+    [aria-label='twitter'] {
+      display: none;
+    }
+  }
+}
