@@ -68,3 +68,17 @@ $ bundle exec jekyll serve  # or $ jekyll serve
 ## Showcase
 
 - [Text and Typography](https://chirpy.cotes.page/posts/text-and-typography/)
+
+---
+
+<br>
+
+## CSS Custom
+
+- CSS 커스텀을 하기 위해서는 아래 경로에 스타일을 추가한다.
+
+  - _sass/pages/_custom.scss
+
+- 폰트 관련 설정
+
+  - _scss/abstracts/_variables.scss
