@@ -9,3 +9,62 @@
 ';
 
 /* append your custom style below */
+
+@media (prefers-color-scheme: light) {
+  html:not([data-mode]),
+  html[data-mode='light'] {
+    --sidebar-hover-bg: rgba(223, 227, 231, 0.6);
+    --bs-border-color-translucent: rgba(0, 0, 0, 0.1);
+    --fs-point: #3a6bff;
+    --search-border-color: rgba(0, 0, 0, 0.1);
+    --input-focus-border-color: rgba(0, 0, 0, 0.3);
+    --bs-btn-hover-bg: #3a6bff;
+    --toc-highlight: #3a6bff;
+    --link-color: #3a6bff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html[data-mode='dark'] {
+    --sidebar-hover-bg: #2d2f34;
+    --card-hover-bg: #2d2f34;
+    --card-bg: #00000000;
+    --avatar-border-color: rgba(0, 0, 0, 0.9);
+    --bs-border-color-translucent: rgba(255, 255, 255, 0.1);
+    --fs-point: #3a6bff;
+    --search-border-color: rgba(255, 255, 255, 0.1);
+    --input-focus-border-color: rgba(255, 255, 255, 0.4);
+    --bs-btn-hover-bg: #3a6bff;
+    --toc-highlight: #3a6bff;
+    --link-color: #3a6bff;
+  }
+}
+
+body {
+  &::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 99px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 99px;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.btn {
+  &:hover {
+    background: var(--bs-btn-hover-bg) !important;
+  }
+
+  &.btn-outline-primary {
+    &:not(.disabled):hover {
+      border-color: var(--bs-btn-hover-bg) !important;
+    }
+  }
+}
