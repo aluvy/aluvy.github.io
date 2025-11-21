@@ -1,15 +1,3 @@
----
----
-
-/* prettier-ignore */
-@use 'main
-{%- if jekyll.environment == 'production' -%}
-  .bundle
-{%- endif -%}
-';
-
-/* append your custom style below */
-
 @media (prefers-color-scheme: light) {
   html:not([data-mode]),
   html[data-mode='light'] {
