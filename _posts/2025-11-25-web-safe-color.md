@@ -70,4 +70,4 @@ _Photoshop Color Picker_
 
 ##### 참고
 
-[websafecolor](http://old.nazuni.net/web/design/color/websafecolor.php){: target="_blank"}
+[websafecolor](https://old.nazuni.net/web/design/color/websafecolor.php){: target="_blank"}
