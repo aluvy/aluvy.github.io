@@ -358,7 +358,7 @@ _align-self_
 
 ##### 참고
 
-- [marina-ferreira.github.io/tutorials/css/flexbox/](https://marina-ferreira.github.io/tutorials/css/flexbox/)
-- [https://d2.naver.com/helloworld/8540176](https://d2.naver.com/helloworld/8540176)
-- [https://www.heropy.dev/p/Ha29GI](https://www.heropy.dev/p/Ha29GI)
-- [https://ux.stories.pe.kr/43?category=748568](https://ux.stories.pe.kr/43?category=748568)
+- [marina-ferreira.github.io/tutorials/css/flexbox/](https://marina-ferreira.github.io/tutorials/css/flexbox/){: target="_blank"}
+- [https://d2.naver.com/helloworld/8540176](https://d2.naver.com/helloworld/8540176){: target="_blank"}
+- [https://www.heropy.dev/p/Ha29GI](https://www.heropy.dev/p/Ha29GI){: target="_blank"}
+- [https://ux.stories.pe.kr/43?category=748568](https://ux.stories.pe.kr/43?category=748568){: target="_blank"}

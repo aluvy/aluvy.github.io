@@ -17,11 +17,11 @@ tags: [etc, chrome extensions]     # TAG names should always be lowercase
 
 ## LINK
 
-- 공식 사이트: [Wappalyzer](https://www.wappalyzer.com/)
+- 공식 사이트: [Wappalyzer](https://www.wappalyzer.com/){: target="_blank"}
 
-- chrome 웹 스토어 확장 프로그램: [Wappalyzer - Technology profiler](https://chrome.google.com/webstore/detail/wappalyzer/gppongmhjkpfnbhagpmjfkannfbllamg?utm_source=chrome-ntp-icon)
+- chrome 웹 스토어 확장 프로그램: [Wappalyzer - Technology profiler](https://chrome.google.com/webstore/detail/wappalyzer/gppongmhjkpfnbhagpmjfkannfbllamg?utm_source=chrome-ntp-icon){: target="_blank"}
 
 <br>
 
 #### 참고   
-[웹사이트를 뭘로 만들었는지 알 수 있게 해주는 크롬 확장 프로그램 Wappalyzer](https://this-programmer.tistory.com/231)
+[웹사이트를 뭘로 만들었는지 알 수 있게 해주는 크롬 확장 프로그램 Wappalyzer](https://this-programmer.tistory.com/231){: target="_blank"}
