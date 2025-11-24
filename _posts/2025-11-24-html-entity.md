@@ -1,8 +1,8 @@
 ---
 title: "HTML Entity"
 date: 2025-11-24 08:26:00 +0900
-categories: [HTML]
-tags: [html, entity]
+categories: [ETC, etc]
+tags: [html, entity, unicode]
 render_with_liquid: false
 math: true
 mermaid: true
