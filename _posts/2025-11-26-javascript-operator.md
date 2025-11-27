@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] 연산자 (operator)"
 date: 2025-11-26 15:37:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, basic]
 tags: [연산자, operator]
 render_with_liquid: false
 math: true
