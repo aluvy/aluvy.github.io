@@ -19,10 +19,10 @@ mermaid: true
 | 문자열 연결 | +    |
 
 ````javascript
-var st="Hello"+"Javascript"; // Hello Javascript
+var st = "Hello" + "Javascript"; // Hello Javascript
 
-var st="100"+10 // 10010
-var st=100+10; // 110
+var st = "100" + 10 // 10010
+var st = 100 + 10; // 110
 ````
 
 <br>
@@ -47,16 +47,16 @@ var st=100+10; // 110
 {: .prompt-info}
 
 ````javascript
-var incData=1;
+var incData = 1;
 var decData-5;
 
-var r1=r2=0; //나머지 연산
+var r1 = r2 = 0; //나머지 연산
 document.write("15%3 ="+ r1 +"<br>");// 3
 document.write("incData++ ="+ incData++ +"<br>"); // 1 후위 증가 (출력 후 증가)
 document.write("++incData ="+ ++incData +"<br>"); // 3 전위 증가
 document.write("decData-- ="+ decData-- +"<br>"); // 5 후위 감소 (출력 후 감소)
 document.write("--decData ="+ --decData +"<br>"); // 3 전위 감소
-r2=incData*decData; //곱셈 연산
+r2 = incData * decData; //곱셈 연산
 document.write("incData*decData ="+ r2 +"<br>"); // 9
 ````
 
@@ -86,23 +86,23 @@ document.write("incData*decData ="+ r2 +"<br>"); // 9
 | !==        | 값 또는 타입이 다른지 비교 | 5!=="5" | false |
 
 ````javascript
-var x=5;
-var y="5";
+var x = 5;
+var y = "5";
 var result;
 
-result=(x>y); // 비교 연산
+result = (x>y); // 비교 연산
 document.write("x > y : "+ result +"<br>"); // x > y : false
 
-result=(x==y); // 두 값이 같은지 비교
+result = (x==y); // 두 값이 같은지 비교
 document.write("x == y : "+ result +"<br>"); // x == y : true
 
-result=(x===y); // 두 값과 타입이 같은지 비교
+result = (x===y); // 두 값과 타입이 같은지 비교
 document.write("x === y : "+ result +"<br>"); // x === y : false
 
-result=(x!=y); // 두 값이 다른지 비교
+result = (x!=y); // 두 값이 다른지 비교
 document.write("x != y : "+ result +"<br>"); // x != y : false
 
-result=(x!==y); //두 값이 다르거나 또는 타입이 다른지 비교
+result = (x!==y); //두 값이 다르거나 또는 타입이 다른지 비교
 document.write("x !== y : "+ result +"<br>"); // x !== y : true
 ````
 
@@ -120,17 +120,17 @@ document.write("x !== y : "+ result +"<br>"); // x !== y : true
 | !    | 논리 부정 | 피연산자 값이 참이면 거짓, 거짓이면 참                              |
 
 ````javascript
-var x=5;
-var y=7;
+var x = 5;
+var y = 7;
 var result;
 
-result=(x<10 && y>10); // 논리곱
+result = (x<10 && y>10); // 논리곱
 document.write("(x<10 && y>10 :"+ result +"<br>"); // (x<10 && y>10) : false
 
-result=(x<10 || y>10); // 논리합
+result = (x<10 || y>10); // 논리합
 document.write("(x<10 || y>10 :"+ result +"<br>"); // (x<10 || y>10) : true
 
-result=!(x<10 && y>10); // 논리 부정
+result =! (x<10 && y>10); // 논리 부정
 document.write("!(x<10 && y>10 :"+ result +"<br>"); // !(x<10 && y>10) : true
 ````
 
@@ -146,20 +146,20 @@ document.write("!(x<10 && y>10 :"+ result +"<br>"); // !(x<10 && y>10) : true
 | ^    | 배타적 비트합 | 두 비트가 같을 때 0이고, 다를 때 1            |
 
 ````javascript
-var x=5; // 0101 (2진수로 변환)
-var y=7; // 0111 (2진수로 변환)
+var x = 5; // 0101 (2진수로 변환)
+var y = 7; // 0111 (2진수로 변환)
 var result;
 
-result=(x & y); // 비트곱
+result = (x & y); // 비트곱
 document.write("x & y = "+ result +"<br>"); // x & y = 5
 
-result=(x | y); // 비트합
+result = (x | y); // 비트합
 document.write("x | y = "+ result +"<br>"); // x | y = 7
 
-result=(x ^ y); // 배타적 비트합
+result = (x ^ y); // 배타적 비트합
 document.write("x ^ y = "+ result +"<br>"); // x ^ y = 2
 
-result=(~x); // 비트 부정
+result = (~x); // 비트 부정
 document.write("~x = "+ result +"<br>"); // ~x = -6
 ````
 
@@ -174,16 +174,16 @@ document.write("~x = "+ result +"<br>"); // ~x = -6
 | 판단 | ? true : false; |
 
 ````javascript
-Max_value=(a>b) ? A : b; // a, b 중 큰 값을 저장
+Max_value = (a>b) ? A : b; // a, b 중 큰 값을 저장
 
-var x=5;
-var y=7;
+var x = 5;
+var y = 7;
 var reseult;
 
-result=(x>y) ? x : y; // 조건 연산
+result = (x>y) ? x : y; // 조건 연산
 document.write("큰 값 : "+ result +"<br>"); // 큰 값 : 7
 
-result=(x>y) ? x-y : y-x; // 조건 연산
+result = (x>y) ? x-y : y-x; // 조건 연산
 document.write("큰 값-작은 값 : "+ result +"<br>"); // 큰 값-작은 값 : 2
 ````
 
@@ -200,8 +200,8 @@ document.write("큰 값-작은 값 : "+ result +"<br>"); // 큰 값-작은 값 :
 |  <<=  |  >>=  | >>>=  |  &=   | \| =  |  ^=   |
 
 ````javascript
-var x1=x2=x3=x4=x5=10;
-var st="Hello";
+var x1 = x2 = x3 = x4 = x5 = 10;
+var st = "Hello";
 
 x1 += 1;
 document.write("x1 :"+ x1 +"<br>"); // x1 : 11

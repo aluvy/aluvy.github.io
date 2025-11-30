@@ -48,13 +48,13 @@ mermaid: true
 
 ````javascript
 if (조건식) {
-	실행 문장;
+  실행 문장;
 }
 
 if (조건식A) {
   실행 문장;
   if (조건식B) {
-  	실행 문장;
+    실행 문장;
   }
 }
 ````
@@ -66,31 +66,31 @@ if (조건식A) {
 
 ````javascript
 if (age >= 19){
-	result="성인입니다";
+  result = "성인입니다";
 }
 else {
-	result="미성년자입니다.";
+  result = "미성년자입니다.";
 }
 ````
 
 ex) 성별과 성년 구분하는 프로그램 만들기
 
 ````javascript
-var genter="M"; // 남자(M), 여자(F)
-var age=21;
+var genter = "M"; // 남자(M), 여자(F)
+var age = 21;
 
-if(genter=="M"){
-    if(age>=19){
-        result="남자 성인입니다.";
-    } else {
-        result="남자 미성년자입니다.";
-    }
-}else{
-    if(age>=19){
-        result="여자 성인입니다.";
-    } else {
-        result="여자 미성년자입니다.";
-    }
+if(genter == "M"){
+  if(age>=19){
+    result = "남자 성인입니다.";
+  } else {
+    result = "남자 미성년자입니다.";
+  }
+} else {
+  if(age>=19){
+    result = "여자 성인입니다.";
+  } else {
+    result = "여자 미성년자입니다.";
+  }
 }
 document.write("당신은"+ result +"<br>");
 ````
@@ -102,37 +102,37 @@ document.write("당신은"+ result +"<br>");
 
 ````javascript
 if(조건식-1){
-	조건식-1의 결과가 참일 때 실행할 문장;
+  조건식-1의 결과가 참일 때 실행할 문장;
 } else if (조건식-2){
-	조건식-2의 결과가 참일 때 실행할 문장;
+  조건식-2의 결과가 참일 때 실행할 문장;
 } else {
-	조건식-1, 조건식-2 모두 거짓일 때 실행할 문장;
+  조건식-1, 조건식-2 모두 거짓일 때 실행할 문장;
 }
 ````
 
 ex) 학점 환산 프로그램 만들기
 
 ````javascript
-var point=93; //과목 점수
-var grade="";
+var point = 93; //과목 점수
+var grade = "";
 
 if(point>100){
-    document.write("0~100점 사이 값을 입력해야 합니다."+"<br>");
+  document.write("0~100점 사이 값을 입력해야 합니다."+"<br>");
 } else if(point>=90){
-    grade="A";
-    document.write("아주 잘했어요."+"<br>");
+  grade = "A";
+  document.write("아주 잘했어요."+"<br>");
 } else if(point>=80){
-    grade="B";
-    document.write("잘했어요"+"<br>");
+  grade = "B";
+  document.write("잘했어요"+"<br>");
 } else if(point>=70){
-    grade="C";
-    document.write("조금만 노력하면 잘할 수 있어요."+"<br>");
+  grade = "C";
+  document.write("조금만 노력하면 잘할 수 있어요."+"<br>");
 } else if(point>=60){
-    grade="D";
-    document.write("좀 더 노력하세요."+"<br>");
+  grade = "D";
+  document.write("좀 더 노력하세요."+"<br>");
 } else {
-    grade="F";
-    document.write("많이 노력하시기 바랍니다."+"<br>");
+  grade = "F";
+  document.write("많이 노력하시기 바랍니다."+"<br>");
 }
 
 document.write("학생의 학점은 <b>"+ grade +"</b>입니다.");
@@ -146,13 +146,13 @@ document.write("학생의 학점은 <b>"+ grade +"</b>입니다.");
 ````javascript
 switch (상수값){
   case n:
-  	실행 문장;
-  	break;
+    실행 문장;
+    break;
   case n:
     실행 문장;
     break;
   default:
-  	기본 실행 문장;
+    기본 실행 문장;
 }
 ````
 
@@ -160,32 +160,32 @@ ex) 요일을 알려주는 프로그램 만들기
 
 ````javascript
 var day;
-var week=new Date().getDay(); // 0(일요일)~6(토요일)
+var week = new Date().getDay(); // 0(일요일)~6(토요일)
 
 switch(week){
-    case 0:
-        day="일요일";
-        break;
-    case 1:
-        day="월요일";
-        break;
-    case 2:
-        day="화요일";
-        break;
-    case 3:
-        day="수요일";
-        break;
-    case 4:
-        day="목요일";
-        break;
-    case 5:
-        day="금요일";
-        break;
-    case 6:
-        day="토요일";
-        break;
-    default:
-        day="없는 요일";
+  case 0:
+    day="일요일";
+    break;
+  case 1:
+    day="월요일";
+    break;
+  case 2:
+    day="화요일";
+    break;
+  case 3:
+    day="수요일";
+    break;
+  case 4:
+    day="목요일";
+    break;
+  case 5:
+    day="금요일";
+    break;
+  case 6:
+    day="토요일";
+    break;
+  default:
+    day="없는 요일";
 }
 document.write("오늘은<b>"+ day +"</b>입니다.<br>");
 ````
@@ -199,7 +199,7 @@ document.write("오늘은<b>"+ day +"</b>입니다.<br>");
 ````javascript
 // for문 형식
 for(초기식; 조건식; 증감식){
-	실행 문장;
+  실행 문장;
 }
 ````
 
@@ -226,11 +226,11 @@ for(x=2; x<=5; x++){
 ex) 1부터 100까지 합 구하기
 
 ````javascript
-var a=1;
-var sum=0;
+var a = 1;
+var sum = 0;
 
 while(a<=100){
-  sum+=a;
+  sum += a;
   a++;
 }
 document.write("1~100까지 합 : <b>"+ sum +"</b><br>");
@@ -239,11 +239,11 @@ document.write("1~100까지 합 : <b>"+ sum +"</b><br>");
 ex) 1부터 10000까지 합 구하기
 
 ````javascript
-var b=1;
-var summ=0;
+var b = 1;
+var summ = 0;
 
 while(1){
-    summ+=b;
+  summ += b;
   b++;
   if(b==10001)
   break;
@@ -257,11 +257,11 @@ document.write("1~10000 까지의 합 : <b>"+ summ + "<b>");
 ex) 1부터 100까지 합 구하기
 
 ````javascript
-var c=1;
-var summm=0;
+var c = 1;
+var summm = 0;
 
-do{
-  summm+=c;
+do {
+  summm += c;
   c++;
 } while(c<=100);
 
@@ -280,14 +280,14 @@ switch~case문 내에서 해당 블록을 강제적으로 벗어나 다음 문�
 ex) break문으로 1부터 100까지 수 중 3의 배수 합 구하기
 
 ````javascript
-var d=0;
-var sum=0;
+var d = 0;
+var sum = 0;
 
 while(1){
-  d+=3;
+  d += 3;
   if(d>100)
     break;
-  sum+=d;
+  sum += d;
   document.write(d + " ");
 }
 document.write("<br><Br>");
@@ -302,13 +302,13 @@ if문의 조건식이 참이면 continue문 이후 문장을 처리하지 않고
 ex) continue문으로 1부터 100까지 수 중 3의 배수 합 구하기
 
 ````javascript
-var e=0;
-var sum=0;
+var e = 0;
+var sum = 0;
 
 for(e=1; e<=100; e++){
   if(e%3 != 0)
     continue;
-  sum+=e;
+  sum += e;
   document.write(e + " ");
 }
 document.write("<br><br>");
