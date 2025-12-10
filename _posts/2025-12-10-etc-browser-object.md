@@ -14,7 +14,7 @@ mermaid: true
 
 대표적으로 window(최상위 객체), location, navigator, history, screen, document 객체가 있다.
 
-![window 객체 구조도](/assets/images/posts/2025/1210/bom.png)
+![window 객체 구조도](/assets/images/posts/2025/1210/bom.png){: width="450"}
 _window 객체 구조도_
 
 - **location Object**: 웹 링크, url에 관련된 객체
@@ -22,7 +22,6 @@ _window 객체 구조도_
 - **history Object**: 히스토리 관장
 - **screen Object**: 윈도우 창, 사이즈 관장 (반응형 웹 관련)
 
-<br>
 
 ### window 객체
 
@@ -33,16 +32,6 @@ _window 객체 구조도_
 - window를 생략한 형태로 window객체와 메서드 사용 가능
 - 적용하기 위한 공식적인 웹표준은 없느나, 주로 브라우저들에서 지원되고 있음.
 
-````javascript
-function test(){
-  window.alert('안녕');
-  var a = window.prompt('이름을 입력하세요','');
-  window.alert(a); // a는 지역변수기 때문에 window. 을 쓰면 안된다
-}
-
-window.test();
-````
-
 ### screen 객체
 
 - 윈도우의 사이즈를 핸들링한다.
@@ -50,42 +39,17 @@ window.test();
 - window 객체의 한 부분으로써 window,screen 속성을 통해 접근 (window는 생략 가능)
 - 방문자의 화면을 고려해 적당한 사이즈의 팝업창을 제공 가능
 
-````javascript
-var child = window.open('http://naver.com', 'win1', 'width=300, height=200');
-var width = screen.width;
-
-var height = screen.height;
-child.moveTo(0, 0);
-child.resizeTo(width, height);
-````
-
 ### location 객체
 
 - 현재 URL에 대한 정보를 가지고 있는 객체
 - window 객체의 한 부분으로써 window.location 속성을 통해 접근 (window는 생략 가능)
 - a 태그를 대신해 사용할 수 있다.
 
-````javascript
-location='http://naver.com';
-location.href='http://nate.com';
-location.replace('http://daum.net');
-````
-
 ### navigator 객체
 
 - 웹 문서를 실행하고 있는 브라우저에 대한 정보를 가지고 있는 객체
 - window 객체의 한 부분으로써 window.navigator 속성을 통해 접근 (window는 생략 가능)
 
-````javascript
-var infoBrowser;
-infoBrowser = '브라우저의 이름 : ' + navigator.appName + '\n\n';
-infoBrowser += '브라우저의 코드명 : ' + navigator.appCodeName + '\n\n';
-infoBrowser += '브라우저의 버전 : ' + navigator.appVersion + '\n\n';
-infoBrowser += '운영체제 환경 : ' + navigator.platform;
-infoBrowser += '자바 사용 여부 : ' + navigator.javaEnabled();
-
-console.log(infoBrowser);
-````
 
 ### history 객체
 
@@ -93,19 +57,11 @@ console.log(infoBrowser);
 - window 객체의 한 부분으로써 window.history 속성을 통해 접근 (window는 생략 가능)
 - 사용자들의 사생활을 보호하기 위해, JavaScript를 통해 접근하는데 제한이 있음
 
-````javascript
-back(); // 히스토리 리스트 안에서 이전 URL 로드(브라우저의 “뒤로 가기” 버튼 클릭)
-forward(); //히스트로 리스트 안에서 다음 URL 로드(브라우저의 “앞으로 가기” 버튼 클릭)
-go('http://naver.com'); // 히스토리 리스트의 특정 URL로 이동
-````
-
-
 
 <br>
 
 <hr>
 
-<br>
 
 ## 문서 객체 모델 (Document Object Model : DOM)
 
@@ -118,7 +74,7 @@ go('http://naver.com'); // 히스토리 리스트의 특정 URL로 이동
 - HTML DOM은 HTML 구성요소들을 획득, 변경, 추가, 삭제하기 위한 표준
 - HTML 문서를 브라우저에서 로드 시 각 구성요소들을 객체화하여 객체 드리 구조를 나타냄
 
-![DOM](/assets/images/posts/2025/1210/dom.png)
+![DOM](/assets/images/posts/2025/1210/dom.png){: width="450"}
 
 
 ### document 객체
@@ -131,10 +87,3 @@ go('http://naver.com'); // 히스토리 리스트의 특정 URL로 이동
 
 > 사용할 때 계산순서가 중요한데, html을 전부 로드한 후에 계산되어야 한다.
 {: .prompt-tip}
-
-````javascript
-window.onload = function(){
-  // body를 모두 load한 후에 이 스크립트를 실행해라.
-  // onload 안에 스크립트를 넣을 경우, 스크립트 코드가 head에 있어도 마지막에 실행된다.
-};
-````
