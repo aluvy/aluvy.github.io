@@ -1,5 +1,5 @@
 ---
-title: "[CSS] CSS3 선택자(Selector), 가상선택자(Virtual selector)"
+title: "[CSS] 선택자(Selector), 가상선택자(Virtual selector)"
 date: 2025-12-02 08:26:00 +0900
 categories: [CSS, basic]
 tags: [선택자, selector, 가상선택자]
