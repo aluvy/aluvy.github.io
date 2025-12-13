@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] RegExp, 정규표현식"
 date: 2025-12-11 08:49:00 +0900
-categories: [JavaScript, etc]
+categories: [JavaScript]
 tags: [regexp, 정규표현식]
 render_with_liquid: false
 math: true
