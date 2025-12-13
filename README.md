@@ -53,7 +53,7 @@ This work is published under [MIT][mit] License.
 - Launch VS Code
 - Copy the GitHub clone URL
 - Local Clone
-- Press F1 and select “Dev Container: Clone Repository in Container Volume...”
+- Press F1 and select “Dev Container: **Clone Repository in Container Volume..**.”
 - Clone the GitHub repository
 
 ```shell
