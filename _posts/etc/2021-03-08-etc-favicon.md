@@ -9,7 +9,7 @@ mermaid: true
 ---
 
 
-![favicon](/assets/images/posts/2021/0308/favicon.png){: width="400"}
+![favicon](/assets/images/posts/2021/0308/favicon.png)
 _파비콘 예시_
 
 
