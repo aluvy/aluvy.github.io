@@ -1,5 +1,5 @@
 ---
-title: "HTML Entity"
+title: "[HTML] Entity"
 date: 2025-11-24 08:26:00 +0900
 categories: [ETC, etc]
 tags: [html, entity, unicode]

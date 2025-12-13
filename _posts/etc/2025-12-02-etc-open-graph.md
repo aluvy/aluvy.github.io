@@ -2,7 +2,7 @@
 title: "[ETC] 오픈그래프(open graph)"
 date: 2025-12-02 08:12:00 +0900
 categories: [ETC, etc]
-tags: [open graph]
+tags: [open graph, og]
 render_with_liquid: false
 math: true
 mermaid: true

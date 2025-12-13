@@ -2,7 +2,7 @@
 title: "[HTML] HTML5 시맨틱 태그 (Semantic Tag)"
 date: 2025-11-25 08:35:00 +0900
 categories: [HTML]
-tags: [html, html5, semantic tag]
+tags: [html, semantic tag]
 render_with_liquid: false
 math: true
 mermaid: true
