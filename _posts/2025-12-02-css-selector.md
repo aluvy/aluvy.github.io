@@ -1,7 +1,7 @@
 ---
 title: "[CSS] 선택자(Selector), 가상선택자(Virtual selector)"
 date: 2025-12-02 08:26:00 +0900
-categories: [CSS, basic]
+categories: [CSS]
 tags: [선택자, selector, 가상선택자]
 render_with_liquid: false
 math: true
