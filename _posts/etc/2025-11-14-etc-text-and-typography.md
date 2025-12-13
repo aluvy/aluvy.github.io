@@ -2,7 +2,7 @@
 title: jekyll theme Chripy Text and Typography
 # description: Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.
 date: 2025-11-14 10:49:00 +0900
-categories: [ETC, etc]
+categories: [ETC, jekyll]
 tags: [typography]
 render_with_liquid: false
 math: true

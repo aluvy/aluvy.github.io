@@ -1,7 +1,7 @@
 ---
 title: 웹사이트를 뭘로 만들었는지 알 수 있게 해주는 크롬 확장 프로그램 Wappalyzer
 date: 2025-11-13 14:00:00 +0900
-categories: [ETC, extentions]
+categories: [ETC, chrome extention]
 tags: [etc, chrome extensions]     # TAG names should always be lowercase
 ---
 

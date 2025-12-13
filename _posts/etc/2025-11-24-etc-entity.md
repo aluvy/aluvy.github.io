@@ -1,7 +1,7 @@
 ---
-title: "[HTML] Entity"
+title: "Entity"
 date: 2025-11-24 08:26:00 +0900
-categories: [ETC, etc]
+categories: [ETC]
 tags: [html, entity, unicode]
 render_with_liquid: false
 math: true

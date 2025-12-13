@@ -1,7 +1,7 @@
 ---
 title: "[CSS] CSS3 animation"
 date: 2025-12-10 21:22:00 +0900
-categories: [CSS, animation]
+categories: [CSS]
 tags: [css, animation]
 render_with_liquid: false
 math: true
@@ -57,22 +57,22 @@ CSS 애니메이션을 만들려면 animation 속성과 속성의 하위 속성�
 #exampleSub img{ border:5px solid green;}
 
 @keyframes animationSample{
-  from{
-  	opacity:1.0;
-  	transform:rotate(0deg);
+  from {
+    opacity:1.0;
+    transform:rotate(0deg);
   }
-  30% {
-  	border:5px solid red;
+    30% {
+    border:5px solid red;
   }
-  50% {
-  	opacity:0.1;
+    50% {
+    opacity:0.1;
   }
-  70% {
-  	border:5px solid blue;
+    70% {
+    border:5px solid blue;
   }
-  to {
-  	opacity:1.0;
-  	transform:rotate(360deg);
+    to {
+    opacity:1.0;
+    transform:rotate(360deg);
   }
 }
 

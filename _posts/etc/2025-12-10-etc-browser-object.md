@@ -1,7 +1,7 @@
 ---
-title: "[ETC] BOM, DOM Object Model"
+title: "BOM, DOM Object Model"
 date: 2025-12-10 22:20:00 +0900
-categories: [ETC, etc]
+categories: [ETC]
 tags: [browser object model, bom, document object model, dom]
 render_with_liquid: false
 math: true

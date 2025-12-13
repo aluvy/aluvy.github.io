@@ -1,7 +1,7 @@
 ---
 title: "svg see: SVG 파일 미리보기 extention"
 date: 2025-11-14 15:01:00 +0900
-categories: [ETC, extentions]
+categories: [ETC]
 tags: [svg see, extention]
 render_with_liquid: false
 math: true

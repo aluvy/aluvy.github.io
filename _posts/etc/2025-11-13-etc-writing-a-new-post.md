@@ -2,7 +2,7 @@
 title: jekyll theme Chripy 포스트 작성 방법
 # description: Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.
 date: 2025-11-13 09:28:00 +0900
-categories: [ETC, etc]
+categories: [ETC, jekyll]
 tags: [writing a new post, post, jekyll, chripy]     # TAG names should always be lowercase
 render_with_liquid: false
 ---

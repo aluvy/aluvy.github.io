@@ -1,7 +1,7 @@
 ---
 title: "파비콘 제작, 웹사이트에 적용하기"
 date: 2025-11-14 10:49:00 +0900
-categories: [ETC, favicon]
+categories: [ETC]
 tags: [favicon]
 render_with_liquid: false
 math: true

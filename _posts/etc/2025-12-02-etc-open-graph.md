@@ -1,7 +1,7 @@
 ---
-title: "[ETC] 오픈그래프(open graph)"
+title: "오픈그래프(open graph)"
 date: 2025-12-02 08:12:00 +0900
-categories: [ETC, etc]
+categories: [ETC]
 tags: [open graph, og]
 render_with_liquid: false
 math: true
