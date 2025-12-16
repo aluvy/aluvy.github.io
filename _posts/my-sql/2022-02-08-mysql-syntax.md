@@ -16,13 +16,13 @@ mermaid: true
 > mysql -u계정아이디 -p비밀번호 데이터베이스명
 {: .prompt-info}
 
-````shell
+````sql
 c:\>mysql -usong -p1234 song_db
 ````
 
 또는
 
-````shell
+````sql
 c:\>mysql -usong -p1234   // 계정로그인
 mysql>use song_db         // use 명령을 사용해 작업하려는 데이터베이스 선택
 ````
@@ -33,7 +33,7 @@ _song_db로 들어왔음을 확인_
 
 ## 데이터베이스 빠져나오기
 
-````shell
+````sql
 \q
 ````
 ![Bye 메세지](/assets/images/posts/2022/0208/mysql-syntax-02.png)
@@ -52,7 +52,7 @@ _Bye 메세지_
 데이터베이스 출력 명령을 통해 그 존재를 확인해 본다.
 
 
-````shell
+````sql
 c:\>mysql -uroot -p mysql	// root 계정으로 접속, 비밀번호는 엔터
 mysql>create database sample1;	// sample1 데이터베이스 생성
 mysql>show databases;	//데이터베이스 목록 출력 명령
@@ -79,7 +79,7 @@ _데이터베이스 목록 출력 / sample1 을 확인할 수 있다._
 
 데이터베이스 삭제 명령 : `drop database 데이터베이스명;`
 
-````shell
+````sql
 c:\>mysql -uroot -p mysql	// root 계정 접속
 mysql>drop database sample1;    // sample1 데이터베이스 삭제
 mysql>show databases;   //데이터베이스 목록 출력 명령
@@ -111,7 +111,7 @@ _sample1 DB가 목록에서 사라졌음을 확인_
 {: .prompt-info}
 
 
-````shell
+````sql
 mysql>create table friend(
   num int not null,     // ＊필수항목(primary-key) 값이 꼭 들어가야 함 / int : 정수, null값 안됨
   name char(10),     // char(10) : 글자(글자수)
@@ -123,7 +123,7 @@ mysql>create table friend(
 );
 ````
 
-````shell
+````sql
 mysql -usong -p1234 song_db	// 데이터베이스 접속
 
 mysql>create table friend(
@@ -152,7 +152,7 @@ _friend 테이블이 생성된것을 확인_
 
 `desc 테이블명;`
 
-````shell
+````sql
 mysql>desc friend;
 ````
 
@@ -167,7 +167,7 @@ _테이블 구조 확인_
 ### 새로운 필드 추가 명령
 alter table 테이블명 add 새로운필드명 필드타입 [first 또는 after 필드명];
 
-````shell
+````sql
 mysql>alter table friend add age int;  // friend 테이블에 age 필드를 정수형으로 추가 (제일 마지막에 추가됨)
 mysql>alter table friend add hp char(20) after tel;  // tel 필드 바로 다음에 hp필드를 추가
 ````
@@ -183,7 +183,7 @@ _tel 다음에 hp filed가 추가된 것을 확인_
 
 alter table 테이블명 drop 삭제할 필드명1, drop 필드명2, ....;
 
-````shell
+````sql
 mysql>alter table friend drop email;   // email 필드 삭제
 mysql>alter table friend drop age, drop hp;    // age, hp 필드 삭제 
 mysql>desc friend;
@@ -198,7 +198,7 @@ _email과 age filed가 삭제된 것을 확인_
 
 alter table 테이블명 change 이전필드명 새로운필드명 필드타입;
 
-````shell
+````sql
 mysql>alter table friend change tel phone int;    // tel 필드를 phone 필드 정수형으로 수정
 mysql>desc friend;
 ````
@@ -211,7 +211,7 @@ _tel 필드가 삭제되고 phone필드가 들어감_
 
 alter table 테이블명 modify 필드명 새로운타입 not null;
 
-````shell
+````sql
 mysql>alter table friend modify name char(20);   // name 필드 타입을 char(20)로 수정
 mysql>desc friend;
 ````
@@ -224,7 +224,7 @@ mysql>desc friend;
 
 alter table 이전테이블명 rename 새로운테이블명;
 
-````shell
+````sql
 mysql>alter table friend rename student;
 mysql>show tables;
 ````
@@ -237,7 +237,7 @@ _테이블명이 student 로 변경됨_
 
 drop table 테이블명;
 
-````shell
+````sql
 mysql>drop table student;
 mysql>show tables;
 ````
@@ -252,7 +252,7 @@ _테이블이 삭제됨_
 
 mysql>show variables like 'c%';
 
-````shell
+````sql
 mysql>show variables like 'c%';
 ````
 
