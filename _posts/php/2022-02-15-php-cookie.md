@@ -1,5 +1,5 @@
 ---
-title: "쿠키 (Cookie)"
+title: "[PHP] 쿠키 (Cookie)"
 date: 2022-02-15 10:13:00 +0900
 categories: [PHP]
 tags: [PHP, cookie]
