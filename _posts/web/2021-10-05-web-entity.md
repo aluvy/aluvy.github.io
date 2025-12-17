@@ -1,7 +1,7 @@
 ---
 title: "Entity"
 date: 2021-10-05 08:26:00 +0900
-categories: [ETC]
+categories: [WEB]
 tags: [html, entity, unicode]
 render_with_liquid: false
 math: true

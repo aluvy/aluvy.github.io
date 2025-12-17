@@ -77,22 +77,45 @@ mermaid: true
 
 
 ## 날짜형 데이터타입
-DATE	날짜(년도, 월, 일) 형태의 기간 표현 데이터 타입(3byte)
-TIME	시간(시, 분, 초) 형태의 기간 표현 데이터 타입(3byte)
-DATETIME	날짜와 시간 형태의 기간 표현 데이터 타입(8byte)
-TIMESTAMP	날짜와 시간 형태의 기간 표현 데이터 타입(4byte) -시스템 변경 시 자동으로 그 날짜와 시간이 저장된다.
-YEAR	년도 표현 데이터 타입(1byte)
+
+- **DATE**
+  - 날짜(년도, 월, 일) 형태의 기간 표현 데이터 타입(3byte)
+
+- **TIME**
+  - 시간(시, 분, 초) 형태의 기간 표현 데이터 타입(3byte)
+
+- **DATETIME**
+  - 날짜와 시간 형태의 기간 표현 데이터 타입(8byte)
+
+- **TIMESTAMP**
+  - 날짜와 시간 형태의 기간 표현 데이터 타입(4byte)
+  - 시스템 변경 시 자동으로 그 날짜와 시간이 저장된다.
+
+- **YEAR**
+  - 년도 표현 데이터 타입(1byte)
 
 
 
 
 ## 이진 데이터타입
-BINARY(n) & BYTE(n)	CHAR의 형태의 이진 데이터 타입 (최대 255byte)
-VARBINARY(n)	VARCHAR의 형태의 이진 데이터 타입 (최대 65535byte)
-TINYBLOB(n)	이진 데이터 타입 (최대 255byte)
-BLOB(n)	이진 데이터 타입 (최대 65535byte)
-MEDIUMBLOB(n)	이진 데이터 타입 (최대 16777215byte)
-LONGBLOB(n)	이진 데이터 타입 (최대 4294967295byte)
+
+- **BINARY(n) & BYTE(n)**
+  - CHAR의 형태의 이진 데이터 타입 (최대 255byte)
+
+- **VARBINARY(n)**
+  - VARCHAR의 형태의 이진 데이터 타입 (최대 65535byte)
+
+- **TINYBLOB(n)**
+  - 이진 데이터 타입 (최대 255byte)
+
+- **BLOB(n)**
+  - 이진 데이터 타입 (최대 65535byte)
+
+- **MEDIUMBLOB(n)**
+  - 이진 데이터 타입 (최대 16777215byte)
+
+- **LONGBLOB(n)**
+  - 이진 데이터 타입 (최대 4294967295byte)
 
 
 

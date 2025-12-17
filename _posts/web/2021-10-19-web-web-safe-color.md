@@ -1,7 +1,7 @@
 ---
 title: "웹 안전색(Web Safe Color)"
 date: 2021-10-19 08:47:00 +0900
-categories: [ETC]
+categories: [WEB]
 tags: [web safe color, color, 웹 안전색]
 render_with_liquid: false
 math: true

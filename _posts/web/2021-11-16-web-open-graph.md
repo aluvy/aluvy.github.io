@@ -1,7 +1,7 @@
 ---
 title: "오픈그래프(open graph)"
 date: 2021-11-16 08:12:00 +0900
-categories: [ETC]
+categories: [WEB]
 tags: [open graph, og]
 render_with_liquid: false
 math: true

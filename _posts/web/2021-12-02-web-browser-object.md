@@ -1,7 +1,7 @@
 ---
 title: "BOM, DOM Object Model"
 date: 2021-12-02 22:20:00 +0900
-categories: [ETC]
+categories: [WEB]
 tags: [browser object model, bom, document object model, dom]
 render_with_liquid: false
 math: true
