@@ -53,7 +53,7 @@
   --btn-paginator-hover-color: var(--sidebar-bg);
 
   /* Posts */
-  --toc-highlight: #0550ae;
+  --toc-highlight: #db7070;
   --toc-popup-border-color: lightgray;
   --btn-share-color: gray;
   --btn-share-hover-color: #0d6efd;
@@ -100,7 +100,7 @@
   --highlighter-rouge-color: #3f596f;
   --highlight-lineno-color: #9e9e9e;
   --inline-code-bg: rgb(25 25 28 / 5%);
-  --code-color: #3a3a3a;
+  --code-color: #5e646f;
   --code-header-text-color: #a3a3a3;
   --code-header-muted-color: #e5e5e5;
   --code-header-icon-color: #c9c8c8;
@@ -137,7 +137,7 @@
   .highlight .kr,
   .highlight .kt,
   .highlight .kv {
-    color: #cf222e;
+    color: #b870ce;
   }
 
   .highlight .gr {
@@ -150,11 +150,11 @@
   }
 
   .highlight .nb {
-    color: #953800;
+    color: #db7070;
   }
 
   .highlight .nc {
-    color: #953800;
+    color: #c95959;
   }
 
   .highlight .no {
@@ -170,11 +170,11 @@
   }
 
   .highlight .na {
-    color: #116329;
+    color: #db7070;
   }
 
   .highlight .nt {
-    color: #116329;
+    color: #db7070;
   }
 
   .highlight .gi {
@@ -183,7 +183,7 @@
   }
 
   .highlight .kc {
-    color: #0550ae;
+    color: #db7070;
   }
 
   .highlight .l,
@@ -196,27 +196,27 @@
   .highlight .il,
   .highlight .mo,
   .highlight .mx {
-    color: #0550ae;
+    color: #db7070;
   }
 
   .highlight .sb {
-    color: #0550ae;
+    color: #db7070;
   }
 
   .highlight .bp {
-    color: #0550ae;
+    color: #db7070;
   }
 
   .highlight .ne {
-    color: #0550ae;
+    color: #db7070;
   }
 
   .highlight .nl {
-    color: #0550ae;
+    color: #6587bf;
   }
 
   .highlight .py {
-    color: #0550ae;
+    color: #db7070;
   }
 
   .highlight .nv,
@@ -224,21 +224,21 @@
   .highlight .vg,
   .highlight .vi,
   .highlight .vm {
-    color: #0550ae;
+    color: #db7070;
   }
 
   .highlight .o,
   .highlight .ow {
-    color: #0550ae;
+    // color: #db7070;
   }
 
   .highlight .gh {
-    color: #0550ae;
+    color: #db7070;
     font-weight: bold;
   }
 
   .highlight .gu {
-    color: #0550ae;
+    color: #db7070;
     font-weight: bold;
   }
 
@@ -253,7 +253,7 @@
   .highlight .sx,
   .highlight .s1,
   .highlight .ss {
-    color: #0a3069;
+    color: #7c9f4b;
   }
 
   .highlight .nd {
@@ -262,12 +262,12 @@
 
   .highlight .nf,
   .highlight .fm {
-    color: #8250df;
+    color: #6587bf;
   }
 
   .highlight .err {
-    color: #f6f8fa;
-    background-color: #82071e;
+    // color: #f6f8fa;
+    // background-color: #82071e;
   }
 
   .highlight .c,
@@ -278,7 +278,7 @@
   .highlight .cpf,
   .highlight .c1,
   .highlight .cs {
-    color: #68717a;
+    color: #acb2bc;
   }
 
   .highlight .gl {
