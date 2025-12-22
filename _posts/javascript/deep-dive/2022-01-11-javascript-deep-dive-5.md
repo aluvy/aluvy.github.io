@@ -2,7 +2,7 @@
 title: "[Deep Dive] 5장 표현식과 문, 값, 리터럴, 토큰"
 date: 2022-01-11 20:28:00 +0900
 categories: [JavaScript, Deep Dive]
-tags: []
+tags: [deep dive]
 render_with_liquid: false
 math: true
 mermaid: true

@@ -2,7 +2,7 @@
 title: "[Deep Dive] 4장 변수, 식별자, 변수 선언, 값의 할당, 재할당, 네이밍규칙"
 date: 2022-01-08 19:57:00 +0900
 categories: [JavaScript, Deep Dive]
-tags: [deep dive, 네이밍규칙, 매니지드언어, 변수, 식별자, 카멜케이스, 호이스팅]
+tags: [deep dive]
 render_with_liquid: false
 math: true
 mermaid: true
