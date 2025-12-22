@@ -2,7 +2,7 @@
 title: "[PHP] 설문조사"
 date: 2022-02-25 12:38:00 +0900
 categories: [PHP]
-tags: [PHP]
+tags: [php]
 render_with_liquid: false
 math: true
 mermaid: true
