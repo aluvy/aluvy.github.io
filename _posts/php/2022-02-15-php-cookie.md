@@ -2,7 +2,7 @@
 title: "[PHP] 쿠키 (Cookie)"
 date: 2022-02-15 10:13:00 +0900
 categories: [PHP]
-tags: [PHP, cookie]
+tags: [php]
 render_with_liquid: false
 math: true
 mermaid: true

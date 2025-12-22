@@ -2,7 +2,7 @@
 title: "[PHP] 세션 (Session)"
 date: 2022-02-15 11:11:00 +0900
 categories: [PHP]
-tags: [PHP, session]
+tags: [php]
 render_with_liquid: false
 math: true
 mermaid: true

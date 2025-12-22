@@ -2,7 +2,7 @@
 title: "[PHP] 아이디 비밀번호 찾기 AJAX"
 date: 2022-02-18 11:52:00 +0900
 categories: [PHP]
-tags: [PHP]
+tags: [php]
 render_with_liquid: false
 math: true
 mermaid: true

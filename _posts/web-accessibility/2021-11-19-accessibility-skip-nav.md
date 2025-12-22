@@ -2,7 +2,7 @@
 title: "[Accessibility] Skip Nav"
 date: 2021-11-19 21:22:00 +0900
 categories: [Web Accessibility]
-tags: [web accessibility, 웹 접근성, skip nav]
+tags: []
 render_with_liquid: false
 math: true
 mermaid: true

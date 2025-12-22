@@ -2,7 +2,7 @@
 title: "[PHP] 회원가입 - ajax"
 date: 2022-02-16 11:22:00 +0900
 categories: [PHP]
-tags: [PHP, session]
+tags: [php]
 render_with_liquid: false
 math: true
 mermaid: true

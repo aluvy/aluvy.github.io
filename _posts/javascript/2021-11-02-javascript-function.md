@@ -2,7 +2,7 @@
 title: "[JavaScript] 함수 (Function)"
 date: 2021-11-02 19:03:00 +0900
 categories: [JavaScript, basic]
-tags: [함수, function]
+tags: []
 render_with_liquid: false
 math: true
 mermaid: true

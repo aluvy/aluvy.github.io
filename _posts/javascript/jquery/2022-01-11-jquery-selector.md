@@ -2,7 +2,7 @@
 title: "[jQuery] 셀렉터, 요소 복사 및 잘라내기"
 date: 2022-01-11 20:25:00 +0900
 categories: [JavaScript, jQuery]
-tags: [jquery,]
+tags: []
 render_with_liquid: false
 math: true
 mermaid: true

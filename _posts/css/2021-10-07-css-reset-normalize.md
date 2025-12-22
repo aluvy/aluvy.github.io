@@ -2,7 +2,7 @@
 title: "[CSS] Reset.css vs Normalize.css"
 date: 2021-10-07 08:26:00 +0900
 categories: [CSS]
-tags: [css, reset, normalize]
+tags: []
 render_with_liquid: false
 math: true
 mermaid: true

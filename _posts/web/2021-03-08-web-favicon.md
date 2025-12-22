@@ -2,7 +2,7 @@
 title: "파비콘 제작, 웹사이트에 적용하기"
 date: 2021-03-08 11:04:00 +0900
 categories: [WEB]
-tags: [favicon]
+tags: []
 render_with_liquid: false
 math: true
 mermaid: true

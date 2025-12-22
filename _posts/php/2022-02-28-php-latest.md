@@ -2,7 +2,7 @@
 title: "[PHP] 최근게시물"
 date: 2022-02-28 10:27:00 +0900
 categories: [PHP]
-tags: [PHP]
+tags: [php]
 render_with_liquid: false
 math: true
 mermaid: true

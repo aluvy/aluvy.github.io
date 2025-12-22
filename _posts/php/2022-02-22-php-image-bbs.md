@@ -2,7 +2,7 @@
 title: "[PHP] 이미지 첨부 게시판"
 date: 2022-02-22 10:35:00 +0900
 categories: [PHP]
-tags: [PHP]
+tags: [php]
 render_with_liquid: false
 math: true
 mermaid: true

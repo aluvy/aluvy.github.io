@@ -2,7 +2,7 @@
 title: "[jQuery] 영역의 크기 메소드"
 date: 2022-01-11 20:17:00 +0900
 categories: [JavaScript, jQuery]
-tags: [jquery,]
+tags: []
 render_with_liquid: false
 math: true
 mermaid: true

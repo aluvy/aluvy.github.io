@@ -2,7 +2,7 @@
 title: "[CSS] 선택자(Selector), 가상선택자(Virtual selector)"
 date: 2021-11-12 08:26:00 +0900
 categories: [CSS]
-tags: [선택자, selector, 가상선택자]
+tags: []
 render_with_liquid: false
 math: true
 mermaid: true

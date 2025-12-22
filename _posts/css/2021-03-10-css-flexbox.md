@@ -2,7 +2,7 @@
 title: "[CSS] Flexbox"
 date: 2021-03-10 16:37:00 +0900
 categories: [CSS]
-tags: [css, flex, flexbox]
+tags: []
 render_with_liquid: false
 math: true
 mermaid: true

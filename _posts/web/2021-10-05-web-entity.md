@@ -2,7 +2,7 @@
 title: "Entity"
 date: 2021-10-05 08:26:00 +0900
 categories: [WEB]
-tags: [html, entity, unicode]
+tags: []
 render_with_liquid: false
 math: true
 mermaid: true

@@ -2,7 +2,7 @@
 title: "[PHP] 댓글 게시판"
 date: 2022-02-25 10:13:00 +0900
 categories: [PHP]
-tags: [PHP]
+tags: [php]
 render_with_liquid: false
 math: true
 mermaid: true

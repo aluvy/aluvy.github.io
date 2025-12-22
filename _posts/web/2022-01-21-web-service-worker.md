@@ -2,7 +2,7 @@
 title: "Service worker Navigation PreLoad"
 date: 2022-01-21 20:53:00 +0900
 categories: [WEB]
-tags: [service worker, youtube, iframe]
+tags: []
 render_with_liquid: false
 math: true
 mermaid: true

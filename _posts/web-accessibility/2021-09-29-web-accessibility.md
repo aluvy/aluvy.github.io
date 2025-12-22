@@ -2,7 +2,7 @@
 title: "[Accessibility] 웹표준과 웹접근성"
 date: 2021-09-29 08:26:00 +0900
 categories: [Web Accessibility]
-tags: [web accessibility, 웹표준, 웹접근성]
+tags: []
 render_with_liquid: false
 math: true
 mermaid: true

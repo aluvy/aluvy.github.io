@@ -2,7 +2,7 @@
 title: "[JavaScript] 제어문 (control statements)"
 date: 2021-11-01 08:36:00 +0900
 categories: [JavaScript, basic]
-tags: [제어문, control statements, 조건문, 반복문, 보조 제어문]
+tags: []
 render_with_liquid: false
 math: true
 mermaid: true

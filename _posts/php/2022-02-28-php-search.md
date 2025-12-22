@@ -2,7 +2,7 @@
 title: "[PHP] 검색"
 date: 2022-02-28 12:17:00 +0900
 categories: [PHP]
-tags: [PHP]
+tags: [php]
 render_with_liquid: false
 math: true
 mermaid: true

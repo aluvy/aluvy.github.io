@@ -2,7 +2,7 @@
 title: "[PHP&MySQL] file upload"
 date: 2022-02-15 14:33:00 +0900
 categories: [PHP]
-tags: [PHP, file upload]
+tags: [php]
 render_with_liquid: false
 math: true
 mermaid: true

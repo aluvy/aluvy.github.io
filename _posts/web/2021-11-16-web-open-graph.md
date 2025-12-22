@@ -2,7 +2,7 @@
 title: "오픈그래프(open graph)"
 date: 2021-11-16 08:12:00 +0900
 categories: [WEB]
-tags: [open graph, og]
+tags: []
 render_with_liquid: false
 math: true
 mermaid: true

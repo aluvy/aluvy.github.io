@@ -2,7 +2,7 @@
 title: "[PHP] 로그인 및 로그아웃"
 date: 2022-02-17 11:58:00 +0900
 categories: [PHP]
-tags: [PHP]
+tags: [php]
 render_with_liquid: false
 math: true
 mermaid: true
