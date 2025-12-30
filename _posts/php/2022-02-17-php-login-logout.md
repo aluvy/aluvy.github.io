@@ -191,4 +191,4 @@ uset() 함수를 사용하여 세션변수를 삭제하고 index로 링크시켜
 
 <hr>
 
-[login-logout.zip](/assets/images/posts/2022/0217/login-logout.zip)
+[login-logout.zip](/assets/images/posts/2022/02/17/login-logout.zip)
