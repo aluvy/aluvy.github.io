@@ -230,7 +230,7 @@ Object.is(NaN, NaN);  // true
 > 조건식 ? 조건식이 true일 때 반환할 값 : 조건식이 false일 때 반환할 값
 {: .prompt-tip}
 
-![alt text](/assets/images/posts/2022/0314/deepdive7-01.png)
+![alt text](/assets/images/posts/javascript/deepdive/07-01.png)
 
 ````javascript
 var x = 2;

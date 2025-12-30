@@ -18,7 +18,7 @@ mermaid: true
 
 객체는 0개 이상의 프로퍼티로 구성된 집합이며, 프로퍼티는 키와 값으로 구성된다.
 
-![alt text](/assets/images/posts/2022/0425/deepdive-10-01.png)
+![alt text](/assets/images/posts/javascript/deepdive/10-01.png)
 _객체는 프로퍼티의 집합이다._
 
 
@@ -26,7 +26,7 @@ _객체는 프로퍼티의 집합이다._
 자바스크립트의 함수는 일급객체이므로 값으로 취급할 수 없다. 따라서 함수도 프로퍼티 값으로 사용할 수 있다.   
 **프로퍼티 값이 함수일 경우, 일반 함수와 구분하기 위해 메서드라 부른다.**
 
-![alt text](/assets/images/posts/2022/0425/deepdive-10-02.png)
+![alt text](/assets/images/posts/javascript/deepdive/10-02.png)
 _객체의 프로퍼티와 메서드_
 
 

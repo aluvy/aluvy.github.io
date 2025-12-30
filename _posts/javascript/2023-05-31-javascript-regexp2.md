@@ -1,5 +1,5 @@
 ---
-title: "[JavaScript] 정규식을 이용한 input replace 유효성 체크"
+title: "[JavaScript] RegExp, 정규식을 이용한 input replace 유효성 체크"
 date: 2023-05-31 08:50:00 +0900
 categories: [JavaScript]
 tags: []
@@ -28,7 +28,7 @@ value 입력 시 다음 칸으로 focus() 된다
 ````javascript
 // signup
 $(function(){
-  $(document).on('keypress keyup keydown', 'input[onlyNumber]', function(e){
+  $(document).on('keypress keyup keydown', 'input[onlyNumber]', function(e) {
     if (/[a-z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g.test(this.value)) { //한글 막기
       e.preventDefault();
       this.value = '';
@@ -50,7 +50,7 @@ $(function(){
 
 // 아래걸로
 // 숫자만 입력 가능
-$(document).on('keypress keyup keydown', 'input[onlyNumber]', function(e){
+$(document).on('keypress keyup keydown', 'input[onlyNumber]', function(e) {
   // console.log(e.which);
   if (/[a-z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g.test(this.value)) { //한글 막기
     e.preventDefault();
