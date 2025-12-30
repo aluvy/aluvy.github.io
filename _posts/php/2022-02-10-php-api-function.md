@@ -158,7 +158,7 @@ mysql_ 로 시작되는 함수를 사용한다.
 ````
 
 
-![alt text](/assets/images/posts/2022/0210/php-api-function-01.png)
+![alt text](/assets/images/posts/2022/02/10/php-api-function-01.png)
 
 
 <hr>
@@ -204,4 +204,4 @@ mysql_ 로 시작되는 함수를 사용한다.
 ?>
 ````
 
-![alt text](/assets/images/posts/2022/0210/php-api-function-02.png)
+![alt text](/assets/images/posts/2022/02/10/php-api-function-02.png)

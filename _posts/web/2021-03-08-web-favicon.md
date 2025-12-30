@@ -9,7 +9,7 @@ mermaid: true
 ---
 
 
-![favicon](/assets/images/posts/2021/0308/favicon.png)
+![favicon](/assets/images/posts/2021/03/08/favicon-01.png)
 _파비콘 예시_
 
 
@@ -27,7 +27,7 @@ _파비콘 예시_
 
 1. 포토샵으로 192 x 192 픽셀의 이미지를 만든다. (확장자는 png 또는 jpg)
 
-    ![favicon](/assets/images/posts/2021/0308/favicon-1.png)
+    ![favicon](/assets/images/posts/2021/03/08/favicon-02.png)
     _Slog favicon_
 
 2. 사이즈 자동 변환 사이트 Favicon & App Icon Generator 사이트에 접속한다.
@@ -36,22 +36,22 @@ _파비콘 예시_
 
 3. 만든 이미지를 첨부하고 'Create Favicon' 버튼을 클릭한다.
 
-    ![favicon](/assets/images/posts/2021/0308/favicon-2.png)
+    ![favicon](/assets/images/posts/2021/03/08/favicon-03.png)
     _Favicon & App Icon Generator capture_
 
 4. 'Download the generated favicon' 으로 파일을 다운받는다.
 
-    ![favicon](/assets/images/posts/2021/0308/favicon-3.png)
+    ![favicon](/assets/images/posts/2021/03/08/favicon-04.png)
     _Download the generator favicon_
 
 5. 다운받은 파일
 
-    ![favicon](/assets/images/posts/2021/0308/favicon-4.png)
+    ![favicon](/assets/images/posts/2021/03/08/favicon-05.png)
     _다운받은 파일_
 
 6. 아래쪽에 있는 코드를 홈페이지 `<head></head>` 사이에 삽입한다. (이미지 경로 수정이 필요하다)
 
-    ![favicon](/assets/images/posts/2021/0308/favicon-5.png)
+    ![favicon](/assets/images/posts/2021/03/08/favicon-06.png)
 
 7. `<link rel="shortcut icon" href="">`코드가 빠져있으므로 추가하여 넣어준다.
 

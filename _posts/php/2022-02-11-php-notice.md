@@ -117,4 +117,4 @@ insert into notice values (10, 'hongsa', '드디어 야간개장 에버랜드 �
 ?>
 ````
 
-![alt text](/assets/images/posts/2022/0211/php-notice-01.png)
+![alt text](/assets/images/posts/2022/02/11/php-notice-01.png)

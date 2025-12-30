@@ -48,13 +48,13 @@ mysql>show variables like 'c%';
 ````
 
 
-![방법1](/assets/images/posts/2022/0209/레코드관련명령-01.png)
+![방법1](/assets/images/posts/2022/02/09/record-01.png)
 _[방법1] show variables like 'character_set%';_
 
-![방법2](/assets/images/posts/2022/0209/레코드관련명령-02.png)
+![방법2](/assets/images/posts/2022/02/09/record-02.png)
 _[방법2] \s_
 
-![방법3](/assets/images/posts/2022/0209/레코드관련명령-03.png)
+![방법3](/assets/images/posts/2022/02/09/record-03.png)
 _[방법3] show variables like 'c%';_
 
 
@@ -79,10 +79,10 @@ mysql>insert into friend2 values (2,'이순신','서울 동작구 노량진동',
 mysql>select * from friend2;
 ````
 
-![언어설정](/assets/images/posts/2022/0209/레코드관련명령-04.png)
+![언어설정](/assets/images/posts/2022/02/09/record-04.png)
 
-![한글이 깨지지 않고 들어갔음을 확인](/assets/images/posts/2022/0209/레코드관련명령-05.png)
+![한글이 깨지지 않고 들어갔음을 확인](/assets/images/posts/2022/02/09/record-05.png)
 _한글이 깨지지 않고 들어갔음을 확인_
 
-![한글이 깨지지 않고 등록됨](/assets/images/posts/2022/0209/레코드관련명령-06.png)
+![한글이 깨지지 않고 등록됨](/assets/images/posts/2022/02/09/record-06.png)
 _한글이 깨지지 않고 등록됨_

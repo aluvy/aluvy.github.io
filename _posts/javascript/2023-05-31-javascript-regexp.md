@@ -52,7 +52,7 @@ new RegExp('[a-z]', 'gi')
 
 ## 정규 표현식 패턴 작성하기
 
-![alt text](/assets/images/posts/2023/0531/regexp-01.png)
+![alt text](/assets/images/posts/2023/05/31/regexp-01.png)
 _출처: https://hamait.tistory.com/342_
 
 ### Meta문자

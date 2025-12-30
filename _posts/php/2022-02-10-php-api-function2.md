@@ -91,7 +91,7 @@ create table memberTable(
 </html>
 ````
 
-![alt text](/assets/images/posts/2022/0210/php-api-function2-01.png)
+![alt text](/assets/images/posts/2022/02/10/php-api-function2-01.png)
 
 
 ## insert.php

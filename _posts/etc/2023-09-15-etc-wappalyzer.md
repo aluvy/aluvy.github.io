@@ -12,7 +12,7 @@ tags: []     # TAG names should always be lowercase
 
 아래 이미지는 Wappalyzer 공식 사이트의 상태 값이다.
 
-![](/assets/images/posts/2023/0915/wappalyzer.png){:width="498"}
+![](/assets/images/posts/2023/09/15/wappalyzer.png){:width="498"}
 
 
 ## LINK

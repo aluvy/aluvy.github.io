@@ -82,7 +82,7 @@ mysql>select * from mem where  name like '__용%';
 mysql>select * from mem where  name like '김%' and address like '광주%';
 ````
 
-![alt text](/assets/images/posts/2022/0209/레코드검색명령-01.png)
+![alt text](/assets/images/posts/2022/02/09/record-search-01.png)
 _select id,name,address,tel,gender from mem where gender='W';_
 
 

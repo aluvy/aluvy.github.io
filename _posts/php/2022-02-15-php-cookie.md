@@ -51,7 +51,7 @@ setcookie( [쿠키이름], [값], [만료시간 / 초 단위], [경로] );     /
 <meta charset="UTF-8">
 ````
 
-![alt text](/assets/images/posts/2022/0215/cookie-01.png)
+![alt text](/assets/images/posts/2022/02/15/cookie-01.png)
 
 
 <hr>

@@ -8,7 +8,7 @@ math: true
 mermaid: true
 ---
 
-![alt text](/assets/images/posts/2022/0222/image-bbs-01.png)
+![alt text](/assets/images/posts/2022/02/22/image-bbs-01.png)
 
 ### /concert/concert.sql
 

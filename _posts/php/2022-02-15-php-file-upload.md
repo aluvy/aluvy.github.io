@@ -33,7 +33,7 @@ create table file (
 );
 ````
 
-![alt text](/assets/images/posts/2022/0215/fileupload-01.png)
+![alt text](/assets/images/posts/2022/02/15/fileupload-01.png)
 _저장 된 화면_
 
 

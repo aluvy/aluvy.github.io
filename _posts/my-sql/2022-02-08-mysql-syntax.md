@@ -27,7 +27,7 @@ c:\>mysql -usong -p1234   // 계정로그인
 mysql>use song_db         // use 명령을 사용해 작업하려는 데이터베이스 선택
 ````
 
-![song_db로 들어왔음을 확인](/assets/images/posts/2022/0208/mysql-syntax-01.png)
+![song_db로 들어왔음을 확인](/assets/images/posts/2022/02/08/mysql-syntax-01.png)
 _song_db로 들어왔음을 확인_
 
 
@@ -36,7 +36,7 @@ _song_db로 들어왔음을 확인_
 ````sql
 \q
 ````
-![Bye 메세지](/assets/images/posts/2022/0208/mysql-syntax-02.png)
+![Bye 메세지](/assets/images/posts/2022/02/08/mysql-syntax-02.png)
 _Bye 메세지_
 
 
@@ -58,13 +58,13 @@ mysql>create database sample1;	// sample1 데이터베이스 생성
 mysql>show databases;	//데이터베이스 목록 출력 명령
 ````
 
-![root 계정으로 들어왔음을 확인](/assets/images/posts/2022/0208/mysql-syntax-03.png)
+![root 계정으로 들어왔음을 확인](/assets/images/posts/2022/02/08/mysql-syntax-03.png)
 _root 계정으로 들어왔음을 확인_
 
-![데이터베이스 생성 Query OK](/assets/images/posts/2022/0208/mysql-syntax-04.png)
+![데이터베이스 생성 Query OK](/assets/images/posts/2022/02/08/mysql-syntax-04.png)
 _데이터베이스 생성 Query OK_
 
-![데이터베이스 목록 출력 / sample1 을 확인할 수 있다.](/assets/images/posts/2022/0208/mysql-syntax-05.png)
+![데이터베이스 목록 출력 / sample1 을 확인할 수 있다.](/assets/images/posts/2022/02/08/mysql-syntax-05.png)
 _데이터베이스 목록 출력 / sample1 을 확인할 수 있다._
 
 
@@ -85,10 +85,10 @@ mysql>drop database sample1;    // sample1 데이터베이스 삭제
 mysql>show databases;   //데이터베이스 목록 출력 명령
 ````
 
-![삭제되었다. Query OK! 두번 물어보지 않으니 조심조심](/assets/images/posts/2022/0208/mysql-syntax-06.png)
+![삭제되었다. Query OK! 두번 물어보지 않으니 조심조심](/assets/images/posts/2022/02/08/mysql-syntax-06.png)
 _삭제되었다. Query OK! 두번 물어보지 않으니 조심조심_
 
-![sample1 DB가 목록에서 사라졌음을 확인](/assets/images/posts/2022/0208/mysql-syntax-07.png)
+![sample1 DB가 목록에서 사라졌음을 확인](/assets/images/posts/2022/02/08/mysql-syntax-07.png)
 _sample1 DB가 목록에서 사라졌음을 확인_
 
 
@@ -139,10 +139,10 @@ mysql>show tables;  // 테이블 생성 확인
 ````
 
 
-![Query OK, 테이블이 만들어졌다](/assets/images/posts/2022/0208/mysql-syntax-08.png)
+![Query OK, 테이블이 만들어졌다](/assets/images/posts/2022/02/08/mysql-syntax-08.png)
 _Query OK, 테이블이 만들어졌다_
 
-![friend 테이블이 생성된것을 확인](/assets/images/posts/2022/0208/mysql-syntax-09.png)
+![friend 테이블이 생성된것을 확인](/assets/images/posts/2022/02/08/mysql-syntax-09.png)
 _friend 테이블이 생성된것을 확인_
 
 
@@ -156,7 +156,7 @@ _friend 테이블이 생성된것을 확인_
 mysql>desc friend;
 ````
 
-![테이블 구조 확인](/assets/images/posts/2022/0208/mysql-syntax-10.png)
+![테이블 구조 확인](/assets/images/posts/2022/02/08/mysql-syntax-10.png)
 _테이블 구조 확인_
 
 
@@ -172,10 +172,10 @@ mysql>alter table friend add age int;  // friend 테이블에 age 필드를 정�
 mysql>alter table friend add hp char(20) after tel;  // tel 필드 바로 다음에 hp필드를 추가
 ````
 
-![age filed가 맨 마지막에 추가된 것을 확인할 수 있다.](/assets/images/posts/2022/0208/mysql-syntax-11.png)
+![age filed가 맨 마지막에 추가된 것을 확인할 수 있다.](/assets/images/posts/2022/02/08/mysql-syntax-11.png)
 _age filed가 맨 마지막에 추가된 것을 확인할 수 있다._
 
-![tel 다음에 hp filed가 추가된 것을 확인](/assets/images/posts/2022/0208/mysql-syntax-12.png)
+![tel 다음에 hp filed가 추가된 것을 확인](/assets/images/posts/2022/02/08/mysql-syntax-12.png)
 _tel 다음에 hp filed가 추가된 것을 확인_
 
 
@@ -189,7 +189,7 @@ mysql>alter table friend drop age, drop hp;    // age, hp 필드 삭제
 mysql>desc friend;
 ````
 
-![email과 age filed가 삭제된 것을 확인](/assets/images/posts/2022/0208/mysql-syntax-13.png)
+![email과 age filed가 삭제된 것을 확인](/assets/images/posts/2022/02/08/mysql-syntax-13.png)
 _email과 age filed가 삭제된 것을 확인_
 
 
@@ -203,7 +203,7 @@ mysql>alter table friend change tel phone int;    // tel 필드를 phone 필드 
 mysql>desc friend;
 ````
 
-![tel 필드가 삭제되고 phone필드가 들어감](/assets/images/posts/2022/0208/mysql-syntax-14.png)
+![tel 필드가 삭제되고 phone필드가 들어감](/assets/images/posts/2022/02/08/mysql-syntax-14.png)
 _tel 필드가 삭제되고 phone필드가 들어감_
 
 
@@ -216,7 +216,7 @@ mysql>alter table friend modify name char(20);   // name 필드 타입을 char(2
 mysql>desc friend;
 ````
 
-![필드 타입 수정 명령](/assets/images/posts/2022/0208/mysql-syntax-15.png)
+![필드 타입 수정 명령](/assets/images/posts/2022/02/08/mysql-syntax-15.png)
 
 
 
@@ -229,7 +229,7 @@ mysql>alter table friend rename student;
 mysql>show tables;
 ````
 
-![테이블명이 student 로 변경됨](/assets/images/posts/2022/0208/mysql-syntax-16.png)
+![테이블명이 student 로 변경됨](/assets/images/posts/2022/02/08/mysql-syntax-16.png)
 _테이블명이 student 로 변경됨_
 
 
@@ -242,7 +242,7 @@ mysql>drop table student;
 mysql>show tables;
 ````
 
-![테이블이 삭제됨](/assets/images/posts/2022/0208/mysql-syntax-17.png)
+![테이블이 삭제됨](/assets/images/posts/2022/02/08/mysql-syntax-17.png)
 _테이블이 삭제됨_
 
 
@@ -256,4 +256,4 @@ mysql>show variables like 'c%';
 mysql>show variables like 'c%';
 ````
 
-![데이터베이스 문자셋 확인하기](/assets/images/posts/2022/0208/mysql-syntax-18.png)
+![데이터베이스 문자셋 확인하기](/assets/images/posts/2022/02/08/mysql-syntax-18.png)

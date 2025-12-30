@@ -65,10 +65,10 @@ cd.. change directory (폴더 이동) 한단계 이동
 
 cd\ root  디렉토리로 가라
 
-![cd.. 로 c:\ 로 이동](/assets/images/posts/2022/0209/일괄실행-01.png)
+![cd.. 로 c:\ 로 이동](/assets/images/posts/2022/02/09/batch01-01.png)
 _cd.. 로 c:\ 로 이동_
 
-![파일이 있는 폴더로 이동한다](/assets/images/posts/2022/0209/일괄실행-02.png)
+![파일이 있는 폴더로 이동한다](/assets/images/posts/2022/02/09/batch01-02.png)
 _파일이 있는 폴더로 이동한다_
 
 
@@ -81,8 +81,8 @@ mysql>show tables;  //테이블이 생성되었는지 확인
 mysql>desc friend2;  //테이블 구조 확인
 ````
 
-![일괄실행 명령](/assets/images/posts/2022/0209/일괄실행-03.png)
+![일괄실행 명령](/assets/images/posts/2022/02/09/batch01-03.png)
 _일괄실행 명령_
 
-![db에 접속해서 show table과 desc friend2;를 확인해본다](/assets/images/posts/2022/0209/일괄실행-04.png)
+![db에 접속해서 show table과 desc friend2;를 확인해본다](/assets/images/posts/2022/02/09/batch01-04.png)
 _db에 접속해서 show table과 desc friend2;를 확인해본다_

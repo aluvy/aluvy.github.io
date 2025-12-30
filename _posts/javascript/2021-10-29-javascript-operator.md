@@ -116,7 +116,7 @@ if (true === 1) {
 - **여집합 (`!`)**: 참은 거짓으로, 거짓은 참으로
   - 단항 연산자는 이항 연산자보다 연산순위가 높다
 
-![논리 연산자](/assets/images/posts/2021/1029/operator.png)
+![논리 연산자](/assets/images/posts/2021/10/29/operator-01.png)
 
 
 ### 비트 논리 연산자

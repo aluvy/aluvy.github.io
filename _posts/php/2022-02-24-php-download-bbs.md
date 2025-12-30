@@ -8,7 +8,7 @@ math: true
 mermaid: true
 ---
 
-![alt text](/assets/images/posts/2022/0224/download-bbs-01.png)
+![alt text](/assets/images/posts/2022/02/24/download-bbs-01.png)
 
 
 ### download.sql
@@ -812,4 +812,4 @@ create table download (
 
 <hr>
 
-[download-bbs.zip](/assets/images/posts/2022/0224/download-bbs.zip)
+[download-bbs.zip](/assets/images/posts/2022/02/24/download-bbs.zip)

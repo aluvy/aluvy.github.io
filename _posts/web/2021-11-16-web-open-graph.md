@@ -15,7 +15,7 @@ mermaid: true
 - 오픈그래프는 HTML문서의 메타정보를 쉽게 표시하기 위해 만들어짐
 - 메타정보에 해당하는 제목, 설명, 문서의 타입, 대표 URL등 다양한 요소들에 대해서 사람들이 통일하여 쓸 수 있도록 정의해 놓은 프로토콜임.
 
-![open graph](/assets/images/posts/2021/1116/open-graph-1.png)
+![open graph](/assets/images/posts/2021/11/16/open-graph-01.png)
 
 ## open graph 작동원리
 

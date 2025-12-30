@@ -25,7 +25,7 @@ mermaid: true
 - `.outerHeight(true)`: 영역의 높이에 안쪽 여백과 테두리 두께, 바깥 여백을 더한 값을 리턴한다.
 - `.outerWidth(true)`: 영역의 높이에 안쪽 여백과 테두리 두께, 바깥 여백을 더한 값을 리턴한다.
 
-![영역의 크기](/assets/images/posts/2022/0111/size-1.png)
+![영역의 크기](/assets/images/posts/2022/01/11/size-01.png)
 
 
 <hr>
@@ -39,7 +39,7 @@ mermaid: true
 - `.scrollLeft()`: jQuery 객체집합 내 첫 번째 아이템의 수평 스크롤 위치를 가져오거나 전체 노드의 수평 스크롤 위치를 지정한다.
 - `.scrollTop()`: jQuery 객체 집합 내 첫 번째 아이템의 수직 스크롤 위치를 가져오거나 전체 노드의 수직 스크롤 위치를 지정한다.
 
-![창과 페이지의 크기](/assets/images/posts/2022/0111/size-2.png)
+![창과 페이지의 크기](/assets/images/posts/2022/01/11/size-02.png)
 
 
 <hr>

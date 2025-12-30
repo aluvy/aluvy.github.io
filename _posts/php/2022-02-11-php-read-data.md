@@ -13,7 +13,7 @@ mermaid: true
 **membership.sql 테이블 만들기**   
 char(?) 는 문자열의 길이가 적을때 사용하고, varchar(?)는 좀 더 많은 문자열을 처리할 수 있다.
 
-[membership.sql download](/assets/images/posts/2022/0211/membership.sql)
+[membership.sql download](/assets/images/posts/2022/02/11/php-member.sql)
 
 ````sql
   create table membership (

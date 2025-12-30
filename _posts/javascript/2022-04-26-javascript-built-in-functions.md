@@ -68,7 +68,7 @@ names.forEach((item, index) => { console.log(item,index) });
 
 names의 배열을 for문을 사용한 것 처럼 차례로 실행한다.
 
-![alt text](/assets/images/posts/2022/0426/built-in-functions-01.png)
+![alt text](/assets/images/posts/2022/04/26/built-in-functions-01.png)
 _결과_
 
 
@@ -110,7 +110,7 @@ let data2 = ceoList.map((item) => item.name);
 console.log(data2);
 ````
 
-![alt text](/assets/images/posts/2022/0426/built-in-functions-02.png)
+![alt text](/assets/images/posts/2022/04/26/built-in-functions-02.png)
 _결과_
 
 ### 예제2
@@ -192,7 +192,7 @@ let data4 = names.filter((item) => {
 console.log(data4);
 ````
 
-![alt text](/assets/images/posts/2022/0426/built-in-functions-03.png)
+![alt text](/assets/images/posts/2022/04/26/built-in-functions-03.png)
 
 ### 예제2
 
@@ -287,7 +287,7 @@ let data5 = names.some((item)=>{
 console.log(data5);
 ````
 
-![alt text](/assets/images/posts/2022/0426/built-in-functions-04.png)
+![alt text](/assets/images/posts/2022/04/26/built-in-functions-04.png)
 
 ### some 문제
 문제1) 전체 이름의 길이가 20자 이상인 사람이 있는가?
@@ -338,7 +338,7 @@ let data7 = ceoList.every((item)=>{
 console.log(data7);
 ````
 
-![alt text](/assets/images/posts/2022/0426/built-in-functions-05.png)
+![alt text](/assets/images/posts/2022/04/26/built-in-functions-05.png)
 
 ### every 문제
 문제1) 모두의 전체 이름의 길이가 20자 이상인가?
@@ -367,7 +367,7 @@ let data8 = names.find((item)=>{
 console.log(data8);
 ````
 
-![alt text](/assets/images/posts/2022/0426/built-in-functions-06.png)
+![alt text](/assets/images/posts/2022/04/26/built-in-functions-06.png)
 
 
 ### find 문제
@@ -398,7 +398,7 @@ let data9 = names.findIndex((item)=>{
 console.log(data9);
 ````
 
-![alt text](/assets/images/posts/2022/0426/built-in-functions-07.png)
+![alt text](/assets/images/posts/2022/04/26/built-in-functions-07.png)
 
 ### findIndex 문제
 문제1) 전체 이름의 길이가 20자 이상인 사람의 인덱스 번호를 찾으시오.

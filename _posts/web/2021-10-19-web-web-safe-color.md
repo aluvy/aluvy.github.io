@@ -16,7 +16,7 @@ mermaid: true
 초기 웹 브라우저에서는 다양한 색상을 지원하지 못했다.   
 GPU 나 디스플레이에서도 8bit Color 이상 지원하지 못하는 경우가 빈번 했으며 이런 문제를 해결하기 위해 웹 페이지를 구성할때 브라우저에서 지원하는 색상으로 색상을 선정 했다.
 
-![Web Safe Color](/assets/images/posts/2021/1019/web-safe-color.png)
+![Web Safe Color](/assets/images/posts/2021/10/19/web-safe-color-01.png)
 _Web Safe Color_
 
 
@@ -50,7 +50,7 @@ RGB를 각각 8비트로 표현하니까 모두 24비트가 되어서 24비트 �
 
 이 6단계를 10진수로 표현하면 '0, 51, 102, 153, 204, 255'가 되고, 16진수로 표현하면 '00, 33, 66, 99, CC, FF'가 된다.
 
-![Photoshop Color Picker](/assets/images/posts/2021/1019/web-safe-color-2.png)
+![Photoshop Color Picker](/assets/images/posts/2021/10/19/web-safe-color-02.png)
 _Photoshop Color Picker_
 
 

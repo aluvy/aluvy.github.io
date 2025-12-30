@@ -14,7 +14,7 @@ mermaid: true
 
 대표적으로 window(최상위 객체), location, navigator, history, screen, document 객체가 있다.
 
-![window 객체 구조도](/assets/images/posts/2021/1202/bom.png){: width="450"}
+![window 객체 구조도](/assets/images/posts/2021/12/02/bom-dom-01.png){: width="450"}
 _window 객체 구조도_
 
 - **location Object**: 웹 링크, url에 관련된 객체
@@ -74,11 +74,11 @@ _window 객체 구조도_
 - HTML DOM은 HTML 구성요소들을 획득, 변경, 추가, 삭제하기 위한 표준
 - HTML 문서를 브라우저에서 로드 시 각 구성요소들을 객체화하여 객체 드리 구조를 나타냄
 
-![DOM](/assets/images/posts/2021/1202/dom.png){: width="450"}
+![DOM](/assets/images/posts/2021/12/02/bom-dom-02.png){: width="450"}
 
 
 ### document 객체
-
+s
 - HTML 문서와 관련있는 객체
 - window 객체의 한 부분으로써 window.documet 속성을 통해 접근 (window는 생략 가능)
 - 좁은 의미의 문서 객체 모델 : document 객체와 관련된 객체의 집합

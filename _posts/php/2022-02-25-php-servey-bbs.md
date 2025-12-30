@@ -307,4 +307,4 @@ insert into survey values(0, 0, 0, 0);
 <hr>
 
 
-[servey-bbs.zip download](/assets/images/posts/2022/0225/survey-bbs.zip)
+[servey-bbs.zip download](/assets/images/posts/2022/02/25/survey-bbs.zip)

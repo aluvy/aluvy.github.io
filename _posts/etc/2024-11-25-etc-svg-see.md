@@ -22,7 +22,7 @@ SVG SEE 프로그래 설치 사이트로 이동해서 컴퓨터 사양에 맞는
 (32bit -> x86, 64bit -> x64)
 
 
-![Capture Image](/assets/images/posts/2024/1125/svg-see.png)
+![Capture Image](/assets/images/posts/2024/11/25/svg-see.png)
 
 ---
 

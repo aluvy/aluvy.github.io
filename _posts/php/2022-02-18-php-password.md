@@ -512,4 +512,4 @@ $ranpass = generateRandomPassword(8,1); //랜덤으로 뽑은 8자의 문자
 
 <hr>
 
-[password.zip](/assets/images/posts/2022/0218/password.zip)
+[password.zip](/assets/images/posts/2022/02/18/password.zip)

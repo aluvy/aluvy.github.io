@@ -518,4 +518,4 @@ member_form.php에서 받은 데이터를 정리(?)하여 포멧을 맞춘 후 m
 
 ### 예제파일
 
-[join-ajax](/assets/images/posts/2022/0216/join-ajax.zip)
+[join-ajax](/assets/images/posts/2022/02/16/join-ajax.zip)

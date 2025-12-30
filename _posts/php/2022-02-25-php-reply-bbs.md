@@ -879,4 +879,4 @@ create table free_ripple (
 
 <hr>
 
-[reply-bbs.zip download](/assets/images/posts/2022/0225/reply-bbs.zip)
+[reply-bbs.zip download](/assets/images/posts/2022/02/25/reply-bbs.zip)

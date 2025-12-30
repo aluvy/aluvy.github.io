@@ -10,7 +10,7 @@ mermaid: true
 
 ## Lazy Loading 이란?
 
-![alt text](/assets/images/posts/2022/0318/lazy-load-01.png)
+![alt text](/assets/images/posts/2022/03/18/lazy-load-01.png)
 
 lazy loading은 페이지를 읽어들이는 시점에 중요하지 않은 리소스 로딩을 추 후에 하는 기술 입니다.
 
@@ -64,5 +64,5 @@ lazy loading은 페이지를 읽어들이는 시점에 중요하지 않은 리�
 
 #### 다운로드
 
-- [jquery-lazyload-01.zip](/assets/images/posts/2022/0318/jquery-lazyload-01.zip)
-- [jquery-lazyload-02.zip](/assets/images/posts/2022/0318/jquery-lazyload-02.zip)
+- [jquery-lazyload-01.zip](/assets/images/posts/2022/03/18/jquery-lazyload-01.zip)
+- [jquery-lazyload-02.zip](/assets/images/posts/2022/03/18/jquery-lazyload-02.zip)

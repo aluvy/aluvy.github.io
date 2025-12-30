@@ -8,7 +8,7 @@ math: true
 mermaid: true
 ---
 
-![alt text](/assets/images/posts/2022/0318/writing-mode.png)
+![alt text](/assets/images/posts/2022/03/18/writing-mode.png)
 
 CSS 쓰기 모드는 텍스트가 가로 또는 세로로 표시되는지 여부를 나타냅니다. writing-mode (en-US) 속성을 사용하면 쓰기 모드에서 다른 쓰기 모드로 전환할 수 있습니다. 이를 위해 세로 쓰기 모드를 사용하는 언어로 작업할 필요는 없습니다 — 창의적 목적으로 레이아웃 일부의 쓰기 모드를 변경할 수도 있습니다.
 
@@ -41,7 +41,7 @@ writing-mode: unset;
   - ※ 한글은 그대로 있고, 영문은 오른쪽으로 누움.
 
 
-- [세로쓰기 모드를 이용한 글자 타이핑 효과 예제](/assets/images/posts/2022/0318/writing-mode.zip)
+- [세로쓰기 모드를 이용한 글자 타이핑 효과 예제](/assets/images/posts/2022/03/18/writing-mode.zip)
 
 
 <hr>
