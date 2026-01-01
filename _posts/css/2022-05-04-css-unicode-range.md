@@ -1,5 +1,5 @@
 ---
-title: "[CSS] 폰트를 한글과 영어,숫자 따로 적용하기 (feat. unicode-range)"
+title: "[CSS] 폰트를 한글과 영어, 숫자 따로 적용하기 (feat. unicode-range)"
 date: 2022-05-04 11:19:00 +0900
 categories: [CSS]
 tags: []
