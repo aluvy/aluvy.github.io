@@ -105,157 +105,157 @@ html의 각 태그에는 기본적으로 갖고 있는 역할과 의미가 있�
 html 각 태그별로 암묵적으로 가지고 있는 role(역할)이 있다.   
 그리고 각 태그별로 적용할 수 있는 역할도 있다.
 
-- `<a href="">`
+- **`<a href="">`**
   - 암묵적 기본 역할:
     - role="link"
   - 적용 가능한 역할:
     - button, checkbox, menuitem, menuitemcheckbox, menuitemradio, option, radio, switch, tab
 
-- `<a>` (href 속성 없이)
+- **`<a>`** (href 속성 없이)
   - 암묵적 기본 역할:
     - x
   - 적용 가능한 역할:
     - 어떤 role이든 적용 가능
 
-- `<article>`
+- **`<article>`**
   - 암묵적 기본 역할:
     - role="article"
   - 적용 가능한 역할:
     - application, document, feed, main, none, presentation, region
 
-- `<aside>`
+- **`<aside>`**
   - 암묵적 기본 역할:
     - role="complementary"
   - 적용 가능한 역할:
     - feed, none, note, presentation, region, search
 
-- `<header>`
+- **`<header>`**
   - 암묵적 기본 역할:
     - article, aside, main, nav, section 태그의 자손 요소이거나 role=article, complementary, main, navigation, region을 사용한 태그의 자손일 경우엔 암묵적 역할이 따로 없고 해당 요소들의 자손요소가 아닐 경우엔 role="banner"이다.
   - 적용 가능한 역할:
     - group, none, presentation
 
-- `<footer>`
+- **`<footer>`**
   - 암묵적 기본 역할:
     - article, aside, main, nav, section 태그의 자손 요소이거나 role=article, complementary, main, navigation, region을 사용한 태그의 자손일 경우엔 암묵적 역할이 따로 없고 해당 요소돌의 자손요소가 아닐 경우엔 role="contentinfo"이다.
   - 적용 가능한 역할:
     - group, none, presentation
 
-- `<section>`
+- **`<section>`**
   - 암묵적 기본 역할:
     - accessible name을 가지고 있다면 role="region" 그렇지 않다면 역할이 따로 없다.
   - 적용 가능한 역할:
     - alert, alertdialog, application, banner, complementary, contentinfo, dialog, document, feed, log, main, marquee, navigation, none, note, presentation, search, status, tabpanel
 
-- `<button>`
+- **`<button>`**
   - 암묵적 기본 역할:
     - role="button"
   - 적용 가능한 역할:
     - checkbox, link, menuitem, menuitemcheckbox, menuitemradio, option, radio, switch, tab
 
-- `<div>`
+- **`<div>`**
   - 암묵적 기본 역할:
     - x
   - 적용 가능한 역할:
     - 어떤 role이든 적용 가능
 
-- `<dl>`
+- **`<dl>`**
   - 암묵적 기본 역할:
     - x
   - 적용 가능한 역할:
     - group, list, presentation, none
 
-- `<dt>`
+- **`<dt>`**
   - 암묵적 기본 역할:
     - role="term"
   - 적용 가능한 역할:
     - listitem
 
-- `<dd>`
+- **`<dd>`**
   - 암묵적 기본 역할:
     - role="definition"
   - 적용 가능한 역할:
     - x
 
-- `<fieldset>`
+- **`<fieldset>`**
   - 암묵적 기본 역할:
     - role="group"
   - 적용 가능한 역할:
     - none, presentation, radiogroup
 
-- `<form>`
+- **`<form>`**
   - 암묵적 기본 역할:
     - accessible name을 가지고 있다면 role="form" 그렇지 않다면 역할이 따로 없다.
   - 적용 가능한 역할:
     - search, none, presentation
 
-- `<h1>` ~ `<h6>`
+- **`<h1>`** ~ **`<h6>`**
   - 암묵적 기본 역할:
     - role="heading"
   - 적용 가능한 역할:
     - none, presentation, tab
 
-- `<img alt="텍스트">`
+- **`<img alt="텍스트">`**
   - 암묵적 기본 역할:
     - role="img"
   - 적용 가능한 역할:
     - button, checkbox, link, menuitem, menuitemcheckbox, menuitemradio, option, progressbar, scrollbar, separator, slider, switch, tab, treeitem
 
-- `<img alt="">`
+- **`<img alt="">`**
   - 암묵적 기본 역할:
     - x
   - 적용 가능한 역할:
     - x
 
-- `<img>` (alt 속성 없이)
+- **`<img>`** (alt 속성 없이)
   - 암묵적 기본 역할:
     - role="img"
   - 적용 가능한 역할:
     - x
 
-- `<ul>`, `<ol>`
+- **`<ul>`**, **`<ol>`**
   - 암묵적 기본 역할:
     - role="list"
   - 적용 가능한 역할:
     - directory, group, listbox, menu, menubar, none, presentation, radiogroup, tablist, toolbar, tree
 
-- `<li>`
+- **`<li>`**
   - 암묵적 기본 역할:
     - role="listitem"
   - 적용 가능한 역할:
     - menuitem, menuitemcheckbox, menuitemradio,option, none, presentation, radio, separator, tab, treeitem
 
-- `<nav>`
+- **`<nav>`**
   - 암묵적 기본 역할:
     - role="navigation"
   - 적용 가능한 역할:
     - menu, menubar, tablist
 
-- `<svg>`
+- **`<svg>`**
   - 암묵적 기본 역할:
     - role="graphics-document"
   - 적용 가능한 역할:
     - 어떤 role이든 적용 가능
 
-- `<input type="button">`
+- **`<input type="button">`**
   - 암묵적 기본 역할:
     - role="button"
   - 적용 가능한 역할:
     - link, menuitem, menuitemcheckbox, menuitemradio, option, radio, switch, tab
 
-- `<input type="checkbox">`
+- **`<input type="checkbox">`**
   - 암묵적 기본 역할:
     - role="checkbox"
   - 적용 가능한 역할:
     - button(사용할 경우 aria-pressed 함께 사용), menuitemcheckbox, option, switch
 
-- `<input type="radio">`
+- **`<input type="radio">`**
   - 암묵적 기본 역할:
     - role="radio"
   - 적용 가능한 역할:
     - menuitemradio
 
-- `<input type="text">`
+- **`<input type="text">`**
   - 암묵적 기본 역할:
     - role="textbox"
   - 적용 가능한 역할:
