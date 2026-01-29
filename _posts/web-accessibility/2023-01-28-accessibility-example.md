@@ -1,6 +1,6 @@
 ---
-title: "[Accessibility] WAI-ARIA 요소 - TreeView"
-date: 2023-01-24 16:53:00 +0900
+title: "[Accessibility] WAI-AREA 실무 예제 코드로 적용하기"
+date: 2023-01-28 21:59:00 +0900
 categories: [Web Accessibility]
 tags: []
 render_with_liquid: false
@@ -8,113 +8,700 @@ math: true
 mermaid: true
 ---
 
-## 트리뷰의 정의 - TreeView가 뭔가요?
-트리뷰(TreeView)는 한글로 단순하게 풀어보면 "나무 구조로 보기" 정도로 해석됩니다.   
-이름 그대로 나무처럼 한 줄기에서 여러 개의 가지로 나뉘는 세로 막대 형태로 나열된 항목의 목록을 말합니다.
+WAI-ARIA는 HTML의 접근성 문제를 보완하는 W3C 명세입니다.   
+WAI-ARIA는 HTML 요소에 role 또는 aria-* 속성을 추가하여 컨텐츠의 '역할(roles), 상태(states), 속성(properties)' 정보를 보조기기에 제공합니다.   
+WAI-ARIA 속성을 모든 HTML 요소에 무분별하게 사용할 수 있는 것은 아닙니다. role 또는 aria-* 속성을 특정 HTML 요소에 사용할 수 있는지 ARIA in HTML 명세를 검토하면서 적용해야 합니다.
+- [ARIA in HTML](https://www.w3.org/TR/html-aria/)
 
-## 어디서 볼 수 있는 요소인가요?
-windows의 UI를 상속받아서 사용하는 응용 프로그램에서 주로 볼 수 있습니다.   
-멀리 가지 않고, Logo + E 를 눌러 탐색기 (explorer)를 열면 따로 보이지 않게 설정하지 않았다면 기본값으로 탐색기 좌측에 있는 폴더 디렉토리를 이동하는 트리뷰를 볼 수 있습니다.   
-보이지 않는다면, 탐색기의 윗 부분에 있는 리본 탭에서 "보기"를 선택하고, 가장 왼쪽에 있는 "탐색 창" 메뉴를 확장하여 "탐색 창" 항목을 활성화해보세요.
+````html
+<!-- ex -->
+
+<!-- 역할(roles) -->
+<div role="tablist">
+<div role="tab">
+<div role="tabpanel">
+<div role="tooltip">
+<div role="status">
+<div role="alert">
+<div role="alertdialog">
+<div role="dialog">
+<div role="navigation">
+<div role="complementary">
+<div role="none">
+
+<!-- 상태(states) -->
+<div aria-current="page|step|location|date|time|true|false(default)">
+<div aria-selected="false|true|undefined(default)">
+<div aria-haspopup="true|menu|dialog|listbox|tree|grid|false(default)">
+<div aria-expanded="true|false|undefined(default)">
+<div aria-pressed="true|false|mixed|undefined(default)">
+<div aria-hidden="true|false|undefined(default)">
+<div aria-invalid="true|false(default)|grammar|spelling">
+
+<!-- 속성(properties) -->
+<div aria-controls="ID reference lise">
+<div aria-live="polite|assertive|off(default)">
+<div aria-labelledby="ID reference list">
+<div aria-label="string">
+<div aria-describedby="ID reference list">
+<div aria-errermessage="ID reference">
+<div aria-modal="true|false(default)">
+````
+
+## 0. 선택된 요소를 표현하는 방법으로 ::after 
+WAI-ARIA를 사용할 수 없는 경우, 선택된 요소를 표현하는 방법으로 ::after 를 이용해 텍스트를 넣어줄 수 있다.
+
+````css
+.list li.on::after {
+  position: absolute;
+  content: '선택됨';
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+}
+````
+
+## 1. HTML을 의미 있게 작성한다.
+대부분의 WAI-ARIA 명세는 HTML 요소와 속성을 흉내내는 것입니다. 올바른 HTML을 사용한다면 WAI-ARIA 사용을 최소화 할 수 있습니다. WAI-ARIA를 사용하기에 앞서 HTML을 의미 있게 사용했는지 충분히 검토합니다.
+
+````html
+<!-- X -->
+<a href="#" role="button">...</a>
+
+<!-- O -->
+<button type="button">...</button>
+````
+
+보조기기는 두 가지 예제를 모두 '버튼'으로 간주할 것입니다.   
+그러나 첫 번째 예제의 경우 브라우저는 문맥 메뉴를 통해 링크와 관련된 기능(새 탭에서 링크 열기, 링크 주소 복사 등)을 제공하게 되고 사용자를 혼란스럽게 합니다.   
+또한, 첫 번째 예제에서 '버튼'이라는 설명을 들은 보조기기 사용자는 '스페이스' 키를 눌러 버튼 기능을 사용하려고 시도할 수 있습니다. 하지만 a 요소는 '엔터' 키만으로 실행할 수 있습니다. button 요소는 '엔터' 키와 '스페이스' 키로 실행할 수 있기 때문에 a 요소로브터 '버튼' 이라는 설명을 들은 보조기기 사용자를 혼란스럽게 합니다. 결국 올바른 HTML의 선택은 사용자 경험과 접근성 측면에서 모두 중요합니다.
+
+## 2. 탭 목록, 탭, 탭 패널 (role="tablist|tab|tabpanel")
+탭은 스타일을 의미하는 것이 아니라 현재 페이지 내용에 색인을 제공하는 구조(tablist, tab, tabpanel)를 의미합니다. 사이트 탐색 도구에 해당하는 요소는 nav>h2+ul 또는 aside>h2+ul 구조로 마크업 합니다.
+````html
+<!-- O : 앵커 형식 탭 -->
+<div class="weekly">
+  <div role="tablist">
+    <a id="mon-anchor" href="#mon" role="tab" aria-selected="true">월</a>
+    <a id="tue-anchor" href="#tue" role="tab" aria-selected="false">화</a>
+  </div>
+  <div id="mon" tabindex="0" role="tabpanel" aria-labelledby="mon-anchor">월요일</div>
+  <div id="tue" tabindex="0" role="tabpanel" aria-labelledby="tue-anchor" hidden>화요일</div>
+</div>
+
+<!-- O : 버튼 형식 탭 -->
+<div class="weekly">
+  <div role="tablist">
+    <button type="button" id="mon-anchor" aria-controls="mon" role="tab" aria-selected="true">월</button>
+    <button type="button" id="tue-anchor" aria-controls="mon" role="tue" aria-selected="false">화</button>        
+  </div>
+  <div id="mon" tabindex="0" role="tabpanel" aria-labelledby="mon-anchor">월요일</div>
+  <div id="tue" tabindex="0" role="tabpanel" aria-labelledby="tue-anchor" hidden>화요일</div>
+</div>
+````
+role 속성은 값에 따라 적용할 수 있는 HTML 요소가 제한되어 있습니다.   
+예를 들면 role="tabpanel" 속성은 `<ul>` 요소에 사용할 수 없으므로 적용 시 HTML5 명세를 확인해야 합니다.
 
 
-## 트리뷰의 구성요소
-트리뷰의 구성 요소는 크게 두 가지로 나눌 수 있습니다.
+## 3. 툴팁 (role="tooltip")
+툴팁은 앵커 또는 폼 컨트롤 요소에 대한 참고용 컨텐츠입니다.
 
-### 1. Tree (트리 목록 컨테이너 role="tree")
-트리 항목을 넣기 위해 사용되는 컨테이너 요소입니다. 트리뷰는 반드시 이 컨테이너를 사용하여 구현해야 합니다.   
-마치 li가 ul이나 ol 컨테이너에, dt나 dd가 dl 컨테이너에 있어야 하는 것 처럼
+보통 마우스 오버 또는 키보드 초점을 받으면 표시하는 내용이지만 화면에 항상 표시할 수도 있습니다. 툴팁 요소에 role="tooltip" 속성으로 명시할 수 있습니다. 툴팁을 유발하는 앵커 또는 컨트롤에 aria-describedby="ID reference list" 속성을 명시하여 연결합니다.
 
-### 2. Treeitem (트리 항목 role="treeitem")
-트리 항목 요소입니다. 부모 컨테이너 중에 role="tree"가 있어야 합니다. 트리 항목 요소는 아래와 같은 속성값을 가질 수 있습니다.
+````html
+<!-- O : 인풋 툴팁 -->
+<label for="tel">전화번호</label>
+<input id="tel" type="tel" aria-describedby="TIP-TEL">
+<p id="TIP-TEL" role="tooltip" hidden>하이픈(-) 없이 숫자만 입력.</p>
 
-- **속성 1. aria-setsize="int"**   
-  목록의 크기를 임의의 값으로 강제 조절하는 속성입니다. 현재 보이는 목록의 개수가 제한되어 있다면 실제 있는 목록보다 많거나 작은 수로 강제로 읽는 항목 전체 수를 설정할 때 필요합니다.   
-  특별한 사례가 아니라면 잘 사용하지 않습니다.   
-  예) aria-setsize="5"   
-  <출력내용> : (OOO lebel 1, 1 of 5)
+<!-- O : 버튼 툴팁 -->
+<button aria-describedby="TIP-DEL">게시물 삭제</button>
+<p id="TIP-DEL" role="tooltip" hidden>게시물 삭제 후 복원할 수 없음.</p>
+````
 
-- **속성 2. aria-posinset="int" (선택)**   
-  aria-setsize를 사용했을 때만 사용할 수 있는 속성으로, 항목에서 스크린리더가 읽어주는 순서를 임의로 조절합니다. 마찬가지로 특별한 사례가 아니라면 사용하지 않습니다.   
-  예) aria-posinset="3"   
-  <출력내용> : (OOO lebel 1, 3 of 5)
-
-- **속성 3. aria-lebel="int" (필수)**   
-  트리뷰 항목은 제목(헤딩) 태그처럼 깊이 수준을 스크린리더에 알려야 합니다. 컨테이너에 사용하여 일괄 적용되면 더 좋겠지만, 아쉽게도 트리 항목에 적용해야 동작합니다.   
-  예) aria-level="5"   
-  <출력내용> : (OOO, lebel5, 1 of 3)
-
-- **속성 4. aria-expanded="boolean" (조건필수)**   
-  트리뷰 항목에는 자식 트리뷰 목록이 있을 수 있습니다. 자식 트리뷰 목록이 있다면 aria-expanded로 확장/축소가 가능하다는 것을 스크린리더 사용자에게 상태로 알려야 합니다.   
-  또한 앞에 확장/축소 마크를 두어 눈으로도 구분 가능해야 합니다.   
-  예) aria-expanded="false"의 출력내용   
-  <출력내용> : (OOO, collapsed, level 2, 1 of 4)
-
-### 3. group (role="group")
-하위 트리뷰 항목에 대한 목록 그룹을 형성하기 위해 컨테이너에 사용합니다.
+role="alert" 또는 role="alertdialog" 또는 role="dialog" 컨텐츠와 혼동하지 않도록 유의합니다.
 
 
+## 4. 성공(결과) 메시지 (role="status")
+성공(또는 결과) 상태 메시지를 사용자에게 전달하는 컨텐츠입니다.   
+사용자의 현재 작업을 방해하지 않고 (초점을 옮기지 않고) 보조기기 사용자에게 조언할만한 메시지를 전달하는 것을 의도하고 있습니다. role="alert" 만큼 중요하지 않습니다.   
+성공 role="status" 메시지는 초점을 받지 않도록 처리해야 합니다. role="status" 요소는 aria-live="polite" 속성과 aria-atomic="true" 속성을 암시적으로 할당하기 때문에 추가로 선언할 필요가 없습니다. 성공 메시지 영역을 변경하면 화면 낭독기는 현재 진행 중인 음성 안내를 마친 후 성공 메시지 전체 내용을 사용자에게 전달합니다.
+
+````html
+<!-- O : 성공 메시지 -->
+<p role="status">회원가입 양식 전송 완료</p>
+
+<!-- O : 결과 메시지 -->
+<p role="status">10개의 검색 결과</p>
+<p role="status">장바구니에 5개의 항목</p>
+````
+
+초정믈 받을 수 있는 사용자의 인터렉션 요소를 포함하고 있다면 알럿 대화상자 role="alertdialog" 또는 대화상자 role="dialog"를 사용합니다.
+
+
+## 5. 오류(제안) 메시지 (role="alert")
+시간에 민감하고 중요한(오류, 제안) 메시지를 사용자에게 전달하는 컨텐츠입니다. 사용자의 현재 작업을 방해하지 않고(초점을 옮기지 않고) 보조기기 사용자에게 즉각 메시지를 전달하는 것을 의도하고 있습니다.   
+오류 role="alert" 메시지는 초점을 받지 않도록 처리해야 합니다. role="alert" 요소는 aria-live="assertive" 속성과 aria-atomic="true" 속성을 암시적으로 할당하기 때문에 추가로 선언할 필요가 없습니다. 오류 메시지 영역을 변경하면 화면 낭독기는 현재 진행 중인 음성 안내를 즉시 멈추고 오류 메시지 전체 내용을 사용자에게 전달합니다.
+
+````html
+<!-- O : 오류 메시지 -->
+<p role="alert">우편번호 입력 오류</p>
+
+<!-- O : 제안 메시지 -->
+<p role="alert">로그인 후 이용 가능</p>
+````
+
+초점을 받을 수 있는 사용자의 인터렉션 요소를 포함하고 있다면 알럿 대화상자 role="alertdialog" 또는 대화상자 role="dialog"를 사용합니다.   
+사용자 입력 컨트롤(input, textarea)의 실시간 오류를 표시하는 경우라면 오류 메시지 대신 컨트롤 요소에 aria-invalid="true|false" 속성과 aria-errormessage="ID reference" 속성을 사용합니다.
+
+
+## 6. 알럿 대화상자 (role="alertdialog")
+사용자 동의 또는 확인이 필요한 인터렉션 요소(input, button)를 포함한 상태로 다른 과업을 차단하는 경우 알럿 대화상자 role="alertdialog"를 사용합니다. 사용자 입력 없이 '확인, 취소' 버튼을 제공하는 경우에 적절합니다.   
+알럿 대화상자는 aria-labelledby="ID reference list" 그리고 aria-describedby="ID reference list" 속성으로 알럿 대화상자의 제목과 설명을 연결합니다.   
+알럿 대화상자는 다른 과업을 차단해야 하기 때문에 모달 윈도우 스타일로 처리한 다음 aria-modal="true" 속성을 추가합니다.   
+알럿 대화상자를 표시할 때 키보드 초점을 대화상자 내부 첫 번째 컨트롤(예를 들면 '확인' 버튼 또는 '인풋')으로 옮겨야 합니다. 알럿 대화상자를 표시하는 동안 초점은 대화상자 안에서 벗어나지 않아야 합니다.
+
+````html
+<!-- O : 알럿 대화상자 -->
+<div role="alertdialog" aria-modal="true" aria-labelledby="TITLE" aria-describedby="DESCRIPTION">
+  <h2 id="TITLE">안내사항</h2>
+  <p id="DESCRIPTION">안내사항 내용이 들어갑니다. 적용 하시겠습니까?</p>
+  <button type="button">적용</button>
+  <button type="button">취소</button>
+</div>
+````
+
+사용자가 응답할 필요 없는 내용이라면 role="alert" 속성이 적절합니다.   
+사용자가 하위 창 맥락으로 벗어나 정보를 입력(input, textarea, select, button)하는 경우라면 대화상자 role="dialog"가 적절합니다.
+
+
+## 7. 대화상자 (role="dialog")
+대화상자 role="dialog"는 사용자 인터렉션이 필요한 현재 문서의 하위창(마치 윈도우 팝업)입니다. 사용자가 정보를 입력하거나 응답하도록 하는 내용 (input, textarea, select, button)을 반드시 포함합니다.   
+대화상자에는 aria-labelledby="ID reference list" 또는 aria-label="string" 속성으로 설명을 제공합니다.   
+대화상자를 표시할 때 키보드 초점을 대화상자 내부 첫 번째 컨트롤로 옮겨야 합니다. 대화상자를 표시하는 동안 초점은 대화상자 안에서 벗어나지 않아야 합니다.   
+모달 스타일로 표시할 것인지 여부는 선택 사항입니다. 모달 스타일로 처리하는 경우 aria-modal="true" 속성을 추가합니다.
+
+````html
+<!-- O : 대화상자 -->
+<section role="dialog" aria-modal="true" aria-labelledby="TITLE">
+  <h2 id="TITLE">로그인<h2>
+  <form>
+    <label for="ID">아이디</label>
+    <input id="Id">
+
+    <label for="PW">비밀번호</label>
+    <input id="PW" type="password">
+
+    <button>로그인</button>
+  </form>
+</section>
+````
+
+사용자의 다른 과업을 차단하면서 '확인, 취소' 버튼만 제공하는 경우라면 role="alertdialog" 속성이 적절합니다.   
+사용자가 응답할 필요 없는 내용이라면 role="alert" 속성이 적절합니다.   
+대중적인 브라우저가 `<dialog>`요소를 충분히 지원하면 role="dialog" 속성 대신 `<dialog>` 요소를 사용합니다.
 
 
 
-## 트리뷰 사용자 상호작용 구현
-### 1. 마우스 동작 구현
-트리뷰는 마우스로 클릭하여 확장하고, 상호작용이 가능해야 합니다.
+## 8. 탐색 (nav, role="navigation")
+탐색은 현재 페이지 또는 연결된 페이지를 탐색하는 주요 탐색 블록(보통 링크 집합)입니다. 문서의 '주요 내용'을 탐색하는 경우에 사용하면 적절합니다. 모든 링크 집합이 탐색 블록은 아닙니다.   
+탐색 블록에 적절한 HTML 요소는 `<nav>` 요소입니다. role="navigation" 속성을 사용하기 전에 `<nav>` 요소를 먼저 고려합니다.   
+탐색 역할을 하는 요소(`<nav>`, role="navigation") 가 문서 안에서 유일한 경우 레이블(aria-labelledby, aria-label) 제공은 선택입니다. 그러나 탐색 역할을 하는 요소가 둘 이상인 경우 고유한 레이블을 제공해야 합니다.
 
-- **동작 1. 마우스 클릭으로 하위 목록 확장**   
-  마우스 클릭으로 하위 목록 확장이 가능해야 합니다.   
-  windows의 UI에서는 텍스트 상자를 더블클릭하거나, 확장/축소 마크를 한 번 클릭하는 것이 기본입니다. 하지만 텍스트 상자를 한 번 클릭하여 확장할 수 있어도 무방합니다.
+````html
+<!-- O : 탐색에 nav 요소를 권장 -->
+<nav>
+  <h2>글로벌 네비게이션</h2>
+  ...
+</nav>
 
-- **동작 2. 마우스로 항목 클릭 시 활성화 기능 구현**   
-  windows의 탐색기와 같이 누르면 디렉토리 파일을 타일형으로 보여주는 항목 보기 목록과 같은 패널이 변형되는 구조라면 트리 항목을 눌렀을 때 해당 항목에 맞게 패널을 바꿔줘야 합니다.
+<!-- O : 탐색 역할을 하는 요소가 유일한 경우 레이블 생략 가능 -->
+<div role="navigation">
+  <h2>글로벌 네비게이션</h2>
+  ...
+</div>
 
-### 2. 키보드 탐색 동작 구현
-트리뷰는 키보드로 접근했을 때, 키보드로 탐색할 수 있어야 하며, 하위 항목이 있는 트리 항목은 확장과 축소 동작을 수행할 수 있어야 합니다.
+<!-- O : 탐색 역할이 둘 이상인 경우 레이블 제공(nav) -->
+<nav aria-labelledby="global-navigation">
+  <h2 id="global-navigation">글로벌 네비게이션</h2>
+  ...
+</nav>
+<nav aria-labelledby="notice-pagenation">
+  <h3 id="notice-pagenation">공지사항 페이지네이션</h3>
+  ...
+</nav>
 
-- **동작 3. 위 또는 아래 화살표 키로 목록 탐색 구현**   
-  트리뷰는 항목의 깊이 수준과 관계없이 현재 눈에 보이는 모든 항목을 위 또는 아래 화살표 키로 탐색할 수 있어야 합니다.   
-  또한, 탐색 중인 트리 항목 객체가 아니라면 Tab으로 초점이 이동되어서는 안됩니다.
+<!-- O : 탐색 역할이 둘 이상인 경우 레이블 제공 (role="navigation") -->
+<div role="navigation" aria-labelledby="global-navigation">
+  <h2 id="global-navigation">글로벌 네비게이션</h2>
+  ...
+</div>
+<div role="navigation" aria-labelledby="notice-pagenation">
+  <h3 id="notice-pagenation">공지사항 페이지네이션</h3>
+  ...
+</div>
+````
 
-- **동작 4. Home과 End 키로 전체 트리뷰의 첫 번째 항목, 마지막 항목으로 탐색 포커스 이동 기능 구현**   
-  트리뷰는 Home 또는 End 키로 전체 트리뷰 항목의 첫 번째 항목과 마지막 항목으로 탐색 포커스를 보내주는 기능을 구현해 주어야 합니다.
-
-- **동작 5. 상위 항목의 확장/축소 기능 구현**   
-  확장 가능한 트리 항목은 오른쪽 화살표 키로 확장할 수 있어야 하며, 왼쪽 화살표 키로 축소할 수 있어야 합니다. 이미 하위항목이 열려있다면 오른쪽 화살표 키로 첫번째 하위 항목이 탐색되어야 합니다.
-
-- **동작 6. 마우스 클릭과 동등하게 Enter 키로 활성화 기능 구현**   
-  탐색 초점이 해당 트리 항목에 있을 때, Enter를 눌러 탐색기의 "항목 보기 목록"과 같이 패널 내용이 선택된 트리 항목에 맞게 바뀌는 동작을 구현해 주어야 합니다.
-
-
-
-## 트리뷰 스타일링
-### 1. 익숙한 형태로 스타일 제공
-사용자가 한 눈에 알아볼 수 있도록 windows의 TreeView와 유사한 스타일을 적용해 주세요.
-
-- **시각 디자인 1. 깊이 수준에 따른 목록 들여쓰기를 margin이나 padding으로 구현해 주세요.**   
-  트리뷰 항목은 가지가 나뉘면서 점점 깊이 들어가는 구조입니다. 이를 눈으로 알 수 있도록 들여쓰기 효과를 적용해주세요.
-
-- **시각 디자인 2. 확장/축소 가능한 항목은 확장/축소 가능을 표시하는 삼각형 화살표를 트리항목 이름 왼쪽에 넣어주세요.**   
-  트리뷰 항목 이름 상자 왼쪽에는 삼각형 화살표가 있습니다. 축소된 트리뷰는 오른쪽을 가리키는 삼각형이나 화살표로 확장이 가능함을 시각적으로 안내해야 합니다.   
-  확장된 트리 항목은 아래를 가리키는 화살표느 삼각형으로 아래 화살표 키로 하위 항목을 탐색할 수 있음을 시각적으로 안내해야 합니다.
-
-- **시각 디자인 3. 트리뷰 항목의 키보드 초점 활성화 유무를 구분해 주어야 합니다.**   
-  트리뷰 항목에 초점이 없다면 마지막으로 탐색한 항목의 색상을 옅게 표시하고, 트리뷰 항목에 초점이 있다면 진하게 표시하여 현재 키보드 초점이 트리뷰에 있고, 키보드로 탐색할 수 있음을 인지할 수 있도록 해야 합니다.
+`<nav>` 요소는 섹셔닝 컨텐츠이기 때문에 문서 개요(outline)을 생성합니다. 제목 없는 개요를 만들지 않기 위해 헤딩을 제공합니다. 레이블 요소(예를 들면 헤딩)가 있는 경우 aria-labelledby 속성으로 연결합니다. 레이블 요소(예를 들면 헤딩)가 없는 경우 aria-label 속성을 사용합니다.
 
 
+## 9. 보충 (aside, role="complementary")
+보충은 주요 내용을 보완하는 블록입니다. 문서의 '주요 내용'이 아닙니다. 보충을 제거해도 주요 내용에 변함이 없어야 합니다. 주요 내용에서 보충을 분리한 경우에도 보충은 나름의 의미가 있습니다.   
+보충으로 적절한 HTML 요소는 `<aside>` 요소입니다. role="complementary" 속성을 사용하기 전에 `<aside>` 요소를 먼저 고려합니다.   
+보충 역할을 하는 요소(`<aside>`, role="complementary")가 문서 안에서 유일한 경우 레이블(aria-labelledby, aria-label) 제공은 선택입니다. 그러나 보충 역할을 하는 요소가 둘 이상인 경우 고유한 레이블을 제공해야 합니다.
 
-지금까지 트리뷰를 만드는 방법에 대해 알아보았습니다. 트리뷰는 구현에 많은 작업을 요구하는 위젯입니다. 커스텀 위젯을 만드는 이유는 웹페이지의 스타일 테마와 최대한 비슷하게 만들어 웹페이지의 몰입감, 아름다움을 추구하기 위한 것임을 압니다.
+````html
+<!-- O : 보충에 aside 요소를 권장 -->
+<aside>
+  <h2>배너/광고</h2>
+  ...
+</aside>
 
-Electron과 같은 프레임워크로 웹 엔진을 기반으로 하는 데스크탑용 애플리케이션을 제작할 때, 특히 문서 에디터와 같은 프로그램을 만들 때 사이드 바를 구현하거나, 특정 네트워크 드라이브에 대한 커스텀 파을 탐색기를 응용 프로그램으로 구현하는 등의 작업을 수행할 때 이렇게 트리뷰를 구현한다면 접근성이 좋은 응용 프로그램이 나올 것을 의심치 않습니다. 대표적으로 Microsoft에서 만든 Visual Studio Code를 예로 들 수 있습니다.
+<!-- O : 보충 역할을 하는 요소가 유일한 경우 레이블 생략 가능 -->
+<div role="complementary">
+  <h2>배너/광고</h2>
+  ...
+</div>
 
-하지만 웹페이지 내에서는 되도록 간단한 파일의 업로드와 같은 작업을 수행할 때는 웹브라우저에서 제공하는 파일 업로드 UI를 불러와 사용할 수 있도록 하는 것이 가장 좋습니다. 커스텀보다는 네이티브 요소를 사용하는 것이 작업량을 줄이고 다양한 디바이스를 지원하는 방법임을 늘 강조해 드립니다.
+<!-- O : 보충 역할이 둘 이상인 경우 레이블 제공 (aside) -->
+<aside aria-labelledby="event">
+  <h2 id="event">이벤트</h2>
+  ...
+</aside>
+<aside aria-labelledby="advertisement">
+  <h2 id="advertisement">배너/광고</h2>
+  ...
+</aside>
+
+<!-- O : 보충 역할이 둘 이상인 경우 레이블 제공 (role="complementary") -->
+<div role="complementary" aria-labelledby="event">
+  <h2 id="event">이벤트</h2>
+  ...
+</div>
+<div role="complementary" aria-labelledby="advertisement">
+  <h2 id="advertisement">배너/광고</h2>
+  ...
+</div>
+````
+
+`<aside>` 요소는 섹셔닝 컨텐츠이기 때문에 문서 개요(outline)을 생성합니다. 제목 없는 개요를 만들지 않기 위해 헤딩을 제공합니다. 레이블 요소 (예를 들면 헤딩)가 있는 경우 aria-labelledby 속성으로 연결합니다. 레이블 요소 (예를 들면 헤딩)가 없는 경우 aria-label 속성을 사용합니다.
+
+
+## 10. 의미 없음 (role="none")
+의미 없음 (role="none")을 선언하는 경우 보조기기는 마크업의 의미를 제거 후 내용만 사용자에게 전달합니다. role="none" 속성은 role="presentation"과 동일하며 role="presentation"을 대체합니다.   
+HTML을 의미에 맞지 않게 마크업한 경우, 또는 스타일링에 피룡한 마크업을 추가한 경우 role="none" 속성을 사용할 수 있습니다. 이미에 맞지 않는 마크업과 스타일을 위한 마크업을 권장하지 않기 때문에 이 속성은 절제해야 합니다.
+
+````html
+<!-- O : tablist와 tab 사이 li 요소의 의미 제거 -->
+<ul role="tablist">
+  <li role="none">
+    <a href="#home" role="tab" aria-selected="true">홈</a>
+  </li>
+  <li role="none">
+    <a href="#ongoing" role="tab" aria-selected="false">연재</a>
+  </li>
+  <li role="none">
+    <a href="#ranking" role="tab" aria-selected="false">랭킹</a>
+  </li>
+</ul>
+````
+
+의미 없음(role="none")은 숨김(hidden, aria-hidden="true") 속성과 다릅니다. 숨김 속성은 요소와 내용을 모두 감추어 버리지만 role="none"속성은 내용은 드러내고 의미만 감춥니다.
+
+
+## 11. 현재 상태 (aria-current="token")
+aria-current 속성은 현재 맥락과 일치하는 항목을 의미합니다. token 값은 정해진 값 중 하나만 사용할 수 있음을 의미합니다. 예를 들면 aria-current 속성의 token 값은 page|step|location|date|time|true|false(default) 으로 정해져 있고 이 중 하나만 사용할 수 있습니다.
+
+- page : 현재 '페이지'와 일치하는 시각적으로 강조한 링크
+- step : 현재 '단계'와 일치하는 시각적으로 강조한 링크
+- location : 플로우 차트에서 현재 '위치'와 일치하는 시각적으로 강조한 이미지
+- date : 달력에서 현재 '날짜'와 일치하는 날짜
+- time : 시간표에서 현재 '시간'과 일치하는 시간
+
+이 밖에 true와 false 값도 있습니다.
+
+true 또는 false 값은 구체적으로 어떤 맥락(페이지, 단계, 위치, 날짜, 시간)과 일치하는 정보를 전달하지 않기 때문에 page|step|location|date|time 토큰이 적절하지 않은 맥락에 한하여 사용합니다.
+
+- true : 항목이 세트 내 현재 맥락과 일치함
+- false(default) : 항목이 세트 내 현재 맥락과 일치하지 않음. 속성 또는 값을 선언하지 않은 경우 초기값
+
+````html
+<!-- O : aria-current="page" 현재 페이지 강조 링크 -->
+<nav>
+  <h2>글로벌 네비게이션</h2>
+  <ul>
+    <li><a href="/home" aria-current="page">홈</a></li>
+    <li><a href="/ongoing">연재</a></li>
+    <li><a href="/ranking">랭킹</a></li>
+  </ul>
+</nav>
+
+<!-- O : aria-current="step" 현재 단계 강조 링크 -->
+<nav>
+  <h2>회원가입</h2>
+  <ol>
+    <li><a href="/accept-terms" aria-current="step">약관 동의</a></li>
+    <li><a href="/id-password">아이디/비밀번호 생성</a></li>
+    <li><a href="/email-authentication">이메일 인증</a></li>        
+  </ol>
+</nav>
+
+<!-- O : aria-current="location" 현재 위치 강조 이미지 -->
+<img src="is-payment-success.png" alt="결제 성공?" aria-current="location">
+<img src="payment-info.png" alt="결제 내역 안내">
+<img src="payment-fail.png" alt="결제 실패 안내">
+
+<!-- O : aria-current="date" 현재 날짜 강조 -->
+<td aria-current="date">12/24(토)</td>
+<td>
+  <button type="button" aria-current="date">12/24(토)</button>
+</td>
+
+<!-- O : aria-current="time" 현재 시간 강조 -->
+<th scope="row" aria-current="time">18:00 ~ 20:00</th>
+<td>무한 도전</td>
+````
+
+aria-current 속성은 aria-selected 속성과 다른 의미로 사용되기 때문에 tablist 목록 안에서 aria-selected 속성을 대체하는 용도로 사용하면 안됩니다. 그러나 aria-current 속성과 aria-selected 속성을 함께 선언할 수도 있습니다. 예를 들면 편집 가능한 트리 형식의 목록에서 현재 페이지 항목과 편집을 위해 선택한 항목이 일치하는 경우 함께 선언할 수 있습니다.
+
+
+## 12. 선택 상태 (aria-selected="true|false|undefined")
+aria-selected 속성은 단일 또는 다중 선택이 가능한 요소(role="gridcell|option|row|tab")에 한하여 선택 상태를 명시하는 용도로 사용합니다. role="tab" 요소에 가장 흔히 사용합니다. 키보드 초점을 받을 수 있는 요소에 적용해야 합니다.
+
+- undefined(default) : 속성 또는 값을 선언하지 않은 경우 초기값. 선택할 수 없음
+- true : 선택 가능한 요소를 선택했음
+- false : 선택 가능한 요소를 선택하지 않았음
+
+선택 요소에만 aria-selected="true" 속성을 적용하면 aria-selected 속성을 적용하지 않은 요소는 aria-selected="undefined" 상태(선택할 수 없음)가 됩니다. 따라서 선택하지 않은 요소에는 명시적으로 aria-selected="false" 속성과 값을 적용합니다.
+
+````html
+<!-- O : role="tab" 요소에 선택 상태를 명시 -->
+<div role="tablist">
+  <a id="mon-anchor" href="mon" role="tab" aria-selected="true">월</a>
+  <a id="tue-anchor" href="tue" role="tab" aria-selected="false">화</a>
+</div>
+````
+
+aria-selected 속성은 aria-current 속성과 다른 의미로 사용하기 때문에 혼동하지 않도록 유의합니다. aria-selected 속성은 선택 가능한 요소에, aria-current 속성은 현재 맥락과 일치하는 요소에 사용합니다. aria-selected 속성은 단일 또는 다중 선택이 가능한 요소(role="gridcell|option|row|tab")에 제한적으로 사용할 수 있습니다. 예를 들면 페이지네이션에서 현재 페이지와 일치하는 링크에는 aria-selected 속성이 적절하지 않고 aria-currnet 속성이 적절합니다.
+
+
+## 13. 팝업 상태 ( aria-haspopup="token")
+aria-haspopup 속성은 요소에 연결되어 있는 팝업(메뉴, 대화상자 등) 정보를 제공합니다. 팝업은 다른 내용 위에 표시하는 블럭을 의미합니다. 팝업 유형은 menu, listbox, tree, grie, dialog 으로 제한되어 있기 때문에 의미가 정확하게 일치하는 경우에만 사용해야 합니다. 일반적으로 menu와 dialog 유형이 빈번하므로 많이 사용할 것입니다.
+
+- true : menu와 동일한 의미
+- menu : menu(role) 팝업이 연결됨. menu(role)는 링크 목록
+- dialog : dialog(role) 팝업이 연결됨. dialog(role)는 상호작용 요소(버튼 또는 컨트롤)가 포함된 현재 문서의 하위 창
+- listbox : listbox(role) 팝업이 연결됨. listbox(role)는 선택 가능한 option(role)을 포함한 콤보박스
+- tree : tree(role) 팝업이 연결됨. tree(role) 는 하위 list(role)을 포함하고 접고 펼칠 수 있음
+- grid : grid(role) 팝업이 연결됨. grid(role)는 행과 열로 구성된 선택 가능한 위젯. 상호작용 가능한 셀익 ㅣ때문에 table(role)과는 역할이 다름에 유의
+- false(default) : 연결된 팝업이 없음을 의미
+
+````html
+<!-- O : aria-haspopup="menu|true" -->
+<button type="button" id="menu-button" aria-haspopup="menu" aria-controls="menu-list" aria-expanded="false">메뉴</button>
+<ul id="menu-list" role="menu" aria-labelledby="menu-button" hidden>
+  <li><a href="/completed">완결</a></li>
+  <li><a href="/printed">단행본</a></li>
+</ul>
+
+<!-- O : aria-haspopup="dialog" -->
+<a href="login-dialog" aria-haspopup="dialog">로그인</a>
+<section id="login-dialog" role="dialog" aria-labelledby="login-heading" aria-modal="true" hidden>
+  <h2 id="login-heading">로그인</h2>
+  <form>
+    <label for="id-input">아이디</label>
+    <input id="id-input" type="text">
+
+    <label for="pw-input">비밀번호<label>
+    <input id="pw-input" type="password">
+
+    <button type="submit">로그인</button>
+  </form>
+</section>
+````
+
+연결한 팝업 role 이 암시적인 경우에도 aria-haspopup 속성을 연결할 수 있습니다. 예를 들어 연결된 팝업이 `<dialog>` 요소라면 암시적으로 role="dialog" 속성을 지닌 것이므로 aria-haspopup="dialog" 속성을 사용할 수 있습니다. 대중적인 브라우저가 `<dialog>` 요소를 충분히 지원하면 role="dialog" 속성 대신 `<dialog>`요소를 사용합니다.
+
+
+## 14. 확장 상태 ( aria-expanded="true|false|undefined")
+aria-expanded 속성은 제어 대상의 확장 또는 축소 상태를 나타냅니다. 아코디언, 메뉴, 콤보박스, 트리와 같이 하위 그룹 (또는 독립적인) 내용을 토글(열기, 닫기) 하는 경우에 사용하면 적절합니다. 독립적인 내용을 제어할 때 aria-controls 속성을 이용하여 제어 대상을 명시해야 합니다.
+
+- undefined(default) : 속성 또는 값을 선언하지 않은 경우 초기값. 제어 대상이 없거나 모두 확장 상태. 확장/축소 제어 불가능
+- true : 요소 또는 제어 대상 확장 상태
+- false : 요소 또는 제어 대상 축소 상태
+
+````html
+<!-- O : 아코디언 -->
+<dt>
+  <button type="button" aria-controls="answer-99" aria-expended="false">보너스 코인은 언제 소진되나요?</button>
+</dt>
+<dd id="answer-99" hidden>
+  <p>만료 기간이 짧은 보너스 코인이 일반 코인보다 먼저 소진됩니다.<p>
+</dd>
+
+<!-- O : 팝업 -->
+<a id="popular-btn" href="#popular" aria-haspopup="menu" aria-expanded="false">인기</a>
+<ul id="popular" role="menu" aria-labelledby="popular-btn" hidden>
+  <li><a href="#">로맨스</a></li>
+  <li><a href="#">드라마</a></li>
+</ul>
+````
+
+이 밖에도 툴팁(role="tooltip"), 알럿(role="alert"), 알럿 대화상자(role="alertdialog"), 대화상자(role="dialog")와 같이 동적으로 표시 상태를 결정(토글) 하는 요소에 aria-expanded 속성을 사용할 수 있습니다.
+
+
+## 15. 눌림 상태 ( aria-pressed="tristate")
+aria-pressed 속성은 토글 버튼(button, role="button")이 눌린 상태를 표시합니다.   
+흔하게 사용하는 속성은 아닙니다.
+
+이 속성을 사용하기 전에 `input[type="radio"]`, `input[type="checkbox"]` 또는 aria-checked 또는 aria-selected 속성을 먼저 검토하는 것이 좋습니다.   
+속성 값은 일반적으로 true 또는 false 두 가지 값을 사용하지만 tristate 으로 true, false, mixed 세 가지 상태를 모두 표시할 수도 있습니다. mixed 값은 버튼이 제어하는 두 개 이상의 요소 상태 값이 모두 true 이거나 모두 false 가 아닌 복합적인 상태를 의미합니다.
+
+- undefined(defatult) : 속성 또는 값을 선언하지 않은 경우 초기 값. 누름 상태 표시를 지원하지 않는 버튼
+- true : 버튼을 누른 상태
+- false : 버튼을 누르지 않은 상태
+- mixed : true 또는  false 값으로 표시할 수 없는 복합적인 상태
+
+````html
+<!-- O : true / false 모드 -->
+<button type="button" aria-pressed="true">음소거</button>
+<button type="button" aria-pressed="false">음소거</button>
+
+<!-- O : true/false/mixed 모드(이 예제에서 제어 대상이 하나는 true이고 하나는 false 이다) -->
+<button type="button" aria-pressed="mixed" aria-controls="noti-text noti-sound">알림 켜기</button>
+<ul>
+  <li>
+    <input id="noti-text" type="checkbox" checked>
+    <label for="noti-text">문자 알림</label>
+  </li>
+  <li>
+    <input id="noti-sound" type="checkbox">
+    <label for="noti-sound">소리 알림</label>
+  </li>
+</ul>
+````
+
+토글 버튼이 눌린 상태를 동적 텍스트로 전달하는 경우에는 aria-pressed 속성을 사용하지 않습니다.   
+예를 들어 버튼 설명 텍스트를 배경음 켜기 그리고 배경음 끄기 형태로 동적으로 변경한다면 aria-pressed 속성을 선언하는 것이 오히려 혼란을 초래합니다.
+
+
+## 16. 숨김 상태 (aria-hidden="true|false|undefined")
+aria-hidden 속성은 접근성 API(보조기기 접근 가능성) 차단 상태를 결정합니다. 화면에 표시하지만 잠시 사용을 제한하는 컨텐츠에 적용합니다. 예를 들면 모달 대화상자를 화면에 표시할 때 모달 대화상자 뒤 본문 컨텐츠에 aria-hidden="true" 속성을 선언하면 보조기기가 무시합니다.
+
+- undefined(default) : 속성 또는 값을 선언하지 않은 경우 초기값. 화면 표시 여부에 따라 접근성 API 차단 상태를 결정. 화면에 표시하면 false, 화면에서 숨기면 true.
+- true : 접근성 API 차단 (화면 표시 여부와 무관 API 차단)
+- false : 접근성 API 사용 (화면에 표시한 경우 API 사용)
+
+````html
+<!-- O : 모달 윈도우를 표시할 때 다른 요소를 차단 -->
+<body>
+  <div class="container" aria-hidden="true">
+    // 보조기기가 무시하는 영역
+  </div>
+  <div role="alertdialog" aria-modal="true" aria-labelledby="TITLE" aria-describedby="DESCRIPTION">
+    <h2 id="TITLE">레진패스 안내</h2>
+    <p id="DESCRIPTION">이 작품의 유료 에피소드 열람 시 자동으로 구매합니다. 레진패스를 적용하시겠습니까?</p>
+    <button type="button">레진패스 적용</button>
+    <button type="button">취소</button>
+  </div>
+</body>
+````
+
+hidden 속성은 요소를 화면에 표시하지 않기 때문에 접근 불가능한 상태가 되지만 aria-hidden="true" 속성은 화면 표시 여부와 관계 없이 보조기기 접근 불가능 상태를 만듭니다. aria-hidden="true" 속성이 접근성 API를 차단 하지만 포인팅 기능(마우스 커서, 키보드 초점)을 차단하는 것은 아니므로 개발자는 aria-hidden="true" 요소가 포인팅을 받지 않도록 처리해야 합니다.
+
+
+## 17. 오류 상태 (aria-invalid="true|false|grammar|spelling")
+aria-invalid 속성은 주로 input 요소와 선언하여 사용자가 입력한 값이 요구하는 형식과 일치하는지 여부를 나타냅니다. aria-errormessage 속성과 함께 사용하여 오류 설명을 제공할 수 있습니다.
+
+- false(default) : 오류 없음. aria-invalid 속성을 선언하지 않거나 값이 없으면 false로 간주
+- true : 오류 있음
+- grammar : 문법 오류
+- spelling : 철자 오류
+
+````html
+<!-- O : 입력 값이 유효하면 aria-invalid 속성을 생략 -->
+<label for="email">이메일</label>
+<input id="email" type="email" required value="abc@xyz.xxx" aria-errormessage="email-error-msg">
+<p id="email-error-msg" role="alert" aria-live="assertive" hidden>이메일 형식이 유효하지 않습니다. 앳(@)과 마침표(.)를 포함해 주세요.</p>
+
+<!-- O : 입력 값이 오류이면 aria-invalid="true" 속성을 선언 -->
+<label for="email">이메일</label>
+<input id="email" type="email" required value="..." aria-invalid="true" aria-errormessage="email-error-msg">
+<p id="email-error-msg" role="alert" aria-live="assertive">이메일 형식이 유효하지 않습니다. 앳(@)과 마침표(.)를 포함해 주세요.</p>
+````
+
+aria-errormessage 속성은 aria-invalid 속성이 없거나 값이 false 라면 동작하지 않습니다. 입력 값이 비어 있거나 유효하지 않은 초기 값을 제공한 때에는 aria-invalid="true"를 선언하지 않아야 합니다.
+
+
+## 18. 제어 대상 (aria-controls="ID reference list")
+aria-controls 속성은 현재 요소가 제어하는 대상을 명시하는 속성입니다.   
+주로 role="tab", aria-haspopup, aria-expanded 속성과 함께 `<button>` 요소가 무엇을 제어하는지 명시합니다.   
+aria-controls 속성의 값은 하나 또는 그 이상의 ID 값 입니다.   
+흔한 경우는 아니지만 ID 값이 여럿인 경우 ID 값을 공백으로 분리합니다.
+
+````html
+<!-- O : role="tab" 요소에 aria-controls 속성 사용 -->
+<div role="tablist">
+  <button type="button" id="mon-anchor" aria-controls="mon" role="tab" aria-selected="true">월</button>
+  <button type="button" id="tue-anchor" aria-controls="tue" role="tab" aria-selected="false">화</button>
+</div>
+<div id="mon" tabindex="0" role="tabpanel" aria-labelledby="mon-anchor">월요일 컨텐츠</div>
+<div id="tue" tabindex="0" role="tabpanel" aria-labelledby="tue-anchor">화요일 컨텐츠</div>
+
+<!-- O : aria-haspopup 속성과 함께 aria-controls 속성 사용 -->
+<button type="button" aria-haspopup="dialog" aria-controls="login-dialog">로그인</button>
+<section id="login-dialog" role="dialog" aria-labelledby="login-heading" aria-modal="true" hidden>
+  <h2 id="login-heading">로그인</h2>
+...
+</section>
+
+<!-- O : aria-expanded 속성과 함께 aria-controls 속성 사용 -->
+<dl>
+  <dt>
+    <button type="button" aria-controls="answer-99" aria-expanded="false">보너스 코인은 언제 소진되나요?</button>
+  </dt>
+  <dd id="answer-99" hidden>
+    <p>만료기한이 짧은 보너스 코인이 일반 코인보다 먼저 소진됩니다.</p>
+  </dd>
+</dl>
+````
+
+`<a>`요소의 href 속성값을 통해 참조(제어) 대상을 명시한 경우 aria-controls 속성을 사용하지 않습니다.
+
+
+## 19. 실시간 (aria-live="token")
+aria-live 속성은 실시간으로 내용을 갱신하는 영역을 의미합니다.   
+값으로 polite, assertive, off(default)를 설정할 수 있으며 갱신하는 내용의 중요도에 따라 선택합니다.   
+갱신 영역에 polite, asswertive 값을 사용하면 갱신하는 순간 보조기기는 사용자에게 내용을 전달합니다.   
+polite 값은 중요도가 낮은 내용에 사용하여 현재 진행중인 음성 또는 타이핑을 방해하지 않고 뒤늦게 전달합니다.   
+assertive 값은 중요도가 높은 내용에 사용하여 현재 진행중인 보조기기 작업을 중단하고 갱신 내용을 즉시 사용자에게 전달합니다.   
+일반적으로 role 속성의 값이 alert 인 경우 사용하면 적절합니다.   
+그 밖에 Ajax 기법을 시용하여 실시간으로 내용을 갱신하는 모든 영역(채팅, 오류, 로그, 상태 표시)에 사용할 수 있습니다.
+
+````html
+<!-- O : 알럿 -->
+<div role="alert" aria-live="assertive">
+  <p>로그인 후 이용할 수 있습니다.</p>
+</div>
+````
+
+assertive 값은 사용자의 현재 작업을 방해할 수 있기 때문에 중요도가 높은 내용을 선별하여 신중하게 적용해야 합니다.
+
+
+## 20. 간결한 설명 참조 (aria-labelledby="ID reference list")
+aria-labelledby, aria-label, aria-describedby 속성은 모두 현재 요소에 설명을 제공하는 속성입니다.   
+aria-labelledby 속성은 ID(s) 값을 이용하여 '간결한' 내용을 참조(연결) 하는 방식으로 설명합니다.   
+보통 h1, h2, h3, h4, h5, h6, a, button 요소를 참조하면 적절합니다.   
+aria-label 속성과 함께 선언하는 경우 aria-labelledby 속성이 우선순위가 높기 때문에 보조기기는 aria-labeledby 속성을 설명합니다.
+
+````html
+<!-- O : 헤딩 설명 참조 -->
+<section aria-labelledby="LZ-PATH" hidden>
+  <h2 id="LZ-PATH">레진페스란?</h2>
+  <p>이 작품의 유료 에피소드 열람 시 자동으로 구매합니다.</p>
+</section>
+
+<!-- O : 링크 설명 참조 -->
+<a id="LZ-PATH" href="#LZ-PATH-TEXT">레진패스란</a>
+<div id="LZ-PATH-TEXT" aria-labelledby="LZ-PATH" hidden>
+  <p>이 작품의 유료 에피소드 열람 시 자동으로 구매합니다.</p>
+</div>
+````
+
+aria-labelledby 속성으로 숨김 처리한 설명을 참조하면 안됩니다.   
+참조가 불가능한 설명은 aria-label 속성을 사용합니다.   
+자세한 설명을 참조하면 안됩니다. 자세한 설명은 aria-describedby 속성을 사용합니다.
+
+## 21. 간결한 설명 (aria-label="string")
+aria-labelledby, aria-label, aria-describedby 속성은 모두 현재 요소에 설명을 제공하는 속성입니다.   
+aria-label 속성은 값에 '간결한' 설명(string)을 직접 제공합니다.   
+가능한 aria-labelledby 속성을 사용하는 것이 좋습니다.   
+aria-label 속성은 현재 요소를 설명할 다른 참조(연결) 요소가 없는 경우에만 사용합니다.   
+aria-labelledby 속성과 함께 선언한 경우 aria-label 속성이 우선순위가 낮기 때문에 보조기기는 aria-labelledby 속성을 설명합니다.
+
+````html
+<!-- O : 참조할 설명이 없는 경우 -->
+<form>
+  <input type="search" aria-label="웹툰 검색">
+  <button type="button">검색</button>
+</form>
+````
+
+aria-label 속성을 장황하게 설명하면 안됩니다. 자세한 설명은 aria-describedby 속성을 사용합니다.
+
+## 22. 자세한 설명 참조 (aria-describedby="ID reference list")
+aria-labelledby, aria-label, aria-describedby 속성은 모두 현재 요소에 설명을 제공하는 속성입니다.   
+aria-describedby 속성은 ID(s) 값을 이용하여 '상세한' 내용을 참조(연결)하는 방식으로 설명합니다.   
+링크(a), 폼 콘트롤(input, textarea, select, button), 알럿(role="alert"), 알럿 대화상자(role="alertdialog") 요소에 사용하면 적절합니다.
+
+````html
+<!-- O : 버튼 요소에 상세한 설명 제공 -->
+<button aria-describedby="TIP-DEL">게시물 삭제</button>
+<p id="TIP-DEL" role="tooltip" hidden>게시물 삭제 후 복원할 수 없음.</p>
+
+<!-- O : 알럿 대화상자 요소에 상세한 설명 제공 -->
+<div role="alertdialog" aria-modal="true" aria-labelledby="TITLE" aria-describedby="DESCRIPTION">
+  <h2 id="TITLE">레진패스 안내</h2>
+  <p id="DESCRIPTION">이 작품의 유료 에피소드 열람 시 자동으로 구매합니다. 레진패스를 적용하시겠습니까?</p>
+  <button type="button">레진패스 적용</button>
+  <button type="button">취소</button>
+</div>
+````
+
+aria-describedby 속성은 간결한 설명을 참조하기에 적절하지 않습니다. 간결한 설명은 aria-labelledby 속성을 사용합니다.
+
+
+## 23. 오류 설명 (aria-errormessage="ID reference")
+aria-errormessage 속성은 주로 input 요소에 선언하여 오류 메시지를 제공하는 요소를 값으로 참조합니다.   
+aria-invalid="true" 속성을 활성화하면 보조기기는 aria-errormessage 속성이 참조하는 요소를 오류 메시지로 전달합니다.
+
+````html
+<!-- O : aria-invalid 값이 true 이면 보조기기는 aria-errormessage 값을 참조 -->
+<label for="email">이메일</label>
+<input id="email" type="email" required value="..." aria-invalid="true" aria-errormessage="email-error-msg">
+<p id="email-error-msg" role="alert" aria-live="assertive">이메일 형식이 유효하지 않습니다. 앳(@)과 마침표(.)를 포함해 주세요.</p>
+```` 
+
+
+
+## 24. 모달 (aria-modal="true|false")
+aria-modal 속성은 요소가 모달인지 여부를 보조기기에 전달합니다.   
+모달은 본문 위에 대화상자를 띄워 본문을 차단한 상태로 상호작용하는 요소를 의미합니다.   
+일반적으로 role="alertdialog" 또는 role="dialog" 요소를 모달 형태로 표시할 수 있는데 이런 경우 aria-modal="true"속성을 함께 선언합니다.
+
+- false(default) : 속성 또는 값을 선언하지 않은 경우 초기값. 모달 컨텐츠 아님.
+- true : 모달 컨텐츠
+
+````html
+<!-- O : 알럿 대화상자에 aria-modal="true" 선언 -->
+<div role="alertdialog" aria-modal="true" aria-labelledby="TITLE" aria-describedby="DESCRIPTION">
+  <h2 id="TITLE">레진패스 안내</h2>
+  <p id="DESCRIPTION">이 작품의 유료 에피소드 열람 시 자동으로 구매합니다. 레진패스를 적용하시겠습니까?</p>
+  <button type="button">레진패스 적용</button>
+  <button type="button">취소</button>
+</div>
+
+<!-- O : 대화상자에 aria-modal="true" 선언 -->
+<section role="dialog" aria-modal="true" aria-labelledby="TITLE">
+  <h2 id="TITLE">로그인</h2>
+  <form>
+    <label for="ID">아이디</label>
+    <input id="ID">
+    <label for="PW">비밀번호</label>
+    <input id="PW" type="password">
+    <button type="button">로그인</button>
+  </form>
+</section>
+````
+
+모달 컨텐츠를 화면에 표시할 때 사용할 수 없는 요소에 aria-hidden="true" 속성을 선언해서 보조기기가 무시하도록 설정해야 합니다.   
+aria-hidden="true" 속성이 접근성 API를 차단하지만 포인팅 기능(마우스 커서, 키보드 초점)을 차단하는 것은 아니므로 개발자는 aria-hidden="true" 요소가 포인팅을 받지 않도록 처리해야 합니다.
 
 
 ---
-
 <br>
 
 ##### 참고
-
-- [Navigation Treeview Example](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/examples/treeview-navigation/#tree1)
-- [WAI-ARIA 바르게 사용하기 10부 - TreeView](https://nuli.navercorp.com/community/article/1133102)
-
+- [레진 WAI-ARIA 가이드라인](https://github.com/lezhin/accessibility/blob/master/aria/README.md)
+- [WEI-AREA 실무 예제 코드로 적용하기](https://whales.tistory.com/84)
