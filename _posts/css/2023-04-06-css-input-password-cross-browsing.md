@@ -1,5 +1,5 @@
 ---
-title: "[CSS] input type=password ios/aos 폰트 크로스브라우징 이슈"
+title: "[이슈][CSS] input type=password ios/aos 폰트 크로스브라우징 이슈"
 date: 2023-04-06 20:05:00 +0900
 categories: [CSS]
 tags: []
