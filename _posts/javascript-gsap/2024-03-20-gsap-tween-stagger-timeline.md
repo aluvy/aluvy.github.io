@@ -15,21 +15,21 @@ Tweens는 모든 애니메이션이 작동하는 역할을 말하며, ( high-per
 Tween은 3가지의 methods를 가지고 애니메이션을 만들 수 있으며 각각의 트윈엔 기본 규칙으로 `target`과 `vars object` 옵션을 가집니다.
 
 
-## 1. 기본 문법 - to, from, fromTo
+### 1. 기본 문법 - to, from, fromTo
 
-### gsap.to()
+#### gsap.to()
 
 ````js
 gsap.to('.elem', { duration: 1, x: 100, y: 100, rotation: 45 });
 ````
 
-### gsap.from()
+#### gsap.from()
 
 ````js
 gsap.from('.elem', { duration: 1, x: 100, y: 100, rotation: 45 });
 ````
 
-### gsap.fromTo()
+#### gsap.fromTo()
 
 ````js
 gsap.fromTo(
@@ -68,7 +68,7 @@ gsap.fromTo(
 {: .prompt-tip}
 
 
-## 2. 지연과 반복 - delay, repeat, yoyo, repeatDelay
+### 2. 지연과 반복 - delay, repeat, yoyo, repeatDelay
 스페셜 속성은 애니메이션이 실행되는 방식과 수행해야 하는 작업을 정의합니다.   
 특수 속성은 애니메이션 되지 않습니다.
 
@@ -90,7 +90,7 @@ gsap.fromTo(
 </iframe>
 
 
-## 3. 가속도 - easing
+### 3. 가속도 - easing
 ease는 애니메이션이 재생될 때의 변경 속도를 제어합니다.   
 간단한 사용에서 ease는 애니메이션이 느려지거나 빨라지는지에 대한 여부를 제어합니다.
 
@@ -107,7 +107,7 @@ gsap.to(".elem", { duration: 2.5, ease: "power1.out", y: -500 });
 
 
 
-## 4. 다중 요소 제어 - stagger
+### 4. 다중 요소 제어 - stagger
 stagger 기능을 사용하면 각 개체의 애니메이션의 시작 사이에 약간의 지연시간을 넣어 보다 쉽게 제어할 수 있습니다.   
 stagger 객체를 사용하면 stagger가 시작되는 위치와 타이밍이 분산되는 방식을 더 잘 제어할 수 있습니다.
 
@@ -133,7 +133,7 @@ gsap.to(".stage .box", { y: -50, stagger: {
 
 
 
-## 5. tween control
+### 5. tween control
 Tween에는 재생을 제어하는 여러 가지 방법들이 있습니다.   
 트윈을 제어하려면 이를 참조할 방법이 필요합니다. 아래의 코드처럼 트윈을 참조하는 변수를 설정합니다.
 
@@ -161,7 +161,7 @@ tween.restart();
 </iframe>
 
 
-## 6. 트윈의 버그, 해결방법
+### 6. 트윈의 버그, 해결방법
 
 지금까지 GSAP의 기본 트윈으로 할 수 있는 많은 애니메이션들을 만들어봤습니다.   
 GSAP을 사용하면 몇 줄의 코드로 다양하고 많은 애니메이션들을 만들어낼 수 있습니다.   
