@@ -109,4 +109,4 @@ console.log('실행 끝');
 ##### 참고
 
 - [자바스크립트 async와 await](https://joshua1988.github.io/web-development/javascript/js-async-await/)
-- [Async \& Await](https://joshua1988.github.io/vue-camp/es6+/async-await.html)
+- [Async & Await](https://joshua1988.github.io/vue-camp/es6+/async-await.html)
