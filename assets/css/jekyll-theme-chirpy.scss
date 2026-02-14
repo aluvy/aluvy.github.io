@@ -21,6 +21,14 @@
     --bs-btn-hover-bg: #3a6bff;
     --toc-highlight: #3a6bff;
     --link-color: #3a6bff;
+
+    --fc-primary: #5982ff;
+    --fc-sub: #9d9d9d;
+    --fc-danger: #ed6767;
+    --fc-success: #2fb075;
+    --fc-pink: #d63384;
+
+    --fc-marker-success: #e9ff47;
   }
 }
 
@@ -37,6 +45,14 @@
     --bs-btn-hover-bg: #3a6bff;
     --toc-highlight: #3a6bff;
     --link-color: #3a6bff;
+
+    --fc-primary: #5982ff;
+    --fc-sub: #9d9d9d;
+    --fc-danger: #ed6767;
+    --fc-success: #2fb075;
+    --fc-pink: #d63384;
+
+    --fc-marker-success: #e9ff47;
   }
 }
 
@@ -55,6 +71,30 @@ body {
     border-radius: 99px;
     background-color: rgba(0, 0, 0, 0.05);
   }
+}
+
+.fc-primary {
+  color: var(--fc-primary);
+}
+
+.fc-sub {
+  color: var(--fc-sub);
+}
+
+.fc-danger {
+  color: var(--fc-danger);
+}
+
+.fc-success {
+  color: var(--fc-success);
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.fc-markder-success {
+  background-color: var(--fc-marker-success);
 }
 
 .btn {
