@@ -112,18 +112,42 @@ body {
 #sidebar {
   background: none;
 
+  .profile-wrapper {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+  }
+
+  #avatar {
+    width: 6rem;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
   .site-title {
-    color: #444;
-    font-size: 1.55rem;
+    color: var(--heading-color);
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  .site-subtitle {
+    font-size: 76%;
+    margin-top: 0;
   }
 
   ul {
     li.nav-item {
       a.nav-link {
         border-radius: 0;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
 
         i {
           display: none;
+        }
+
+        span {
+          font-size: 80%;
         }
       }
     }
@@ -291,6 +315,12 @@ footer a:hover,
     i::before {
       color: #fff;
     }
+  }
+}
+
+.categories {
+  .card-header {
+    // padding: 4rem;
   }
 }
 
