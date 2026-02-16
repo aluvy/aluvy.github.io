@@ -8,7 +8,7 @@ math: true
 mermaid: true
 ---
 
-![alt text](/assets/images/posts/2024/06/12/ios-buffer-02.png)
+![alt text](/assets/images/posts/2024/06/12/ios-buffer-01.png)
 _'오늘날씨' 입력_
 
 ![alt text](/assets/images/posts/2024/06/12/ios-buffer-02.png)
