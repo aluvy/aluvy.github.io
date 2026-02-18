@@ -32,7 +32,7 @@ JW Player는 개별 **플레이리스트 소스(playlist source)** 에 DRM을 �
 > 모든 DRM 보호 콘텐츠는 HTTPS 연결을 통해서만 제공되어야 합니다.
 {: .prompt-tip}
 
-DRM에 대한 자세한 정보와 예시는 JW Player [지원 문서(Support Article)](<(https://docs.jwplayer.com/platform/docs/protection-overview)>) 를 참고하세요.
+DRM에 대한 자세한 정보와 예시는 JW Player [지원 문서(Support Article)](<https://docs.jwplayer.com/platform/docs/protection-overview>) 를 참고하세요.
 
 
 ---
