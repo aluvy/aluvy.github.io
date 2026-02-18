@@ -1,6 +1,6 @@
 ---
 title: "[JWPlayer] Options - Setup Options"
-date: 2025-02-05 22:02:00 +0900
+date: 2025-03-01 08:00:00 +0900
 categories: [JavaScript, JWPlayer]
 tags: []
 render_with_liquid: false
@@ -8,7 +8,7 @@ math: true
 mermaid: true
 ---
 
-아래 옵션들은 **플레이어의 레이아웃과 재생 동작(playback behavior)** 을 설정하는 항목입니다.
+아래 옵션들은 **플레이어의 레이아웃과 재생 동작(playback behavior)** 을 설정하는 항목입니다.   
 각 옵션은 플레이어의 **setup 구성 객체**에 직접 포함됩니다.
 
 
@@ -20,7 +20,6 @@ mermaid: true
   - 플레이어의 `width`가 백분율(%)로 지정된 경우, **비율(aspect ratio)** 을 유지합니다.
   - 플레이어가 **고정 크기(static size)** 인 경우에는 적용되지 않습니다.
   - 비율은 **x:y 형식**으로 입력해야 합니다.
-
   - 예: `"16:9"`, `"4:3"`
 
 - **controls** (boolean)
@@ -73,13 +72,12 @@ mermaid: true
   - 기본적으로 JW Player는 매니페스트 파일의 정보를 기반으로 화질 단계를 설정합니다.
   - 이 옵션을 사용하면 특정 **대역폭(kbps)** 에 사용자 지정 **화질 라벨(quality label)** 을 적용할 수 있습니다.
   - (HLS 및 DASH에서 모두 동작합니다.)
-
-    ```javascript
+    ````js
     qualityLabels: {
       "2500": "High",
       "1000": "Medium"
     }
-    ```
+    ````
 
 - **renderCaptionsNatively** (boolean) <sup>8.0.1+</sup>
   - **(Chrome 및 Safari 전용)**
@@ -101,9 +99,9 @@ mermaid: true
   - 비디오 플레이어의 **가로 크기(px 또는 %)** 를 지정합니다.
   - 기본값: `640`
 
-<br><br>
 
----
+
+
 
 ## Behavior
 
@@ -202,7 +200,6 @@ mermaid: true
   - 플레이리스트가 완료된 후 콘텐츠를 **반복 재생(loop)** 할지 여부를 결정합니다.
   - 기본값: `false`
 
----
 
 
 ## Rendering and Loading
