@@ -237,6 +237,7 @@ mermaid: true
     - `false`: 단일 요청만 보내며 자격 증명은 포함되지 않음
 
 
+---
 
 ## advertising.bids
 
@@ -278,6 +279,7 @@ jwplayer("myElement").setup({
   - 참고: advertising.bid.ortbParams
 
 
+---
 
 ## advertising.bids.bidders[]
 
@@ -958,6 +960,8 @@ jwplayer("myElement").setup({
 
 
 
+---
+
 
 ## advertising.bids.bidders[].optionalParams
 
@@ -1034,6 +1038,7 @@ jwplayer("myElement").setup({
   - _(더 이상 사용되지 않음 — Deprecated)_ 퍼블리셔가 정의한 **커스텀 패스스루 매크로(pass-through macros)**
 
 
+---
 
 ## advertising.bids.ortbParams
 
@@ -1054,7 +1059,6 @@ jwplayer("myElement").setup({
   }
 });
 ````
-
 
 - **gpid** (string)
   - 퍼블리셔가 정의한 문자열로, **플랫폼 및 SSP 간 광고 게재 위치를 고유하게 식별**합니다.
@@ -1085,7 +1089,7 @@ jwplayer("myElement").setup({
   - 이 값은 `pos` 속성을 통해 전송됩니다.
   - 자세한 내용은 **[5.4 Ad Position]** 항목을 참조하십시오.
 
-
+---
 
 ## advertising.bids.settings
 
@@ -1108,7 +1112,6 @@ jwplayer("myElement").setup({
   }
 });
 ````
-
 
 - **mediationLayerAdServer\*** (string)
   - (필수) 어떤 광고가 재생될지를 결정하는 **중재 계층(Mediation Layer)** 을 지정합니다.
@@ -1163,6 +1166,7 @@ jwplayer("myElement").setup({
     • `false`: 상위 입찰자 한 명의 KVP만 전송하여 광고 서버로의 데이터 전송량을 줄임.
 
 
+---
 
 ## advertising.bids.settings.buckets[]
 
@@ -1178,6 +1182,7 @@ jwplayer("myElement").setup({
   - 기본값: `0`
 
 
+---
 
 ## advertising.bids.settings.consentManagement
 
@@ -1190,6 +1195,7 @@ jwplayer("myElement").setup({
   - 참고: [advertising.bids.settings.consentManagement.usp]
 
 
+---
 
 ## advertising.bids.settings.consentManagement.gdpr
 
@@ -1213,6 +1219,7 @@ GDPR 동의 관리 모듈(GDPR Consent Management Module)의 다음 매개변수
   - CMP가 **GDPR 동의 문자열(consent string)** 을 가져올 수 있도록 허용하는 **최대 시간(밀리초 단위)** 을 지정합니다.
 
 
+---
 
 ## advertising.bids.settings.consentManagement.gdpr.rules
 
@@ -1233,6 +1240,7 @@ GDPR 동의 관리 모듈(GDPR Consent Management Module)의 다음 매개변수
   - 해당 목적(Purpose)의 강제 적용에서 **제외될 입찰자 코드(bidder codes)** 또는 **모듈 이름(module names)** 의 목록을 정의합니다.
 
 
+---
 
 ## advertising.bids.settings.consentManagement.usp
 
@@ -1246,6 +1254,7 @@ GDPR 동의 관리 모듈(GDPR Consent Management Module)의 다음 매개변수
   - **USP-API**가 **CCPA 문자열(CCPA string)** 을 가져올 수 있도록 허용하는 **최대 시간(밀리초 단위)** 을 지정합니다.
 
 
+---
 
 ## advertising.companiondiv
 
@@ -1268,6 +1277,7 @@ GDPR 동의 관리 모듈(GDPR Consent Management Module)의 다음 매개변수
 {: .prompt-tip}
 
 
+---
 
 ## advertising.enablePPS
 
@@ -1321,6 +1331,7 @@ jwplayer("myElement").setup({
   - 기본값: `false`
 
 
+---
 
 ## advertising.freewheel
 
@@ -1383,6 +1394,7 @@ jwplayer("myElement").setup({
 {: .prompt-tip}
 
 
+---
 
 ## advertising.rules
 
@@ -1449,6 +1461,7 @@ jwplayer("myElement").setup({
     - Default: `0`
 
 
+---
 
 ## advertising.schedule
 
@@ -1458,6 +1471,7 @@ jwplayer("myElement").setup({
 개별 플레이리스트 항목별 광고 스케줄링 방법은 playlist 항목별 광고 스케줄링을 참고하세요.
 
 
+---
 
 ### Ad Schedules with VMAP Files
 
@@ -1476,6 +1490,8 @@ jwplayer('myElement').setup({
   },
 });
 ````
+
+---
 
 ### Embedded Ad Schedules with JSON
 

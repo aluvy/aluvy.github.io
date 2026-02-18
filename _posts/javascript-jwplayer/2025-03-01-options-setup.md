@@ -100,7 +100,7 @@ mermaid: true
   - 기본값: `640`
 
 
-
+---
 
 
 ## Behavior
@@ -200,6 +200,8 @@ mermaid: true
   - 플레이리스트가 완료된 후 콘텐츠를 **반복 재생(loop)** 할지 여부를 결정합니다.
   - 기본값: `false`
 
+
+---
 
 
 ## Rendering and Loading
