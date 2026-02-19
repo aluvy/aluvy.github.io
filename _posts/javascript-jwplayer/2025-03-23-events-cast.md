@@ -47,7 +47,7 @@ mermaid: true
 
 ## .on('castIntercepted')
 
-[`interceptCast`](<(https://docs.jwplayer.com/players/reference/casting)>)가 활성화된 상태에서 사용자가 콘텐츠를 캐스트하려고 시도할 때 발생합니다.
+[`interceptCast`](https://docs.jwplayer.com/players/reference/casting)가 활성화된 상태에서 사용자가 콘텐츠를 캐스트하려고 시도할 때 발생합니다.
 
 이 이벤트는 또한 **현재 캐스트 세션이 활성 상태인지 여부**를 나타냅니다.
 
