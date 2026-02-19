@@ -16,13 +16,13 @@ mermaid: true
 - RSS 피드 또는 JSON 파일의 URL을 참조하는 **문자열(string)**
 - 여러 개의 미디어 객체를 포함하는 **배열(array)**
 
----
 
-## playlist
+
+### playlist
 
 `playlist`의 값은 각 미디어 항목의 **기본 파일(primary file), 관련 리소스(related assets)**, 및 **메타데이터(metadata)** 를 포함하는 **RSS 피드 또는 JSON 파일의 URL**입니다.
 
-### playlist를 단일 URL로 지정하는 예시:
+playlist를 단일 URL로 지정하는 예시:
 
 ```javascript
 player.setup({
@@ -36,7 +36,7 @@ player.setup({
 {: .prompt-tip}
 
 
-### Dashboard
+#### Dashboard
 
 다음 단계에 따라 **JWP 대시보드(JWP Dashboard)** 에서 JWP에 호스팅된 미디어를 포함한 **플레이리스트(playlist)** 를 생성할 수 있습니다.
 
@@ -45,7 +45,7 @@ player.setup({
 3. 플레이어 설정에서 `playlist` 속성에 해당 **JSON URL을 정의**합니다.
 
 
-### API
+#### API
 
 다음 단계에 따라 **JWP API를 통해 JWP에 호스팅된 미디어를 포함한 플레이리스트**를 생성할 수 있습니다.
 
@@ -60,16 +60,16 @@ player.setup({
 3. 아래 URL에서 `{PLAYLIST_ID}` 자리 표시자를 복사한 id 값으로 교체합니다.
 
 
-#### Playlist URL
+##### Playlist URL
 
 ```
 https://cdn.jwplayer.com/v2/playlists/{PLAYLIST_ID}
 ```
 
 
----
 
-## playlist[]
+
+### playlist[]
 
 `playlist`의 값은 **각 미디어 항목(media item)** 의 **기본 파일(primary file), 관련 리소스(related assets), 및 메타데이터(metadata)** 를 정의할 수 있는 **객체(object)** 입니다.
 
@@ -172,7 +172,7 @@ player.setup({
 {: .prompt-tip}
 
 
-### playlist[].adschedule
+#### playlist[].adschedule
 
 `playlist[].adschedule` 속성은 **특정 플레이리스트 항목 내에서 광고 구간(ad break)을 예약(scheduling)** 하는 데 사용됩니다.
 
@@ -183,7 +183,7 @@ player.setup({
 - 여러 개의 광고 구간 객체(ad break objects)를 포함하는 [배열(array)](https://docs.jwplayer.com/players/reference/playlists#playlistadschedule-2)
 
 
-### playlist.adschedule
+##### playlist.adschedule
 
 외부 VMAP XML 파일(string) 에서 광고 스케줄을 불러올 수도 있습니다.
 
@@ -194,7 +194,7 @@ player.setup({
 
 
 
-### playlist.adschedule[]
+##### playlist.adschedule[]
 
 광고 구간(ad break)을 사용할 경우,  
 `adschedule` 속성 내부에 최소 한 개 이상의 **광고 구간 객체(ad break object)** 를 정의해야 합니다.  
@@ -244,7 +244,7 @@ player.setup({
 
 
 
-### playlist[].freewheel
+#### playlist[].freewheel
 
 ```json
 "freewheel": {
@@ -284,13 +284,13 @@ player.setup({
   - 주의: 동일한 미디어 항목 객체 내에서 `playlist[].streamtype` 과 함께 사용하지 마십시오.
 
 
-### playlist[].sources[]
+#### playlist[].sources[]
 
 `sources[]`를 사용하면 **하나의 미디어 항목(media item)** 에 대해 **여러 개의 소스(source)** 또는 **품질(quality)** 을 정의할 수 있습니다.
 
 
 
-####  Multiple Sources
+#####  Multiple Sources
 
 ```json
 "sources": [
@@ -309,7 +309,7 @@ player.setup({
 ]
 ```
 
-#### Multiple Qualities
+##### Multiple Qualities
 
 ```json
 "sources": [
@@ -352,7 +352,7 @@ player.setup({
 
 
 
-##### playlist[].sources[].drm
+###### playlist[].sources[].drm
 
 DRM(디지털 권한 관리)을 사용할 때는,  
 **해당 미디어 소스 내부에 `drm` 블록을 배치할 것을 권장합니다.**   
@@ -444,7 +444,7 @@ DRM(디지털 권한 관리)을 사용할 때는,
 
 
 
-### playlist[].tracks[]
+#### playlist[].tracks[]
 
 `track은` 미디어 항목에 **자막(captions), 썸네일(thumbnails)**, 또는 **챕터(chapters)** 정보를 추가할 때 사용됩니다.
 

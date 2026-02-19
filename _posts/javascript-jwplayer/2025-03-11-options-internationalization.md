@@ -240,9 +240,9 @@ player.setup({
   - 기본값: `Volume`
 
 
----
 
-## intl.{lang}.advertising object
+
+### intl.{lang}.advertising object
 
 이 객체는 **플레이어의 광고(advertising) 관련 텍스트 및 ARIA 레이블(접근성 속성)** 을 현지화합니다.
 
@@ -277,9 +277,9 @@ player.setup({
   - 기본값: `Skip`
 
 
----
 
-## intl.{lang}.captionsStyles object
+
+### intl.{lang}.captionsStyles object
 
 이 객체는 플레이어 내 자막 스타일링 메뉴(captions styling menu) 의 텍스트를 현지화합니다.
 
@@ -376,9 +376,9 @@ player.setup({
   - 기본값: `Yellow`
 
 
----
 
-## intl.{lang}.errors object
+
+### intl.{lang}.errors object
 
 이 객체는 **플레이어에 표시되는 오류 메시지(error messages)** 를 현지화합니다.
 
@@ -419,9 +419,9 @@ player.setup({
   - 기본값: `This video cannot be played because of a technical error.`
 
 
----
 
-## intl.{lang}.related object
+
+### intl.{lang}.related object
 
 이 객체는 **플레이어 내 추천 영상(related object)** 의 텍스트와 **ARIA 레이블(접근성 속성)** 을 현지화합니다.
 
@@ -435,9 +435,9 @@ player.setup({
   - 기본값: `More Videos`
 
 
----
 
-## intl.{lang}.sharing object
+
+### intl.{lang}.sharing object
 
 이 객체는 **공유(Sharing) 기능**의 플레이어 텍스트와 **ARIA 레이블(접근성 속성)** 을 현지화합니다.
 
@@ -463,9 +463,9 @@ player.setup({
   - 기본값: `Link`
 
 
----
 
-## intl.{lang}.shortcuts object <sup>8.11.0 +</sup>
+
+### intl.{lang}.shortcuts object <sup>8.11.0 +</sup>
 
 이 객체는 **비디오 플레이어의 키보드 단축키 메뉴 항목**을 현지화합니다.
 
@@ -516,9 +516,9 @@ player.setup({
   - 기본값: `Mute/Unmute`
 
 
----
 
-## Transition table
+
+### Transition table
 
 아래 표는 **이전 버전의 커스터마이징 또는 번역 값(old customization/translation values)** 을  
 해당하는 **새로운 `intl.{lang}.{property}` 구조로 이전할 때** 참고할 수 있는 대응 관계를 보여줍니다.

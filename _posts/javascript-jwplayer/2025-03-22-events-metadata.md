@@ -9,20 +9,20 @@ mermaid: true
 ---
 
 
-# Metadata Events
-
-재생이 **새로운 메타데이터가 활성화되는 시간 구간에 진입할 때** 트리거됩니다.  
-메타데이터는 아래에 나열된 형식 중 하나로 반환될 수 있습니다.
-
----
-
-## .on('meta')
+## Metadata Events
 
 재생이 **새로운 메타데이터가 활성화되는 시간 구간에 진입할 때** 트리거됩니다.  
 메타데이터는 아래에 나열된 형식 중 하나로 반환될 수 있습니다.
 
 
-### Date range (meta)
+
+### .on('meta')
+
+재생이 **새로운 메타데이터가 활성화되는 시간 구간에 진입할 때** 트리거됩니다.  
+메타데이터는 아래에 나열된 형식 중 하나로 반환될 수 있습니다.
+
+
+#### Date range (meta)
 
 HLS 스트림에서 `#EXT-X-DATERANGE` 태그가 지정된 구간에 재생이 진입할 때 트리거됩니다.
 
@@ -101,7 +101,7 @@ HLS 스트림에서 `#EXT-X-DATERANGE` 태그가 지정된 구간에 재생이 �
   - 이 이벤트의 경우 항상 `"meta"`
 
 
-### EMSG (meta)
+#### EMSG (meta)
 
 `meta` 이벤트가 **메타데이터 시작 시점과 함께 발생할 때** 트리거됩니다.
 
@@ -174,7 +174,7 @@ HLS 스트림에서 `#EXT-X-DATERANGE` 태그가 지정된 구간에 재생이 �
   - 이 이벤트의 경우 항상 `"meta"`
 
 
-### ID3 (meta)
+#### ID3 (meta)
 
 재생이 **ID3 태그가 포함된 HLS 스트림 구간에 진입할 때** 트리거됩니다.
 
@@ -240,7 +240,7 @@ HLS 스트림에서 `#EXT-X-DATERANGE` 태그가 지정된 구간에 재생이 �
 
 
 
-### Program-date-time (meta)
+#### Program-date-time (meta)
 
 재생이 `#EXT-X-PROGRAM-DATE-TIME` 태그가 지정된 HLS 스트림 구간에 진입할 때 트리거됩니다.
 
@@ -286,7 +286,7 @@ HLS 스트림에서 `#EXT-X-DATERANGE` 태그가 지정된 구간에 재생이 �
 
 
 
-### SCTE-35 (meta)
+#### SCTE-35 (meta)
 
 재생이 `#EXT-X-CUE-OUT` 또는 `#EXT-X-CUE-IN` 태그가 지정된 HLS 스트림 구간에 진입할 때 트리거됩니다.
 
@@ -333,7 +333,7 @@ HLS 스트림에서 `#EXT-X-DATERANGE` 태그가 지정된 구간에 재생이 �
 
 
 
-### Unknown (meta)
+#### Unknown (meta)
 
 서드파티 미디어 제공자 또는 **레거시 Flash**로부터 발생한 **메타 이벤트가 트리거되었음을 나타냅니다.**
 
@@ -353,14 +353,18 @@ HLS 스트림에서 `#EXT-X-DATERANGE` 태그가 지정된 구간에 재생이 �
   - 플레이어 이벤트의 카테고리
   - 이 이벤트의 경우 항상 `"meta"`
 
----
 
-## .on('metadataCueParsed')
+
+
+
+
+
+### .on('metadataCueParsed')
 
 **메타데이터 큐 포인트가 버퍼링되면** 트리거됩니다.
 
 
-### Date range (metadataCueParsed)
+#### Date range (metadataCueParsed)
 
 플레이어가 `#EXT-X-DATERANGE` 태그가 지정된 HLS 스트림 구간을 버퍼링할 때 트리거됩니다.
 
@@ -440,7 +444,7 @@ HLS 스트림에서 `#EXT-X-DATERANGE` 태그가 지정된 구간에 재생이 �
 
 
 
-### EMSG (metadataCueParsed)
+#### EMSG (metadataCueParsed)
 
 ```json
 {
@@ -512,7 +516,7 @@ HLS 스트림에서 `#EXT-X-DATERANGE` 태그가 지정된 구간에 재생이 �
 
 
 
-### ID3 (metadataCueParsed)
+#### ID3 (metadataCueParsed)
 
 재생이 **ID3 태그가 포함된 HLS 스트림의 구간을 버퍼링할 때** 트리거됩니다.
 
@@ -578,7 +582,7 @@ HLS 스트림에서 `#EXT-X-DATERANGE` 태그가 지정된 구간에 재생이 �
 
 
 
-### Program-date-time (metadataCueParsed)
+#### Program-date-time (metadataCueParsed)
 
 플레이어가 `#EXT-X-PROGRAM-DATE-TIME` 태그가 지정된 HLS 스트림 구간을 버퍼링할 때 트리거됩니다.
 
@@ -624,7 +628,7 @@ HLS 스트림에서 `#EXT-X-DATERANGE` 태그가 지정된 구간에 재생이 �
 
 
 
-### SCTE-35 metadata
+#### SCTE-35 metadata
 
 플레이어가 `#EXT-X-CUE-OUT` 또는 `#EXT-X-CUE-IN` 태그가 지정된 HLS 스트림 구간을 버퍼링할 때 트리거됩니다.
 

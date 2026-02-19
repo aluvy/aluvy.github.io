@@ -12,9 +12,9 @@ mermaid: true
 
 이 API 호출은 플레이어의 **현재 재생 상태를 가져오거나 변경**하는 데 사용됩니다.
 
----
 
-## .on('autostartNotAllowed')
+
+### .on('autostartNotAllowed')
 
 플레이어가 **자동 재생(autostart)** 으로 설정되어 있지만, **브라우저 설정으로 인해 자동 재생이 차단될 때** 트리거됩니다.
 
@@ -43,9 +43,9 @@ mermaid: true
   - 플레이어 이벤트의 카테고리
   - 이 값은 항상 `"autostartNotAllowed"` 입니다.
 
----
 
-## .on('buffer')
+
+### .on('buffer')
 
 다음 이벤트 중 하나가 발생할 때 트리거됩니다:
 
@@ -92,9 +92,9 @@ mermaid: true
   - 이벤트의 카테고리
   - 이 값은 항상 `"buffer"`
 
----
 
-## .on('complete')
+
+### .on('complete')
 
 비디오의 **끝에 도달했을 때** 트리거됩니다.  
 단, 다음의 경우에는 트리거되지 않습니다:
@@ -112,9 +112,9 @@ mermaid: true
   - 이벤트의 카테고리
   - 이 값은 항상 `"complete"`
 
----
 
-## .on('error')
+
+### .on('error')
 
 재생 과정에서 **치명적인 오류가 발생했을 때** 트리거됩니다.
 
@@ -142,9 +142,9 @@ mermaid: true
   - 플레이어 이벤트의 카테고리
   - 이 값은 항상 `"error"`
 
----
 
-## .on('firstFrame')
+
+### .on('firstFrame')
 
 비디오의 **첫 번째 프레임이 표시되거나, 오디오 파일이 재생을 시작하는 순간** 트리거됩니다.
 
@@ -165,9 +165,9 @@ mermaid: true
   - 플레이어 이벤트의 카테고리
   - 이 값은 항상 `"firstFrame"`
 
----
 
-## .on('idle')
+
+### .on('idle')
 
 플레이어가 **idle(대기)** 상태로 전환될 때 트리거됩니다.
 
@@ -207,9 +207,9 @@ mermaid: true
   - 가능한 값:
     - `idle`
 
----
 
-## .on('pause')
+
+### .on('pause')
 
 플레이어 내의 **광고가 아닌 미디어 콘텐츠가 일시정지될 때** 트리거됩니다.
 
@@ -274,9 +274,9 @@ mermaid: true
     - `1` (보임)
     - `0` (보이지 않음)
 
----
 
-## .on('play')
+
+### .on('play')
 
 플레이어 내의 **광고가 아닌 미디어 콘텐츠가 재생을 시작할 때** 트리거됩니다.
 
@@ -341,9 +341,9 @@ mermaid: true
     - `1` (보임)
     - `0` (보이지 않음)
 
----
 
-## .on('playAttemptFailed')
+
+### .on('playAttemptFailed')
 
 **재생이 중단되거나 차단될 때** 트리거됩니다.
 
@@ -387,9 +387,9 @@ mermaid: true
   - 플레이어 이벤트의 카테고리
   - 이 값은 항상 `"playAttemptFailed"`
 
----
 
-## .on('playbackRateChanged')
+
+### .on('playbackRateChanged')
 
 재생 속도가 **변경되었을 때** 트리거됩니다.
 
@@ -407,9 +407,9 @@ mermaid: true
   - 플레이어 이벤트의 카테고리
   - 이 값은 항상 `"playbackRateChanged"`
 
----
 
-## .on('warning')
+
+### .on('warning')
 
 **설정(setup)** 또는 **재생 과정(playback process)** 에 치명적이지 않은 오류가 발생했을 때 트리거됩니다.
 

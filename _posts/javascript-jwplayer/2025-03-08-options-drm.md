@@ -35,9 +35,9 @@ JW Player는 개별 **플레이리스트 소스(playlist source)** 에 DRM을 �
 DRM에 대한 자세한 정보와 예시는 JW Player [지원 문서(Support Article)](<https://docs.jwplayer.com/platform/docs/protection-overview>) 를 참고하세요.
 
 
----
 
-## drm.playready
+
+### drm.playready
 
 **PlayReady DRM은 Windows 8.1 이상 운영체제의 Internet Explorer 11 및 Microsoft Edge** 브라우저에 특화된 DRM 방식입니다.
 
@@ -77,9 +77,9 @@ DRM에 대한 자세한 정보와 예시는 JW Player [지원 문서(Support Art
     - `SW_SECURE_DECODE`
 
 
----
 
-## drm.widevine
+
+### drm.widevine
 
 **Widevine DRM**은 **iOS를 제외한 기기에서의 Google Chrome 브라우저**에 특화된 DRM 방식입니다.  
 또한 **데스크톱 환경의 Firefox 브라우저**에서도 동작합니다.
@@ -123,9 +123,9 @@ DRM에 대한 자세한 정보와 예시는 JW Player [지원 문서(Support Art
     - `SW_SECE_DECODE`
 
 
----
 
-## drm.\[widevine\/playready\].headers
+
+### drm.\[widevine\/playready\].headers
 
 `headers` 구성을 사용하면 **라이선스 요청(license request)에 사용자 정의 HTTP 헤더 데이터(customized HTTP header data)** 를 추가할 수 있습니다.  
 이 설정은 과거 `widevine` 및 `playready` 환경에서 사용되던 **정적 `customData`** 구성 옵션을 대체합니다.
@@ -146,7 +146,7 @@ DRM 구성 예시
 }
 ````
 
-### 이전 버전의 구성 방식
+#### 이전 버전의 구성 방식
 
 이전 버전에서는 `"customData"` 속성을 직접 지정하는 형태로 사용되었습니다.
 
@@ -166,9 +166,9 @@ DRM 구성 예시
   - 요청에 포함될 **HTTP 헤더의 값**을 지정합니다.
 
 
----
 
-## drm.fairplay
+
+### drm.fairplay
 
 JW Player는 **맞춤형 FairPlay 통합(custom FairPlay integrations)** 을 위한 구성 옵션을 제공합니다.
 맞춤 FairPlay DRM 통합에 대한 자세한 정보와 예시는 JW Player [지원 문서](<https://docs.jwplayer.com/players/reference/drm#drmfairplay>)를 참고하세요.
@@ -231,9 +231,9 @@ JW Player는 **맞춤형 FairPlay 통합(custom FairPlay integrations)** 을 위
   - 이 옵션은 `licenseRequestMessage`의 처리 방식에도 영향을 미칩니다.
 
 
----
 
-## drm.clearkey
+
+### drm.clearkey
 
 **ClearKey**는 플레이어 설정 내에 복호화 키(decryption key)를 직접 명시하는 **가장 기본적인 형태의 DRM**입니다.   
 이 방식은 **보안 수준이 가장 낮지만, 브라우저 간 구현이 가장 간단**합니다.   

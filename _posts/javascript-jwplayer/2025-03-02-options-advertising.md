@@ -237,9 +237,9 @@ mermaid: true
     - `false`: 단일 요청만 보내며 자격 증명은 포함되지 않음
 
 
----
 
-## advertising.bids
+
+### advertising.bids
 
 이 속성은 **지원되는 입찰자(bidder)** 와 함께 **Player Bidding** 기능을 활성화하고 구성할 때 사용됩니다.
 
@@ -279,16 +279,16 @@ jwplayer("myElement").setup({
   - 참고: advertising.bid.ortbParams
 
 
----
 
-## advertising.bids.bidders[]
+
+### advertising.bids.bidders[]
 
 아래 확장 가능한 섹션에서는 **각 입찰자(bidder)** 에 대한 코드 예시와 속성을 확인할 수 있습니다.   
 입찰자의 이름을 클릭하면 해당 파트너에 대한 세부 정보를 볼 수 있습니다.
 
 제공된 설정값에 따라 각 속성을 구성하십시오.
 
-### Azerion
+#### Azerion
 
 ````js
 jwplayer("myElement").setup({
@@ -314,7 +314,7 @@ jwplayer("myElement").setup({
   - _(필수)_ Azerion Placement ID
 
 
-### Connatix
+#### Connatix
 
 ````js
 jwplayer("myElement").setup({
@@ -340,7 +340,7 @@ jwplayer("myElement").setup({
   - _(필수)_ Connatix Placement ID
 
 
-### Criteo
+#### Criteo
 
 ````js
 jwplayer("myElement").setup({
@@ -371,7 +371,7 @@ jwplayer("myElement").setup({
 
 
 
-### Emodo
+#### Emodo
 
 ````js
 jwplayer("myElement").setup({
@@ -398,7 +398,7 @@ jwplayer("myElement").setup({
 
 
 
-### EMX
+#### EMX
 
 ````js
 jwplayer("myElement").setup({
@@ -426,7 +426,7 @@ jwplayer("myElement").setup({
 
 
 
-### Equativ
+#### Equativ
 
 ````js
 jwplayer("myElement").setup({
@@ -465,7 +465,7 @@ jwplayer("myElement").setup({
 
 
 
-### iMDS
+#### iMDS
 
 ````js
 jwplayer("myElement").setup({
@@ -496,7 +496,7 @@ jwplayer("myElement").setup({
 
 
 
-### Index Exchange
+#### Index Exchange
 
 ````js
 jwplayer("myElement").setup({
@@ -523,7 +523,7 @@ jwplayer("myElement").setup({
 
 
 
-### Kargo
+#### Kargo
 
 ````js
 jwplayer("myElement").setup({
@@ -550,7 +550,7 @@ jwplayer("myElement").setup({
 
 
 
-### Magnite
+#### Magnite
 
 ````js
 jwplayer("myElement").setup({
@@ -585,7 +585,7 @@ jwplayer("myElement").setup({
 
 
 
-### Media.net
+#### Media.net
 
 ````js
 jwplayer("myElement").setup({
@@ -616,7 +616,7 @@ jwplayer("myElement").setup({
 
 
 
-### OpenX
+#### OpenX
 
 ````js
 jwplayer("myElement").setup({
@@ -647,7 +647,7 @@ jwplayer("myElement").setup({
 
 
 
-### PubMatic
+#### PubMatic
 
 ````js
 jwplayer("myElement").setup({
@@ -677,7 +677,7 @@ jwplayer("myElement").setup({
   - PubMatic 광고 슬롯 ID
 
 
-### Sonobi
+#### Sonobi
 
 ````js
 jwplayer("myElement").setup({
@@ -704,7 +704,7 @@ jwplayer("myElement").setup({
 
 
 
-### Sovrn
+#### Sovrn
 
 ````js
 jwplayer("myElement").setup({
@@ -731,7 +731,7 @@ jwplayer("myElement").setup({
 
 
 
-### SpotX
+#### SpotX
 
 ````js
 jwplayer("myElement").setup({
@@ -758,7 +758,7 @@ jwplayer("myElement").setup({
 
 
 
-### The MediaGrid
+#### The MediaGrid
 
 ````js
 jwplayer("myElement").setup({
@@ -789,7 +789,7 @@ jwplayer("myElement").setup({
 
 
 
-### The Trade Desk
+#### The Trade Desk
 
 ````js
 jwplayer("myElement").setup({
@@ -824,7 +824,7 @@ jwplayer("myElement").setup({
 
 
 
-### Unruly
+#### Unruly
 
 ````js
 jwplayer("myElement").setup({
@@ -851,7 +851,7 @@ jwplayer("myElement").setup({
 
 
 
-### VideoByte
+#### VideoByte
 
 ````js
 jwplayer("myElement").setup({
@@ -886,7 +886,7 @@ jwplayer("myElement").setup({
 
 
 
-### Xandr
+#### Xandr
 
 ````js
 jwplayer("myElement").setup({
@@ -925,7 +925,7 @@ jwplayer("myElement").setup({
 
 
 
-### YahooSSP
+#### YahooSSP
 
 ````js
 jwplayer("myElement").setup({
@@ -960,10 +960,10 @@ jwplayer("myElement").setup({
 
 
 
----
 
 
-## advertising.bids.bidders[].optionalParams
+
+### advertising.bids.bidders[].optionalParams
 
 > 이 객체는 **IndexExchange, PubMatic, SpotX**, 또는 **Xandr (AppNexus)** 가 광고 파트너일 때만 사용해야 합니다.
 {: .prompt-tip}
@@ -1038,9 +1038,9 @@ jwplayer("myElement").setup({
   - _(더 이상 사용되지 않음 — Deprecated)_ 퍼블리셔가 정의한 **커스텀 패스스루 매크로(pass-through macros)**
 
 
----
 
-## advertising.bids.ortbParams
+
+### advertising.bids.ortbParams
 
 ````js
 jwplayer("myElement").setup({
@@ -1089,9 +1089,9 @@ jwplayer("myElement").setup({
   - 이 값은 `pos` 속성을 통해 전송됩니다.
   - 자세한 내용은 **[5.4 Ad Position]** 항목을 참조하십시오.
 
----
 
-## advertising.bids.settings
+
+### advertising.bids.settings
 
 ````js
 jwplayer("myElement").setup({
@@ -1166,9 +1166,9 @@ jwplayer("myElement").setup({
     • `false`: 상위 입찰자 한 명의 KVP만 전송하여 광고 서버로의 데이터 전송량을 줄임.
 
 
----
 
-## advertising.bids.settings.buckets[]
+
+### advertising.bids.settings.buckets[]
 
 - **increment** (number)
   - 입찰 통화 단위에서 **입찰가가 내림(round down)** 처리되는 **가장 가까운 증분 단위**입니다.
@@ -1182,9 +1182,9 @@ jwplayer("myElement").setup({
   - 기본값: `0`
 
 
----
 
-## advertising.bids.settings.consentManagement
+
+### advertising.bids.settings.consentManagement
 
 - **gdpr** (object)
   - **GDPR(일반 데이터 보호 규정)** 지원을 위한 리소스
@@ -1195,9 +1195,9 @@ jwplayer("myElement").setup({
   - 참고: [advertising.bids.settings.consentManagement.usp]
 
 
----
 
-## advertising.bids.settings.consentManagement.gdpr
+
+### advertising.bids.settings.consentManagement.gdpr
 
 GDPR 동의 관리 모듈(GDPR Consent Management Module)의 다음 매개변수에 대한 자세한 내용은 해당 문서를 참고하세요.
 
@@ -1219,9 +1219,9 @@ GDPR 동의 관리 모듈(GDPR Consent Management Module)의 다음 매개변수
   - CMP가 **GDPR 동의 문자열(consent string)** 을 가져올 수 있도록 허용하는 **최대 시간(밀리초 단위)** 을 지정합니다.
 
 
----
 
-## advertising.bids.settings.consentManagement.gdpr.rules
+
+### advertising.bids.settings.consentManagement.gdpr.rules
 
 - **enforcePurpose** (boolean)
   - **목적 동의(Purpose Consent)** 를 강제할지 여부를 결정합니다.
@@ -1240,9 +1240,9 @@ GDPR 동의 관리 모듈(GDPR Consent Management Module)의 다음 매개변수
   - 해당 목적(Purpose)의 강제 적용에서 **제외될 입찰자 코드(bidder codes)** 또는 **모듈 이름(module names)** 의 목록을 정의합니다.
 
 
----
 
-## advertising.bids.settings.consentManagement.usp
+
+### advertising.bids.settings.consentManagement.usp
 
 다음 매개변수에 대한 자세한 내용은 **US Privacy Consent Management Module** 문서를 참고하세요.
 
@@ -1254,9 +1254,9 @@ GDPR 동의 관리 모듈(GDPR Consent Management Module)의 다음 매개변수
   - **USP-API**가 **CCPA 문자열(CCPA string)** 을 가져올 수 있도록 허용하는 **최대 시간(밀리초 단위)** 을 지정합니다.
 
 
----
 
-## advertising.companiondiv
+
+### advertising.companiondiv
 
 이 객체는 **id, width, height**의 세 가지 속성을 포함합니다.  
 이 속성들을 설정하면, JW Player가 **VAST/IMA 태그**로부터 **companion 광고**를 불러와 페이지 내의 특정 `<div>` 요소에 로드합니다.  
@@ -1277,9 +1277,9 @@ GDPR 동의 관리 모듈(GDPR Consent Management Module)의 다음 매개변수
 {: .prompt-tip}
 
 
----
 
-## advertising.enablePPS
+
+### advertising.enablePPS
 
 이 속성은 **IAB 컨텍스트 세그먼트(IAB contextual segments)** 를 광고 태그(ad tag)를 통해 자동으로 전달하여 **프로그래매틱 수익화(programmatic monetization)** 를 개선하는 데 사용됩니다.
 
@@ -1331,9 +1331,9 @@ jwplayer("myElement").setup({
   - 기본값: `false`
 
 
----
 
-## advertising.freewheel
+
+### advertising.freewheel
 
 ````js
 jwplayer("myElement").setup({
@@ -1394,9 +1394,9 @@ jwplayer("myElement").setup({
 {: .prompt-tip}
 
 
----
 
-## advertising.rules
+
+### advertising.rules
 
 이 속성은 **광고 재생 빈도(ad playback frequency)** 를 제어하는 데 사용됩니다.  
 자세한 내용은 Ad Rules Reference 지원 문서를 참고하세요.
@@ -1461,9 +1461,9 @@ jwplayer("myElement").setup({
     - Default: `0`
 
 
----
 
-## advertising.schedule
+
+### advertising.schedule
 
 이 속성은 **여러 광고 구간(ad break)** 을 포함하는 전체 **광고 스케줄(ad schedule)** 을 JW Player에 로드하는 데 사용됩니다.  
 속성 값은 **VMAP 스케줄(.xml)** 의 URL이거나, **광고 정보를 포함한 인라인 JSON 블록**일 수 있습니다.  
@@ -1471,9 +1471,9 @@ jwplayer("myElement").setup({
 개별 플레이리스트 항목별 광고 스케줄링 방법은 playlist 항목별 광고 스케줄링을 참고하세요.
 
 
----
 
-### Ad Schedules with VMAP Files
+
+#### Ad Schedules with VMAP Files
 
 VMAP 파일을 사용하는 경우, `schedule` 속성에 **VMAP `.xml` 파일의 링크**를 추가합니다.
 
@@ -1491,9 +1491,9 @@ jwplayer('myElement').setup({
 });
 ````
 
----
 
-### Embedded Ad Schedules with JSON
+
+#### Embedded Ad Schedules with JSON
 
 JSON 형식의 스케줄을 사용하려면, `schedule` 속성 내부에 **최소 한 개 이상의 광고 구간(ad break)** 을 정의해야 합니다.  
 각 광고 구간에는 반드시 `offset` 과 `tag` 또는 `vastxml` 속성이 포함되어야 합니다.

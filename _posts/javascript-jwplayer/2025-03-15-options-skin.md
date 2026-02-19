@@ -13,9 +13,9 @@ mermaid: true
 JW Player는 **기본적으로 11가지 스킨 구성 옵션(skin configuration options)** 을 제공합니다.   
 브랜드 아이덴티티를 세밀하게 제어할 수 있어, 플레이어를 보다 **쉽게 맞춤화(customize)** 할 수 있습니다.
 
----
 
-## 색상 사용자 정의 (Color Customization)
+
+### 색상 사용자 정의 (Color Customization)
 
 색상은 **16진수(hex), RGBA 색상 값**, 또는 **색상 이름(color name)** 으로 지정할 수 있습니다. (8.0+ 지원)
 
@@ -80,7 +80,7 @@ player.setup({
 
 
 
-## controlbar
+### controlbar
 
 - **background** (string)
   - 컨트롤 바 및 볼륨 슬라이더의 **배경색**을 설정합니다.
@@ -101,7 +101,7 @@ player.setup({
   - 기본값: `"#FFFFFF"`
 
 
-## menus
+### menus
 
 - **background** (string)
   - **메뉴와 Next Up 오버레이의 배경색**을 설정합니다.
@@ -117,7 +117,7 @@ player.setup({
   - 기본값: `"#FFFFFF"`
 
 
-## timeslider
+### timeslider
 
 - **progress** (string)
   - 비디오 시작 지점부터 현재 위치까지 채워진 **타임 슬라이더 바 색상**을 설정합니다.
@@ -130,7 +130,7 @@ player.setup({
   - 기본값: `"rgba(255,255,255,0.3)"`
 
 
-## tooltips
+### tooltips
 
 - **background** (string)
   - 툴팁의 **배경색**을 설정합니다.

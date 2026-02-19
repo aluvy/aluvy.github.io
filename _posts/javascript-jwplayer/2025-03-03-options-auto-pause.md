@@ -9,7 +9,7 @@ mermaid: true
 ---
 
 
-# Auto Pause
+## Auto Pause
 
 (자동 일시정지)
 

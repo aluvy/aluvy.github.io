@@ -22,9 +22,9 @@ mermaid: true
 > 참고: [FAQs](https://docs.jwplayer.com/players/docs/players-enable-casting-and-airplay#faqs) 도 함께 확인하세요.
 {: .prompt-tip}
 
----
 
-## 캐스팅 활성화 방법
+
+### 캐스팅 활성화 방법
 
 플레이어 설정(`setup()`)에 빈 **cast 객체**를 추가합니다.
 
@@ -37,9 +37,9 @@ player.setup({
 });
 ````
 
----
 
-## 커스텀 리시버(Custom Receiver) 사용 시
+
+### 커스텀 리시버(Custom Receiver) 사용 시
 
 커스텀 리시버를 사용하는 경우, **리시버 앱의 식별자(identifier)** 를  
 `cast.appid` 속성에 지정합니다.

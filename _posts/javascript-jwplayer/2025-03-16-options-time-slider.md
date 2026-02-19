@@ -8,7 +8,7 @@ math: true
 mermaid: true
 ---
 
-# Time slider
+## Time slider
 
 이 옵션 블록은 **새로운 타임 슬라이더(time slider)** 를 활성화하며,   
 **슬라이더의 손잡이(thumb 또는 knob)** 표시 여부를 제어할 수 있습니다.

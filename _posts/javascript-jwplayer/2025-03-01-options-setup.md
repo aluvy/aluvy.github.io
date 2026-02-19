@@ -8,11 +8,13 @@ math: true
 mermaid: true
 ---
 
+## Setup Options
+
 아래 옵션들은 **플레이어의 레이아웃과 재생 동작(playback behavior)** 을 설정하는 항목입니다.   
 각 옵션은 플레이어의 **setup 구성 객체**에 직접 포함됩니다.
 
 
-## Appearance
+### Appearance
 
 외관 관련 옵션
 
@@ -100,10 +102,10 @@ mermaid: true
   - 기본값: `640`
 
 
----
 
 
-## Behavior
+
+### Behavior
 
 동작 관련 옵션
 
@@ -201,10 +203,10 @@ mermaid: true
   - 기본값: `false`
 
 
----
 
 
-## Rendering and Loading
+
+### Rendering and Loading
 
 렌더링 및 로딩 관련 옵션
 

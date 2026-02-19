@@ -9,12 +9,12 @@ mermaid: true
 ---
 
 
-# Captions
+## Captions
 
 **Closed Captions Styling**   
 이 옵션 블록은 JWP 웹 및 iOS 플레이어용 자막(Closed Captions) 의 스타일(모양) 을 구성합니다.
 
----
+
 
 **참고할 만한 두 가지 자막 설정 팁**
 1. 자막이 **브라우저에서 렌더링될지, JW Player에서 렌더링될지**를 제어하려면,  
@@ -23,7 +23,7 @@ mermaid: true
 2. **iOS 및 Android**에서는 **FCC(미 연방통신위원회)** 규정에 따라  
    사용자가 **시스템 설정을 통해 자막 스타일을 직접 제어**할 수도 있습니다.
 
----
+
 
 - **backgroundColor** (string)
   - 자막 문자 **배경의 색상**을 16진수(hex)로 지정합니다.

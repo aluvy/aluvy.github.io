@@ -8,7 +8,7 @@ math: true
 mermaid: true
 ---
 
-# Common Media Client Data
+## Common Media Client Data
 
 <sup>8.36.2+</sup>
 
