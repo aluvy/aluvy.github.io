@@ -12,9 +12,8 @@ mermaid: true
 
 이 API 호출은 **현재 미디어의 재생 위치(playback position)** 를 조회하거나 업데이트하는 데 사용됩니다.
 
----
 
-## .on('absolutePositionReady')
+### .on('absolutePositionReady')
 
 `.getAbsolutePosition()` 메서드가 데이터를 반환할 준비가 되었을 때 트리거됩니다.
 
@@ -41,9 +40,9 @@ mermaid: true
   - 수신 중인 이벤트의 식별자
   - 이 이벤트의 경우 항상 `"absolutePositionReady"`
 
----
 
-## .on('seek')
+
+### .on('seek')
 
 컨트롤 바에서 **스크럽(scrubbing)** 하거나 **API를 통해 탐색(seek)** 이 요청되었을 때 트리거됩니다.
 
@@ -101,9 +100,9 @@ mermaid: true
 > 따라서 실제로 탐색되는 위치는 **요청된 위치와 다를 수 있습니다.**
 {: .prompt-tip}
 
----
 
-## .on('seeked')
+
+### .on('seeked')
 
 `on('seek')` 이벤트가 **탐색 동작이 발생할 때** 트리거되는 것과 달리,  
 이 이벤트는 **탐색이 완료되어 비디오 위치가 실제로 변경된 후** 트리거됩니다.
@@ -118,9 +117,9 @@ mermaid: true
   - 수신 중인 이벤트의 식별자
   - 이 이벤트의 경우 항상 `"seeked"`
 
----
 
-## .on('time')
+
+### .on('time')
 
 플레이어가 재생 중일 때 **재생 위치가 업데이트될 때마다** 트리거됩니다.  
 이 이벤트는 **초당 최대 10회까지** 발생할 수 있습니다.

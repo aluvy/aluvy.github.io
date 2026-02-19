@@ -1,5 +1,5 @@
 ---
-title: "[JWPlayer] Events - Setup"
+title: "[JWPlayer] Events - Setup, All"
 date: 2025-03-17 08:00:00 +0900
 categories: [JavaScript, JWPlayer]
 tags: []
@@ -21,13 +21,13 @@ mermaid: true
 
 ---
 
-## SETUP
+## SETUP Events
 
 - **Setup Events**   
   이 API 호출은 **플레이어를 생성하고 설정 정보를 제공**하는 데 사용됩니다.
 
 
-## .on('ready')
+### .on('ready')
 
 플레이어가 초기화되어 **재생 준비가 완료되었을 때** 발생합니다.   
 이 시점이 **가장 빠르게 API 호출을 수행할 수 있는 시점**입니다.
@@ -45,16 +45,16 @@ mermaid: true
 - **viewable** (number)
   - 플레이어가 현재 **화면에 보이는 상태인지 여부**
 
----
 
-## .on('remove')
+
+### .on('remove')
 
 `jwplayer().remove()`를 통해 **플레이어가 페이지에서 제거될 때** 트리거됩니다.   
 반환되는 값은 없습니다.
 
----
 
-## .on('setupError')
+
+### .on('setupError')
 
 플레이어를 **정상적으로 설정할 수 없을 때** 발생합니다.
 
@@ -79,3 +79,18 @@ mermaid: true
 
 - **type** (string)
   - 오류 또는 경고의 카테고리 (이 이벤트의 경우 항상 `"setupError"`)
+
+
+
+---
+
+
+## ALL Events
+
+
+### .on('all')
+
+이 단일 API 호출은 **플레이어의 API에서 발생하는 모든 이벤트를 수집**하는 데 사용할 수 있습니다.
+
+> 이 호출은 **매우 많은 양의 정보를 출력**하므로, 장시간 사용 시 **브라우저 성능이 저하될 수 있습니다.**
+{: .prompt-tip}

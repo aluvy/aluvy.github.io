@@ -1,6 +1,6 @@
 ---
 title: "[JWPlayer] Events - Advertising"
-date: 2025-03-19 08:00:00 +0900
+date: 2025-03-18 08:00:00 +0900
 categories: [JavaScript, JWPlayer]
 tags: []
 render_with_liquid: false
