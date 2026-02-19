@@ -180,7 +180,7 @@ player.setup({
 **플레이리스트 광고 스케줄(playlist ad schedule)은 다음 중 하나의 데이터 유형으로 정의할 수 있습니다:**
 
 - 광고 태그(ad tag)의 URL을 참조하는 [문자열(string)](https://docs.jwplayer.com/players/reference/playlists#playlistadschedule-1)
-- 여러 개의 광고 구간 객체(ad break objects)를 포함하는 [배열(array)](<(https://docs.jwplayer.com/players/reference/playlists#playlistadschedule-2)>)
+- 여러 개의 광고 구간 객체(ad break objects)를 포함하는 [배열(array)](https://docs.jwplayer.com/players/reference/playlists#playlistadschedule-2)
 
 
 ### playlist.adschedule
