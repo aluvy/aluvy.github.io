@@ -1,8 +1,8 @@
 ---
 title: "[Refactoring] Refactoring"
 date: 2022-08-07 17:09:00 +0900
-categories: [JavaScript, Refactoring]
-tags: [refactoring]
+categories: [Study, Refactoring]
+tags: []
 render_with_liquid: false
 math: true
 mermaid: true

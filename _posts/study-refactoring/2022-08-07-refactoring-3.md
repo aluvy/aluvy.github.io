@@ -1,8 +1,8 @@
 ---
 title: "[Refactoring] 3장 코드에서 나는 악취"
 date: 2022-08-07 18:41:00 +0900
-categories: [JavaScript, Refactoring]
-tags: [refactoring]
+categories: [Study, Refactoring]
+tags: []
 render_with_liquid: false
 math: true
 mermaid: true
