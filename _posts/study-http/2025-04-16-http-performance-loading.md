@@ -1,7 +1,7 @@
 ---
 title: "[HTTP] 06. 성능 - 16장. 로딩 최적화"
 date: 2025-04-16 15:37:00 +0900
-categories: [HTTP]
+categories: [Study, HTTP]
 tags: []
 render_with_liquid: false
 math: true

@@ -1,7 +1,7 @@
 ---
-title: "[HTTP] 04. 추가 프로토콜 - 9장. 폴링"
-date: 2025-04-09 15:37:00 +0900
-categories: [HTTP]
+title: "[HTTP] 04. 추가 프로토콜 - 11장. SSE"
+date: 2025-04-11 15:37:00 +0900
+categories: [Study, HTTP]
 tags: []
 render_with_liquid: false
 math: true
@@ -24,53 +24,70 @@ mermaid: true
 
 ---
 
-## 9장. 폴링
-
-- 클라이언트가 서버에게 지속적으로 HTTP 요청을 보낸다.
-- polling (당기다)
-- 서버 자원이 민감한 환경에서는 이 기법을 신중하게 다뤄야 한다.
+## 11장. SSE
+- SSE(Server Sent Event, HTML5) 서버가 클라이언트로 메시지를 전달하는 프로토콜
+- <https://developer.mozilla.org/ko/docs/Web/API/Server-sent_events/Using_server-sent_events#필드>
+- <https://ko.javascript.info/server-sent-events>
 
 ````shell
-$ curl http://localhost:3000/poll -v
+< Content-Type: text/event-stream
+<
+data: Hello
+
+data: Hello again
+````
+
+### 11-1. 구조
+- 서버가 실시간으로 메시지를 보낸다.
+- 리소스를 효율적으로 사용할 수 있다.
+- 비유: 새 소식이 오면 알려주세요.
+
+
+### 11-2. 서버 구현
+- 클라이언트 대기열 준비
+- 알림 구독 기능
+- 채팅 메시지 추가 기능
+
+````shell
+$ curl http://localhost:3000/subscribe -v
+
+$ curl http://localhost:3000/update ^
+--header "Content-Type: application:json" ^
+--data "{\"text\": \"hello\"}" -v
 ````
 
 
-
-### 9-1. 구조
-- 지속적인 요청으로 서버와 연결을 유지한다.
-- 네트워크 대역폭과 서버 자원을 낭비할 수 있다.
-- 비유: 새로운 소식이 있나요?
+### 11-3. 클라이언트 구현
+- EventSource
+- 수신한 메시지 출력
 
 
-### 9-2. 서버 구현
-- 채팅 어플리케이션 제작
-- 채팅 메시지 조회 기능
-- 채팅 메시지 전송 기능
 
+### 11-4. 재연결
+- EventSource 객체는 서버와 연결이 끊기면 자동으로 다시 연결
+  - 시간 간격 커스텀 가능: retry로 설정
+- 이전에 받은 메시지가 있다면 last-event-id 헤더에 값을 실어서 보낸다.
 
-### 9-3. 클라이언트 구현
-- 지속적으로 요청을 생성
-  - setTimeout
-- 수신한 메시지를 출력
-
-````shell
-curl -v -X POST http://localhost:3000/update ^
-  -H "Content-Type: application/json" ^
-  --data "{\"text\":\"hello\"}"
+````js
+waitingClient.write(
+  [
+    `retry: 10000\n`,
+    `id: ${message.timestamp}\n`, // last event id
+    `data: ${message}\n\n`, // 개행
+  ].join('')
+);
 ````
 
 
-### 9-4. 중간정리
-
-- HTTP 연결을 유지하기 위해 주기적으로 요쳥을 만드는 기법
-- 특징: 단순한 구현
-- 주의사항 1: 네트웍과 서버 자원을 낭비할 수 있다.
-- 주의사항 2: 지연 시간 (실시간성 저하)
+### 11-5. 중간 정리
+- 클라이언트와 서버 연결 유지 및 '실시간' 메시지 전송 기법
+- EventSource
+- 특징: 실시간 알림을 위한 프로토콜
+- 주의사항: 단방향 메시지
 
 
 ### 참고
-
-- [롱 폴링 \| JAVASCRIPT.INFO](https://ko.javascript.info/long-polling)
+- [Server Sent Events \| JAVASCRIPT.INFO](https://ko.javascript.info/server-sent-events)
 
 
 -----
@@ -78,7 +95,7 @@ curl -v -X POST http://localhost:3000/update ^
 
 ## 예제
 **파일구조**
-- /ch09
+- /ch11
   - public
     - favicon.ico
     - index.html
@@ -89,20 +106,11 @@ curl -v -X POST http://localhost:3000/update ^
   - server.js
 
 ````js
-const pollServer = async () => {
-  const INTERVAL_MS = 5000;
-
-  const response = await fetch('/poll');
-
-  if (response.status === 204) {
-    setTimeout(pollServer, INTERVAL_MS);
-    return;
-  }
-
-  const message = await response.json();
-  render(message);
-
-  setTimeout(pollServer, INTERVAL_MS);
+const subscribe = () => {
+  const eventSource = new EventSource('/subscribe'); // eventSource 객체
+  eventSource.addEventListener('message', (event) => {
+    render(JSON.parse(event.data));
+  });
 };
 
 const render = (message) => {
@@ -114,12 +122,12 @@ const render = (message) => {
 };
 
 const init = () => {
-  pollServer();
+  subscribe();
 };
 
 document.addEventListener('DOMContentLoaded', init);
 ````
-{: file="/ch09/public/script.js"}
+{: file="/ch11/public/script.js"}
 
 ````js
 class Message {
@@ -138,7 +146,7 @@ class Message {
 
 module.exports = Message;
 ````
-{: file="/ch09/shared/message.js"}
+{: file="/ch11/shared/message.js"}
 
 ````js
 const fs = require('fs');
@@ -197,7 +205,7 @@ const serveStatic = (root) => {
 
 module.exports = serveStatic;
 ````
-{: file="/ch09/shared/serve-static.js"}
+{: file="/ch11/shared/serve-static.js"}
 
 ````js
 const http = require('http');
@@ -205,23 +213,23 @@ const path = require('path');
 const static = require('./shared/serve-static');
 const Message = require('./shared/message');
 
+let waitingClients = [];
 let message = null;
 
-const poll = (req, res) => {
-  if (!message) {
-    res.statusCode = 204; // 204: no content
-    res.end();
-    return;
-  }
+const subscribe = (req, res) => {
+  const lastEventId = req.headers['last-event-id'];
+  console.log('lastEventId', lastEventId);
 
-  res.setHeader('Content-Type', 'application/json');
-  res.write(`${message}\n`); // 본문
-  res.end(); // 종료
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.write('\n');
 
-  message = null;
+  waitingClients.push(res);
+
+  req.on('close', () => {
+    waitingClients = waitingClients.filter((client) => client !== res);
+  });
 };
 
-// (POST) 클라이언트 -> 서버
 const update = (req, res) => {
   let body = '';
 
@@ -234,28 +242,33 @@ const update = (req, res) => {
 
     if (!text) {
       res.statusCode = 400;
-      res.setHeader('content-type', 'application/json');
-      res.write(
-        JSON.stringify({
-          error: 'text 필드를 채워주세요',
-        })
-      );
+      res.setHeader('Content-Type', 'application/json');
+      res.write(JSON.stringify({ error: 'text 필드를 채워주세요' }));
       res.end();
       return;
     }
 
     message = new Message(text);
 
-    res.setHeader('content-type', 'application/json');
-    res.write(JSON.stringify(`${message}`));
+    for (const waitingClient of waitingClients) {
+      waitingClient.write(
+        [
+          `retry: 10000\n`,
+          `id: ${message.timestamp}\n`, // last event id
+          `data: ${message}\n\n`, // 개행
+        ].join('')
+      );
+    }
+
+    res.write(`${message}`);
     res.end();
   });
 };
 
 const handler = (req, res) => {
-  const { pathname } = new URL(req.url, `https://${req.headers.host}`);
+  const { pathname } = new URL(req.url, `http://${req.headers.host}`);
 
-  if (pathname === '/poll') return poll(req, res);
+  if (pathname === '/subscribe') return subscribe(req, res);
   if (pathname === '/update') return update(req, res);
 
   static(path.join(__dirname, 'public'))(req, res);
@@ -264,5 +277,6 @@ const handler = (req, res) => {
 const server = http.createServer(handler);
 server.listen(3000, () => console.log('server is running ::3000'));
 ````
-{: file="/ch09/server.js"}
+{: file="/ch11/server.js"}
+
 

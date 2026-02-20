@@ -1,7 +1,7 @@
 ---
 title: "[HTTP] 01. HTTP 기본 - 2장. HTTP 메세지"
 date: 2025-04-02 15:37:00 +0900
-categories: [HTTP]
+categories: [Study, HTTP]
 tags: []
 render_with_liquid: false
 math: true

@@ -1,7 +1,7 @@
 ---
 title: "[HTTP] 04. 추가 프로토콜 - 12장. 웹 소켓"
 date: 2025-04-12 15:37:00 +0900
-categories: [HTTP]
+categories: [Study, HTTP]
 tags: []
 render_with_liquid: false
 math: true

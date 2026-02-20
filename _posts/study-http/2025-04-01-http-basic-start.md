@@ -1,7 +1,7 @@
 ---
 title: "[HTTP] 01. HTTP 기본 - 1장. HTTP 시작"
 date: 2025-04-01 15:37:00 +0900
-categories: [HTTP]
+categories: [Study, HTTP]
 tags: []
 render_with_liquid: false
 math: true

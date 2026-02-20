@@ -1,7 +1,7 @@
 ---
 title: "[HTTP] 05. 보안 - 13장. 브라우저 보안"
 date: 2025-04-13 15:37:00 +0900
-categories: [HTTP]
+categories: [Study, HTTP]
 tags: []
 render_with_liquid: false
 math: true

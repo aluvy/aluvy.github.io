@@ -1,7 +1,7 @@
 ---
 title: "[HTTP] 03. AJAX - 7장. 진행율과 취소"
 date: 2025-04-07 15:37:00 +0900
-categories: [HTTP]
+categories: [Study, HTTP]
 tags: []
 render_with_liquid: false
 math: true

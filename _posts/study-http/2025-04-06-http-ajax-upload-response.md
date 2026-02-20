@@ -1,7 +1,7 @@
 ---
 title: "[HTTP] 03. AJAX - 6장. 업로드와 응답"
 date: 2025-04-06 15:37:00 +0900
-categories: [HTTP]
+categories: [Study, HTTP]
 tags: []
 render_with_liquid: false
 math: true

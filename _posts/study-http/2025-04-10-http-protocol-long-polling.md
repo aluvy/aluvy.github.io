@@ -1,7 +1,7 @@
 ---
 title: "[HTTP] 04. 추가 프로토콜 - 10장. 롱 폴링"
 date: 2025-04-10 15:37:00 +0900
-categories: [HTTP]
+categories: [Study, HTTP]
 tags: []
 render_with_liquid: false
 math: true

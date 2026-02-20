@@ -1,7 +1,7 @@
 ---
 title: "[HTTP] 06. 성능 - 17장. 캐싱"
 date: 2025-04-17 15:37:00 +0900
-categories: [HTTP]
+categories: [Study, HTTP]
 tags: []
 render_with_liquid: false
 math: true
