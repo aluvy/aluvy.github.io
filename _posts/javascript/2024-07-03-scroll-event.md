@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] scroll event 제어"
 date: 2024-07-03 09:31:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

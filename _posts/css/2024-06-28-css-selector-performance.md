@@ -1,7 +1,7 @@
 ---
 title: "[CSS] 브라우저가 css 셀렉터를 해석하는 방법과 성능 향상 방법"
 date: 2024-06-28 10:23:00 +0900
-categories: [CSS]
+categories: [CSS, CSS-basic]
 tags: []
 render_with_liquid: false
 math: true

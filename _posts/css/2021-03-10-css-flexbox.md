@@ -1,7 +1,7 @@
 ---
 title: "[CSS] Flexbox"
 date: 2021-03-10 16:37:00 +0900
-categories: [CSS]
+categories: [CSS, CSS-basic]
 tags: []
 render_with_liquid: false
 math: true

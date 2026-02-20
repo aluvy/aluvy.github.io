@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] 모바일 디바이스 체크"
 date: 2022-12-12 17:52:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

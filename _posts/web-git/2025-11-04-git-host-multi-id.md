@@ -1,7 +1,7 @@
 ---
 title: "[Git] Host로 아이디2개 사용"
 date: 2025-02-03 17:24:00 +0900
-categories: [git]
+categories: [Git]
 tags: []
 render_with_liquid: false
 math: true

@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] 객체 (Object)"
 date: 2021-11-02 19:22:00 +0900
-categories: [JavaScript, basic]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

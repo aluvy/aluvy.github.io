@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] RegExp, 정규표현식"
 date: 2023-05-31 08:49:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

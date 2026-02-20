@@ -1,7 +1,7 @@
 ---
 title: "[CSS] Media Queries Breakpoints For Responsive Design In 2023"
 date: 2023-11-01 17:06:00 +0900
-categories: [CSS]
+categories: [CSS, CSS-basic]
 tags: []
 render_with_liquid: false
 math: true

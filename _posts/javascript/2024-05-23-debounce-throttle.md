@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] Debounce & Throttle"
 date: 2024-05-23 15:09:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

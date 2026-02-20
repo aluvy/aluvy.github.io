@@ -1,7 +1,7 @@
 ---
 title: "스크롤시 엘리먼트에 애니메이션 추가하기"
 date: 2022-05-20 18:06:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

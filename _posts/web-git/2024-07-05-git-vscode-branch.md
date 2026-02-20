@@ -1,7 +1,7 @@
 ---
 title: "[Git] 맥 vscode 터미널에 git 현재 branch 표시하기"
 date: 2024-07-05 19:59:00 +0900
-categories: [git]
+categories: [Git]
 tags: []
 render_with_liquid: false
 math: true

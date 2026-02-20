@@ -1,7 +1,7 @@
 ---
 title: "웹, 앱 체크 navigator.userAgent"
 date: 2023-04-06 22:36:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

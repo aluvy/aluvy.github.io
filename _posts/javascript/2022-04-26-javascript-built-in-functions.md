@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] ES6 배열 내장 함수"
 date: 2022-04-26 10:09:00 +0900
-categories: [JavaScript, basic]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

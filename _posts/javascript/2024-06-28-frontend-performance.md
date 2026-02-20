@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] 프론트엔드 성능 최적화"
 date: 2024-06-28 10:24:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

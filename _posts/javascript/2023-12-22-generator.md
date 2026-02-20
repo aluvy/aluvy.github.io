@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] 제너레이터 - 이터레이터 강화판"
 date: 2023-12-22 15:55:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

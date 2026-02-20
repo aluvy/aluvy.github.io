@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] images Loaded"
 date: 2024-05-29 14:44:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

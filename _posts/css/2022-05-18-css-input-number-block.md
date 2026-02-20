@@ -1,7 +1,7 @@
 ---
 title: "input[type='number'] 화살표 및 키보드 막기"
 date: 2022-05-18 11:38:00 +0900
-categories: [CSS]
+categories: [CSS, CSS-basic]
 tags: []
 render_with_liquid: false
 math: true

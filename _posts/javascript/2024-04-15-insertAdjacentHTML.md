@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] Element: insertAdjacentHTML()"
 date: 2024-04-15 10:50:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

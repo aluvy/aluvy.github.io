@@ -1,7 +1,7 @@
 ---
 title: "[CSS] 세로쓰기 모드 writing-mode, 글자 타이핑 효과"
 date: 2022-03-18 12:44:00 +0900
-categories: [CSS]
+categories: [CSS, CSS-basic]
 tags: []
 render_with_liquid: false
 math: true

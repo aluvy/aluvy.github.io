@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] Execution Context (실행 컨텍스트)"
 date: 2023-12-27 22:03:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] 단축평가 논리연산자 && ||, null병합 ??, 옵셔널체이닝 ?"
 date: 2024-04-15 17:03:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

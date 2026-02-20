@@ -1,7 +1,7 @@
 ---
 title: "SVG 도넛차트"
 date: 2022-12-05 21:40:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

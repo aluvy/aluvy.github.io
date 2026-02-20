@@ -1,7 +1,7 @@
 ---
 title: "[CSS] 디자인 시스템 만들기: breakpoint"
 date: 2024-07-12 13:01:00 +0900
-categories: [CSS]
+categories: [CSS, CSS-basic]
 tags: []
 render_with_liquid: false
 math: true

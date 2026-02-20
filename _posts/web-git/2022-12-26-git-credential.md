@@ -1,7 +1,7 @@
 ---
 title: "Git pull/push 시 Password 물어보지 않도록 설정하기(credential.helper)"
 date: 2022-12-26 15:17:00 +0900
-categories: [WEB]
+categories: [Git]
 tags: []
 render_with_liquid: false
 math: true

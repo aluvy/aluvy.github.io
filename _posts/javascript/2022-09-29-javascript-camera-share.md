@@ -1,7 +1,7 @@
 ---
 title: "아이폰 카메라, 공유하기 버튼"
 date: 2022-09-29 18:17:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

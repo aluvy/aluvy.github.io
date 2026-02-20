@@ -1,7 +1,7 @@
 ---
 title: "스크롤 방향에 따른 네비게이션 보이기, 감추기"
 date: 2022-06-02 14:53:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

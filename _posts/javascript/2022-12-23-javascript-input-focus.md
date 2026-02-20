@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] input 글자수 입력 후 다음 칸에 focus"
 date: 2022-12-23 13:46:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

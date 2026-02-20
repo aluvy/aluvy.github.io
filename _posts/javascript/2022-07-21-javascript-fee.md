@@ -1,7 +1,7 @@
 ---
 title: "수수료 포함한 금액 계산법 /1.1"
 date: 2022-07-21 09:50:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

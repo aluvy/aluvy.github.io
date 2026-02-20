@@ -1,7 +1,7 @@
 ---
 title: "input type number를 비밀번호로 표시하기, 모바일 숫자키패드"
 date: 2022-08-17 18:32:00 +0900
-categories: [CSS]
+categories: [CSS, CSS-basic]
 tags: []
 render_with_liquid: false
 math: true

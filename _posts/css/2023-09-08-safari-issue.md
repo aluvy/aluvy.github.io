@@ -1,7 +1,7 @@
 ---
 title: "[이슈][CSS] 사파리 overflow:hidden + border-radius 관련 이슈 해결법"
 date: 2023-09-08 15:18:00 +0900
-categories: [CSS]
+categories: [CSS, CSS-basic]
 tags: []
 render_with_liquid: false
 math: true

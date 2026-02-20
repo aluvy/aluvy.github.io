@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] RegExp, 정규식을 이용한 input replace 유효성 체크"
 date: 2023-05-31 08:50:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

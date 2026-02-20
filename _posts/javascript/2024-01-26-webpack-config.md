@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] webpack.config.js"
 date: 2024-01-26 13:48:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

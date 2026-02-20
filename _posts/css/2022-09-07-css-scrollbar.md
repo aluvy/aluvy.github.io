@@ -1,7 +1,7 @@
 ---
 title: "[CSS] scrollbar webkit"
 date: 2022-09-07 12:03:00 +0900
-categories: [CSS]
+categories: [CSS, CSS-basic]
 tags: []
 render_with_liquid: false
 math: true

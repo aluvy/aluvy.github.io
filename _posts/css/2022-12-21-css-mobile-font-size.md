@@ -1,7 +1,7 @@
 ---
 title: "[CSS] mobile font size"
 date: 2022-12-21 11:34:00 +0900
-categories: [CSS]
+categories: [CSS, CSS-basic]
 tags: []
 render_with_liquid: false
 math: true

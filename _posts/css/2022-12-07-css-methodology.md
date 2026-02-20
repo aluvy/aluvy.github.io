@@ -1,7 +1,7 @@
 ---
 title: "[CSS] 방법론"
 date: 2022-12-07 17:20:00 +0900
-categories: [CSS]
+categories: [CSS, CSS-basic]
 tags: []
 render_with_liquid: false
 math: true

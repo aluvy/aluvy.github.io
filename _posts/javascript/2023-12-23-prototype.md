@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] Prototype, Prototype Chain"
 date: 2023-12-23 20:55:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

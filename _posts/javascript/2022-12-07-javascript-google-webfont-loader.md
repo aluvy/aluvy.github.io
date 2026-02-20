@@ -1,7 +1,7 @@
 ---
 title: "google webFont loader"
 date: 2022-12-07 17:19:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

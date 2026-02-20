@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] forEach와 Promise.all"
 date: 2025-02-05 22:02:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

@@ -1,7 +1,7 @@
 ---
 title: "URLSearchParams, javascript url 파라미터 가져오기"
 date: 2022-06-27 15:59:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true

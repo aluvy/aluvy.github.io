@@ -1,7 +1,7 @@
 ---
 title: "[CSS] backdrop-filter"
 date: 2024-04-25 15:40:00 +0900
-categories: [CSS]
+categories: [CSS, CSS-basic]
 tags: []
 render_with_liquid: false
 math: true

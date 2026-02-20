@@ -1,7 +1,7 @@
 ---
 title: "iOS input focus, buffer"
 date: 2024-06-12 21:02:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true
