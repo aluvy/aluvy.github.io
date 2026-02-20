@@ -1,6 +1,6 @@
 ---
 title: "[JWPlayer] Events - Audio Tracks"
-date: 2025-03-19 08:00:00 +0900
+date: 2025-03-13 08:00:00 +0900
 categories: [JavaScript, JWPlayer]
 tags: []
 render_with_liquid: false

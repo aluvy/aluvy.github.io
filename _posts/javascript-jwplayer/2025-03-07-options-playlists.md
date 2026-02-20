@@ -1,6 +1,6 @@
 ---
 title: "[JWPlayer] Options - Playlists"
-date: 2025-03-13 08:00:00 +0900
+date: 2025-03-07 08:00:00 +0900
 categories: [JavaScript, JWPlayer]
 tags: []
 render_with_liquid: false

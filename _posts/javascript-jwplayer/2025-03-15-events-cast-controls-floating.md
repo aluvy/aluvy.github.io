@@ -1,6 +1,6 @@
 ---
 title: "[JWPlayer] Events - Cast, Controls, Floating"
-date: 2025-03-21 08:00:00 +0900
+date: 2025-03-15 08:00:00 +0900
 categories: [JavaScript, JWPlayer]
 tags: []
 render_with_liquid: false
