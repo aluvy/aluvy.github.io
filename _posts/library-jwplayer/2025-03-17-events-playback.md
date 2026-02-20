@@ -1,7 +1,7 @@
 ---
 title: "[JWPlayer] Events - Playback"
 date: 2025-03-17 08:00:00 +0900
-categories: [JavaScript, JWPlayer]
+categories: [Library, JWPlayer]
 tags: []
 render_with_liquid: false
 math: true

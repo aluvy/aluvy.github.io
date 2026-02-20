@@ -1,7 +1,7 @@
 ---
 title: "[GSAP] timeline"
 date: 2024-03-20 22:00:00 +0900
-categories: [JavaScript, GSAP]
+categories: [Library, GSAP]
 tags: []
 render_with_liquid: false
 math: true

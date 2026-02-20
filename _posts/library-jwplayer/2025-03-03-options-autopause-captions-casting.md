@@ -1,7 +1,7 @@
 ---
 title: "[JWPlayer] Options - Auto Pause, Captions, Casting, Common Media Client Data, Do Not Save Cookies"
 date: 2025-03-03 08:00:00 +0900
-categories: [JavaScript, JWPlayer]
+categories: [Library, JWPlayer]
 tags: []
 render_with_liquid: false
 math: true
