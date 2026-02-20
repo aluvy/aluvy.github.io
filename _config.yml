@@ -16,7 +16,7 @@ timezone: Asia/Seoul
 
 title: aluvy # the main title
 
-tagline: OMG... I have nothing to say # it will display as the subtitle
+tagline: study work code coding # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
