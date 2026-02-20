@@ -1,7 +1,7 @@
 ---
 title: "[JavaScript] history API로 SPA 구현"
 date: 2024-06-24 19:40:00 +0900
-categories: [JavaScript]
+categories: [JavaScript, JavaScript-basic]
 tags: []
 render_with_liquid: false
 math: true
