@@ -1,6 +1,6 @@
 ---
 title: "[HTTP] 03. AJAX - 8장. 라이브러리"
-date: 2025-04-06 15:37:00 +0900
+date: 2025-04-08 15:37:00 +0900
 categories: [HTTP]
 tags: []
 render_with_liquid: false
