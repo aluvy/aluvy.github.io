@@ -1,5 +1,5 @@
 ---
-title: "[HTTP] 01. HTTP 기본"
+title: "[HTTP] 01. HTTP 기본 - 1장. HTTP 시작"
 date: 2025-04-01 15:37:00 +0900
 categories: [HTTP]
 tags: []
@@ -8,8 +8,10 @@ math: true
 mermaid: true
 ---
 
-🔗 <https://github.com/jeonghwan-kim/lecture-http>
-🔗 <https://jeonghwan-kim.github.io/2024/07/07/lecture-http-part1>
+# 01. HTTP 기본
+
+- 🔗 <https://github.com/jeonghwan-kim/lecture-http>
+- 🔗 <https://jeonghwan-kim.github.io/2024/07/07/lecture-http-part1>
 
 
 - 1장. HTTP 시작: 웹의 탄생 배경과 역사에 대해 알 수 있다.
@@ -108,6 +110,20 @@ $ node ch 01/my-server
 
 
 
+### 1.5 중간 정리
+
+- HTTP의 초기 버전을 직접 만들면서 이해했습니다.
+- 이후에 http 프로토콜은 여러 버전으로 진화했습니다.
+- 수업에서 사용할 도구 cURL을 소개했습니다.
+
+
+### 참고
+- [HTTP의 진화 | MDN](https://developer.mozilla.org/ko/docs/Web/HTTP/Guides/Evolution_of_HTTP)
+- [WorldWideWeb](https://worldwideweb.cern.ch/browser/)
+- [cURL \| 김정환블로그](https://jeonghwan-kim.github.io/2023/12/03/curl)
+
+
+
 ----------------
 
 ## 예제
@@ -115,7 +131,7 @@ $ node ch 01/my-server
 ### my-server
 
 **퍄일구조**
-- /my-server
+- /ch01/my-server
   - public
     - ch01.txt
     - ch02.txt
@@ -177,7 +193,7 @@ Chapter 2. Web Browser
 ### my-client
 
 **파일구조**
-- /my-client
+- /ch01/my-client
   - index.js
 
 
