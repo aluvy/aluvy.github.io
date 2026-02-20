@@ -198,7 +198,7 @@ responsive: {
 }
 ````
 
-가장 편리한 옵션 중 하나는 [chart.className]() 으로, Highcharts [styled mode]() 에서 다른 모든 요소의 스타일을 제어하는 데 사용할 수 있습니다.
+가장 편리한 옵션 중 하나는 [chart.className](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/responsive/classname/) 으로, Highcharts [styled mode](https://www.highcharts.com/docs/chart-design-and-style/style-by-css) 에서 다른 모든 요소의 스타일을 제어하는 데 사용할 수 있습니다.
 
 일반적으로 반응형 설정을 통해 차트의 모든 측면에 대해 크기에 따른 설정을 정의할 수 있습니다. 대표적인 활용 사례로는 [범례 이동](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/responsive/legend/) 이나 [축이 차지하는 공간](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/responsive/axis/) 조정 등이 있습니다.   
 반응형은 [스톡 차트(stock charts)](https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/stock/demo/responsive/) 와 같이 많은 그래픽 요소가 있는 차트에서도 매우 유용한 개념입니다.
