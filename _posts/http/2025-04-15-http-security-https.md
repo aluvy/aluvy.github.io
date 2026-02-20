@@ -254,3 +254,43 @@ how to fix it, please visit the webpage mentioned above.
 ### 참고
 - HTTP 완벽 가이드 > 14장 보안 \| 인사이트
 - 리얼월드 HTTP \| 한빛미디어
+
+
+
+-----
+
+
+## 예제
+**파일구조**
+- /ch15
+  - encrypted
+  - google.crt
+  - message.txt
+  - private_key.pem
+  - public_key.pem
+  - server.sert
+  - server.csr
+  - server.js
+  - server.key
+
+````js
+const https = require('https'); // https 모듈
+const fs = require('fs');
+const path = require('path');
+
+const options = {
+  // 디지털 인증서
+  key: fs.readFileSync(path.join(__dirname, './server.key')), // 키
+  cert: fs.readFileSync(path.join(__dirname, './server.cert')), // 인증서
+};
+
+const handler = (req, res) => {
+  res.write('Hello\n');
+  res.end();
+};
+
+const server = https.createServer(options, handler);
+server.listen(3000, () => console.log('server is running ::3000'));
+````
+{: file="/ch15/server.js"}
+
