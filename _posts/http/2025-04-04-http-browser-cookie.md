@@ -1,6 +1,6 @@
 ---
 title: "[HTTP] 02. 브라우저 - 4장. 쿠키"
-date: 2025-04-03 15:37:00 +0900
+date: 2025-04-04 15:37:00 +0900
 categories: [HTTP]
 tags: []
 render_with_liquid: false

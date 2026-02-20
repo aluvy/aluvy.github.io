@@ -1,6 +1,6 @@
 ---
 title: "[HTTP] 02. 브라우저 - 5장. 네트워크 요청"
-date: 2025-04-03 15:37:00 +0900
+date: 2025-04-05 15:37:00 +0900
 categories: [HTTP]
 tags: []
 render_with_liquid: false
