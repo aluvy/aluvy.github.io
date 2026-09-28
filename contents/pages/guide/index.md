@@ -13,7 +13,7 @@ thumbnail: './cover.png'
 
 ### 1. 레포지토리 클론
 
-The51DTSet.github.io 레포지토리를 클론한다.
+aluvy.github.io 레포지토리를 클론한다.
 
 ### 2. 브랜치 생성
 
@@ -65,7 +65,7 @@ thumbnail: './cover.jpg'
 ### 5. 포스팅 작성 완료하기
 
 1. 포스팅을 모두 작성한 후에 깃허브에 push 한다.
-2. The51DTSet.github.io 레포지토리의 Pull requests를 진행한다.
+2. aluvy.github.io 레포지토리의 Pull requests를 진행한다.
 3. base 브랜치와 compare 브랜치 선택에 유의하고, Create pull request 버튼을 클릭한다.
   1. base 브랜치가 develop, compare 브랜치가 내가 작업 한 브랜치다.
 4. Open a pull request title과 description 작성 후 Create pull request 버튼을 클릭한다.

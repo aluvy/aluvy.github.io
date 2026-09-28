@@ -31,8 +31,8 @@ const Seo: FunctionComponent<SeoProps> = ({
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
-    <meta name="twitter:site" content="@the51dtset" />
-    <meta name="twitter:creator" content="@the51dtset" />
+    <meta name="twitter:site" content="@aluvy" />
+    <meta name="twitter:creator" content="@aluvy" />
   </>
 )
 

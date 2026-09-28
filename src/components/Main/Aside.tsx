@@ -90,7 +90,7 @@ const Aside: FunctionComponent<AsideProps> = function ({
         <div className="aside-foot">
           <div className="foot-links">
             <a
-              href="https://github.com/The51DTSet"
+              href="https://github.com/aluvy"
               target="_blank"
               className="foot-links-item"
             >

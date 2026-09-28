@@ -9,11 +9,11 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `The51X DT Center Set Team | BLOG`,
-    sitename: `The51X DT`, // 모바일에서 표시되는 topbar 타이틀
-    description: `The51X DT Center Set Team BLOG`,
-    author: `@The51XDTSet`,
-    siteUrl: `https://The51DTSet.github.io`,
+    title: `aluvy | BLOG`,
+    sitename: `aluvy`, // 모바일에서 표시되는 topbar 타이틀
+    description: `aluvy BLOG`,
+    author: `@aluvy`,
+    siteUrl: `https://aluvy.github.io`,
   },
   plugins: [
     {
@@ -88,7 +88,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://The51DTSet.github.io',
+        siteUrl: 'https://aluvy.github.io',
         stripQueryString: true,
       },
     },
