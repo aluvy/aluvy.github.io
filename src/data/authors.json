@@ -1,0 +1,44 @@
+[
+  {
+    "id": "example",
+    "name": "Example Author",
+    "bio": "Frontend Developer @ The51X DT Center Set",
+    "homepage": "https://github.com/example",
+    "photo": "/member/example.png"
+  },
+  {
+    "id": "aluvy",
+    "name": "mioksong",
+    "bio": "Frontend Developer @ The51X DT Center Set",
+    "homepage": "https://github.com/aluvy",
+    "photo": "/member/aluvy.png"
+  },
+  {
+    "id": "sodium",
+    "name": "Kim, Hwijae",
+    "bio": "Frontend Developer @ The51X DT Center Set",
+    "homepage": "https://github.com/HwijaeKim",
+    "photo": "/member/sodium.png"
+  },
+  {
+    "id": "sjhong",
+    "name": "suzyhong",
+    "bio": "Frontend Developer @ The51X DT Center Set",
+    "homepage": "https://github.com/g1azed",
+    "photo": "/member/sjhong.png"
+  },
+  {
+    "id": "BP2974",
+    "name": "100minkyung",
+    "bio": "Frontend Developer @ The51X DT Center Set",
+    "homepage": "https://github.com/BP2974",
+    "photo": "/member/BP2974.png"
+  },
+  {
+    "id": "sseol1112",
+    "name": "sglee",
+    "bio": "Frontend Developer @ The51X DT Center Set",
+    "homepage": "https://github.com/sseol1112",
+    "photo": "/member/sglee.png"
+  }
+]

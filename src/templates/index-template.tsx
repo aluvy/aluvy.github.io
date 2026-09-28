@@ -1,0 +1,66 @@
+import React, { FunctionComponent, ReactNode, useEffect, useState } from 'react'
+
+import { LayoutContext } from 'contexts/LayoutContext'
+import ScrollToTop from 'components/Common/ScrollToTop'
+
+type TemplateProps = {
+  hasSidebar?: boolean
+  children: ReactNode
+}
+
+const Template: FunctionComponent<TemplateProps> = function ({
+  hasSidebar = false,
+  children,
+}) {
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [tocOpen, setTocOpen] = useState(false)
+
+  useEffect(() => {
+    if (searchOpen) {
+      const input = document.getElementById('search-input') as HTMLInputElement
+      // input?.focus()
+      setTimeout(() => input?.focus(), 100)
+    }
+  }, [searchOpen])
+
+  const classList = [
+    hasSidebar ? 'has-sidebar' : '',
+    sidebarOpen ? 'open-sidebar' : '',
+    searchOpen ? 'open-search' : '',
+    tocOpen ? 'open-toc' : '',
+  ]
+    .filter(Boolean)
+    .join(' ')
+
+  return (
+    <LayoutContext.Provider
+      value={{
+        sidebarOpen,
+        searchOpen,
+        tocOpen,
+        toggleSidebar: () => setSidebarOpen(v => !v),
+        closeSidebar: () => setSidebarOpen(false),
+        toggleSearch: () => setSearchOpen(v => !v),
+        closeSearch: () => setSearchOpen(false),
+        toggleToc: () => setTocOpen(v => !v),
+        closeToc: () => setTocOpen(false),
+      }}
+    >
+      <div id="wrap" className={classList}>
+        {children}
+        <div
+          className="aside-mask"
+          onClick={() => {
+            setSidebarOpen(false)
+            setTocOpen(false)
+            setSearchOpen(false)
+          }}
+        ></div>
+      </div>
+      <ScrollToTop />
+    </LayoutContext.Provider>
+  )
+}
+
+export default Template

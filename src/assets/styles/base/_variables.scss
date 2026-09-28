@@ -1,0 +1,90 @@
+@use '../abstracts/mixins' as *;
+
+:root {
+  --bg-primary: #3a6bff;
+  --bg-default: #fff;
+  --bg-sub: #f3f3f3;
+  --bg-table: #fbfcfd;
+
+  --fc-primary: #3a6bff;
+  --fc-default: #34343c;
+  --fc-sub: #757575;
+  --fc-sub2: #aaa;
+  --fc-code: #3f596f; // 텍스트 내 일반 code
+  --fc-success: #2fb075;
+  --fc-warning: #ef9c03;
+  --fc-danger: #ed6767;
+  --fc-pink: #d63384;
+  --fc-marker-success: #e9ff47;
+
+  --bc-primary: #3a6bff;
+  --bc-default: #ddd;
+  --bc-sub: #eee;
+  --bc-link: #dee2e6;
+  --bc-input: #ddd;
+  --bc-input-focus: #999;
+
+  --scrollbar-track: rgba(0, 0, 0, 0.04);
+  --scrollbar-thumb: rgba(0, 0, 0, 0.1);
+
+  // icon
+  --ic-default: #222;
+  --ic-sub: #999;
+  --ic-sub2: #aaa;
+  // --ic-tip: #03b303;
+
+  // layout size
+  --max-width: 1190px;
+  --max-width-md: 768px;
+  --max-width-sm: 1190px;
+
+  --aside-width: 26rem;
+  --wrap-left-padding: 26rem;
+  --rnb-width: 26rem;
+  @include tablet {
+    --wrap-left-padding: 0;
+  }
+
+  // 좌우 여백
+  --side-padding: 4rem;
+  --side-back-margin: -4rem;
+  @include desktop {
+    --side-padding: 2.4rem;
+    --side-back-margin: -2.4rem;
+  }
+  @include tablet {
+    --side-padding: 1.6rem;
+    --side-back-margin: -1.6rem;
+  }
+  // @include mobile {
+  //   --side-padding: 1.2rem;
+  //   --side-back-margin: -1.2rem;
+  // }
+
+  // code block
+  --codeblock-fontfamily: 'Consolas', 'Verdana', 'Apple SD Gothic Neo';
+
+  --codeblock-background: #f6f8fa;
+  --codeblock-border-color: #ececec;
+  --codeblock-radius: 1rem;
+
+  --codeblock-header-text-color: #a3a3a3;
+  --codeblock-header-icon-color: #c9c8c8;
+
+  --codeblock-numbers-line: transparent;
+
+  --codeblock-color: #5e646f;
+  --codeblock-color-muted: #e5e5e5;
+  --codeblock-color-keyword: #b870ce;
+  --codeblock-color-classname: #c95959;
+  --codeblock-color-function: #6587bf;
+  --codeblock-color-number: #db7070;
+  --codeblock-color-attrname: #db7070;
+  --codeblock-color-tag: #db7070;
+  --codeblock-color-comment: #acb2bc;
+  --codeblock-color-operator: #5e646f;
+  --codeblock-color-value: #7c9f4b;
+
+  --codeblock-highlight-background: rgba(44, 81, 193, 0.102);
+  --codeblock-highlight-border: rgba(58, 107, 255, 0.7);
+}

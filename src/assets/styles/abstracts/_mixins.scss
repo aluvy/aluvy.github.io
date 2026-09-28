@@ -1,0 +1,85 @@
+$desktop-lg: 1650px;
+$desktop: 1280px;
+$tablet-lg: 1024px;
+$tablet: 768px;
+$mobile-lg: 480px;
+$mobile: 320px;
+
+@mixin desktop-lg {
+  @media (width <= #{$desktop-lg}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (width <= #{$desktop}) {
+    @content;
+  }
+}
+@mixin tablet-lg {
+  @media (width <= #{$tablet-lg}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (width <= #{$tablet}) {
+    @content;
+  }
+}
+@mixin mobile-lg {
+  @media (width <= #{$mobile-lg}) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (width <= #{$mobile-lg}) {
+    @content;
+  }
+}
+@mixin mobile-sm {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+}
+
+@mixin clamp($line: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+}
+
+@mixin scrollbar($type: round, $size: 4px) {
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+  }
+
+  @if $type == 'round' {
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-track,
+    &::-webkit-scrollbar-thumb {
+      border-radius: $size;
+    }
+  }
+  @content;
+}

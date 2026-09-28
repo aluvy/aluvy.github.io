@@ -1,0 +1,55 @@
+@use '../abstracts/mixins' as *;
+
+.section {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.inner {
+  padding: 0 var(--side-padding);
+}
+
+.cont {
+  & + .cont {
+    margin-top: 2.4rem;
+  }
+}
+
+.row {
+  display: flex;
+}
+
+.col {
+  flex: 1 1 0;
+}
+
+.col-content {
+  flex: 1 1 auto;
+}
+
+.col-rnb {
+  flex: 0 0 var(--rnb-width);
+  align-self: stretch;
+}
+
+.scroll-y {
+  overflow: hidden;
+  overflow-y: auto;
+
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    #000 calc(0% + 1.2rem),
+    #000 calc(100% - 2.2rem),
+    transparent calc(100% - 1rem)
+  );
+
+  @include scrollbar();
+}
+
+.scroll-x {
+  overflow: hidden;
+  overflow-x: auto;
+  @include scrollbar();
+}

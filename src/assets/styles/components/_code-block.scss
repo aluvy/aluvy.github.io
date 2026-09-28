@@ -1,0 +1,219 @@
+@use '../abstracts/mixins' as *;
+
+.post-contents {
+  & > .gatsby-highlight {
+    @include tablet {
+      width: calc(100% + var(--side-padding) * 2);
+      margin-left: var(--side-back-margin);
+      margin-right: var(--side-back-margin);
+      border-radius: 0;
+      border-left: 0 none;
+      border-right: 0 none;
+    }
+  }
+}
+
+.gatsby-highlight {
+  border-radius: var(--codeblock-radius);
+  border: 1px solid var(--codeblock-border-color);
+  background: var(--codeblock-background);
+  padding-bottom: 1.2rem;
+  margin-top: 0.8rem;
+  margin-bottom: 2rem;
+
+  .gatsby-highlight-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.6rem;
+
+    @include tablet {
+      justify-content: flex-start;
+      padding-left: 1.6rem;
+    }
+
+    &::before {
+      position: absolute;
+      left: 1.6rem;
+      content: '';
+      display: inline-block;
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: 50%;
+      background-color: var(--codeblock-color-muted);
+      box-shadow:
+        2rem 0 0 var(--codeblock-color-muted),
+        4rem 0 0 var(--codeblock-color-muted);
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &:has(.gatsby-code-title) {
+      .gatsby-code-language {
+        display: none;
+      }
+    }
+
+    .gatsby-code-language,
+    .gatsby-code-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 86%;
+      color: var(--codeblock-header-text-color);
+      font-weight: 600;
+      user-select: none;
+
+      .svg-inline--fa {
+        color: var(--codeblock-header-icon-color);
+        font-size: 0.9em;
+      }
+    }
+
+    .gatsby-code-copy {
+      position: absolute;
+      right: 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 80%;
+      color: var(--codeblock-header-text-color);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+
+      .svg-inline--fa {
+        color: var(--codeblock-header-icon-color);
+        font-size: 1em;
+      }
+
+      // check 아이콘은 기본 숨김
+      svg:last-child {
+        display: none;
+      }
+
+      &::after {
+        content: 'Copy';
+      }
+
+      &.copied {
+        color: var(--fc-success);
+
+        svg:first-child {
+          display: none;
+        }
+        svg:last-child {
+          display: inline-block;
+        }
+
+        .svg-inline--fa {
+          color: var(--fc-success);
+        }
+
+        &::after {
+          content: 'Copied!';
+        }
+      }
+    }
+  }
+
+  .gatsby-code-body {
+    code[class*='language-'],
+    pre[class*='language-'] {
+      font-family: var(--codeblock-fontfamily);
+      color: var(--codeblock-color);
+      font-size: 1.36rem;
+      line-height: 1.66;
+      text-shadow: none;
+      tab-size: 2;
+    }
+
+    :not(pre) > code[class*='language-'],
+    pre[class*='language-'] {
+      background: var(--codeblock-background);
+    }
+
+    pre[class*='language-'] {
+      padding: 0;
+      margin: 0;
+      overflow-y: hidden;
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+
+    pre[class*='language-'].line-numbers {
+      padding-left: 5.2rem;
+    }
+
+    .gatsby-highlight-code-line {
+      background-color: var(--codeblock-highlight-background);
+      display: block;
+      margin-right: -1em;
+      margin-left: -1em;
+      padding-right: 1em;
+      padding-left: 0.75em;
+      border-left: 0.25em solid var(--codeblock-highlight-border);
+    }
+
+    .line-numbers {
+      .line-numbers-rows {
+        border-right-color: var(--codeblock-numbers-line);
+        padding-left: 1.6rem;
+      }
+    }
+
+    .token.atrule,
+    .token.keyword {
+      color: var(--codeblock-color-keyword);
+    }
+
+    .token.attr-name {
+      color: var(--codeblock-color-attrname);
+    }
+    .token.attr-value {
+      color: var(--codeblock-color-value);
+    }
+
+    .token.function {
+      color: var(--codeblock-color-function);
+    }
+
+    .token.class-name {
+      color: var(--codeblock-color-classname);
+    }
+
+    .token.property,
+    .token.boolean,
+    .token.number,
+    .token.constant,
+    .token.symbol,
+    .token.deleted {
+      color: var(--codeblock-color-number);
+    }
+
+    .token.tag {
+      color: var(--codeblock-color-tag);
+    }
+
+    .token.comment,
+    .token.prolog,
+    .token.doctype,
+    .token.cdata {
+      color: var(--codeblock-color-comment);
+    }
+
+    .token.operator,
+    .token.entity,
+    .token.url,
+    .language-css .token.string,
+    .style .token.string {
+      color: var(--codeblock-color-operator);
+    }
+  }
+}
