@@ -1,9 +1,9 @@
 {
-  "name": "the51x-dt-set",
+  "name": "aluvy",
   "private": true,
-  "description": "The51X DT Center Set Team Blog",
+  "description": "aluvy Blog",
   "version": "0.1.0",
-  "author": "aluvy <oookwork@gmail.com>",
+  "author": "aluvy <hi.songisu@gmail.com>",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",

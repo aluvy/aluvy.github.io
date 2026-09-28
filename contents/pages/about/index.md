@@ -1,7 +1,7 @@
 ---
 date: '2026-03-02 22:40:00 +0900'
 title: 'About, Text and Typography'
-summary: 'The51X DT Center Set Team Blog'
+summary: 'aluvy Blog'
 author: ['aluvy']
 categories: []
 tags: []

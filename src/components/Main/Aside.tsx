@@ -68,8 +68,8 @@ const Aside: FunctionComponent<AsideProps> = function ({
             <LogoImage logoImage={logoImage} />
           </Link>
           <Link to="/" className="line-home">
-            <h1>The51X DT</h1>
-            <p className="desc">The51X DTCenter Set Team Blog</p>
+            <h1>aluvy</h1>
+            <p className="desc">aluvy Blog</p>
           </Link>
         </div>
         <div id="lnb" className="aside-body">
