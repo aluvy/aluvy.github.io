@@ -3,8 +3,8 @@ date: '2024-05-16 09:00:00 +0900'
 title: '[SASS] CSS 전처리기 SASS SCSS'
 summary: 'SASS는 CSS전처리기(Preprocessor)라고도 합니다. CSS 전(예비)처리기 입니다. 보통 언급되는 전치리기 3대장으로 Less, SASS(SCSS), Styleus가 있습니다. 그 중 SASS는 2006년부터 시작하여 가장 오래된 CSS 확장 언어이며, 그만큼 높은 성숙도와 많은 커뮤니티를 가지고 있고 기능도 훌륭합니다.'
 author: ['aluvy']
-categories: ['CSS']
-tags: ['css']
+categories: ['SASS']
+tags: ['sass']
 thumbnail: ''
 ---
 
