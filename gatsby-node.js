@@ -57,12 +57,21 @@ exports.onCreateWebpackConfig = ({ getConfig, actions, stage }) => {
 }
 
 // Declare gitLastModified as a Date type so formatString works in GraphQL
+// Declare thumbnail as File so posts without a thumbnail (omitted or '') resolve to null
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   createTypes(`
     type MarkdownRemarkFields {
       slug: String
       gitLastModified: Date @dateformat
+    }
+
+    type MarkdownRemark implements Node {
+      frontmatter: MarkdownRemarkFrontmatter
+    }
+
+    type MarkdownRemarkFrontmatter {
+      thumbnail: File @fileByRelativePath
     }
   `)
 }

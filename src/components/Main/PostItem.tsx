@@ -18,7 +18,7 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
 }) {
   return (
     <Link to={link} className="post-item">
-      {thumbnail ? (
+      {thumbnail?.childImageSharp?.gatsbyImageData ? (
         <GatsbyImage
           image={thumbnail.childImageSharp.gatsbyImageData}
           alt="Post Item Image"

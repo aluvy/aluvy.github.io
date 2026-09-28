@@ -10,9 +10,9 @@ export type PostFrontmatterType = {
   thumbnail?: {
     childImageSharp: {
       gatsbyImageData: IGatsbyImageData
-    }
+    } | null
     publicURL: string
-  }
+  } | null
 }
 
 export type PostListItemType = {
