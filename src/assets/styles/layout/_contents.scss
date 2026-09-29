@@ -20,12 +20,18 @@
 
   .contents-left {
     flex: 1 1 auto;
+    max-width: calc(100% - var(--rnb-width) - 8rem);
+
+    @include desktop-lg {
+      max-width: calc(100% - var(--rnb-width) - 4rem);
+    }
+
+    @include desktop {
+      max-width: initial;
+    }
   }
 
   .contents-right {
-    // flex: 0 0 var(--rnb-width);
-    // align-self: stretch;
-
     @include desktop {
       position: fixed;
       right: 0;

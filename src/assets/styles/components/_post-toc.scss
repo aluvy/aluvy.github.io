@@ -34,9 +34,8 @@
           font-size: 1.4rem;
           color: var(--fc-sub);
           @include clamp(2);
-          padding: 0.6rem 0;
           transition: color 0.2s;
-          overflow: visible;
+          overflow: hidden;
 
           &:hover {
             color: var(--fc-default);
@@ -60,15 +59,13 @@
 
         ul {
           li {
-            a {
-              padding-left: 2rem;
-            }
+            padding: 0.6rem 0;
+            padding-left: 2rem;
 
             ul {
               li {
-                a {
-                  padding-left: 4rem;
-                }
+                padding: 0.6rem 0;
+                padding-left: 2rem;
               }
             }
           }

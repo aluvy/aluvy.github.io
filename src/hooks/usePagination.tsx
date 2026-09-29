@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react'
 import { PostListItemType } from 'types/PostItem.types'
 
-const ITEMS_PER_PAGE = 5
+const ITEMS_PER_PAGE = 10
 
 const usePagination = (
   selectedCategory: string,

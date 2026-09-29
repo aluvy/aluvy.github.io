@@ -130,6 +130,7 @@
       line-height: 1.66;
       text-shadow: none;
       tab-size: 2;
+      padding-right: 2rem;
     }
 
     :not(pre) > code[class*='language-'],
@@ -141,10 +142,7 @@
       padding: 0;
       margin: 0;
       overflow-y: hidden;
-
-      &::-webkit-scrollbar {
-        width: 0;
-      }
+      @include scrollbar();
     }
 
     pre[class*='language-'].line-numbers {

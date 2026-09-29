@@ -1,16 +1,16 @@
 [
   {
     "id": "example",
-    "name": "songisu",
+    "name": "example",
     "bio": "Frontend Developer @ aluvy",
-    "homepage": "https://aluvy.github.com",
-    "photo": "/member/example.png"
+    "homepage": "https://aluvy.github.io",
+    "photo": ""
   },
   {
     "id": "aluvy",
     "name": "songisu",
     "bio": "Frontend Developer @ aluvy",
-    "homepage": "https://aluvy.github.com",
+    "homepage": "https://aluvy.github.io",
     "photo": "/member/aluvy.png"
   }
 ]

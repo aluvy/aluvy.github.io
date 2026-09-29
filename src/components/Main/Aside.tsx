@@ -30,30 +30,40 @@ const Aside: FunctionComponent<AsideProps> = function ({
       ? 'All'
       : parsed.category
 
-  const categoryList = useMemo(
-    () =>
-      edges.reduce(
-        (
-          list: CategoryListProps['categoryList'],
-          {
-            node: {
-              frontmatter: { categories },
-            },
-          }: PostListItemType,
-        ) => {
-          categories.forEach(category => {
-            if (list[category] === undefined) list[category] = 1
-            else list[category]++
-          })
+  const categoryList = useMemo(() => {
+    const counts = edges.reduce(
+      (
+        list: CategoryListProps['categoryList'],
+        {
+          node: {
+            frontmatter: { categories },
+          },
+        }: PostListItemType,
+      ) => {
+        categories.forEach(category => {
+          if (list[category] === undefined) list[category] = 1
+          else list[category]++
+        })
 
-          list['All']++
+        list['All']++
 
-          return list
+        return list
+      },
+      { All: 0 },
+    )
+
+    // All은 맨 앞에 두고 나머지 카테고리는 ABC순으로 정렬
+    const { All, ...rest } = counts
+    return Object.keys(rest)
+      .sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }))
+      .reduce(
+        (sorted: CategoryListProps['categoryList'], key) => {
+          sorted[key] = rest[key]
+          return sorted
         },
-        { All: 0 },
-      ),
-    [edges],
-  )
+        { All },
+      )
+  }, [edges])
   const { pathname } = useLocation()
 
   const handleClick = (e: React.MouseEvent) => {
