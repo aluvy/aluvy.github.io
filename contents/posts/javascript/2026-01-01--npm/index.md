@@ -5,7 +5,7 @@ summary: 'Node.js는 백엔드를 구현하는 기술이라고 생각했을지 �
 author: ['aluvy']
 categories: ['JavaScript']
 tags: ['frontend']
-thumbnail: './cover.png'
+thumbnail: ''
 ---
 
 # [프론트엔드 개발환경의 이해] 01. NPM

@@ -5,7 +5,7 @@ summary: 'Custom Elements는 사용자 HTML Element를 만들게 해준다. 그�
 author: ['aluvy']
 categories: ['JavaScript']
 tags: ['javascript']
-thumbnail: './cover.png'
+thumbnail: ''
 ---
 
 
