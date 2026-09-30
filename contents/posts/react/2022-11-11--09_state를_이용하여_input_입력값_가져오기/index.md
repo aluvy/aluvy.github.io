@@ -1,0 +1,28 @@
+---
+date: '2022-11-11 22:16:00 +0900'
+title: '09. state를 이용하여 input 입력값 가져오기'
+summary: 'state와 onChange 함수를 활용해 사용자가 input에 입력 한 값을 바로 가져올 수 있다. react에서는 HTML을 직접 만질 필요가 없다. state를 변경하면 바로 반영되기 때문!'
+author: ['aluvy']
+categories: ['REACT']
+tags: []
+thumbnail: ''
+---
+
+
+state와 onChange 함수를 활용해 사용자가 input에 입력 한 값을 바로 가져올 수 있다.   
+react에서는 HTML을 직접 만질 필요가 없다. state를 변경하면 바로 반영되기 때문!
+
+````javascript
+function App (){
+  let [text, setText] = useState('');
+
+  return (
+    <div>
+      <input type="text" onChange={ (e)=>{
+        setText(e.target.value)
+      }} />
+      <div>{text}</div>
+    </div>
+  )
+}
+````
