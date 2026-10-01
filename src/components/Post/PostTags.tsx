@@ -6,11 +6,12 @@ type PostTagsProps = {
 }
 
 const PostTags: FunctionComponent<PostTagsProps> = function ({ tags }) {
-  if (!tags || tags.length === 0) return null
+  const validTags = (tags ?? []).filter(tag => tag && tag.trim())
+  if (validTags.length === 0) return null
 
   return (
     <div className="post-tags">
-      {tags.map(tag => (
+      {validTags.map(tag => (
         <Link key={tag} to={`/?tag=${tag}`} className="post-tags-item">
           #{tag}
         </Link>

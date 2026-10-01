@@ -19,7 +19,10 @@ const PostTags: FunctionComponent<PostTagsProps> = function ({
           frontmatter: { tags },
         },
       }) => {
-        if (tags) tags.forEach(tag => tagSet.add(tag))
+        if (tags)
+          tags.forEach(tag => {
+            if (tag && tag.trim()) tagSet.add(tag)
+          })
       },
     )
     return Array.from(tagSet).sort()
