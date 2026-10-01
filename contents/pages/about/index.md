@@ -1,5 +1,5 @@
 ---
-date: '2026-03-02 22:40:00 +0900'
+date: '1999-01-01 22:40:00 +0900'
 title: 'About, Text and Typography'
 summary: 'aluvy Blog'
 author: ['aluvy']
