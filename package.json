@@ -47,6 +47,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "gh-pages": "^6.3.0",
+    "patch-package": "^8.0.1",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3"
   },
@@ -62,7 +63,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby clean && gatsby build && gh-pages -d public -b main"
+    "deploy": "gatsby clean && gatsby build && gh-pages -d public -b main",
+    "postinstall": "patch-package"
   },
   "repository": {
     "type": "git",
