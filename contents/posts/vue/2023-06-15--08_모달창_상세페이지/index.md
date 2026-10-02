@@ -1,0 +1,109 @@
+---
+date: '2023-06-15 10:17:00 +0900'
+title: '08. 모달창 내에 상세페이지 만들기'
+summary: '누른거 라는 변수를 데이터에 넣고 리스트의 제목을 누를때마다 누른거의 값을 바꿔주고 모달을 띄워준다. <template> <div class="black-bg" v-if="모달창열렸니==1"> <div class="white-bg"> <img :src="원룸들[누른거].image" class="room-img"> <h4>{{ 원룸들[누른거].title }}</h4>'
+author: ['aluvy']
+categories: ['VUE']
+tags: []
+thumbnail: ''
+---
+
+
+누른거 라는 변수를 데이터에 넣고   
+리스트의 제목을 누를때마다 누른거의 값을 바꿔주고 모달을 띄워준다.
+
+````vue
+<template>
+  <div class="black-bg" v-if="모달창열렸니==1">
+    <div class="white-bg">
+      <img :src="원룸들[누른거].image" class="room-img">
+      <h4>{{ 원룸들[누른거].title }}</h4>
+      <p>{{ 원룸들[누른거].content }}</p>
+      <p>{{ 원룸들[누른거].price }}</p>
+      <button @click="모달창열렸니=0">닫기</button>
+    </div>
+  </div>
+
+  <div class="menu">
+    <a v-for="(a,i) in 메뉴들" :key="i">{{a}}</a>
+  </div>
+
+  <div v-for="(a,i) in 원룸들" :key="i">
+    <img :src="a.image" class="room-img">
+    <h4 @click="모달창열렸니=1; 누른거=i;">{{ a.title }}</h4>
+    <p>{{ a.content }}</p>
+    <p>{{ a.price }}원</p>
+  </div>
+</template>
+
+<script>
+import data from './assets/oneroom';
+
+export default {
+  name: 'App',
+  data(){
+    return {
+      메뉴들: ['Home', 'Shop', 'About'],
+      모달창열렸니: 0,  // 0:닫힘, 1:열림
+      원룸들: data,
+      누른거: 0,
+    }
+  },
+  methods: {},
+  components: {}
+}
+</script>
+````
+
+### onerooms.js
+
+````javascript
+var a = [
+  {
+    id : 0,
+    title: "Sinrim station 30 meters away",
+    image: "https://codingapple1.github.io/vue/room0.jpg",
+    content: "18년 신축공사한 남향 원룸 ☀️, 공기청정기 제공",
+    price: 340000
+  },
+  {
+    id : 1,
+    title: "Changdong Aurora Bedroom(Queen-size)",
+    image: "https://codingapple1.github.io/vue/room1.jpg",
+    content: "침실만 따로 있는 공용 셰어하우스입니다. 최대 2인 가능",
+    price: 450000
+  },
+  {
+    id : 2,
+    title: "Geumsan Apartment Flat",
+    image: "https://codingapple1.github.io/vue/room2.jpg",
+    content: "금산오거리 역세권 아파트입니다. 애완동물 불가능 ?",
+    price: 780000
+  },
+  {
+    id : 3,
+    title: "Double styled beds Studio Apt",
+    image: "https://codingapple1.github.io/vue/room3.jpg",
+    content: "무암동인근 2인용 원룸입니다. 전세 전환가능",
+    price: 550000
+  },
+  {
+    id : 4,
+    title: "MyeongIl Apartment flat",
+    image: "https://codingapple1.github.io/vue/room4.jpg",
+    content: "탄천동 아파트 월세, 남향, 역 5분거리, 허위매물아님",
+    price: 680000
+  },
+  {
+    id : 5,
+    title: "Banziha One Room",
+    image: "https://codingapple1.github.io/vue/room5.jpg",
+    content: "반지하 원룸입니다. 비올 때 물가끔 새는거 빼면 좋아요",
+    price: 370000
+  }
+];
+
+export default a
+````
+
+

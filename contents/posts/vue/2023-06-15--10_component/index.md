@@ -1,0 +1,105 @@
+---
+date: '2023-06-15 11:42:00 +0900'
+title: '10. component'
+summary: 'component 문법을 사용하면 긴 HTML을 한 단어로 깔끔하게 줄일 수 있다. 생성, 작성, import, 등록, 사용의 스텝으로 한다. 1. src 폴더 안에 DiscountBanner.vue 파일을 생성한다 2. Discount.vue 에 html작성 ( `<` 열고 엔터치면 vue 템플릿 자동생성)'
+author: ['aluvy']
+categories: ['VUE']
+tags: []
+thumbnail: ''
+---
+
+
+component 문법을 사용하면   
+긴 HTML을 한 단어로 깔끔하게 줄일 수 있다.
+
+**생성, 작성, import, 등록, 사용**의 스텝으로 한다.
+   
+
+1. src 폴더 안에 DiscountBanner.vue 파일을 생성한다
+2. Discount.vue 에 html작성 ( `<` 열고 엔터치면 vue 템플릿 자동생성)   
+    ````vue
+    <template>
+      <div class="discount">
+        <h4>지금 결제하면 20% 할인</h4>
+      </div>
+    </template>
+
+    <script>
+    export default {
+      name: 'DiscountBanner',
+    }
+    </script>
+
+    <style>
+    .discount {
+      background: #eee;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+    }
+    </style>
+    ````
+
+3. App.vue에 import   
+     
+    ````vue
+    <script>
+    import DiscountBanner from './components/DiscountBanner.vue';
+    </script>
+    ````
+
+4. components : {} 오브젝트에 등록   
+  `Discount : Discount,`   
+  이렇게 좌우 항목이 똑같으면    
+  `Discount,` 로 축약이 가능하다.   
+  
+    ````vue
+    <script>
+    import data from './assets/oneroom';
+    import DiscountBanner from './components/DiscountBanner.vue';
+
+    export default {
+      name: 'App',
+      data(){
+        return {
+          메뉴들: ['Home', 'Shop', 'About'],
+          모달창열렸니: 0,  // 0:닫힘, 1:열림
+          원룸들: data,
+          누른거: 0,
+        }
+      },
+      methods: {},
+      components: {
+        DiscountBanner : DiscountBanner,
+      }
+    }
+    </script>
+    ````
+
+1. 가져다쓰기   
+  
+    ````vue
+    <DiscountBanner />
+    ````
+
+---
+
+(업데이트 사항)
+
+컴포넌트.vue 이름을 2단어 이상으로 작성해야 한다.   
+Discount ==> DiscountBanner
+
+````vue
+DiscountBanner : DiscountBanner,
+````
+ 
+
+이게 싫으면 package.json 파일을 열어서 "rules" 라는 항목에 아래 한 줄을 추가하고 껐다가 다시 띄우면 된다.
+
+````vue
+"rules": {
+  "vue/multi-word-component-names": "off"
+}
+````
+
+컴포넌트를 만들면 데이터 관리가 복잡해질 수 있음

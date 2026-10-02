@@ -1,0 +1,125 @@
+---
+date: '2023-06-12 21:22:00 +0900'
+title: '04. 이벤트 바인딩 v-on, @, 함수'
+summary: 'click event binding - v-on:click="script" - @click="script" 두 가지 문법 <button v-on:click="자바스크립트~~">허위매물신고</button> <button @click="자바스크립트~~">허위매물신고</button> 버튼을 클릭하면 신고수 증가하기'
+author: ['aluvy']
+categories: ['VUE']
+tags: []
+thumbnail: ''
+---
+
+
+
+## click event binding
+- v-on:click="script"
+- @click="script"
+
+두 가지 문법
+
+````vue
+<button v-on:click="자바스크립트~~">허위매물신고</button>
+<button @click="자바스크립트~~">허위매물신고</button>
+````
+
+
+## 버튼을 클릭하면 신고수 증가하기
+
+````vue
+<template>
+  <button @click="신고수++">허위매물신고</button> <span>신고수: {{ 신고수 }}</span>
+</template>
+
+// @click="신고수 += 1"
+<script>
+export default {
+  name: 'App',
+  data(){
+    return {
+      // 데이터 보관함
+      // 데이터는 object 자료형으로 저장한다. {자료이름:자료내용}
+      메뉴들: ['Home', 'Shop', 'About'],
+      products : ['역삼동원룸', '천호동원룸', '마포구원룸'],
+      신고수: 0,
+    }
+  },
+  components: {
+  }
+}
+</script>
+````
+
+## 클릭 외에 여러가지 이벤트
+- @mouseover
+- @input
+- @drag
+- ...
+
+
+## 함수
+vue는 함수를 만드는 공간이 정해져있다.   
+데이터 끝나는 부분에 methods: { }
+
+함수 내에서 데이터 변수를 사용하려면 this.변수명 으로 사용한다.
+
+````vue
+<template>
+  <button @click="increase">허위매물신고</button> <span>신고수: {{ 신고수 }}</span>
+</template>
+
+<script>
+export default {
+  name: 'App',
+  data(){
+    return {
+      // 데이터 보관함
+      // 데이터는 object 자료형으로 저장한다. {자료이름:자료내용}
+      메뉴들: ['Home', 'Shop', 'About'],
+      products : ['역삼동원룸', '천호동원룸', '마포구원룸'],
+      신고수: 0,
+    }
+  },
+  methods: {
+    // 함수 만드는 공간
+    increase(){
+      this.신고수+=1;
+    }
+  },
+  components: {}
+}
+<script>
+````
+
+## v-for
+
+````vue
+<template>
+  <div class="menu">
+    <a v-for="(a,i) in 메뉴들" :key="i">{{a}}</a>
+  </div>
+  <div v-for="(a,i) in products" :key="i">
+    <h4>{{ a }}</h4>
+    <p>40 만원</p>
+    <button @click="신고수[i]++">허위매물신고</button> <span>신고수: {{ 신고수[i] }}</span>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'App',
+  data(){
+    return {
+      // 데이터 보관함
+      // 데이터는 object 자료형으로 저장한다. {자료이름:자료내용}
+      메뉴들: ['Home', 'Shop', 'About'],
+      products : ['역삼동원룸', '천호동원룸', '마포구원룸'],
+      신고수: [0, 0, 0],
+    }
+  },
+  methods: {
+    // 함수 만드는 공간
+  },
+  components: {
+  }
+}
+</script>
+````

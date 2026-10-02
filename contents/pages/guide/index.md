@@ -1,5 +1,5 @@
 ---
-date: '1999-01-01 14:09:00 +0900'
+date: '1999-01-01 14:00:00 +0900'
 title: 'Posting Guide'
 summary: 'aluvy Blog, 포스팅을 작성하기 위한 기본 세팅과 가독성 높은 포스팅 작성을 위한 팁'
 author: ['aluvy']

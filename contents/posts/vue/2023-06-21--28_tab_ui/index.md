@@ -1,0 +1,35 @@
+---
+date: '2023-06-21 13:55:00 +0900'
+title: '28. tab UI'
+summary: '동적인 UI 만드는 법 1. UI 현재 상태를 데이터로 만들기 export default { name:App, data(){ return { tab: 0, } }, } 상태에 따라 HTML이 어떻게 보일지 작성하기 <button @click="tab=0">버튼0</button> <button @click="tab=1">버튼1</button>'
+author: ['aluvy']
+categories: ['VUE']
+tags: []
+thumbnail: ''
+---
+
+## 동적인 UI 만드는 법
+
+### 1. UI 현재 상태를 데이터로 만들기
+
+````javascript
+export default {
+  name:'App',
+  data(){
+    return {
+      tab: 0,
+    }
+  },
+}
+````
+
+### 2. 상태에 따라 HTML이 어떻게 보일지 작성하기
+
+````html
+<button @click="tab=0">버튼0</button>
+<button @click="tab=1">버튼1</button>
+<button @click="tab=2">버튼2</button>
+<div v-if="tab == 0">내용0</div>
+<div v-if="tab == 1">내용1</div>
+<div v-if="tab == 2">내용2</div>
+````

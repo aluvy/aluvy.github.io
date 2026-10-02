@@ -1,0 +1,33 @@
+---
+date: '2023-06-15 10:23:00 +0900'
+title: '09. v-if, v-else-if, v-else'
+summary: 'v-if="조건식" 조건식이 참일 때 보여짐 v-else-if v-if="조건식"이 참이 아니면 실행해주세요 v-else 위에거가 모두 참이 아니면 실행해주세요 <div v-if="1==2">안녕하세요</div> <div v-else-if="1==3">위에거가 참이 아니면 실행해주세요</div>'
+author: ['aluvy']
+categories: ['VUE']
+tags: []
+thumbnail: ''
+---
+
+
+## v-if="조건식"
+조건식이 참일 때 보여짐
+
+
+## v-else-if
+v-if="조건식"이 참이 아니면 실행해주세요
+
+
+## v-else
+위에거가 모두 참이 아니면 실행해주세요
+
+````html
+<div v-if="1==2">
+	안녕하세요
+</div>
+<div v-else-if="1==3">
+	위에거가 참이 아니면 실행해주세요
+</div>
+<div v-else>
+	위에거가 모두 참이 아니면 실행해주세요
+</div>
+````
