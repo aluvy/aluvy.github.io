@@ -3,7 +3,7 @@ date: '2024-01-07 17:04:00 +0900'
 title: '[프론트엔드 개발환경의 이해] 04. 린트'
 summary: '배경 오래된 스웨터의 보푸라기 같은 것을 린트(Lint)라고 부른다. 보푸라기가 많으면 옷이 보기 좋지 않은데 코드에서도 이런 보프라기가 있다. 들여쓰기를 맞추지 않은 경우, 선언한 변수를 사용하지 않은 경우 보프라기 있는 옷을 입을 수는 있듯이 이러한 코드로 만든'
 author: ['aluvy']
-categories: ['Frontend_Development_Environment']
+categories: ['프론트엔드 개발환경의 이해']
 tags: ['']
 thumbnail: ''
 ---

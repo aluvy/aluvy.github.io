@@ -12,7 +12,7 @@ const PostTags: FunctionComponent<PostTagsProps> = function ({ tags }) {
   return (
     <div className="post-tags">
       {validTags.map(tag => (
-        <Link key={tag} to={`/?tag=${tag}`} className="post-tags-item">
+        <Link key={tag} to={`/?tag=${encodeURIComponent(tag)}`} className="post-tags-item">
           #{tag}
         </Link>
       ))}

@@ -36,7 +36,7 @@ const CategoryList: FunctionComponent<CategoryListProps> = function ({
           return (
             <li key={name}>
               <Link
-                to={`/?category=${name}`}
+                to={`/?category=${encodeURIComponent(name)}`}
                 className={`post-link ${isActive ? 'on' : ''}`}
                 aria-current={isActive ? 'page' : undefined}
               >

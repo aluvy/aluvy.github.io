@@ -3,7 +3,7 @@ date: '2024-01-07 17:03:00 +0900'
 title: '[프론트엔드 개발환경의 이해] 03. Babel'
 summary: '배경 1-1. 크로스 브라우징 사용하는 말이 달라서 바벨탑이 실패했듯이, 브라우저마다 사용하는 언어가 달라서 프론트엔트 코드는 일관적이지 못할 때가 많다. 스팩과 브라우저가 개선되고 있지만, 여전히 인터넷 익스플로러는 프로미스를 이해하지 못한다. 작년까지만 해도'
 author: ['aluvy']
-categories: ['Frontend_Development_Environment']
+categories: ['프론트엔드 개발환경의 이해']
 tags: ['']
 thumbnail: ''
 ---

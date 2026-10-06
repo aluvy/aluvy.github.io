@@ -3,7 +3,7 @@ date: '2024-01-07 17:06:00 +0900'
 title: '[프론트엔드 개발환경의 이해] 06. webpack5'
 summary: '프론트엔드 개발환경의 이해 강의를 듣고 최신 스펙인 webpack5로 다시 환경설정을 해봤다. 1. NPM 1-2. 프로젝트 생성 vs code로 프로젝트 폴더를 열고 터미널을 이용해 프로젝트를 생성한다. $ npm init 옵션은 전부 엔터로 넘겨도 된다. 루트에 package.json 파일이 생성된다.'
 author: ['aluvy']
-categories: ['Frontend_Development_Environment']
+categories: ['프론트엔드 개발환경의 이해']
 tags: ['']
 thumbnail: ''
 ---

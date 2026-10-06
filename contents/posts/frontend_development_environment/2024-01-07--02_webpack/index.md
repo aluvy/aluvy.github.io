@@ -3,7 +3,7 @@ date: '2024-01-07 17:02:00 +0900'
 title: '[프론트엔드 개발환경의 이해] 02. 웹팩(기본)'
 summary: '배경 문법 수준에서 모듈을 지원하기 시작한 것은 ES2015부터다. import/export 구문이 없었던 모듈 이전 상황을 살펴보는 것이 웹팩 등장 배경을 설명하는데 수월할 것 같다. 아래 덧셈 함수를 보자.'
 author: ['aluvy']
-categories: ['Frontend_Development_Environment']
+categories: ['프론트엔드 개발환경의 이해']
 tags: ['']
 thumbnail: ''
 ---
