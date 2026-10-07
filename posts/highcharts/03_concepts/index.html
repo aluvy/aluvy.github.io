@@ -1,0 +1,1149 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.16.1"/><meta name="description" content="Highcharts 이해하기 Highcharts가 어떻게 동작하는지 이해하려면 차트의 다양한 구성 요소, 즉 개념들을 이해하는 것이 중요합니다. 아래 이미지는 차트의 주요 개념들을 설명합니다." data-gatsby-head="true"/><meta name="viewport" content="width=device-width, initial-scale=1.0" data-gatsby-head="true"/><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" data-gatsby-head="true"/><meta property="og:type" content="website" data-gatsby-head="true"/><meta property="og:title" content="Highcharts 이해하기 (title, series, tooltip, legend, axes)" data-gatsby-head="true"/><meta property="og:description" content="Highcharts 이해하기 Highcharts가 어떻게 동작하는지 이해하려면 차트의 다양한 구성 요소, 즉 개념들을 이해하는 것이 중요합니다. 아래 이미지는 차트의 주요 개념들을 설명합니다." data-gatsby-head="true"/><meta property="og:image" data-gatsby-head="true"/><meta property="og:url" data-gatsby-head="true"/><meta property="og:site_name" content="Highcharts 이해하기 (title, series, tooltip, legend, axes)" data-gatsby-head="true"/><meta name="twitter:card" content="summary" data-gatsby-head="true"/><meta name="twitter:title" content="Highcharts 이해하기 (title, series, tooltip, legend, axes)" data-gatsby-head="true"/><meta name="twitter:description" content="Highcharts 이해하기 Highcharts가 어떻게 동작하는지 이해하려면 차트의 다양한 구성 요소, 즉 개념들을 이해하는 것이 중요합니다. 아래 이미지는 차트의 주요 개념들을 설명합니다." data-gatsby-head="true"/><meta name="twitter:image" data-gatsby-head="true"/><meta name="twitter:site" content="@aluvy" data-gatsby-head="true"/><meta name="twitter:creator" content="@aluvy" data-gatsby-head="true"/><style data-href="/styles.27cbf60abaac24161d84.css" data-identity="gatsby-global-css">@import url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css);pre[class*=language-].line-numbers{counter-reset:linenumber;padding-left:3.8em;position:relative}pre[class*=language-].line-numbers>code{position:relative;white-space:inherit}.line-numbers .line-numbers-rows{border-right:1px solid #999;font-size:100%;left:-3.8em;letter-spacing:-1px;pointer-events:none;position:absolute;top:0;-webkit-user-select:none;user-select:none;width:3em}.line-numbers-rows>span{counter-increment:linenumber;display:block}.line-numbers-rows>span:before{color:#999;content:counter(linenumber);display:block;padding-right:.8em;text-align:right}.command-line-prompt{border-right:1px solid #999;display:block;float:left;font-size:100%;letter-spacing:-1px;margin-right:1em;pointer-events:none;text-align:right;-webkit-user-select:none;user-select:none}.command-line-prompt>span:before{content:" ";display:block;opacity:.7;padding-right:.8em}.command-line-prompt>span[data-user]:before{content:"[" attr(data-user) "@" attr(data-host) "] $"}.command-line-prompt>span[data-user=root]:before{content:"[" attr(data-user) "@" attr(data-host) "] #"}.command-line-prompt>span[data-prompt]:before{content:attr(data-prompt)}.command-line-prompt>span[data-continuation-prompt]:before{content:attr(data-continuation-prompt)}.command-line span.token.output{opacity:.7}:root{--bg-primary:#3a6bff;--bg-default:#fff;--bg-sub:#f3f3f3;--bg-table:#fbfcfd;--fc-primary:#3a6bff;--fc-default:#34343c;--fc-sub:#757575;--fc-sub2:#aaa;--fc-code:#3f596f;--fc-success:#2fb075;--fc-warning:#ef9c03;--fc-danger:#ed6767;--fc-pink:#d63384;--fc-marker-success:#e9ff47;--bc-primary:#3a6bff;--bc-default:#ddd;--bc-sub:#eee;--bc-link:#dee2e6;--bc-input:#ddd;--bc-input-focus:#999;--scrollbar-track:rgba(0,0,0,.04);--scrollbar-thumb:rgba(0,0,0,.1);--ic-default:#222;--ic-sub:#999;--ic-sub2:#aaa;--max-width:1190px;--max-width-md:768px;--max-width-sm:1190px;--aside-width:26rem;--wrap-left-padding:26rem;--rnb-width:26rem}@media(width <= 768px){:root{--wrap-left-padding:0}}:root{--side-padding:4rem;--side-back-margin:-4rem}@media(width <= 1280px){:root{--side-padding:2.4rem;--side-back-margin:-2.4rem}}@media(width <= 768px){:root{--side-padding:1.6rem;--side-back-margin:-1.6rem}}:root{--codeblock-fontfamily:"Consolas","Verdana","Apple SD Gothic Neo";--codeblock-background:#f6f8fa;--codeblock-border-color:#ececec;--codeblock-radius:1rem;--codeblock-header-text-color:#a3a3a3;--codeblock-header-icon-color:#c9c8c8;--codeblock-numbers-line:transparent;--codeblock-color:#5e646f;--codeblock-color-muted:#e5e5e5;--codeblock-color-keyword:#b870ce;--codeblock-color-classname:#c95959;--codeblock-color-function:#6587bf;--codeblock-color-number:#db7070;--codeblock-color-attrname:#db7070;--codeblock-color-tag:#db7070;--codeblock-color-comment:#acb2bc;--codeblock-color-operator:#5e646f;--codeblock-color-value:#7c9f4b;--codeblock-highlight-background:rgba(44,81,193,.102);--codeblock-highlight-border:rgba(58,107,255,.7)}body,html{min-height:100%;scroll-behavior:smooth;width:100%}html{font-size:10px}body{-webkit-text-size-adjust:none;-webkit-font-smoothing:antialiased;-moz-font-smoothing:grayscale;color:inherit;font-family:Pretendard,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Microsoft Yahei,sans-serif;font-size:1.6rem;font-weight:400;line-height:1.437}a,abbr,address,article,aside,audio,b,blockquote,body,button,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,i,iframe,img,input,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,select,small,span,strong,sub,summary,sup,table,tbody,td,textarea,tfoot,th,thead,time,tr,ul,var,video{background:transparent;border:0;box-sizing:border-box;margin:0;padding:0;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}table{border-collapse:collapse;border-spacing:0;table-layout:fixed;width:100%}caption,legend{clip:rect(0,0,0,0);border:0;height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;white-space:nowrap;width:1px}li,ol,ul{list-style:none}address,caption,cite,code,em{font-style:normal;font-weight:400}font{font-size:inherit}img,svg{height:auto;vertical-align:top;width:100%}img[data-main-image]{height:100%;width:100%}a{color:inherit;cursor:pointer;display:inline-block}a,a:active,a:focus,a:hover{text-decoration:none}:focus:not(:focus-visible){outline:0}button{background-color:transparent;cursor:pointer;font-size:inherit}button,button:hover{color:inherit}button[disabled]{opacity:.4}label{cursor:pointer}button,input,optgroup,select,textarea{appearance:none;background-color:transparent;border:0;border-radius:0;font-family:inherit;font-size:inherit;line-height:inherit}textarea{resize:none}body,html{background-color:var(--bg-default);color:var(--fc-default)}#___gatsby,#gatsby-focus-wrapper{width:100%}@media(width <= 1280px){#___gatsby{overflow-x:clip}}.blind{clip:rect(0,0,0,0);border:0;height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;white-space:nowrap;width:1px}.fc-primary{color:var(--fc-primary)}.fc-default{color:var(--fc-default)}.fc-sub{color:var(--fc-sub)}.fc-danger{color:var(--fc-danger)}.fc-success{color:var(--fc-success)}.section{margin:0 auto;max-width:var(--max-width);width:100%}.inner{padding:0 var(--side-padding)}.cont+.cont{margin-top:2.4rem}.row{display:flex}.col{flex:1 1}.col-content{flex:1 1 auto}.col-rnb{align-self:stretch;flex:0 0 var(--rnb-width)}.scroll-y{-webkit-mask-image:linear-gradient(180deg,transparent,#000 1.2rem,#000 calc(100% - 2.2rem),transparent calc(100% - 1rem));mask-image:linear-gradient(180deg,transparent,#000 1.2rem,#000 calc(100% - 2.2rem),transparent calc(100% - 1rem));overflow:hidden;overflow-y:auto}.scroll-y::-webkit-scrollbar{height:4px;width:4px}.scroll-y::-webkit-scrollbar-track{background:var(--scrollbar-track)}.scroll-y::-webkit-scrollbar-thumb{background:var(--scrollbar-thumb)}.scroll-y::-webkit-scrollbar,.scroll-y::-webkit-scrollbar-thumb,.scroll-y::-webkit-scrollbar-track{border-radius:4px}.scroll-x{overflow:hidden;overflow-x:auto}.scroll-x::-webkit-scrollbar{height:4px;width:4px}.scroll-x::-webkit-scrollbar-track{background:var(--scrollbar-track)}.scroll-x::-webkit-scrollbar-thumb{background:var(--scrollbar-thumb)}.scroll-x::-webkit-scrollbar,.scroll-x::-webkit-scrollbar-thumb,.scroll-x::-webkit-scrollbar-track{border-radius:4px}#wrap{transition:transform .3s}#wrap.has-sidebar{padding-left:var(--wrap-left-padding)}@media(width <= 1280px){#wrap.open-sidebar #aside{transform:translateX(0)}#wrap.open-sidebar #container{transform:translateX(26rem)}}#wrap.open-search #topbar .btn-search .ico-search{display:none}#wrap.open-search #topbar .btn-search .ico-close{display:inline-block}#wrap.open-search #topbar .search-wrapper{display:block}@media(width <= 1280px){#wrap.open-toc .contents-right{transform:translateX(0)}}@media(width <= 768px){#wrap.open-search .aside-mask,#wrap.open-sidebar .aside-mask,#wrap.open-toc .aside-mask{inset:0;position:fixed;z-index:2}}#aside{background:var(--bg-default);border-right:1px solid var(--bc-sub);height:100%;left:0;overflow-y:auto;position:fixed;scrollbar-width:none;top:0;transition:transform .3s;width:var(--aside-width);z-index:3}@media(width <= 768px){#aside{transform:translateX(-100%)}}#aside .inner{display:flex;flex-direction:column;height:100%;padding:2rem}#aside .aside-head{margin:2rem 0;padding:0 1.6rem}#aside .aside-head .logo-image{border-radius:50%;height:8rem;width:8rem}#aside .aside-head .line-home{display:block;margin-top:1.8rem}#aside .aside-head h1{font-size:2.4rem;font-weight:900}#aside .aside-head .desc{color:var(--fc-sub);font-size:1.2rem;font-style:italic;margin-top:.4rem}#aside .aside-body{flex:1 1 auto;margin-top:2rem}#aside .aside-body .page-list{border-top:1px solid var(--bc-sub);margin-top:2rem;padding-top:2rem}#aside .aside-body .page-link,#aside .aside-body .post-link{font-size:1.6rem;font-weight:400;padding:.8rem 1rem}#aside .aside-body .page-link.on,#aside .aside-body .post-link.on{color:var(--fc-primary);font-weight:700}#aside .aside-body .page-link span,#aside .aside-body .post-link span{color:var(--fc-sub2);font-size:1.2rem;font-weight:700}#aside .aside-foot{margin-top:4rem}#aside .aside-foot .foot-links{align-items:center;display:flex;font-size:1.4rem;gap:1rem;justify-content:flex-start;padding:2rem 0}#aside .aside-foot .foot-links .foot-links-item{align-items:center;aspect-ratio:1;border:1px solid var(--bc-default);border-radius:50%;color:var(--ic-sub);display:flex;justify-content:center;padding:.6rem;width:3rem}#topbar{align-items:center;display:flex;gap:2rem;justify-content:space-between;margin:0 auto;padding:2rem 0 0;white-space:nowrap}@media(width <= 768px){#topbar{-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);background:hsla(0,0%,100%,.7);height:6.4rem;margin-left:calc(var(--side-padding)*-1);margin-right:calc(var(--side-padding)*-1);padding:0;position:sticky;top:0;width:calc(100% + var(--side-padding)*2);z-index:3}}#topbar .topbar-title{align-items:center;display:none;flex:1 1 auto;justify-content:center;text-align:center}@media(width <= 768px){#topbar .topbar-title{display:flex}}#topbar .btn-menu,#topbar .btn-search{align-items:center;color:var(--ic-sub);height:4.6rem;justify-content:center;width:5.6rem}#topbar .btn-menu{display:none}@media(width <= 768px){#topbar .btn-menu{display:flex}}#topbar .btn-search{position:relative;z-index:4}#topbar .btn-search .ico-search{display:inline-block}#topbar .btn-search .ico-close{display:none}#topbar .search-wrapper{background:#fff;box-shadow:0 0 5rem 1rem rgba(0,0,0,.2);display:none;left:0;padding:8rem 0 6rem;position:absolute;top:0;width:100%;z-index:3}#topbar .search-wrapper .inner{margin:0 auto;max-width:var(--max-width-md);width:100%}#topbar .search-wrapper .search-result-list{background:var(--bg-default);margin-top:2rem;max-height:60vh;overflow-y:auto;width:100%}#topbar .search-wrapper .search-result-item+.search-result-item{border-top:1px solid var(--bc-sub);margin-top:2rem;padding-top:2rem}#topbar .search-wrapper .search-result-link{align-items:flex-start;border-radius:.8rem;display:flex;gap:2rem;text-decoration:none;transition:background .15s}#topbar .search-wrapper .search-result-link:hover .search-result-title{color:var(--fc-primary)}#topbar .search-wrapper .search-result-thumbnail{aspect-ratio:16/9;background:var(--bg-sub);border-radius:.6rem;flex:0 0 auto;object-fit:cover;width:14rem}#topbar .search-wrapper .search-result-text{flex:1 1 auto;min-width:0}#topbar .search-wrapper .search-result-title{font-size:1.6rem;font-weight:500;transition:color .3s}#topbar .search-wrapper .search-result-summary,#topbar .search-wrapper .search-result-title{-webkit-box-orient:vertical;-webkit-line-clamp:1;display:-webkit-box;overflow:hidden;text-overflow:ellipsis}#topbar .search-wrapper .search-result-summary{color:var(--fc-sub);font-size:1.4rem;margin-top:.4rem}#topbar .search-wrapper .search-result-info{align-items:center;display:flex;gap:1.2rem;margin-top:.6rem}@media(width <= 768px){#topbar .search-wrapper .search-result-info{display:block}}#topbar .search-wrapper .search-result-categories,#topbar .search-wrapper .search-result-date{align-items:center;color:var(--fc-sub2);display:flex;font-size:1.1rem;gap:.4rem;width:max-content}#topbar .search-wrapper .search-result-categories svg,#topbar .search-wrapper .search-result-date svg{font-size:1rem}#container{margin:0 auto;max-width:var(--max-width);padding:0 var(--side-padding);transition:transform .3s;width:100%}#contents .contents-layout{align-items:flex-start;display:flex;gap:8rem;justify-content:space-between;margin:6rem 0}@media(width <= 1650px){#contents .contents-layout{gap:4rem}}@media(width <= 1280px){#contents .contents-layout{display:block;margin-top:2rem}}#contents .contents-left{flex:1 1 auto;max-width:calc(100% - var(--rnb-width) - 8rem)}@media(width <= 1650px){#contents .contents-left{max-width:calc(100% - var(--rnb-width) - 4rem)}}@media(width <= 1280px){#contents .contents-left{max-width:none}#contents .contents-right{background:var(--bg-default);border-left:1px solid var(--bc-sub);bottom:0;height:100%;padding-top:7rem;position:fixed;right:0;scrollbar-width:none;top:0;transform:translateX(100%);transition:transform .3s;width:26rem;z-index:3}}.contents-right .cont-wrap+.cont-wrap{margin-top:6rem}.contents-right .cont-wrap .cont-ttl{border-left:1px solid var(--bc-sub);padding:1rem 0 0 2rem}.contents-right .cont-wrap .cont-ttl h3{font-size:1.6rem;font-weight:600}.contents-right .cont-wrap .cont-box{border-left:1px solid var(--bc-sub);padding:1.2rem 0 2rem 2rem}#footer{align-items:center;color:var(--fc-sub);display:flex;font-size:1.2rem;justify-content:center;padding:5rem 0;text-align:center}@media(width <= 768px){#footer{padding-left:2rem;padding-right:2rem}}.ico{aspect-ratio:1;color:var(--ic-sub);display:block;font-size:1.6rem;width:2rem}.input-item.search-type{align-items:center;border:1px solid var(--bc-input);border-radius:5.2rem;display:flex;gap:1.6rem;height:5.2rem;padding:0 1.6rem;width:100%}.input-item.search-type:has(.input:focus){border-color:var(--bc-input-focus)}.input-item.search-type .input{height:100%;outline:none;width:100%}.breadcrumb-wrapper{align-items:center;color:var(--fc-sub);display:flex;font-size:1.2rem;text-align:center}.breadcrumb-wrapper .breadcrumb-link{color:var(--fc-sub);font-size:1.6rem}@media(width <= 768px){.breadcrumb-wrapper{display:none}}.pagination{gap:.4rem;margin-top:4rem}.pagination,.pagination .pagination-btn{align-items:center;display:flex;justify-content:center}.pagination .pagination-btn{background:none;border-radius:.6rem;color:var(--fc-sub);cursor:pointer;font-size:1.4rem;height:3rem;min-width:3rem;padding:0 .8rem;transition:border-color .15s,color .15s}.pagination .pagination-btn.pagination-prev{margin-right:1rem}.pagination .pagination-btn.pagination-next{margin-left:1rem}.pagination .pagination-btn:hover:not(:disabled){color:var(--fc-primary)}.pagination .pagination-btn.active{background:var(--bg-primary);background:var(--bg-sub);font-weight:700}.pagination .pagination-btn:disabled{cursor:default;opacity:.3}.pagination .pagination-ellipsis{align-items:center;color:var(--fc-sub2);display:flex;font-size:1.4rem;height:3.6rem;justify-content:center;letter-spacing:.1em;min-width:3.6rem}.post-tags{display:flex;flex-wrap:wrap;gap:.4rem}.post-tags .post-tags-item{border:1px solid var(--bc-sub);border-radius:3rem;color:var(--fc-sub);font-size:1.2rem;padding:.6rem .8rem .4rem;transition:color .15s,border-color .15s,background .15s}.post-tags .post-tags-item.active,.post-tags .post-tags-item:hover{border-color:var(--fc-primary);color:var(--fc-primary)}.post-tags .post-tags-item.active{background:rgba(var(--rgb-primary,66,99,235),.08);font-weight:600}.post-page .post-tags{margin:8rem 0}.post-recent .post-recent-item{-webkit-box-orient:vertical;-webkit-line-clamp:2;color:var(--fc-sub);display:block;display:-webkit-box;font-size:1.4rem;overflow:hidden;text-overflow:ellipsis;transition:color .15s,border-color .15s,background .15s}.post-recent .post-recent-item+.post-recent-item{margin-top:1rem}.post-recent .post-recent-item:hover{color:var(--fc-primary)}.post-lists.vertical-type .post-item{align-items:flex-start;border-top:1px solid var(--bc-sub);display:flex;gap:4rem;padding:2.4rem 1.6rem}@media(width <= 768px){.post-lists.vertical-type .post-item{gap:2rem}}.post-lists.vertical-type .post-item:first-child{border-top:0}.post-lists.vertical-type .post-item:hover .thumbnail img{transform:scale(1.1)}.post-lists.vertical-type .post-item:hover .text-wrapper .title{color:var(--fc-primary)}.post-lists.vertical-type .post-item .thumbnail{aspect-ratio:16/9;border-radius:1rem;flex:0 0 36%;max-width:26rem;min-width:16rem;order:2;overflow:hidden;width:100%}.post-lists.vertical-type .post-item .thumbnail.thumbnail--none{display:none}.post-lists.vertical-type .post-item .thumbnail img{transition:transform .3s}@media(width <= 768px){.post-lists.vertical-type .post-item .thumbnail{flex:0 0 40%;min-width:auto}}@media(width <= 480px){.post-lists.vertical-type .post-item .thumbnail{display:none}}.post-lists.vertical-type .post-item .text-wrapper{flex:1 1 auto;order:1;padding:.4rem 0}.post-lists.vertical-type .post-item .text-wrapper .title{-webkit-box-orient:vertical;-webkit-line-clamp:2;display:-webkit-box;font-size:2rem;overflow:hidden;text-overflow:ellipsis;transition:color .3s}.post-lists.vertical-type .post-item .text-wrapper .desc{-webkit-box-orient:vertical;-webkit-line-clamp:2;color:var(--fc-sub);display:-webkit-box;font-size:1.6rem;margin-top:1rem;overflow:hidden;text-overflow:ellipsis}.post-lists.vertical-type .post-item .text-wrapper .info-wrapper{align-items:center;display:flex;gap:2rem;margin-top:2rem}.post-lists.vertical-type .post-item .text-wrapper .info-wrapper div{align-items:center;color:var(--fc-sub2);display:flex;font-size:1.4rem;font-weight:400;gap:.4rem}.post-lists.vertical-type .post-item .text-wrapper .info-wrapper div.categories{flex-wrap:wrap;gap:.6rem}.post-lists.thumbnail-type{align-items:stretch;display:flex;flex-wrap:wrap;gap:3rem;justify-content:flex-start}.post-lists.thumbnail-type .post-item{background:var(--bg-sub);border-radius:1.6rem;flex:0 0 auto;overflow:hidden;width:calc(50% - 1.5rem)}@media(width <= 768px){.post-lists.thumbnail-type .post-item{width:100%}}.post-lists.thumbnail-type .post-item:hover .text-wrapper .title{color:var(--fc-primary)}.post-lists.thumbnail-type .post-item .thumbnail{aspect-ratio:16/9;width:100%}.post-lists.thumbnail-type .post-item .text-wrapper{padding:2.2rem}.post-lists.thumbnail-type .post-item .text-wrapper .title{-webkit-box-orient:vertical;-webkit-line-clamp:2;display:-webkit-box;font-size:2rem;font-weight:500;overflow:hidden;text-overflow:ellipsis;transition:color .3s}.post-lists.thumbnail-type .post-item .text-wrapper .desc{-webkit-box-orient:vertical;-webkit-line-clamp:2;color:var(--fc-sub);display:-webkit-box;font-size:1.6rem;margin-top:1rem;overflow:hidden;text-overflow:ellipsis}.post-lists.thumbnail-type .post-item .text-wrapper .info-wrapper{align-items:center;display:flex;gap:2rem;margin-top:2rem}.post-lists.thumbnail-type .post-item .text-wrapper .info-wrapper div{align-items:center;color:var(--fc-sub2);display:flex;font-size:1.2rem;font-weight:400;gap:.4rem}.post-lists.thumbnail-type .post-item .text-wrapper .info-wrapper div.categories{flex-wrap:wrap;gap:.6rem}.post-lists.search-type{max-height:60vh}.post-lists.search-type .post-item{align-items:flex-start;border-top:1px solid var(--bc-sub);display:flex;gap:2rem;padding:2.4rem 1.6rem}@media(width <= 768px){.post-lists.search-type .post-item{gap:2rem}}.post-lists.search-type .post-item:first-child{border-top:0}.post-lists.search-type .post-item:hover .thumbnail img{transform:scale(1.1)}.post-lists.search-type .post-item:hover .text-wrapper .title{color:var(--fc-primary)}.post-lists.search-type .post-item .thumbnail{aspect-ratio:16/9;border-radius:1rem;flex:0 0 30%;max-width:26rem;min-width:16rem;overflow:hidden;width:100%}.post-lists.search-type .post-item .thumbnail.thumbnail--none{display:none}.post-lists.search-type .post-item .thumbnail img{transition:transform .3s}@media(width <= 768px){.post-lists.search-type .post-item .thumbnail{flex:0 0 40%;min-width:auto}}@media(width <= 480px){.post-lists.search-type .post-item .thumbnail{display:none}}.post-lists.search-type .post-item .text-wrapper{flex:1 1 auto;padding:.4rem 0;white-space:normal}.post-lists.search-type .post-item .text-wrapper .title{-webkit-box-orient:vertical;-webkit-line-clamp:2;display:-webkit-box;font-size:2rem;overflow:hidden;text-overflow:ellipsis;transition:color .3s}.post-lists.search-type .post-item .text-wrapper .desc{-webkit-box-orient:vertical;-webkit-line-clamp:2;color:var(--fc-sub);display:-webkit-box;font-size:1.6rem;margin-top:1rem;overflow:hidden;text-overflow:ellipsis}.post-lists.search-type .post-item .text-wrapper .info-wrapper{align-items:center;display:flex;gap:2rem;margin-top:2rem}.post-lists.search-type .post-item .text-wrapper .info-wrapper div{align-items:center;color:var(--fc-sub2);display:flex;font-size:1.4rem;font-weight:400;gap:.4rem}.post-lists.search-type .post-item .text-wrapper .info-wrapper div.categories{flex-wrap:wrap;gap:.6rem}.toc-wrapper{-webkit-mask-image:linear-gradient(180deg,transparent,#000 1.2rem,#000 calc(100% - 2.2rem),transparent calc(100% - 1rem));mask-image:linear-gradient(180deg,transparent,#000 1.2rem,#000 calc(100% - 2.2rem),transparent calc(100% - 1rem));max-height:calc(100vh - 4rem);overflow-y:auto;padding-left:0;position:sticky;scrollbar-width:none;top:7rem}.toc-wrapper::-webkit-scrollbar{display:none}.toc-wrapper .toc{padding-bottom:2rem}.toc-wrapper .toc ul li a{-webkit-box-orient:vertical;-webkit-line-clamp:2;color:var(--fc-sub);display:block;display:-webkit-box;font-size:1.4rem;overflow:hidden;text-overflow:ellipsis;transition:color .2s}.toc-wrapper .toc ul li a:hover{color:var(--fc-default)}.toc-wrapper .toc ul li a.toc-active{color:var(--fc-primary);font-weight:500;position:relative}.toc-wrapper .toc ul li a.toc-active:before{background:var(--bg-primary);content:"";height:2rem;left:calc(-2rem - 1px);position:absolute;width:1px}.toc-wrapper .toc ul li ul li,.toc-wrapper .toc ul li ul li ul li{padding:.6rem 0 .6rem 2rem}.post-contents{font-size:1.6rem;line-height:1.76;word-break:break-all}.post-contents p{margin:0 0 1.6rem}.post-contents .anchor.custom-class.after:after{content:"#"}.post-contents code.language-text{background:rgba(25,25,28,.05);border-radius:.6rem;color:var(--fc-code);display:inline-block;font-family:var(--codeblock-fontfamily);font-size:90%;letter-spacing:-.024rem;padding:0 .6rem}.post-contents a,.post-contents a:not(.img-link){border-bottom:1px solid var(--bc-link);color:var(--fc-primary);display:inline;line-height:1.2}.post-contents a:hover,.post-contents a:not(.img-link):hover{border-bottom:1px solid var(--bc-primary);color:var(--fc-primary)}.post-contents em{font-style:italic}.post-contents h1 .anchor,.post-contents h2 .anchor,.post-contents h3 .anchor,.post-contents h4 .anchor,.post-contents h5 .anchor{border-bottom:0;margin-left:.8rem;opacity:0}.post-contents h1 .anchor svg,.post-contents h2 .anchor svg,.post-contents h3 .anchor svg,.post-contents h4 .anchor svg,.post-contents h5 .anchor svg{display:none}.post-contents h1:hover .anchor,.post-contents h2:hover .anchor,.post-contents h3:hover .anchor,.post-contents h4:hover .anchor,.post-contents h5:hover .anchor{border-bottom:0;opacity:1;transition:opacity .25s ease-in,visibility 0s ease-in 0s}.post-contents h1:hover .anchor svg,.post-contents h2:hover .anchor svg,.post-contents h3:hover .anchor svg,.post-contents h4:hover .anchor svg,.post-contents h5:hover .anchor svg{display:none}.post-contents *+h1,.post-contents *+h2,.post-contents *+h3{margin-top:8rem}.post-contents h1,.post-contents h2,.post-contents h3,.post-contents h4,.post-contents h5,.post-contents h6{font-weight:500;line-height:1.3;margin:4.8rem 0 2.4rem;scroll-margin-top:80px}.post-contents h1{font-size:3.6rem}.post-contents h2{font-size:3.2rem}.post-contents h3{font-size:2.8rem}.post-contents h4{font-size:2.4rem}.post-contents h5{font-size:2.2rem;margin:3rem 0 2rem}.post-contents h6{font-size:2rem;margin:3rem 0 2rem}.post-contents .gatsby-resp-image-wrapper.img-md{max-width:500px!important}.post-contents .gatsby-resp-image-wrapper.img-sm{max-width:300px!important}.post-contents .gatsby-resp-image-wrapper+em{color:var(--fc-sub);display:block;font-size:1.4rem;font-style:italic;margin-top:1rem;text-align:center}.post-contents .table-wrap{margin-bottom:2.4rem;overflow-x:auto}.post-contents .table-wrap>table{border-collapse:collapse;border-spacing:0;caption-side:bottom;min-width:70%;overflow-x:auto;width:max-content}.post-contents .table-wrap>table thead{border-bottom:2px solid var(--bc-default)}.post-contents .table-wrap>table tbody,.post-contents .table-wrap>table tbody tr{border-bottom:1px solid var(--bc-default)}.post-contents .table-wrap>table tbody tr:nth-child(odd){background:var(--bg-table)}.post-contents .table-wrap>table td,.post-contents .table-wrap>table th{font-size:95%;padding:.8rem 1.6rem;white-space:nowrap}.post-contents blockquote{border-left:2px solid var(--bc-default);margin:.8rem 0 2rem;padding:.6rem 2rem;position:relative}.post-contents blockquote>p:last-child{margin-bottom:0}.post-contents blockquote.prompt-danger,.post-contents blockquote.prompt-info,.post-contents blockquote.prompt-tip,.post-contents blockquote.prompt-warning{background-color:var(--bg-prompt);border-left:0;border-radius:1rem;margin:.8rem 0 1.6rem;padding:1.6rem 1.6rem 1.6rem 4.8rem;position:relative}.post-contents blockquote.prompt-danger:before,.post-contents blockquote.prompt-info:before,.post-contents blockquote.prompt-tip:before,.post-contents blockquote.prompt-warning:before{aspect-ratio:1;background-color:var(--icon-prompt-color);content:"";display:block;left:1.6rem;-webkit-mask:var(--icon-prompt) center/contain no-repeat;mask:var(--icon-prompt) center/contain no-repeat;position:absolute;top:2.2rem;width:2rem}.post-contents blockquote.prompt-danger p:first-child,.post-contents blockquote.prompt-info p:first-child,.post-contents blockquote.prompt-tip p:first-child,.post-contents blockquote.prompt-warning p:first-child{margin:0}.post-contents blockquote.prompt-danger.prompt-tip,.post-contents blockquote.prompt-info.prompt-tip,.post-contents blockquote.prompt-tip.prompt-tip,.post-contents blockquote.prompt-warning.prompt-tip{--bg-prompt:rgba(123,247,144,.2)}.post-contents blockquote.prompt-danger.prompt-tip:before,.post-contents blockquote.prompt-info.prompt-tip:before,.post-contents blockquote.prompt-tip.prompt-tip:before,.post-contents blockquote.prompt-warning.prompt-tip:before{--icon-prompt-color:var(--fc-success);--icon-prompt:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640' fill='var(--fc-success)' viewBox='0 0 640 640'%3E%3Cpath fill='%23000' d='M420.9 448c7.3-22.3 21.9-42.5 38.4-59.9C492 353.7 512 307.2 512 256c0-106-86-192-192-192s-192 86-192 192c0 51.2 20 97.7 52.7 132.1 16.5 17.4 31.2 37.6 38.4 59.9h201.8m-4.9 48H224v16c0 44.2 35.8 80 80 80h32c44.2 0 80-35.8 80-80zM312 176c-39.8 0-72 32.2-72 72 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-66.3 53.7-120 120-120 13.3 0 24 10.7 24 24s-10.7 24-24 24'/%3E%3C/svg%3E")}.post-contents blockquote.prompt-danger.prompt-info,.post-contents blockquote.prompt-info.prompt-info,.post-contents blockquote.prompt-tip.prompt-info,.post-contents blockquote.prompt-warning.prompt-info{--bg-prompt:#e1f5fe}.post-contents blockquote.prompt-danger.prompt-info:before,.post-contents blockquote.prompt-info.prompt-info:before,.post-contents blockquote.prompt-tip.prompt-info:before,.post-contents blockquote.prompt-warning.prompt-info:before{--icon-prompt-color:var(--fc-primary);--icon-prompt:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640' fill='none' viewBox='0 0 640 640'%3E%3Cpath fill='%23000' d='M320 576C178.6 576 64 461.4 64 320S178.6 64 320 64s256 114.6 256 256-114.6 256-256 256m0-192c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32m0-192c-18.2 0-32.7 15.5-31.4 33.7l7.4 104c.9 12.6 11.4 22.3 23.9 22.3 12.6 0 23-9.7 23.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z'/%3E%3C/svg%3E")}.post-contents blockquote.prompt-danger.prompt-warning,.post-contents blockquote.prompt-info.prompt-warning,.post-contents blockquote.prompt-tip.prompt-warning,.post-contents blockquote.prompt-warning.prompt-warning{--bg-prompt:#fff3cd}.post-contents blockquote.prompt-danger.prompt-warning:before,.post-contents blockquote.prompt-info.prompt-warning:before,.post-contents blockquote.prompt-tip.prompt-warning:before,.post-contents blockquote.prompt-warning.prompt-warning:before{--icon-prompt-color:var(--fc-warning);--icon-prompt:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640' fill='none' viewBox='0 0 640 640'%3E%3Cpath fill='%23000' d='M320 576C178.6 576 64 461.4 64 320S178.6 64 320 64s256 114.6 256 256-114.6 256-256 256m0-192c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32m0-192c-18.2 0-32.7 15.5-31.4 33.7l7.4 104c.9 12.6 11.4 22.3 23.9 22.3 12.6 0 23-9.7 23.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z'/%3E%3C/svg%3E")}.post-contents blockquote.prompt-danger.prompt-danger,.post-contents blockquote.prompt-info.prompt-danger,.post-contents blockquote.prompt-tip.prompt-danger,.post-contents blockquote.prompt-warning.prompt-danger{--bg-prompt:rgba(248,215,218,.56)}.post-contents blockquote.prompt-danger.prompt-danger:before,.post-contents blockquote.prompt-info.prompt-danger:before,.post-contents blockquote.prompt-tip.prompt-danger:before,.post-contents blockquote.prompt-warning.prompt-danger:before{--icon-prompt-color:var(--fc-danger);--icon-prompt:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640' fill='none' viewBox='0 0 640 640'%3E%3Cpath fill='%23000' d='M320.001 64c14.7 0 28.2 8.1 35.2 21l216 400c6.7 12.4 6.4 27.4-.8 39.5s-20.3 19.5-34.4 19.5h-432c-14.1 0-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9 20.5-21 35.2-21m0 352c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32m0-192c-18.2 0-32.7 15.5-31.4 33.7l7.4 104c.9 12.5 11.4 22.3 23.9 22.3 12.6 0 23-9.7 23.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z'/%3E%3C/svg%3E")}.post-contents ol,.post-contents ul{margin-bottom:1.6rem;padding-inline-start:1.75rem;padding-left:1.6rem}.post-contents ol ::marker,.post-contents ul ::marker{color:var(--fc-sub)}.post-contents ul{list-style-type:disc}.post-contents ul li{list-style-type:disc;margin:.4rem 0;padding-left:.4rem}.post-contents ul li ul,.post-contents ul li ul li{list-style-type:circle}.post-contents ul li ul li ul,.post-contents ul li ul li ul li{list-style-type:square}.post-contents ul li ul li ul li ul,.post-contents ul li ul li ul li ul li{list-style-type:disc}.post-contents ul li ul li ul li ul li ul,.post-contents ul li ul li ul li ul li ul li{list-style-type:circle}.post-contents ol,.post-contents ol li{list-style-type:decimal}.post-contents hr{border:0;border-top:1px solid var(--bc-default);margin:6.8rem 0 2rem;padding:0}@media(width <= 768px){.post-contents>.gatsby-highlight{border-left:0;border-radius:0;border-right:0;margin-left:var(--side-back-margin);margin-right:var(--side-back-margin);width:calc(100% + var(--side-padding)*2)}}.gatsby-highlight{background:var(--codeblock-background);border:1px solid var(--codeblock-border-color);border-radius:var(--codeblock-radius);margin-bottom:2rem;margin-top:.8rem;padding-bottom:1.2rem}.gatsby-highlight .gatsby-highlight-header{align-items:center;display:flex;height:3.6rem;justify-content:center;position:relative}@media(width <= 768px){.gatsby-highlight .gatsby-highlight-header{justify-content:flex-start;padding-left:1.6rem}}.gatsby-highlight .gatsby-highlight-header:before{background-color:var(--codeblock-color-muted);border-radius:50%;box-shadow:2rem 0 0 var(--codeblock-color-muted),4rem 0 0 var(--codeblock-color-muted);content:"";display:inline-block;height:1.2rem;left:1.6rem;position:absolute;width:1.2rem}@media(width <= 768px){.gatsby-highlight .gatsby-highlight-header:before{display:none}}.gatsby-highlight .gatsby-highlight-header:has(.gatsby-code-title) .gatsby-code-language{display:none}.gatsby-highlight .gatsby-highlight-header .gatsby-code-language,.gatsby-highlight .gatsby-highlight-header .gatsby-code-title{align-items:center;color:var(--codeblock-header-text-color);display:flex;font-size:86%;font-weight:600;gap:.5rem;-webkit-user-select:none;user-select:none}.gatsby-highlight .gatsby-highlight-header .gatsby-code-language .svg-inline--fa,.gatsby-highlight .gatsby-highlight-header .gatsby-code-title .svg-inline--fa{color:var(--codeblock-header-icon-color);font-size:.9em}.gatsby-highlight .gatsby-highlight-header .gatsby-code-copy{align-items:center;background:none;border:none;color:var(--codeblock-header-text-color);cursor:pointer;display:flex;font-size:80%;gap:.5rem;padding:0;position:absolute;right:1.6rem}.gatsby-highlight .gatsby-highlight-header .gatsby-code-copy .svg-inline--fa{color:var(--codeblock-header-icon-color);font-size:1em}.gatsby-highlight .gatsby-highlight-header .gatsby-code-copy svg:last-child{display:none}.gatsby-highlight .gatsby-highlight-header .gatsby-code-copy:after{content:"Copy"}.gatsby-highlight .gatsby-highlight-header .gatsby-code-copy.copied{color:var(--fc-success)}.gatsby-highlight .gatsby-highlight-header .gatsby-code-copy.copied svg:first-child{display:none}.gatsby-highlight .gatsby-highlight-header .gatsby-code-copy.copied svg:last-child{display:inline-block}.gatsby-highlight .gatsby-highlight-header .gatsby-code-copy.copied .svg-inline--fa{color:var(--fc-success)}.gatsby-highlight .gatsby-highlight-header .gatsby-code-copy.copied:after{content:"Copied!"}.gatsby-highlight .gatsby-code-body code[class*=language-],.gatsby-highlight .gatsby-code-body pre[class*=language-]{color:var(--codeblock-color);font-family:var(--codeblock-fontfamily);font-size:1.36rem;line-height:1.66;padding-right:2rem;tab-size:2;text-shadow:none}.gatsby-highlight .gatsby-code-body :not(pre)>code[class*=language-],.gatsby-highlight .gatsby-code-body pre[class*=language-]{background:var(--codeblock-background)}.gatsby-highlight .gatsby-code-body pre[class*=language-]{margin:0;overflow-y:hidden;padding:0}.gatsby-highlight .gatsby-code-body pre[class*=language-]::-webkit-scrollbar{height:4px;width:4px}.gatsby-highlight .gatsby-code-body pre[class*=language-]::-webkit-scrollbar-track{background:var(--scrollbar-track)}.gatsby-highlight .gatsby-code-body pre[class*=language-]::-webkit-scrollbar-thumb{background:var(--scrollbar-thumb)}.gatsby-highlight .gatsby-code-body pre[class*=language-]::-webkit-scrollbar,.gatsby-highlight .gatsby-code-body pre[class*=language-]::-webkit-scrollbar-thumb,.gatsby-highlight .gatsby-code-body pre[class*=language-]::-webkit-scrollbar-track{border-radius:4px}.gatsby-highlight .gatsby-code-body pre[class*=language-].line-numbers{padding-left:5.2rem}.gatsby-highlight .gatsby-code-body .gatsby-highlight-code-line{background-color:var(--codeblock-highlight-background);border-left:.25em solid var(--codeblock-highlight-border);display:block;margin-left:-1em;margin-right:-1em;padding-left:.75em;padding-right:1em}.gatsby-highlight .gatsby-code-body .line-numbers .line-numbers-rows{border-right-color:var(--codeblock-numbers-line);padding-left:1.6rem}.gatsby-highlight .gatsby-code-body .token.atrule,.gatsby-highlight .gatsby-code-body .token.keyword{color:var(--codeblock-color-keyword)}.gatsby-highlight .gatsby-code-body .token.attr-name{color:var(--codeblock-color-attrname)}.gatsby-highlight .gatsby-code-body .token.attr-value{color:var(--codeblock-color-value)}.gatsby-highlight .gatsby-code-body .token.function{color:var(--codeblock-color-function)}.gatsby-highlight .gatsby-code-body .token.class-name{color:var(--codeblock-color-classname)}.gatsby-highlight .gatsby-code-body .token.boolean,.gatsby-highlight .gatsby-code-body .token.constant,.gatsby-highlight .gatsby-code-body .token.deleted,.gatsby-highlight .gatsby-code-body .token.number,.gatsby-highlight .gatsby-code-body .token.property,.gatsby-highlight .gatsby-code-body .token.symbol{color:var(--codeblock-color-number)}.gatsby-highlight .gatsby-code-body .token.tag{color:var(--codeblock-color-tag)}.gatsby-highlight .gatsby-code-body .token.cdata,.gatsby-highlight .gatsby-code-body .token.comment,.gatsby-highlight .gatsby-code-body .token.doctype,.gatsby-highlight .gatsby-code-body .token.prolog{color:var(--codeblock-color-comment)}.gatsby-highlight .gatsby-code-body .language-css .token.string,.gatsby-highlight .gatsby-code-body .style .token.string,.gatsby-highlight .gatsby-code-body .token.entity,.gatsby-highlight .gatsby-code-body .token.operator,.gatsby-highlight .gatsby-code-body .token.url{color:var(--codeblock-color-operator)}.btn-scroll-top{align-items:center;aspect-ratio:1;background:var(--bg-default);border:1px solid var(--bc-default);border-radius:50%;bottom:7.4rem;box-shadow:0 .2rem .4rem 0 rgba(0,0,0,.1);display:flex;justify-content:center;opacity:0;position:fixed;right:var(--side-padding);transition:opacity .6s;visibility:hidden;width:4rem;z-index:10}.btn-scroll-top.on{opacity:1;visibility:visible}.btn-scroll-top .ico{color:var(--fc-default)}.post-head{background:rgba(0,0,0,.4);position:relative;width:100%}.post-head .post-head-bg{filter:brightness(.25);height:100%;object-fit:cover;position:absolute;width:100%}.post-head .post-head-info{color:#fff;margin:0 auto;max-width:var(--max-width);padding:6rem 0;position:relative;width:100%;z-index:2}@media(width <= 768px){.post-head .post-head-info{padding:4rem 0}}.post-head .post-head-info .inner{align-items:flex-start;display:flex;flex-direction:column;height:100%;justify-content:space-between;margin:0 auto;min-height:28rem;width:100%}@media(width <= 768px){.post-head .post-head-info .inner{min-height:22rem;padding:0 2rem}}.post-head .post-head-info .btn-wrap{display:flex;flex:0 0 4rem;gap:1rem}.post-head .post-head-info .btn-back,.post-head .post-head-info .btn-home{align-items:center;aspect-ratio:1;background:var(--bg-default);border-radius:50%;box-shadow:0 0 1rem rgba(0,0,0,.2);display:flex;flex:0 0 4rem;font-size:2.2rem;justify-content:center;margin-bottom:auto}@media(width <= 768px){.post-head .post-head-info .btn-back,.post-head .post-head-info .btn-home{flex:0 0 3.6rem;font-size:2rem;width:3.6rem}}.post-head .post-head-info .btn-back .ico,.post-head .post-head-info .btn-home .ico{color:var(--fc-default)}.post-head .text-wrapper{align-self:stretch;margin-top:4rem}@media(width <= 768px){.post-head .text-wrapper{margin-top:4rem}}.post-head .post-category{font-size:1.4rem;font-weight:600;opacity:.6}.post-head .post-category,.post-head .post-category span{align-items:center;display:flex;gap:1rem}.post-head .post-category span+span:before{aspect-ratio:1;background:#fff;border-radius:50%;content:"";display:block;width:.3rem}.post-head .post-title{-webkit-box-orient:vertical;-webkit-line-clamp:4;display:-webkit-box;font-size:4rem;font-weight:500;line-height:1.2;overflow:hidden;text-overflow:ellipsis}@media(width <= 768px){.post-head .post-title{font-size:3.52rem}}.post-head .post-info{display:flex;flex-direction:column;gap:.6rem;margin-top:3rem}@media(width <= 768px){.post-head .post-info{align-items:flex-start;flex-direction:column;font-size:1.5rem;font-weight:400}}@media(width <= 480px){.post-head .post-info{gap:.4rem;margin-top:2rem}}.post-head .post-dates{align-items:flex-end;display:flex;font-size:1.4rem;font-weight:200;gap:1rem;letter-spacing:0;opacity:.8}.post-head .post-dates span{align-items:center;display:flex;gap:1rem}.post-head .post-dates span strong{font-weight:300}.post-head .post-dates span+span:before{aspect-ratio:1;background:#fff;border-radius:50%;content:"";display:block;width:.3rem}.post-topbar{background:var(--bg-default);box-shadow:0 0 1px 0 rgba(0,0,0,.4);left:0;position:fixed;right:0;top:0;transform:translateY(-100%);transition:transform .15s;z-index:5}.post-topbar.on{transform:translateY(0)}.post-topbar .inner{align-items:center;display:flex;height:4.8rem}.post-topbar .btn-back,.post-topbar .btn-home{align-items:center;aspect-ratio:1;color:var(--ic-sub);display:flex;flex:0 0 4rem;justify-content:center;margin-left:-1rem}.post-topbar .btn-back.btn-home,.post-topbar .btn-home.btn-home{margin-right:.4rem}.post-topbar .title{margin-right:auto;padding-top:.1rem}.post-topbar .title h1{-webkit-box-orient:vertical;-webkit-line-clamp:1;display:-webkit-box;font-size:1.6rem;font-weight:400;overflow:hidden;text-overflow:ellipsis}.post-topbar .btn-toc{align-items:center;aspect-ratio:1;color:var(--ic-sub);display:flex;display:none;flex:0 0 4rem;justify-content:center;margin-left:2rem;margin-right:-1rem}@media(width <= 1280px){.post-topbar .btn-toc{display:flex}}.post-contents{margin:0 auto}.post-authors{display:flex;flex-direction:column;gap:1.2rem;margin:0 0 8rem}.post-authors .post-author{align-items:center;display:flex;gap:1.6rem;padding:1rem 0}.post-authors .post-author .post-author-photo{aspect-ratio:1;background:var(--bc-sub);border-radius:50%;flex:0 0 5rem;object-fit:cover;width:5rem}.post-authors .post-author .post-author-info{display:flex;flex-direction:column;gap:.4rem;min-width:0}.post-authors .post-author .post-author-name{color:var(--fc-default);font-size:1.5rem;font-weight:700}.post-authors .post-author .post-author-bio{color:var(--fc-sub);font-size:1.3rem}.post-authors .post-author .post-author-link{color:var(--fc-primary);font-size:1.2rem;overflow:hidden;text-decoration:none;text-overflow:ellipsis;white-space:nowrap}.post-authors .post-author .post-author-link:hover{text-decoration:underline}.post-prev-next{align-items:stretch;border:1px solid var(--bc-sub);border-radius:1rem;display:flex}.post-prev-next .post-next-item,.post-prev-next .post-prev-item{flex:0 0 50%;padding:1.4rem 2rem;text-align:center}.post-prev-next .post-next-item strong,.post-prev-next .post-prev-item strong{color:var(--fc-sub);display:block;font-size:1.2rem;font-weight:400}.post-prev-next .post-next-item p,.post-prev-next .post-prev-item p{color:var(--fc-primary);font-size:1.6rem;margin-top:.6rem}.post-prev-next .post-next-item.post-nav-empty p,.post-prev-next .post-prev-item.post-nav-empty p{color:var(--fc-default)}.post-prev-next .post-next-item{border-left:1px solid var(--bc-sub)}.comment-wrapper{margin:8rem 0 0}.comment-wrapper .utterances{max-width:none}</style><link rel="preconnect" href="https://www.googletagmanager.com"/><link rel="dns-prefetch" href="https://www.googletagmanager.com"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"/><link rel="canonical" href="https://aluvy.github.io/posts/highcharts/03_concepts/" data-baseprotocol="https:" data-basehost="aluvy.github.io"/><style type="text/css">
+    .anchor custom-class.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor custom-class.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor custom-class svg,
+    h2 .anchor custom-class svg,
+    h3 .anchor custom-class svg,
+    h4 .anchor custom-class svg,
+    h5 .anchor custom-class svg,
+    h6 .anchor custom-class svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor custom-class svg,
+    h2:hover .anchor custom-class svg,
+    h3:hover .anchor custom-class svg,
+    h4:hover .anchor custom-class svg,
+    h5:hover .anchor custom-class svg,
+    h6:hover .anchor custom-class svg,
+    h1 .anchor custom-class:focus svg,
+    h2 .anchor custom-class:focus svg,
+    h3 .anchor custom-class:focus svg,
+    h4 .anchor custom-class:focus svg,
+    h5 .anchor custom-class:focus svg,
+    h6 .anchor custom-class:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><style>.svg-inline--fa{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;width:1.25em}</style><title data-gatsby-head="true">Highcharts 이해하기 (title, series, tooltip, legend, axes)</title><link rel="icon" href="/favicon.png" data-gatsby-head="true"/><link rel="shortcut icon" href="/favicon.png" data-gatsby-head="true"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div id="wrap" class=""><div class="post-head"><div class="post-topbar"><div class="section"><div class="inner"><button type="button" class="btn-back"><svg data-prefix="fas" data-icon="angle-left" class="svg-inline--fa fa-angle-left ico" role="img" viewBox="0 0 256 512" aria-hidden="true"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></button><button type="button" class="btn-home"><svg data-prefix="far" data-icon="house" class="svg-inline--fa fa-house ico" role="img" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M240 6.1c9.1-8.2 22.9-8.2 32 0l232 208c9.9 8.8 10.7 24 1.8 33.9s-24 10.7-33.9 1.8l-8-7.2 0 205.3c0 35.3-28.7 64-64 64l-288 0c-35.3 0-64-28.7-64-64l0-205.3-8 7.2c-9.9 8.8-25 8-33.9-1.8s-8-25 1.8-33.9L240 6.1zm16 50.1L96 199.7 96 448c0 8.8 7.2 16 16 16l48 0 0-104c0-39.8 32.2-72 72-72l48 0c39.8 0 72 32.2 72 72l0 104 48 0c8.8 0 16-7.2 16-16l0-248.3-160-143.4zM208 464l96 0 0-104c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24l0 104z"></path></svg></button><div class="title"><h1>Highcharts 이해하기 (title, series, tooltip, legend, axes)</h1></div><button type="button" class="btn-toc"><svg data-prefix="fas" data-icon="list-ul" class="svg-inline--fa fa-list-ul ico" role="img" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M48 144a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM48 464a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM96 256a48 48 0 1 0 -96 0 48 48 0 1 0 96 0z"></path></svg></button></div></div></div><div class="post-head-info"><div class="inner"><div class="btn-wrap"><button type="button" class="btn-back"><svg data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left ico" role="img" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 105.4-105.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></button><button type="button" class="btn-home"><svg data-prefix="far" data-icon="house" class="svg-inline--fa fa-house ico" role="img" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M240 6.1c9.1-8.2 22.9-8.2 32 0l232 208c9.9 8.8 10.7 24 1.8 33.9s-24 10.7-33.9 1.8l-8-7.2 0 205.3c0 35.3-28.7 64-64 64l-288 0c-35.3 0-64-28.7-64-64l0-205.3-8 7.2c-9.9 8.8-25 8-33.9-1.8s-8-25 1.8-33.9L240 6.1zm16 50.1L96 199.7 96 448c0 8.8 7.2 16 16 16l48 0 0-104c0-39.8 32.2-72 72-72l48 0c39.8 0 72 32.2 72 72l0 104 48 0c8.8 0 16-7.2 16-16l0-248.3-160-143.4zM208 464l96 0 0-104c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24l0 104z"></path></svg></button></div><div class="text-wrapper"><div class="post-title">Highcharts 이해하기 (title, series, tooltip, legend, axes)</div><div class="post-info"><div class="post-dates"><span>Posted <strong>Dec 31, 2025</strong></span><span>Updated <strong>Oct 7, 2026</strong></span></div><div class="post-category"><span>Highcharts</span></div></div></div></div></div></div><div id="container" class="post-page"><div id="contents"><div class="row contents-layout"><div class="col-content contents-left"><div class="post-contents"><h2 id="highcharts-이해하기" style="position:relative;">Highcharts 이해하기<a href="#highcharts-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0" aria-label="highcharts 이해하기 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>Highcharts가 어떻게 동작하는지 이해하려면 차트의 다양한 구성 요소, 즉 개념들을 이해하는 것이 중요합니다.<br>
+아래 이미지는 차트의 주요 개념들을 설명합니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/fc74f05dbb78872caac2ee96952934d5/249e2/image01.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 49.479166666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABUUlEQVR42l1S23KDIBD1/3+wD63NmIymcTAi4i4stx6wmWl7BlcUl3PBrgA5/9SUcHdmG/t+nKbPvh+G4Xa73e8TEWMp5ZxTLZhv29allGKMuaHMj6zXzFxiDBiAiPPMHlUqQYxlUeXykXeDpz/NdVfMiRJXHnRblsdGq3XL7u6LWdWyK0UHlcbfOedA0FS3dsweX6l/V0+tdtbWna9x7RzeLuNbf2XnTgudMQbMpZyuq5n9IHUdD8uhqjq1YwhESYgrR7XZ2NKpzVjGNrHqT2o7NAdv9mhNrD5SfgEcIj4GOVxYrLPEHXoAA2/rMWuCSZBhn/wy8hstIKgRLwGjy9DDVJWFUJNrXLhOzvRynFoc51LTWEm7PI1puAS9NnfVW60hIBXAe2F2AaFaK/cpzLO0b2I7yK7gVFp6/3A4wW9ARM9lqadKVLQu1p65euwq8g2YLkbqEUwGPwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/fc74f05dbb78872caac2ee96952934d5/a59e9/image01.webp 192w,
+/static/fc74f05dbb78872caac2ee96952934d5/0ca9f/image01.webp 384w,
+/static/fc74f05dbb78872caac2ee96952934d5/dc9b9/image01.webp 768w,
+/static/fc74f05dbb78872caac2ee96952934d5/6da5f/image01.webp 810w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/fc74f05dbb78872caac2ee96952934d5/3b721/image01.png 192w,
+/static/fc74f05dbb78872caac2ee96952934d5/66595/image01.png 384w,
+/static/fc74f05dbb78872caac2ee96952934d5/fe486/image01.png 768w,
+/static/fc74f05dbb78872caac2ee96952934d5/249e2/image01.png 810w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/fc74f05dbb78872caac2ee96952934d5/fe486/image01.png"
+            alt="alt text"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h3 id="title-타이틀" style="position:relative;">Title (타이틀)<a href="#title-%ED%83%80%EC%9D%B4%ED%8B%80" aria-label="title 타이틀 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>차트를 설명하는 텍스트입니다. 일반적으로 차트 상단에 위치합니다.<br>
+자세한 내용은 <a href="https://www.highcharts.com/docs/chart-concepts/title-and-subtitle" target="_blank" rel="nofollow">Title and subtitle</a> 문서를 참고하세요.</p>
+<h3 id="series-시리즈" style="position:relative;">Series (시리즈)<a href="#series-%EC%8B%9C%EB%A6%AC%EC%A6%88" aria-label="series 시리즈 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>차트에 표시되는 하나 이상의 데이터 시리즈입니다.<br>
+자세한 내용은 <a href="https://www.highcharts.com/docs/chart-concepts/series" target="_blank" rel="nofollow">Series</a> 문서를 참고하세요.</p>
+<h3 id="tooltip-툴팁" style="position:relative;">Tooltip (툴팁)<a href="#tooltip-%ED%88%B4%ED%8C%81" aria-label="tooltip 툴팁 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>차트의 시리즈나 특정 데이터 포인트 위에 마우스를 올리면, 해당 차트 영역의 값을 설명하는 툴팁을 확인할 수 있습니다.
+자세한 내용은 <a href="https://www.highcharts.com/docs/chart-concepts/tooltip" target="_blank" rel="nofollow">Tooltip</a> 문서를 참고하세요.</p>
+<h3 id="legend-범례" style="position:relative;">Legend (범례)<a href="#legend-%EB%B2%94%EB%A1%80" aria-label="legend 범례 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>범례는 차트의 데이터 시리즈를 보여주며, 하나 이상의 시리즈를 활성화하거나 비활성화할 수 있습니다.
+자세한 내용은 <a href="https://www.highcharts.com/docs/chart-concepts/legend" target="_blank" rel="nofollow">Legend</a> 문서를 참고하세요.</p>
+<h3 id="axes-축" style="position:relative;">Axes (축)<a href="#axes-%EC%B6%95" aria-label="axes 축 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>일반적인 카테시안(Cartesian) 라인 차트나 컬럼 차트와 같은 대부분의 차트에는 데이터를 측정하고 분류하기 위한 두 개의 축이 있습니다. 세로 축(y축)과 가로 축(x축)이 그것입니다. 3D 차트에는 세 번째 축인 깊이 축(z축)이 추가됩니다. 레이더 차트(radar chart)라고도 불리는 폴라 차트(polar chart)는 차트의 둘레를 따라 하나의 축만 가집니다. 속도계 차트(speedometer chart)라고도 불리는 게이지 차트(gauge chart)는 단일 값 축을 가질 수도 있습니다. 반면 파이 차트(pie chart)에는 축이 없습니다.<br>
+자세한 내용은 <a href="https://www.highcharts.com/docs/chart-concepts/axes" target="_blank" rel="nofollow">Axes</a> 문서를 참고하세요.</p>
+<hr>
+<h2 id="title-and-subtitle-타이틀과-서브타이틀" style="position:relative;">Title and subtitle (타이틀과 서브타이틀)<a href="#title-and-subtitle-%ED%83%80%EC%9D%B4%ED%8B%80%EA%B3%BC-%EC%84%9C%EB%B8%8C%ED%83%80%EC%9D%B4%ED%8B%80" aria-label="title and subtitle 타이틀과 서브타이틀 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>타이틀은 기본적으로 차트 상단에 표시되며, 선택적으로 그 아래에 서브타이틀을 표시할 수 있습니다.<br>
+타이틀과 서브타이틀은 아래 예시와 같이 설정할 수 있습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/271d0a0b567733fe777135effb2b5b0d/476b8/image02.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABM0lEQVR42l1Ri26DMAzk/39xUqe1aB0rhLxxnNcOXCG0kwPY+OyLPfQTzM3Z7nRUy/fzOY7j/f71eIywaZpSSv2CWqu1dmit4auX0m8fPbP8Q5CWmTZBjJRyLhIHTv6AU0BGiFNXqn/e2qqadz1RaS2mrNxmY9KBVut3/lFC+AP05JylYIPyEDq6ZNY+gua2xLvH6JFKW13ciE4JA6Qz89s/6oGgQ7JoBShlrVkOGK1Trp6Ktl5yd7IMA34pFczVRm3M/HrhunJVoJQSQpjn2TnnKZtAKfE+MMjWLv7Melr083exxoB2DvY6JGR67xVkrBr6B6lqrF2NRW1cT1JPCp7tgj2/ViJCISHXcgAiOefduIR4rIkIb+Ys9k7ADAGs6p82mTqOj+SdgxZjzLWtbFg6/wEnTkd61xNBSAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/271d0a0b567733fe777135effb2b5b0d/a59e9/image02.webp 192w,
+/static/271d0a0b567733fe777135effb2b5b0d/0ca9f/image02.webp 384w,
+/static/271d0a0b567733fe777135effb2b5b0d/dc9b9/image02.webp 768w,
+/static/271d0a0b567733fe777135effb2b5b0d/8d53d/image02.webp 803w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/271d0a0b567733fe777135effb2b5b0d/3b721/image02.png 192w,
+/static/271d0a0b567733fe777135effb2b5b0d/66595/image02.png 384w,
+/static/271d0a0b567733fe777135effb2b5b0d/fe486/image02.png 768w,
+/static/271d0a0b567733fe777135effb2b5b0d/476b8/image02.png 803w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/271d0a0b567733fe777135effb2b5b0d/fe486/image02.png"
+            alt="alt text"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">'My custom title'</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token literal-property property">subtitle</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">'My custom subtitle'</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<h3 id="적응형-정렬-adaptive-alignment" style="position:relative;">적응형 정렬 (Adaptive Alignment)<a href="#%EC%A0%81%EC%9D%91%ED%98%95-%EC%A0%95%EB%A0%AC-adaptive-alignment" aria-label="적응형 정렬 adaptive alignment permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>버전 12부터 기본적으로 타이틀과 서브타이틀은 텍스트 길이와 차트 너비에 가장 잘 맞도록 <strong>적응형 정렬(adaptive alignment)</strong> 이 적용됩니다. 적용되는 규칙은 다음과 같습니다.</p>
+<p>짧은 텍스트의 경우 타이틀은 가운데 정렬됩니다.</p>
+<p>타이틀이 넘칠 것 같은 경우 <code class="language-text">title.minScale</code> 옵션에 설정된 한계값에 도달할 때까지 타이틀이 축소됩니다.<br>
+기본값은 <code class="language-text">0.67</code>로, 이는 타이틀의 폰트 크기가 서브타이틀과 동일해지는 비율입니다.</p>
+<p>축소 후에도 타이틀이 맞지 않는 경우 타이틀은 여러 줄로 줄 바꿈됩니다. 이때 더 깔끔한 모양을 위해 텍스트는 왼쪽 정렬로 변경됩니다.</p>
+<p>서브타이틀은 기본적으로 (그리고 동적으로) 메인 타이틀과 동일한 정렬 방식을 따릅니다.</p>
+<h3 id="규칙-재정의-overriding-the-rules" style="position:relative;">규칙 재정의 (Overriding the Rules)<a href="#%EA%B7%9C%EC%B9%99-%EC%9E%AC%EC%A0%95%EC%9D%98-overriding-the-rules" aria-label="규칙 재정의 overriding the rules permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>위의 모든 규칙은 타이틀 또는 서브타이틀의 <code class="language-text">align</code> 속성을 명시적으로 설정하거나,<br>
+<code class="language-text">title.minScale</code>을 설정하여 재정의할 수 있습니다. 예를 들어 <code class="language-text">title.minScale</code>을 1로 설정하면 축소를 허용하지 않습니다.</p>
+<h3 id="위치-조정" style="position:relative;">위치 조정<a href="#%EC%9C%84%EC%B9%98-%EC%A1%B0%EC%A0%95" aria-label="위치 조정 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>타이틀과 서브타이틀은 title 및 subtitle 옵션의 기본 속성인 <code class="language-text">align</code>, <code class="language-text">float</code>, <code class="language-text">margin</code>, <code class="language-text">verticalAlign</code>, <code class="language-text">x</code>, <code class="language-text">y</code>를 통해 위치를 조정할 수도 있습니다.<br>
+사용 가능한 모든 옵션은 <a href="https://api.highcharts.com/highcharts/title" target="_blank" rel="nofollow">options.title</a> 및 <a href="https://api.highcharts.com/highcharts/subtitle" target="_blank" rel="nofollow">options.subtitle</a> 문서를 참고하세요.</p>
+<h3 id="동적-수정-dynamic-modification" style="position:relative;">동적 수정 (Dynamic Modification)<a href="#%EB%8F%99%EC%A0%81-%EC%88%98%EC%A0%95-dynamic-modification" aria-label="동적 수정 dynamic modification permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>타이틀은 렌더링 이후에도 <strong>Chart.setTitle</strong> 메서드를 통해 동적으로 수정할 수 있습니다.</p>
+<hr>
+<h2 id="series" style="position:relative;">Series<a href="#series" aria-label="series permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<h3 id="시리즈란-무엇인가-what-is-a-series" style="position:relative;">시리즈란 무엇인가? (What is a series?)<a href="#%EC%8B%9C%EB%A6%AC%EC%A6%88%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-what-is-a-series" aria-label="시리즈란 무엇인가 what is a series permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>시리즈는 하나의 데이터 집합으로, 예를 들어 라인 그래프나 하나의 컬럼 세트가 이에 해당합니다. 차트에 표시되는 모든 데이터는 시리즈 객체에서 가져옵니다. 시리즈 객체의 구조는 다음과 같습니다.</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">series</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span></span></pre></div>
+<blockquote class="prompt-tip">
+<p>참고: 시리즈 객체는 배열이므로 여러 개의 시리즈를 포함할 수 있습니다.</p>
+</blockquote>
+<p><code class="language-text">name</code> 속성은 시리즈에 이름을 부여하며, 차트에서 시리즈 위에 마우스를 올리거나 <a href="https://www.highcharts.com/docs/chart-concepts/legend" target="_blank" rel="nofollow">범례(legend)</a>에서 해당 이름이 표시됩니다.</p>
+<h3 id="시리즈의-데이터-the-data-in-a-series" style="position:relative;">시리즈의 데이터 (The data in a series)<a href="#%EC%8B%9C%EB%A6%AC%EC%A6%88%EC%9D%98-%EB%8D%B0%EC%9D%B4%ED%84%B0-the-data-in-a-series" aria-label="시리즈의 데이터 the data in a series permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>실제 데이터는 <code class="language-text">data</code> 속성을 통해 배열로 표현되며, 세 가지 방식으로 제공할 수 있습니다.</p>
+<h4 id="1-숫자-값의-목록" style="position:relative;">1. 숫자 값의 목록<a href="#1-%EC%88%AB%EC%9E%90-%EA%B0%92%EC%9D%98-%EB%AA%A9%EB%A1%9D" aria-label="1 숫자 값의 목록 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>숫자 값들은 y값으로 해석되며, x값은 자동으로 계산됩니다. x값은 0부터 시작하여 1씩 증가하거나, <code class="language-text">pointStart</code> 및 <code class="language-text">pointInterval</code> 옵션에 따라 결정됩니다. 축에 카테고리가 있는 경우에는 해당 카테고리가 사용됩니다.</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">javascriptdata</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre></div>
+<p><a href="https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/chart/reflow-true/" target="_blank" rel="nofollow">Online example</a></p>
+<h4 id="2-두-개-이상의-값으로-이루어진-배열의-목록" style="position:relative;">2. 두 개 이상의 값으로 이루어진 배열의 목록<a href="#2-%EB%91%90-%EA%B0%9C-%EC%9D%B4%EC%83%81%EC%9D%98-%EA%B0%92%EC%9C%BC%EB%A1%9C-%EC%9D%B4%EB%A3%A8%EC%96%B4%EC%A7%84-%EB%B0%B0%EC%97%B4%EC%9D%98-%EB%AA%A9%EB%A1%9D" aria-label="2 두 개 이상의 값으로 이루어진 배열의 목록 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>첫 번째 값은 x값, 두 번째 값은 y값으로 사용됩니다. 첫 번째 값이 날짜 문자열이고 x축이 <code class="language-text">datetime</code> 타입인 경우, 해당 문자열은 날짜로 파싱됩니다.<br>
+그 외에 첫 번째 값이 문자열인 경우에는 해당 포인트의 이름으로 적용되며, x값은 위의 규칙에 따라 증가합니다. <a href="https://api.highcharts.com/highcharts/series.arearange.data" target="_blank" rel="nofollow">arearange</a>와 같은 일부 시리즈는 두 개 이상의 값을 허용합니다. 각 시리즈 타입의 자세한 내용은 API 문서를 참고하세요.</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre></div>
+<p><a href="https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/series/data-array-of-arrays/" target="_blank" rel="nofollow">Online example</a></p>
+<h4 id="3-이름이-지정된-값을-가진-객체의-목록" style="position:relative;">3. 이름이 지정된 값을 가진 객체의 목록<a href="#3-%EC%9D%B4%EB%A6%84%EC%9D%B4-%EC%A7%80%EC%A0%95%EB%90%9C-%EA%B0%92%EC%9D%84-%EA%B0%80%EC%A7%84-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%AA%A9%EB%A1%9D" aria-label="3 이름이 지정된 값을 가진 객체의 목록 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>이 경우 객체들은 <code class="language-text">options.point</code>에서 설명하는 포인트 설정 객체입니다. 사용 가능한 전체 속성 목록은 API에서 확인할 수 있습니다(예: <a href="https://api.highcharts.com/highcharts/series.line.data" target="_blank" rel="nofollow">라인 시리즈</a>).<br>
+이 옵션이 Highcharts Stock에서 작동하려면 전체 포인트 수가 <code class="language-text">turboThreshold</code>를 초과하지 않아야 하며, 초과하는 경우 <a href="https://api.highcharts.com/highstock/series.line.turboThreshold" target="_blank" rel="nofollow">turboThreshold</a> 설정을 늘려야 합니다.</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Point 1'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">'#00FF00'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">y</span><span class="token operator">:</span> <span class="token number">0</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Point 2'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">'#FF00FF'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">y</span><span class="token operator">:</span> <span class="token number">5</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<h3 id="포인트와-마커-point-and-marker" style="position:relative;">포인트와 마커 (Point and marker)<a href="#%ED%8F%AC%EC%9D%B8%ED%8A%B8%EC%99%80-%EB%A7%88%EC%BB%A4-point-and-marker" aria-label="포인트와 마커 point and marker permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>카테시안(Cartesian) 차트에서 포인트는 차트 위의 (x, y) 좌표 쌍을 나타냅니다. 포인트에는 시리즈 데이터 내에서 개별 옵션을 지정할 수 있습니다. 다른 차트 타입에서는 포인트가 (x, y) 이외의 값을 나타냅니다. 예를 들어 범위 차트(range chart)에서 포인트는 (x, low, high)를, OHLC 차트에서는 (x, open, high, low, close)를 나타냅니다. 파이 차트나 게이지 차트에서 포인트는 단일 값을 나타냅니다.</p>
+<p><code class="language-text">point</code> 옵션은 모든 차트에 적용할 수 있습니다. 아래는 특정 포인트의 색상을 변경하는 예시입니다.</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">series</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">29.9</span><span class="token punctuation">,</span> <span class="token number">71.5</span><span class="token punctuation">,</span> <span class="token number">106.4</span><span class="token punctuation">,</span> <span class="token number">129.2</span><span class="token punctuation">,</span> <span class="token number">144.0</span><span class="token punctuation">,</span> <span class="token number">176.0</span><span class="token punctuation">,</span> <span class="token number">135.6</span><span class="token punctuation">,</span> <span class="token number">148.5</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">y</span><span class="token operator">:</span> <span class="token number">216.4</span><span class="token punctuation">,</span> <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">'#BF0B23'</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">194.1</span><span class="token punctuation">,</span> <span class="token number">95.6</span><span class="token punctuation">,</span> <span class="token number">54.4</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span></span></pre></div>
+<p>라인, 스플라인(spline), 에어리어(area), 에어리어스플라인(areaspline) 차트에는 포인트 마커(point marker) 를 표시하는 옵션이 있습니다.<br>
+이는 <code class="language-text">point</code> 옵션과는 약간 다르며, 포인트 마커의 스타일과 모양을 변경할 수 있습니다.</p>
+<p>아래는 특정 포인트의 마커 색상과 크기를 변경하는 예시입니다.</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">series</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">29.9</span><span class="token punctuation">,</span> <span class="token number">71.5</span><span class="token punctuation">,</span> <span class="token number">106.4</span><span class="token punctuation">,</span> <span class="token number">129.2</span><span class="token punctuation">,</span> <span class="token number">144.0</span><span class="token punctuation">,</span> <span class="token number">176.0</span><span class="token punctuation">,</span> <span class="token number">135.6</span><span class="token punctuation">,</span> <span class="token number">148.5</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token literal-property property">y</span><span class="token operator">:</span> <span class="token number">216.4</span><span class="token punctuation">,</span> <span class="token literal-property property">marker</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">fillColor</span><span class="token operator">:</span> <span class="token string">'#BF0B23'</span><span class="token punctuation">,</span> <span class="token literal-property property">radius</span><span class="token operator">:</span> <span class="token number">10</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">194.1</span><span class="token punctuation">,</span> <span class="token number">95.6</span><span class="token punctuation">,</span> <span class="token number">54.4</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span></span></pre></div>
+<h3 id="시리즈-옵션-series-options" style="position:relative;">시리즈 옵션 (Series options)<a href="#%EC%8B%9C%EB%A6%AC%EC%A6%88-%EC%98%B5%EC%85%98-series-options" aria-label="시리즈 옵션 series options permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>시리즈 옵션은 Highcharts 옵션 구조 내 두 곳에서 정의할 수 있습니다.</p>
+<p>여러 시리즈에 공통으로 적용되는 일반 옵션은 <code class="language-text">plotOptions</code>에서 정의합니다.<br>
+차트 내 모든 시리즈에 일반 옵션을 설정하려면 <code class="language-text">plotOptions.series</code>를 사용하고, 특정 차트 타입에 일반 옵션을 설정하려면 각 차트 타입별 <code class="language-text">plotOptions</code> 컬렉션을 사용합니다.</p>
+<p>각 시리즈에 대한 특정 옵션은 <code class="language-text">series</code> 옵션 구조에서 정의합니다.<br>
+<code class="language-text">plotOptions</code> 구조에 나열된 모든 옵션은 특정 시리즈 정의에서도 설정할 수 있습니다. <code class="language-text">data</code>, <code class="language-text">id</code>, <code class="language-text">name</code>과 같은 일부 옵션은 특정 시리즈에만 의미가 있습니다.</p>
+<p>아래는 데이터 시리즈에 적용할 수 있는 가장 일반적인 옵션들의 개요입니다.</p>
+<h4 id="animation-애니메이션" style="position:relative;">Animation (애니메이션)<a href="#animation-%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98" aria-label="animation 애니메이션 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>시리즈의 초기 애니메이션 특성을 비활성화하거나 변경할 수 있습니다. 애니메이션은 기본적으로 활성화되어 있습니다.</p>
+<h4 id="color-색상" style="position:relative;">Color (색상)<a href="#color-%EC%83%89%EC%83%81" aria-label="color 색상 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>시리즈의 색상을 변경할 수 있습니다.</p>
+<h4 id="point-selection-포인트-선택" style="position:relative;">Point selection (포인트 선택)<a href="#point-selection-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%84%A0%ED%83%9D" aria-label="point selection 포인트 선택 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>단일 포인트를 선택하고 강조 표시할 수 있습니다. 포인트를 제거하거나 편집하거나 정보를 표시하는 데 사용할 수 있습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 368px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/2f3edda476ca616a346db8023d98939b/55493/image03.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 66.14583333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAIAAAAmMtkJAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVR42qWSy27EIAxF+f8P7KJSN1ErzWIyeRCetqGXOJNG86g6quWFMTY+XDC1Vu99CAFBedGMc26aJvT/pVlWh6EWbrquSynVFy1ScbmYeZ6ttb9gi8g6qm1nls8xf015jjwFNkiieVkWBFp3JFQ8ErGRe0djYI8D5Iq9nfoML8vb+8cYBJD3hW1yzlmvXa5iwHwWjLrAh1HnPFAbPejc1WYpuM/Z0eAZgC33/BHMzqBQLsnJ0hHwFvewNKoTESGperV9aQhwVVrWQLblT6Y1M3OMUYcvzkF6BPo+mejc98S8fY9aL8OgBRDd3MobQloPUgMUXvFIjh+5fypT/2Hf0VoBdSUzAncAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/2f3edda476ca616a346db8023d98939b/a59e9/image03.webp 192w,
+/static/2f3edda476ca616a346db8023d98939b/ef070/image03.webp 368w"
+              sizes="(max-width: 368px) 100vw, 368px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/2f3edda476ca616a346db8023d98939b/3b721/image03.png 192w,
+/static/2f3edda476ca616a346db8023d98939b/55493/image03.png 368w"
+            sizes="(max-width: 368px) 100vw, 368px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/2f3edda476ca616a346db8023d98939b/55493/image03.png"
+            alt="alt text"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p><a href="https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-allowpointselect-line/" target="_blank" rel="nofollow">Try it here</a></p>
+<p>포인트 선택을 활성화하는 코드:</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">plotOptions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">series</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">allowPointSelect</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>선택된 포인트를 가져오는 코드:</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token keyword">var</span> selectedPoints <span class="token operator">=</span> chart<span class="token punctuation">.</span><span class="token function">getSelectedPoints</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre></div>
+<h4 id="line-width-라인-두께" style="position:relative;">Line width (라인 두께)<a href="#line-width-%EB%9D%BC%EC%9D%B8-%EB%91%90%EA%BB%98" aria-label="line width 라인 두께 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>라인의 두께를 변경할 수 있습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/933551946e398075b810e4def15a513e/c0214/image04.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKUlEQVR42m1Ri27DIAzk/39xUtVlaZSUPEgoCQ8bekAbbdUsFOWwz+czgkuklGKJ9A5rbd/3Usp6WTN/S5KgEsYY7/3Z4nejF+BoA3PMsOrh50VWSjVNY8xeq/HBccSEoQr0nFxM02oeh0s1DXIIAWTg4zjats0J5kC8e9YHaUcU0xF4VHqS8qe9Xb7bZZm3bYO40FrXSUDr+0HOCgoPS9bnjpj0NoyXazMM923dcAPlbpCrUpl8KnuK2vqvy1XrR3Vr9h1epnGMpfXpf6fEZW6BBiA7isblLQB0XTdA6C7hwjn34uQcn7s0sMNRIAOHNpwFWQTi0zTXjVfWm1vgu4VAKVaK4T2OD87nALQuB17bFfxxqlmR/ovAcVYrHn9ZFiz2IwtN9CWiJyMKSTXUdPsKAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/933551946e398075b810e4def15a513e/a59e9/image04.webp 192w,
+/static/933551946e398075b810e4def15a513e/0ca9f/image04.webp 384w,
+/static/933551946e398075b810e4def15a513e/dc9b9/image04.webp 768w,
+/static/933551946e398075b810e4def15a513e/c6463/image04.webp 796w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/933551946e398075b810e4def15a513e/3b721/image04.png 192w,
+/static/933551946e398075b810e4def15a513e/66595/image04.png 384w,
+/static/933551946e398075b810e4def15a513e/fe486/image04.png 768w,
+/static/933551946e398075b810e4def15a513e/c0214/image04.png 796w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/933551946e398075b810e4def15a513e/fe486/image04.png"
+            alt="alt text"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p><a href="https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-linewidth-specific/" target="_blank" rel="nofollow">Try it here</a></p>
+<p>라인 두께를 변경하는 코드:</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">series</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">216.4</span><span class="token punctuation">,</span> <span class="token number">194.1</span><span class="token punctuation">,</span> <span class="token number">95.6</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">lineWidth</span><span class="token operator">:</span> <span class="token number">5</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span></span></pre></div>
+<h4 id="stacking-스태킹" style="position:relative;">Stacking (스태킹)<a href="#stacking-%EC%8A%A4%ED%83%9C%ED%82%B9" aria-label="stacking 스태킹 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>스태킹은 시리즈들이 겹치지 않고 서로 위에 쌓이도록 배치할 수 있습니다. 자세한 내용은 <a href="https://www.highcharts.com/docs/advanced-chart-features/stacking-charts" target="_blank" rel="nofollow">Stacking charts</a> 문서를 참고하세요.</p>
+<h4 id="cursor-커서" style="position:relative;">Cursor (커서)<a href="#cursor-%EC%BB%A4%EC%84%9C" aria-label="cursor 커서 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>포인트와 시리즈가 클릭 가능하다는 것을 나타내기 위해 커서의 모양을 변경할 수 있습니다.</p>
+<h4 id="data-labels-데이터-레이블" style="position:relative;">Data labels (데이터 레이블)<a href="#data-labels-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%A0%88%EC%9D%B4%EB%B8%94" aria-label="data labels 데이터 레이블 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>차트의 시리즈에 있는 각 데이터 포인트에 데이터 레이블을 표시할 수 있습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f92398bc730a94d67ab6462bca26e3f4/50208/image05.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABJElEQVR42mVSi46EIAzk/z9zs4+LLgiUdwveqHFvLzbEYNuZtlPUerEY4/P5fDwet9vtfr/jMk1Ta+07Z4zhnFO9dxEZF0sp5ZxBFAKV2pgZmP6VAKCS3a5gpIpwLNVQcbEslI0L6wE7E1St9RvcO7xDereUllgoIdpRloWLrGDJuWwt7ATKe48GjjEOPorJpbpVW6zRGrMZY7QxgXxpTJl9SGOHKMQ+lUHnU7WhOE/zPGNslD1CyCEKWmsUi5V9goK8CYbOjY+vt33Ny8+krbXQaZyq/ldBKIDirRcXU1JwsYj3BAwE5nMlH8B5P+bcfqEAmsJXDcgDNWQ/LNgJ+qnMMZXdai4Fnr8DUONtQ1jV9ZGsO7+PibwPIaCjS3zgCbRafwGsrUiq5/JDKwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/f92398bc730a94d67ab6462bca26e3f4/a59e9/image05.webp 192w,
+/static/f92398bc730a94d67ab6462bca26e3f4/0ca9f/image05.webp 384w,
+/static/f92398bc730a94d67ab6462bca26e3f4/dc9b9/image05.webp 768w,
+/static/f92398bc730a94d67ab6462bca26e3f4/1d2dc/image05.webp 798w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/f92398bc730a94d67ab6462bca26e3f4/3b721/image05.png 192w,
+/static/f92398bc730a94d67ab6462bca26e3f4/66595/image05.png 384w,
+/static/f92398bc730a94d67ab6462bca26e3f4/fe486/image05.png 768w,
+/static/f92398bc730a94d67ab6462bca26e3f4/50208/image05.png 798w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/f92398bc730a94d67ab6462bca26e3f4/fe486/image05.png"
+            alt="alt text"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p><a href="https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/demo/line-labels/" target="_blank" rel="nofollow">Try it here</a></p>
+<p>데이터 레이블을 활성화하는 코드 예시:</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">plotOptions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">line</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">dataLabels</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">enabled</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<blockquote class="prompt-tip">
+<p>참고: 마우스 트래킹(mouse tracking)을 비활성화할 수도 있습니다. 마우스 트래킹은 마우스를 올렸을 때 시리즈와 포인트를 강조 표시합니다(마우스 트래킹이 비활성화되면 툴팁도 표시되지 않습니다).</p>
+</blockquote>
+<p>데이터 레이블에 표시되는 텍스트는 <code class="language-text">formatter</code> 옵션을 사용하여 커스터마이징할 수 있습니다. 더 많은 옵션은 API 레퍼런스를 참고하세요.</p>
+<h4 id="dash-style-대시-스타일" style="position:relative;">Dash style (대시 스타일)<a href="#dash-style-%EB%8C%80%EC%8B%9C-%EC%8A%A4%ED%83%80%EC%9D%BC" aria-label="dash style 대시 스타일 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>실선 대신 점선을 사용할 수 있으며, 여러 가지 대시 옵션을 사용할 수 있습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/b244dec66cda0239452c685a2fb6874e/0469b/image06.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6ElEQVR42nWS2a7DMAhE/f8/mjpR9sUr7j0JqlultzxEeBhmAMWUUp7/hXOubdthGJ6/w+Scf/UTVFG5gZVvyhXfZQVDCPu+V8KNbESkfEUtr+vK5J+4zqK52bZNJVWFPKU0jiNtkOgkr5MfxzFNk/cehKHOnUGR6PuehIK1lueyLCBKmudZOaqIBCBOBhQxHPha+6CBfkAGga3nbJoGQtd13ocY43tnlUzp9McNyfepX4twM9w+z6YFo9vyyFkU9SHgcDgXY4opOR9AEMonT6DhJNfTqNbt92A3nYIh8STnipUg18FF8h8eWEvE8lS5HwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/b244dec66cda0239452c685a2fb6874e/a59e9/image06.webp 192w,
+/static/b244dec66cda0239452c685a2fb6874e/0ca9f/image06.webp 384w,
+/static/b244dec66cda0239452c685a2fb6874e/dc9b9/image06.webp 768w,
+/static/b244dec66cda0239452c685a2fb6874e/91236/image06.webp 805w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/b244dec66cda0239452c685a2fb6874e/3b721/image06.png 192w,
+/static/b244dec66cda0239452c685a2fb6874e/66595/image06.png 384w,
+/static/b244dec66cda0239452c685a2fb6874e/fe486/image06.png 768w,
+/static/b244dec66cda0239452c685a2fb6874e/0469b/image06.png 805w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/b244dec66cda0239452c685a2fb6874e/fe486/image06.png"
+            alt="alt text"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p><a href="https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/plotoptions/series-dashstyle/" target="_blank" rel="nofollow">Try it here</a></p>
+<p>개별 시리즈에 점선을 설정하는 코드(<code class="language-text">dashStyle</code>은 <code class="language-text">plotOptions</code>에서도 설정 가능):</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">series</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">dashStyle</span><span class="token operator">:</span> <span class="token string">'longdash'</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span></span></pre></div>
+<h4 id="zones-구역" style="position:relative;">Zones (구역)<a href="#zones-%EA%B5%AC%EC%97%AD" aria-label="zones 구역 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>경우에 따라 그래프의 특정 구간을 다르게 표시하고 싶을 때가 있습니다.</p>
+<p>일반적인 예로는 데이터가 특정 범위에 있을 때 다른 색상을 사용하는 것입니다. 이 효과는 <strong>존(zones)</strong> 을 사용하여 구현할 수 있습니다.</p>
+<p>기본적으로 구역은 y축을 기준으로 적용되지만, 시리즈의 <code class="language-text">zoneAxis</code> 변수를 설정하여 쉽게 변경할 수 있습니다. 구역 자체를 설정하려면 <code class="language-text">zones</code>라는 배열을 정의해야 하며, 각 항목은 하나의 구역에 해당하고 구역의 끝을 나타내는 파라미터 값으로 구분됩니다.</p>
+<p>각 구역에서 재정의할 수 있는 설정은 <code class="language-text">color</code>, <code class="language-text">fillColor</code>, <code class="language-text">dashStyle</code>입니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e358b7a0645a0c44de76fc1bd9a21f4d/6648e/image07.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 42.1875%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA0UlEQVR42oVRixKDIAzj/z937tF3lyJ6qDcHV8SQhja0iEh3z18jcPZcllweSxb332gOkiGpyHNAqhM8PC0sOSglBHsFZh0bVx7y2rrxXaBTgKlHkkSyWYpLx7wLcyomu/bz4sWU25g5106wuKUrJQsStQTuW6xzsboYHSqXP2gZ7ZoQgE+GvIHpwavazhXENidOCQeKCRTT1kex3vbm3MXPkXzGDzFyW70iE3xReCWMkEsQbGEicOAd8/7lwd8x/Lft5rvxYjwABM/cucKyrkS/3o15+z1EYuoAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/e358b7a0645a0c44de76fc1bd9a21f4d/a59e9/image07.webp 192w,
+/static/e358b7a0645a0c44de76fc1bd9a21f4d/0ca9f/image07.webp 384w,
+/static/e358b7a0645a0c44de76fc1bd9a21f4d/dc9b9/image07.webp 768w,
+/static/e358b7a0645a0c44de76fc1bd9a21f4d/1dd27/image07.webp 948w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/e358b7a0645a0c44de76fc1bd9a21f4d/3b721/image07.png 192w,
+/static/e358b7a0645a0c44de76fc1bd9a21f4d/66595/image07.png 384w,
+/static/e358b7a0645a0c44de76fc1bd9a21f4d/fe486/image07.png 768w,
+/static/e358b7a0645a0c44de76fc1bd9a21f4d/6648e/image07.png 948w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/e358b7a0645a0c44de76fc1bd9a21f4d/fe486/image07.png"
+            alt="alt text"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p><a href="https://jsfiddle.net/api/post/library/pure/" target="_blank" rel="nofollow">Try it here</a></p>
+<p>구역 설정에 사용된 코드:</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">zones</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">'#f7a35c'</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">'#7cb5ec'</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">'#90ed7d'</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>또 다른 일반적인 활용 사례는 미래의 예상 데이터 포인트를 다르게 스타일링하는 것입니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/2cdd2e6fe4fc61e3f46d2dabd1d84198/26530/image08.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 43.22916666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA5klEQVR42oWS2xLCIAxE/f+vrD6qT7UVQgJrlsIULx0zs01TModt4ASPUgp+xe16xTRNOF/ONd9vd/yLEx+q6QvKWlWhZjDmJrZZ+QdMCTnnCuly5AZ2Se4VEJ22aIF4tjz2D8AYA/LwkW/JIWsqmF2PplmYt55Mp/mHQ9LXdfVd3CG2nQmhC7rpbpUjoCO0b61mDz4dmmm1v5i70v339nkez4w8sY8ZcseoGTEZCuFV5odgNXO+zKPqmrY+s3dgP+kk0ec5KuAZIubHAhHxWhBCqGtbvfd+AY+Cc4+SDu8q3ffrROALc4DHmQ/drfoAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/2cdd2e6fe4fc61e3f46d2dabd1d84198/a59e9/image08.webp 192w,
+/static/2cdd2e6fe4fc61e3f46d2dabd1d84198/0ca9f/image08.webp 384w,
+/static/2cdd2e6fe4fc61e3f46d2dabd1d84198/dc9b9/image08.webp 768w,
+/static/2cdd2e6fe4fc61e3f46d2dabd1d84198/3d89b/image08.webp 944w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/2cdd2e6fe4fc61e3f46d2dabd1d84198/3b721/image08.png 192w,
+/static/2cdd2e6fe4fc61e3f46d2dabd1d84198/66595/image08.png 384w,
+/static/2cdd2e6fe4fc61e3f46d2dabd1d84198/fe486/image08.png 768w,
+/static/2cdd2e6fe4fc61e3f46d2dabd1d84198/26530/image08.png 944w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/2cdd2e6fe4fc61e3f46d2dabd1d84198/fe486/image08.png"
+            alt="alt text"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p><a href="https://jsfiddle.net/api/post/library/pure/" target="_blank" rel="nofollow">Try it here</a></p>
+<p>구역 설정에 사용된 코드:</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">zoneAxis</span><span class="token operator">:</span> <span class="token string">'x'</span><span class="token punctuation">,</span>
+<span class="token literal-property property">zones</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token number">8</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">dashStyle</span><span class="token operator">:</span> <span class="token string">'dot'</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>자세한 내용은 <a href="https://api.highcharts.com/highcharts/plotOptions.series.zones" target="_blank" rel="nofollow">API</a>를 참고하세요.</p>
+<hr>
+<h2 id="tooltip" style="position:relative;">Tooltip<a href="#tooltip" aria-label="tooltip permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>툴팁은 시리즈의 포인트 위에 마우스를 올렸을 때 나타납니다. 기본적으로 툴팁은 포인트의 값과 시리즈 이름을 표시합니다. 툴팁에 사용할 수 있는 전체 옵션은 <a href="https://api.highcharts.com/highcharts/tooltip" target="_blank" rel="nofollow">API 레퍼런스</a>를 참고하세요.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e44f21d69b34585ecf706c6ea24c5a63/c0214/image09.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 51.041666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5klEQVR42n1R2W7EIAzk/z+yLyttVVVRGkjA4IMOx26j7jEKkbFnGGycmalqfUApZVmWdV1BqC/gpOOxQIWJcqRceFazGIu9E8NmOPk9fVw+L9evRHko1yiB1JP+F9tES6EJUGPR750hQJzYfuI0hRiZ2tnOe39TVVE7sm5JQlYIWsYq3I6icvMDB4TpjMGMgcFqi5JY7xM6T+ocD4PmjFVEPDU3e0a9T+GMVHTP4lBNpTU2eDhAO3lc4BzMbWt3nNidhXk0o/0T0fZXw5yBsf3Li7K0EMu9eP92kS0cewhPamZExMy/dmBP4RkkXTMAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/e44f21d69b34585ecf706c6ea24c5a63/a59e9/image09.webp 192w,
+/static/e44f21d69b34585ecf706c6ea24c5a63/0ca9f/image09.webp 384w,
+/static/e44f21d69b34585ecf706c6ea24c5a63/dc9b9/image09.webp 768w,
+/static/e44f21d69b34585ecf706c6ea24c5a63/c6463/image09.webp 796w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/e44f21d69b34585ecf706c6ea24c5a63/3b721/image09.png 192w,
+/static/e44f21d69b34585ecf706c6ea24c5a63/66595/image09.png 384w,
+/static/e44f21d69b34585ecf706c6ea24c5a63/fe486/image09.png 768w,
+/static/e44f21d69b34585ecf706c6ea24c5a63/c0214/image09.png 796w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/e44f21d69b34585ecf706c6ea24c5a63/fe486/image09.png"
+            alt="alt text"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h3 id="외관-appearance" style="position:relative;">외관 (Appearance)<a href="#%EC%99%B8%EA%B4%80-appearance" aria-label="외관 appearance permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>아래 코드 예시는 툴팁의 가장 일반적인 외관 옵션을 보여줍니다.</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">tooltip</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">backgroundColor</span><span class="token operator">:</span> <span class="token string">'#FCFFC5'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">borderColor</span><span class="token operator">:</span> <span class="token string">'black'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">borderRadius</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">borderWidth</span><span class="token operator">:</span> <span class="token number">3</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>배경색은 그라디언트로도 설정할 수 있습니다. <a href="https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/tooltip/backgroundcolor-gradient/" target="_blank" rel="nofollow">예시</a>를 참고하세요.<br>
+텍스트 속성은 <a href="https://api.highcharts.com/highcharts/tooltip.style" target="_blank" rel="nofollow">style 옵션</a>을 사용하여 설정할 수 있습니다.</p>
+<p>또는 <strong>Styled Mode를 활성화</strong>하여 CSS로 툴팁을 스타일링할 수 있습니다.</p>
+<div class="gatsby-highlight" data-language="css"><pre style="counter-reset: linenumber NaN" class="language-css line-numbers"><code class="language-css"><span class="token selector">.highcharts-tooltip-box</span> <span class="token punctuation">{</span>
+  <span class="token property">fill</span><span class="token punctuation">:</span> #FCFFC5<span class="token punctuation">;</span>
+  <span class="token property">stroke</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">stroke-width</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<blockquote class="prompt-tip">
+<p>참고: 툴팁 내용은 기본적으로 SVG로 렌더링되므로, CSS에서 fill과 stroke 같은 SVG 속성을 지정해야 합니다.</p>
+</blockquote>
+<h3 id="툴팁-포매팅-tooltip-formatting" style="position:relative;">툴팁 포매팅 (Tooltip formatting)<a href="#%ED%88%B4%ED%8C%81-%ED%8F%AC%EB%A7%A4%ED%8C%85-tooltip-formatting" aria-label="툴팁 포매팅 tooltip formatting permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>툴팁의 내용은 HTML의 일부를 기반으로 렌더링되며, 다양한 방식으로 변경할 수 있어 구현자가 내용을 완전히 제어할 수 있습니다.</p>
+<p><a href="https://api.highcharts.com/highcharts/tooltip" target="_blank" rel="nofollow">tooltip</a> 설정 객체의 옵션 외에도, <a href="https://api.highcharts.com/highcharts/plotOptions.series.tooltip" target="_blank" rel="nofollow">series.tooltip</a>을 통해 각 시리즈가 툴팁에 표시되는 방식에 대한 옵션을 설정할 수 있습니다.</p>
+<ul>
+<li>툴팁의 헤더 부분은 <a href="https://api.highcharts.com/highcharts/tooltip.headerFormat" target="_blank" rel="nofollow">tooltip.headerFormat</a>을 사용하여 변경할 수 있습니다. 공유 툴팁(shared tooltip)에서는 첫 번째 시리즈의 <code class="language-text">headerFormat</code>이 사용됩니다.</li>
+</ul>
+<p>v12+에서는 <code class="language-text">point.key</code>에 대한 로케일 인식 날짜 이름이 브라우저의 대소문자 방식을 따르므로(주로 소문자), 헤더를 대문자로 표시하려면 <code class="language-text">{ucfirst point.key}</code>를 사용하세요.</p>
+<ul>
+<li>
+<p>각 시리즈의 목록 부분은 <a href="https://api.highcharts.com/highcharts/tooltip.pointFormat" target="_blank" rel="nofollow">tooltip.pointFormat</a> 옵션 또는 각 시리즈별 개별 <code class="language-text">pointFormat</code>으로 설정합니다.</p>
+</li>
+<li>
+<p>푸터 부분은 <a href="https://api.highcharts.com/highcharts/tooltip.footerFormat" target="_blank" rel="nofollow">tooltip.footerFormat</a> 옵션으로 설정할 수 있습니다.</p>
+</li>
+<li>
+<p>위의 모든 옵션은 프로그래밍 방식의 제어를 위해 <a href="https://api.highcharts.com/highcharts/tooltip.formatter" target="_blank" rel="nofollow">tooltip.formatter</a> 콜백으로 재정의할 수 있습니다.</p>
+</li>
+</ul>
+<p>기본적으로 툴팁은 HTML을 SVG로 파싱하여 렌더링하기 때문에 HTML의 일부만 허용합니다.<br>
+<a href="https://api.highcharts.com/highcharts/tooltip.useHTML" target="_blank" rel="nofollow">useHTML</a> 옵션을 <code class="language-text">true</code>로 설정하면 렌더러가 완전한 HTML로 전환되어 툴팁 내부에 테이블 레이아웃이나 이미지 등을 사용할 수 있습니다.</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">tooltip</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">format</span><span class="token operator">:</span> <span class="token string">'The value for &lt;b>{x}&lt;/b> is &lt;b>{y}&lt;/b>, in series {series.name}'</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span></span></pre></div>
+<p>포매팅에 대한 자세한 내용은 <a href="https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting" target="_blank" rel="nofollow">Labels and string formatting</a> 문서를 참고하세요.</p>
+<h3 id="위치-지정-positioning" style="position:relative;">위치 지정 (Positioning)<a href="#%EC%9C%84%EC%B9%98-%EC%A7%80%EC%A0%95-positioning" aria-label="위치 지정 positioning permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>Highcharts는 기능성과 디자인을 모두 개선하여 툴팁 위치를 필요에 맞게 조정할 수 있는 여러 옵션을 제공합니다.</p>
+<ul>
+<li><strong>공유 툴팁(Shared tooltips)</strong> 은 여러 시리즈가 있는 차트에 유용합니다. 특정 x축 값에 대한 모든 시리즈의 정보를 하나의 툴팁에 표시하여 복잡함을 줄이고 비교를 쉽게 합니다. <a href="https://api.highcharts.com/highcharts/tooltip.shared" target="_blank" rel="nofollow">tooltip.shared</a>를 참고하세요.</li>
+<li><strong>분할 툴팁(Split tooltips)</strong> 은 각 시리즈 포인트에 대해 별도의 툴팁을 표시하며, 각 데이터 포인트의 상세 정보가 필요할 때 유용합니다. <a href="https://api.highcharts.com/highcharts/tooltip.split" target="_blank" rel="nofollow">tooltip.split</a>을 참고하세요.</li>
+<li><strong>고정 툴팁(Fixed tooltips, v12.2부터 지원)</strong> 은 차트의 고정된 위치(기본적으로 데이터 영역의 왼쪽 상단 모서리)에 툴팁을 표시합니다. 고정 툴팁은 <code class="language-text">shared</code> 또는 <code class="language-text">split</code>과 함께 사용할 수 있습니다. <a href="https://api.highcharts.com/highcharts/tooltip.fixed" target="_blank" rel="nofollow">tooltip.fixed</a>를 참고하세요.</li>
+</ul>
+<h3 id="크로스헤어-crosshairs" style="position:relative;">크로스헤어 (Crosshairs)<a href="#%ED%81%AC%EB%A1%9C%EC%8A%A4%ED%97%A4%EC%96%B4-crosshairs" aria-label="크로스헤어 crosshairs permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>크로스헤어는 포인트와 해당 축을 연결하는 선을 표시합니다. Highcharts에서는 기본적으로 비활성화되어 있지만, Highcharts Stock에서는 기본적으로 활성화되어 있습니다. 크로스헤어의 전체 옵션은 <a href="https://api.highcharts.com/highcharts/xAxis.crosshair" target="_blank" rel="nofollow">crosshairs</a> 문서를 참고하세요.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/3f5b36546853bac645b113a5cb53fc5e/78d47/image10.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA9ElEQVR42nVS2WrEMAz0/39jn0qhJTTQOIcl63DHcjZlu7vChNE9GpLMzN3bgxHRNE3zPI/ss5KWNOxJc1UiLsxyy5J4tbsZCZvR7PeGRN6Ot/fPj6+JmOGWakvRTLqxdR5Rk0QwWi2sh9xFjcVWku9Nfg5hBVaAkV2KVDGP4pRz7icFDQQxOJOtbDXYIALM6hdftbaQnbSxue9sbUdbUdRdZ72QssWCXpc8eMI56jkv2A3gF6n/copBhYTswQqSZ1v7e0OFIU53fVzdblFP/YxQW0OFeDYAcWWuoWZvGwBfSNyB9c0vbVn3fdse45iEX0hVfwERek/D1i7BAwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/3f5b36546853bac645b113a5cb53fc5e/a59e9/image10.webp 192w,
+/static/3f5b36546853bac645b113a5cb53fc5e/0ca9f/image10.webp 384w,
+/static/3f5b36546853bac645b113a5cb53fc5e/dc9b9/image10.webp 768w,
+/static/3f5b36546853bac645b113a5cb53fc5e/cf465/image10.webp 800w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/3f5b36546853bac645b113a5cb53fc5e/3b721/image10.png 192w,
+/static/3f5b36546853bac645b113a5cb53fc5e/66595/image10.png 384w,
+/static/3f5b36546853bac645b113a5cb53fc5e/fe486/image10.png 768w,
+/static/3f5b36546853bac645b113a5cb53fc5e/78d47/image10.png 800w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/3f5b36546853bac645b113a5cb53fc5e/fe486/image10.png"
+            alt="alt text"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>크로스헤어는 x축, y축 또는 두 축 모두에 활성화할 수 있습니다.</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token comment">// x축에 활성화</span>
+<span class="token literal-property property">xAxis</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">crosshair</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// y축에 활성화</span>
+<span class="token literal-property property">yAxis</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">crosshair</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<hr>
+<h2 id="legend-범례-1" style="position:relative;">Legend (범례)<a href="#legend-%EB%B2%94%EB%A1%80-1" aria-label="legend 범례 1 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>범례는 차트의 시리즈를 사전에 정의된 기호(symbol)와 시리즈 이름으로 표시합니다. 시리즈는 범례를 통해 비활성화하거나 활성화할 수 있습니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/31a74c230e16d9d00f2a6f830eed9284/78d47/image11.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABpklEQVR42m1Qa2vbQBDU//8hhRJonNTPUPo1NNAkFXVsycQQKZbl3Olxp3tI99jryg35UDosyy7MsDMbEULyLHvN87Isj8cjpfRUlk3bvhXF0NTBWgj/AQBwziOpdM0EbfihKLRSxlhvDGp8RSDLghD/yCxYD15Kaa2NPAQHgWv9K473z3vGGEgBnAXnTAAT+leuauU/xA7pAFr32COAMOAawHuH+CBVWkurcLg7tPOk2RMdPN4E/y7WSI6Mg1EMYN9h0Hkp1DSlcvCt8rcv6tPj8WfejZ6dN8H0vpdCjZk7HC2c4RFU2G87Ot2cFon8/izniZg9scnv6r5sUYwZBxiEF1rptm3HzGfbI/LWXT4107Sardl03Uzi6vLx7Tomi61Y7diacOQYMPgzFAshIpRZH5h294d+lrCvCZltumUqJjH9/CO7uMu+PJxwvdrW12n5woUPo0EpFeYfLyMeCjnZ0HlKlwlfJmKVdjepWI4lVymuYpHWV1tys2NhfC30/fnb4Xy504Z2quKa/i2mq66vu55wRZnCGYuyvhEDBO+8q6p6GIY/SiIw7qt7Jz0AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/31a74c230e16d9d00f2a6f830eed9284/a59e9/image11.webp 192w,
+/static/31a74c230e16d9d00f2a6f830eed9284/0ca9f/image11.webp 384w,
+/static/31a74c230e16d9d00f2a6f830eed9284/dc9b9/image11.webp 768w,
+/static/31a74c230e16d9d00f2a6f830eed9284/cf465/image11.webp 800w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/31a74c230e16d9d00f2a6f830eed9284/3b721/image11.png 192w,
+/static/31a74c230e16d9d00f2a6f830eed9284/66595/image11.png 384w,
+/static/31a74c230e16d9d00f2a6f830eed9284/fe486/image11.png 768w,
+/static/31a74c230e16d9d00f2a6f830eed9284/78d47/image11.png 800w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/31a74c230e16d9d00f2a6f830eed9284/fe486/image11.png"
+            alt="alt text"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>자세한 내용은 범례 옵션에 대한 <a href="https://api.highcharts.com/highcharts/legend" target="_blank" rel="nofollow">API 레퍼런스</a>를 참고하세요.</p>
+<hr>
+<h2 id="axes-축-1" style="position:relative;">Axes (축)<a href="#axes-%EC%B6%95-1" aria-label="axes 축 1 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>x축과 y축은 카테시안 좌표계(<a href="https://www.highcharts.com/docs/chart-concepts/dataviz-glossary#cartesian-coordinate-system" target="_blank" rel="nofollow">cartesian coordinate system</a>)를 가진 데이터 시리즈가 포함된 모든 차트에서 기본적으로 표시됩니다.</p>
+<p>아래는 축 요소에 대한 간략한 개요입니다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7d521cc1fbc02eeacbef482c10fc2787/1745e/image12.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAAByUlEQVR42jVR2XIaMRDk/7/EDwSXwUDAR5HXxK5ggtnlCATMLntJLDpXWh2ZxeWpKZWq1D3drWn5aznn4CSExEmS5Hma50mWHT4+oihKkhMUwjhDiFD2ibfWArgFNKWU/yp7uTiEHLnILGWMcc6llM3gqnKcOym8UlbKqnbG2oastQZtpQ1A6/PZl6XD2JdnoHAuGLlsc5HsU5/GLst8HFmElG28XsnGAO7M5N9/B/BmrxGoUMe8VJWE+yQsOrNimuomYCUt58pYALUaYwh5wX2R+mhvcW69R1T+CLP+HAH6UOrJlt/8OvX+FN4ZJyvLmJJKGdcqMZYYNXNqrbnISvkQ4s5rfB+QuwUdr2hvQW7ntB+Q+7cEQpndziyXCpdM+5YxRtc1KGjrtri++Y2/vcbjNfu+YnfvZBTS0Yp2F6Qf0KcNH0zjssDemkqbxra1DiQ3hYK3zlvRfom6ARsuWT+knTkZhGwQ0ts56b6T8Ya3X7KHaXQi1/DuSvbOQp7eNB7M0lFIxkv6tKaPazZcXJ6D8/OaDlcM9Cc78ThL2z+TNfoiw2+Dc1FpLqHVZzOheKWFqGQU8d2eHWN+jGC5nMLqhNSGicqY+j8ncynx0CqxGQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/7d521cc1fbc02eeacbef482c10fc2787/a59e9/image12.webp 192w,
+/static/7d521cc1fbc02eeacbef482c10fc2787/0ca9f/image12.webp 384w,
+/static/7d521cc1fbc02eeacbef482c10fc2787/dc9b9/image12.webp 768w,
+/static/7d521cc1fbc02eeacbef482c10fc2787/b22d3/image12.webp 814w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/7d521cc1fbc02eeacbef482c10fc2787/3b721/image12.png 192w,
+/static/7d521cc1fbc02eeacbef482c10fc2787/66595/image12.png 384w,
+/static/7d521cc1fbc02eeacbef482c10fc2787/fe486/image12.png 768w,
+/static/7d521cc1fbc02eeacbef482c10fc2787/1745e/image12.png 814w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/7d521cc1fbc02eeacbef482c10fc2787/fe486/image12.png"
+            alt="alt text"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h3 id="축-레이블-눈금-및-격자선-axis-labels-tickmarks-and-gridlines" style="position:relative;">축 레이블, 눈금 및 격자선 (Axis labels, tickmarks and gridlines)<a href="#%EC%B6%95-%EB%A0%88%EC%9D%B4%EB%B8%94-%EB%88%88%EA%B8%88-%EB%B0%8F-%EA%B2%A9%EC%9E%90%EC%84%A0-axis-labels-tickmarks-and-gridlines" aria-label="축 레이블 눈금 및 격자선 axis labels tickmarks and gridlines permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>축 레이블, 눈금 및 격자선은 서로 밀접하게 연결되어 있으며 모두 함께 스케일이 조정됩니다. 이들의 위치는 차트에 표시된 데이터에 가장 적합하도록 계산됩니다.</p>
+<h4 id="눈금-ticks" style="position:relative;">눈금 (Ticks)<a href="#%EB%88%88%EA%B8%88-ticks" aria-label="눈금 ticks permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>눈금 표시(tick mark)는 측정 단위를 나타내기 위해 축을 따라 배치되는 선입니다. 눈금 간격은 주로 <a href="https://api.highcharts.com/highcharts/xAxis.tickInterval" target="_blank" rel="nofollow">tickInterval</a>과 <a href="https://api.highcharts.com/highcharts/xAxis.tickPixelInterval" target="_blank" rel="nofollow">tickPixelInterval</a> 옵션에 의해 결정됩니다. 레이블과 격자선은 눈금 표시와 동일한 위치에 배치됩니다.</p>
+<p><code class="language-text">tickInterval</code> 옵션은 축 단위로 눈금 표시 간격을 결정합니다. 기본값은 <code class="language-text">null</code>이며, 이는 선형(linear) 및 날짜/시간(datetime) 축에서 <code class="language-text">tickPixelInterval</code>을 대략적으로 따르도록 계산된다는 것을 의미합니다.</p>
+<p>카테고리 축(categorized axes)에서 <code class="language-text">tickInterval</code>이 <code class="language-text">null</code>이면 기본값은 <code class="language-text">1</code>, 즉 하나의 카테고리입니다.</p>
+<p>날짜/시간 축은 밀리초를 기반으로 하므로, 예를 들어 하루의 간격은 <code class="language-text">24 * 3600 * 1000</code>으로 표현됩니다.</p>
+<p>로그 축(logarithmic axes)에서 <code class="language-text">tickInterval</code>은 거듭제곱을 기반으로 하므로, <code class="language-text">tickInterval</code>이 <code class="language-text">1</code>이면 0.1, 1, 10, 100 등 각각에 눈금이 하나씩 생깁니다.<br>
+<code class="language-text">tickInterval</code>이 <code class="language-text">2</code>이면 0.1, 10, 1000 등에 눈금이 생깁니다.<br>
+<code class="language-text">tickInterval</code>이 <code class="language-text">0.2</code>이면 0.1, 0.2, 0.4, 0.6, 0.8, 1, 2, 4, 6, 8, 10, 20, 40 등에 눈금이 생깁니다.</p>
+<p><code class="language-text">tickPixelInterval</code> 옵션은 픽셀 값을 기반으로 눈금 표시의 대략적인 픽셀 간격을 설정합니다(<code class="language-text">tickInterval</code>이 null인 경우 적용).<br>
+이를 통해 반응형 레이아웃에서 차트 크기와 축 길이에 관계없이 눈금 간에 적절한 거리를 보장합니다. 카테고리 축에는 적용되지 않습니다. 기본값은 y축의 경우 <code class="language-text">72</code>, x축의 경우 <code class="language-text">100</code>입니다.</p>
+<h4 id="보조-눈금-minor-ticks" style="position:relative;">보조 눈금 (Minor ticks)<a href="#%EB%B3%B4%EC%A1%B0-%EB%88%88%EA%B8%88-minor-ticks" aria-label="보조 눈금 minor ticks permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p><a href="https://api.highcharts.com/highcharts/xAxis.minorTickInterval" target="_blank" rel="nofollow">minorTickInterval</a> 옵션이 설정되면 주요 눈금 사이에 보조 눈금이 배치됩니다.<br>
+여기에는 보조 눈금 표시와 보조 격자선이 포함되며, 이들은 외관에 대한 별도의 옵션을 가지고 있습니다. 단, 레이블은 포함되지 않습니다.</p>
+<h4 id="highcharts에서-눈금은-어떻게-계산되나요-how-are-ticks-calculated-in-highcharts" style="position:relative;">Highcharts에서 눈금은 어떻게 계산되나요? (How are ticks calculated in Highcharts?)<a href="#highcharts%EC%97%90%EC%84%9C-%EB%88%88%EA%B8%88%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B3%84%EC%82%B0%EB%90%98%EB%82%98%EC%9A%94-how-are-ticks-calculated-in-highcharts" aria-label="highcharts에서 눈금은 어떻게 계산되나요 how are ticks calculated in highcharts permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>Highcharts는 축의 눈금 외관과 위치를 제어하는 여러 옵션을 제공합니다.<br>
+기본적으로 축의 최솟값/최댓값과 눈금 위치는 모든 데이터 값이 차트 안에 맞도록 계산됩니다.<br>
+눈금은 “반올림된” 값(선형 축의 경우 1, 2, 5, 10, 20, 50 등, 날짜/시간 축의 경우 분, 시, 월 등)에 배치됩니다.<br>
+이는 차트를 읽고 해석하기 쉽게 만들어 줍니다.<br>
+예를 들어 데이터의 최솟값이 2이고 최댓값이 16이라면, y축은 자동으로 0~20의 범위로 설정되고 눈금은 0, 5, 10, 15, 20에 배치될 수 있습니다.<br>
+이 기본 동작은 여러 옵션을 사용하여 수정할 수 있습니다.</p>
+<h5>눈금 위치 제어 (Controlling tick placement)</h5>
+<ul>
+<li><code class="language-text">tickInterval</code>: 눈금 간격을 고정 값으로 설정합니다.</li>
+<li><code class="language-text">tickPixelInterval</code>: 눈금 사이의 대략적인 픽셀 거리를 설정합니다. 반응형 레이아웃에 유용합니다.</li>
+<li><code class="language-text">tickPositions</code>: 값 배열을 사용하여 눈금 위치를 명시적으로 설정합니다. 자동 계산과 위의 옵션들을 재정의합니다.</li>
+<li><code class="language-text">tickPositioner</code>: 눈금 위치 배열을 반환하는 콜백 함수로, 완전한 커스터마이징이 가능합니다.</li>
+</ul>
+<h5>축 최솟값/최댓값과 눈금 (Axis extremes and ticks)</h5>
+<p>기본적으로 축은 눈금에서 시작하고 끝납니다. 즉, 축의 최솟값과 최댓값은 가장 가까운 눈금 값으로 반올림됩니다.<br>
+이 동작은 <code class="language-text">startOnTick</code>과 <code class="language-text">endOnTick</code> 옵션으로 제어할 수 있습니다. 이 옵션들은 명시적으로 설정한 <code class="language-text">min</code>과 <code class="language-text">max</code> 값도 재정의할 수 있으므로, 축이 정돈된 눈금 값에서 시작하고 끝나게 됩니다.</p>
+<h5>관련 옵션 (Related options)</h5>
+<p>눈금 계산과 축 최솟값/최댓값에 영향을 미치는 추가 옵션들입니다.
+<code class="language-text">alignTicks</code>, <code class="language-text">ceiling</code>, <code class="language-text">floor</code>, <code class="language-text">max</code>, <code class="language-text">min</code>, <code class="language-text">minTickInterval</code>, <code class="language-text">minRange</code>, <code class="language-text">softMax</code>, <code class="language-text">softMin</code>, <code class="language-text">startOnTick</code>, <code class="language-text">tickAmount</code>, <code class="language-text">tickInterval</code>, <code class="language-text">tickPixelInterval</code>, <code class="language-text">tickPositioner</code>, <code class="language-text">tickPositions</code></p>
+<h4 id="레이블-labels" style="position:relative;">레이블 (Labels)<a href="#%EB%A0%88%EC%9D%B4%EB%B8%94-labels" aria-label="레이블 labels permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>축 레이블은 해당 데이터의 값을 나타내며 축을 따라 표시됩니다. 레이블은 포맷 문자열이나 포매터 함수를 사용하여 커스터마이징할 수 있습니다.</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">yAxis</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">labels</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">format</span><span class="token operator">:</span> <span class="token string">'{value}%'</span><span class="token punctuation">,</span> <span class="token comment">// 아래와 동일한 결과:</span>
+    <span class="token function-variable function">formatter</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">+</span> <span class="token string">' %'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>위 예시는 y축 레이블의 값을 가져와 끝에 <code class="language-text">%</code> 기호를 추가합니다.</p>
+<h4 id="격자선-grid-lines" style="position:relative;">격자선 (Grid lines)<a href="#%EA%B2%A9%EC%9E%90%EC%84%A0-grid-lines" aria-label="격자선 grid lines permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>격자선은 차트를 격자 형태로 나누는 수평(및/또는 수직) 선의 모음으로, 차트의 값을 읽기 쉽게 만들어 줍니다.</p>
+<p>x축 또는 y축의 격자선을 활성화하거나 비활성화하려면 해당 축의 <a href="https://api.highcharts.com/highcharts/xAxis.gridLineWidth" target="_blank" rel="nofollow">gridLineWidth</a>를 설정합니다.</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">xAxis</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">gridLineWidth</span><span class="token operator">:</span> <span class="token number">1</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token literal-property property">yAxis</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">gridLineWidth</span><span class="token operator">:</span> <span class="token number">1</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>y축의 격자선은 기본적으로 활성화되어 있으며(<code class="language-text">gridLineWidth: 1</code>), x축은 기본적으로 비활성화되어 있습니다(<code class="language-text">gridLineWidth: 0</code>).</p>
+<p>격자선에 대한 다른 옵션들은 x축 및 y축에 대한 <a href="https://api.highcharts.com/highcharts/xAxis" target="_blank" rel="nofollow">API 레퍼런스</a> 에서 확인할 수 있습니다.</p>
+<p>보조 격자선(minor grid lines)은 <a href="https://api.highcharts.com/highcharts/xAxis.minorTickInterval" target="_blank" rel="nofollow">minorTickInterval</a> 옵션을 설정하여 활성화할 수 있는 중간 선입니다.</p>
+<h3 id="다중-축-multiple-axes" style="position:relative;">다중 축 (Multiple axes)<a href="#%EB%8B%A4%EC%A4%91-%EC%B6%95-multiple-axes" aria-label="다중 축 multiple axes permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>여러 축을 만들고 서로 다른 데이터 시리즈와 연결하는 것이 가능합니다. 이를 위해 아래와 같이 여러 축을 생성해야 합니다.</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token literal-property property">yAxis</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token comment">//--- 기본 yAxis</span>
+  <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">'Temperature'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token comment">//--- 보조 yAxis</span>
+  <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">'Rainfall'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">opposite</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token literal-property property">series</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">yAxis</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token number">49.9</span><span class="token punctuation">,</span> <span class="token number">71.5</span><span class="token punctuation">,</span> <span class="token number">106.4</span><span class="token punctuation">,</span> <span class="token number">129.2</span><span class="token punctuation">,</span> <span class="token number">144.0</span><span class="token punctuation">,</span> <span class="token number">176.0</span><span class="token punctuation">,</span> <span class="token number">135.6</span><span class="token punctuation">,</span> <span class="token number">148.5</span><span class="token punctuation">,</span> <span class="token number">216.4</span><span class="token punctuation">,</span> <span class="token number">194.1</span><span class="token punctuation">,</span>
+    <span class="token number">95.6</span><span class="token punctuation">,</span> <span class="token number">54.4</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">yAxis</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token number">7.0</span><span class="token punctuation">,</span> <span class="token number">6.9</span><span class="token punctuation">,</span> <span class="token number">9.5</span><span class="token punctuation">,</span> <span class="token number">14.5</span><span class="token punctuation">,</span> <span class="token number">18.2</span><span class="token punctuation">,</span> <span class="token number">21.5</span><span class="token punctuation">,</span> <span class="token number">25.2</span><span class="token punctuation">,</span> <span class="token number">26.5</span><span class="token punctuation">,</span> <span class="token number">23.3</span><span class="token punctuation">,</span> <span class="token number">18.3</span><span class="token punctuation">,</span> <span class="token number">13.9</span><span class="token punctuation">,</span> <span class="token number">9.6</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>여러 축은 배열로 생성되므로 첫 번째 <code class="language-text">yAxis</code>는 인덱스 0부터 시작합니다. <code class="language-text">opposite: true</code> 옵션은 축을 차트의 오른쪽에 배치합니다.</p>
+<h4 id="눈금-정렬-align-ticks" style="position:relative;">눈금 정렬 (Align ticks)<a href="#%EB%88%88%EA%B8%88-%EC%A0%95%EB%A0%AC-align-ticks" aria-label="눈금 정렬 align ticks permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>다중 축을 사용할 때는 여러 격자선이 차트를 복잡하게 만들지 않도록 눈금을 정렬하는 것이 일반적으로 바람직합니다. <a href="https://api.highcharts.com/highcharts/chart.alignTicks" target="_blank" rel="nofollow">chart.alignTicks</a> 옵션은 기본적으로 <code class="language-text">true</code>입니다. 정렬의 단점은 각 축이 다른 축과 동일한 눈금 수를 갖도록 사전에 결정되므로 눈금 배치가 최적이 아닐 수 있다는 것입니다. 대안으로 <code class="language-text">alignTicks</code>를 비활성화하고 <code class="language-text">gridLineWidth</code>를 <code class="language-text">0</code>으로 설정할 수 있습니다.</p>
+<h4 id="임계값-정렬-align-thresholds" style="position:relative;">임계값 정렬 (Align thresholds)<a href="#%EC%9E%84%EA%B3%84%EA%B0%92-%EC%A0%95%EB%A0%AC-align-thresholds" aria-label="임계값 정렬 align thresholds permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>v10부터 <a href="https://api.highcharts.com/highcharts/chart.alignThresholds" target="_blank" rel="nofollow">chart.alignThresholds</a> 옵션을 통해 여러 축의 임계값(<a href="https://api.highcharts.com/highcharts/series.line.threshold" target="_blank" rel="nofollow">threshold</a>)을 정렬하는 것이 가능합니다. 이는 <code class="language-text">alignTicks</code>와 유사하지만 한 단계 더 나아가 영(zero) 레벨이나 다른 종류의 임계값도 정렬되도록 보장합니다.</p>
+<h3 id="축-타이틀-axis-title" style="position:relative;">축 타이틀 (Axis title)<a href="#%EC%B6%95-%ED%83%80%EC%9D%B4%ED%8B%80-axis-title" aria-label="축 타이틀 axis title permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>축 타이틀은 축 선 옆에 표시됩니다. y축에서는 기본적으로 표시되고 x축에서는 기본적으로 숨겨집니다.<br>
+전체 옵션은 <a href="https://api.highcharts.com/highcharts/xAxis.title" target="_blank" rel="nofollow">xAxis.title</a> 을 참고하세요.</p>
+<h3 id="축-타입-axis-types" style="position:relative;">축 타입 (Axis types)<a href="#%EC%B6%95-%ED%83%80%EC%9E%85-axis-types" aria-label="축 타입 axis types permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>축은 선형(linear), 로그(logarithmic), 날짜/시간(datetime) 또는 카테고리(categories) 타입 중 하나로 설정할 수 있습니다. 축 타입은 다음과 같이 설정합니다.</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token comment">// 타입은 'linear', 'logarithmic', 'datetime' 중 하나</span>
+<span class="token literal-property property">yAxis</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'linear'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 카테고리는 배열로 설정</span>
+<span class="token literal-property property">xAxis</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">categories</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'Apples'</span><span class="token punctuation">,</span> <span class="token string">'Bananas'</span><span class="token punctuation">,</span> <span class="token string">'Oranges'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<h4 id="선형-linear" style="position:relative;">선형 (Linear)<a href="#%EC%84%A0%ED%98%95-linear" aria-label="선형 linear permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>축의 숫자가 선형 스케일로 표시됩니다. 이것이 기본 축 타입입니다. 데이터 시리즈에 y값만 있는 경우 x축은 0부터 y값의 수까지 레이블이 붙습니다(y값의 배열 인덱스를 표시).</p>
+<div class="gatsby-highlight" data-language="js"><pre style="counter-reset: linenumber NaN" class="language-js line-numbers"><code class="language-js"><span class="token keyword">var</span> chart <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Highcharts<span class="token punctuation">.</span>Chart</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">chart</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">renderTo</span><span class="token operator">:</span> <span class="token string">'container'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'column'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">'Fruit Consumption'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">xAxis</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">'Fruit Number'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">tickInterval</span><span class="token operator">:</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">yAxis</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">'Fruit eaten'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">tickInterval</span><span class="token operator">:</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">series</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Jane'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'John'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f2f5672949ff07afe376499318643648/78d47/image13.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABUklEQVR42nVRy06DQBTle3SBhtQFTaP7LvwWN66ssTZdufEnbHTX2Ay0qYlLn6TSjYmJC0NpQQMlPKoDw+CFsWPT6g0hZy7ncYcrZH8VpdR1XcdxPopKkmSV4/u+ADxCCJ0X4DRNF49BEMRxzBwXC2jLYp4M3wBAbLW62+9fASYJGFPuDB0BXGEqdgjDUFG6pjnOqYTA27KsUknudBBgPjxPEkCAMWZiwzAkaUtVu4DZqCCW5QpCSpGcoOfwcfQJmMUL/JLQMk2zUtlhQ7Ic27bL5W2kqGyWPfR+em00Dg9ubu/zsfPrFQbjKBu+vG1uSAipPHkymYii1G5f5nZxvN9zTrqv4tr6WeviRww/AcQtPejpo2a9Pnga8jtPp16tdqRpA9Y51wOkW83jxt2DlouX1ssxodkXxrDtKJr9x/kVU/bM1zDDaRBGIPY8b5WDi/oGPzsiH60Sag0AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/f2f5672949ff07afe376499318643648/a59e9/image13.webp 192w,
+/static/f2f5672949ff07afe376499318643648/0ca9f/image13.webp 384w,
+/static/f2f5672949ff07afe376499318643648/dc9b9/image13.webp 768w,
+/static/f2f5672949ff07afe376499318643648/cf465/image13.webp 800w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/f2f5672949ff07afe376499318643648/3b721/image13.png 192w,
+/static/f2f5672949ff07afe376499318643648/66595/image13.png 384w,
+/static/f2f5672949ff07afe376499318643648/fe486/image13.png 768w,
+/static/f2f5672949ff07afe376499318643648/78d47/image13.png 800w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/f2f5672949ff07afe376499318643648/fe486/image13.png"
+            alt="alt text"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h4 id="로그-logarithmic" style="position:relative;">로그 (Logarithmic)<a href="#%EB%A1%9C%EA%B7%B8-logarithmic" aria-label="로그 logarithmic permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>로그 축에서 축의 숫자는 로그적으로 증가하며, 축은 차트에 표시된 데이터 시리즈에 맞게 자동 조정됩니다.</p>
+<p>로그 축에서 <a href="https://api.highcharts.com/highcharts/yAxis.tickInterval" target="_blank" rel="nofollow">tickInterval</a> 옵션은 거듭제곱을 기반으로 하므로, <code class="language-text">tickInterval</code>이 <code class="language-text">1</code>이면 0.1, 1, 10, 100 등 각각에 눈금이 하나씩 생깁니다. <code class="language-text">tickInterval</code>이 <code class="language-text">2</code>이면 0.1, 10, 1000 등에 눈금이 생깁니다. <code class="language-text">tickInterval</code>이 <code class="language-text">0.2</code>이면 0.1, 0.2, 0.4, 0.6, 0.8, 1, 2, 4, 6, 8, 10, 20, 40 등에 눈금이 생깁니다.</p>
+<p>또한 로그 축은 음수가 될 수 없다는 점을 주의해야 합니다. 각 전체 축 단위는 이전 값의 10분의 1이기 때문입니다. 따라서 Highcharts는 축과 연관된 0 또는 음수 포인트를 제거하며, <code class="language-text">axis.min</code> 옵션을 0 또는 음수로 설정하려 하면 오류가 발생합니다.</p>
+<h5>로그 축에서 0과 음수 값을 표시하는 방법</h5>
+<p>로그(logarithm)의 핵심 개념부터 살펴보겠습니다. 10의 L승이 Z와 같은 방정식이 있을 때, L은 Z에 대한 밑이 10인 로그라고 합니다. L이 음수이면 Z는 1.0보다 작은 양의 분수를 의미합니다. L이 0이면 Z는 정확히 1.0입니다. L이 0보다 크면 Z는 1.0을 초과합니다. 어떤 L 값이든 Z가 0이거나 음수가 되는 것은 불가능하다는 점이 중요합니다. 로그는 그러한 경우에 대해 정의된 값이 없으며, 오직 양수에 대해서만 작동합니다.</p>
+<p>Highcharts의 로그 축에서 0과 음수 값을 표시하려면 커스텀 플러그인을 사용하는 것이 유일한 방법입니다. 이 플러그인은 로그 축에서 음수 값을 에뮬레이션하는 것을 가능하게 합니다. 진정한 로그 축은 0에 닿거나 교차하지 않기 때문에, 결과 스케일이 수학적으로 정확하지 않다는 점을 유념해야 합니다. 커스텀 플러그인은 이 <a href="https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/yaxis/type-log-negative/" target="_blank" rel="nofollow">데모</a> 에서 확인할 수 있습니다.</p>
+<h4 id="날짜시간-datetime" style="position:relative;">날짜/시간 (Datetime)<a href="#%EB%82%A0%EC%A7%9C%EC%8B%9C%EA%B0%84-datetime" aria-label="날짜시간 datetime permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>날짜/시간 축은 적절한 간격으로 반올림된 날짜 값의 레이블을 출력합니다. 내부적으로 날짜/시간 축은 JavaScript <code class="language-text">Date</code> 객체에서 정의한 대로 1970년 1월 1일 자정 이후의 밀리초를 기반으로 한 선형 숫자 축입니다. 스케일에 따라 날짜/시간 레이블은 시간 또는 날짜 형식으로 표시됩니다.</p>
+<p>날짜/시간 축에서 모든 시간 설정은 밀리초, 날짜 문자열(v12부터), 또는 <code class="language-text">Date</code> 객체로 제공할 수 있습니다. 여기에는 <code class="language-text">min</code>과 <code class="language-text">max</code> 옵션, <code class="language-text">Axis.setExtremes</code> 인자, <code class="language-text">point.x</code> 및 <code class="language-text">series.pointStart</code>와 같은 관련 옵션들이 포함됩니다.</p>
+<h5>타임존 처리 (Timezone handling)</h5>
+<p>기본적으로 Highcharts는 모든 날짜/시간 축에 UTC를 사용합니다. 차트 레벨의 <a href="https://api.highcharts.com/highcharts/time.timezone" target="_blank" rel="nofollow">time.timezone</a> 옵션을 설정하여 날짜가 해석되고 표시되는 방식을 제어할 수 있습니다. 타임존이 없는 날짜 문자열은 이 타임존으로 해석됩니다. 날짜 문자열에 타임존 오프셋이 포함된 경우, 해당 오프셋이 적용됩니다.</p>
+<blockquote class="prompt-tip">
+<p>팁: 모든 사용자와 타임존에서 일관된 동작을 위해 ISO 날짜 문자열(예: <code class="language-text">2024-01-31</code>) 또는 UTC 타임스탬프(<code class="language-text">Date.UTC(...)</code>)를 사용하는 것을 권장합니다. 축 값에 로컬 JavaScript <code class="language-text">Date</code> 객체(예: <code class="language-text">new Date(2024, 0, 31)</code>)를 사용하는 것은 피하세요. 이는 사용자의 로컬 타임존에 따라 달라지며, 특히 월 경계 근처에서 예상치 못한 결과를 초래할 수 있습니다.</p>
+</blockquote>
+<p>Highcharts Stock에서 x축은 항상 날짜/시간 축입니다.</p>
+<h4 id="카테고리-categories" style="position:relative;">카테고리 (Categories)<a href="#%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC-categories" aria-label="카테고리 categories permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>카테고리가 있는 경우, 축의 숫자나 날짜 대신 카테고리 이름이 사용됩니다. <a href="https://api.highcharts.com/highcharts/xAxis.categories" target="_blank" rel="nofollow">xAxis.categories</a> 를 참고하세요.</p>
+<h4 id="어떤-축-타입을-사용해야-하나요-what-axis-type-should-i-use" style="position:relative;">어떤 축 타입을 사용해야 하나요? (What axis type should I use?)<a href="#%EC%96%B4%EB%96%A4-%EC%B6%95-%ED%83%80%EC%9E%85%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%95%BC-%ED%95%98%EB%82%98%EC%9A%94-what-axis-type-should-i-use" aria-label="어떤 축 타입을 사용해야 하나요 what axis type should i use permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p><a href="https://www.highcharts.com/demo/" target="_blank" rel="nofollow">Highcharts 데모 페이지</a> 의 많은 예시들은 카테고리를 포함한 xAxis를 사용합니다. 그러나 카테고리를 사용해야 할 때와 선형 또는 날짜/시간 xAxis를 사용하는 것이 더 나을 때를 이해하는 것이 중요합니다.</p>
+<p>카테고리는 “사과”, “배”, “오렌지” 또는 “빨강”, “초록”, “파랑”, “노랑”과 같이 항목들의 그룹입니다. 이러한 카테고리들의 공통점은 중간값이 없다는 것입니다. 사과와 배 사이에는 연속적인 전환이 없습니다. 또한 카테고리 하나를 빠뜨리면 사용자는 무엇이 빠졌는지 알 수 없습니다. 예를 들어 “빨강”, “초록”, “파랑”, “노랑” 중 하나씩 건너뛰어 출력하면 사용자는 어떤 색상이 빠졌는지 알 수 없습니다. 따라서 Highcharts는 카테고리가 축에 너무 밀집될 경우 자동으로 숨기는 방법을 제공하지 않습니다. 축 레이블이 겹치는 문제가 발생하면 <a href="https://api.highcharts.com/highcharts/xAxis.labels.staggerLines" target="_blank" rel="nofollow">xAxis.labels.staggerLines</a> 옵션을 사용하거나 레이블에 회전(rotation)을 적용해 보세요. <a href="https://api.highcharts.com/highcharts/xAxis.labels.step" target="_blank" rel="nofollow">xAxis.labels.step</a> 옵션으로 카테고리 레이블을 건너뛸 수 있다면, 선형 또는 날짜/시간 축을 사용하는 것이 더 나을 수 있습니다.</p>
+<p>선형 또는 날짜/시간 타입의 xAxis는 Highcharts가 보간(interpolate)하는 방법을 알고 있어 데이터 레이블 간격을 결정할 수 있다는 장점이 있습니다. 레이블은 기본적으로 약 100px 간격으로 배치되며, <code class="language-text">tickPixelInterval</code> 옵션으로 변경할 수 있습니다. “Item1”, “Item2”, “Item3” 또는 “2012-01-01”, “2012-01-02”, “2012-01-03” 등과 같이 예측 가능한 카테고리가 있다면, <a href="https://api.highcharts.com/highcharts/xAxis.labels.formatter" target="_blank" rel="nofollow">xAxis.labels.formatter</a>와 결합한 선형 또는 날짜/시간 축 타입이 더 나은 선택일 것입니다.</p>
+<h3 id="축-동적-업데이트-dynamically-updating-axes" style="position:relative;">축 동적 업데이트 (Dynamically updating axes)<a href="#%EC%B6%95-%EB%8F%99%EC%A0%81-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-dynamically-updating-axes" aria-label="축 동적 업데이트 dynamically updating axes permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>렌더링 이후에 새로운 정보로 축을 업데이트할 수 있습니다. 자세한 내용은 <a href="https://api.highcharts.com/class-reference/Highcharts.Axis" target="_blank" rel="nofollow">API</a> 를 참고하세요.</p>
+<hr>
+<h5>참고</h5>
+<ul>
+<li><a href="https://www.highcharts.com/docs/chart-concepts/understanding-highcharts" target="_blank" rel="nofollow">Understanding Highcharts | Highcharts</a></li>
+<li><a href="https://www.highcharts.com/docs/chart-concepts/title-and-subtitle" target="_blank" rel="nofollow">Title and subtitle | Highcharts</a></li>
+<li><a href="https://www.highcharts.com/docs/chart-concepts/series" target="_blank" rel="nofollow">Series | Highcharts</a></li>
+<li><a href="https://www.highcharts.com/docs/chart-concepts/tooltip" target="_blank" rel="nofollow">Tooltip | Highcharts</a></li>
+<li><a href="https://www.highcharts.com/docs/chart-concepts/legend" target="_blank" rel="nofollow">Legend | Highcharts</a></li>
+<li><a href="https://www.highcharts.com/docs/chart-concepts/axes" target="_blank" rel="nofollow">Axes | Highcharts</a></li>
+</ul></div></div><div class="col-rnb contents-right"><div class="cont-wrap toc-wrapper" aria-label="목차"><div class="cont-ttl"><h3>Contents</h3></div><div class="cont-box"><div class="toc"><ul>
+<li>
+<p><a href="#highcharts-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0">Highcharts 이해하기</a></p>
+<ul>
+<li><a href="#title-%ED%83%80%EC%9D%B4%ED%8B%80">Title (타이틀)</a></li>
+<li><a href="#series-%EC%8B%9C%EB%A6%AC%EC%A6%88">Series (시리즈)</a></li>
+<li><a href="#tooltip-%ED%88%B4%ED%8C%81">Tooltip (툴팁)</a></li>
+<li><a href="#legend-%EB%B2%94%EB%A1%80">Legend (범례)</a></li>
+<li><a href="#axes-%EC%B6%95">Axes (축)</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#title-and-subtitle-%ED%83%80%EC%9D%B4%ED%8B%80%EA%B3%BC-%EC%84%9C%EB%B8%8C%ED%83%80%EC%9D%B4%ED%8B%80">Title and subtitle (타이틀과 서브타이틀)</a></p>
+<ul>
+<li><a href="#%EC%A0%81%EC%9D%91%ED%98%95-%EC%A0%95%EB%A0%AC-adaptive-alignment">적응형 정렬 (Adaptive Alignment)</a></li>
+<li><a href="#%EA%B7%9C%EC%B9%99-%EC%9E%AC%EC%A0%95%EC%9D%98-overriding-the-rules">규칙 재정의 (Overriding the Rules)</a></li>
+<li><a href="#%EC%9C%84%EC%B9%98-%EC%A1%B0%EC%A0%95">위치 조정</a></li>
+<li><a href="#%EB%8F%99%EC%A0%81-%EC%88%98%EC%A0%95-dynamic-modification">동적 수정 (Dynamic Modification)</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#series">Series</a></p>
+<ul>
+<li>
+<p><a href="#%EC%8B%9C%EB%A6%AC%EC%A6%88%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-what-is-a-series">시리즈란 무엇인가? (What is a series?)</a></p>
+</li>
+<li>
+<p><a href="#%EC%8B%9C%EB%A6%AC%EC%A6%88%EC%9D%98-%EB%8D%B0%EC%9D%B4%ED%84%B0-the-data-in-a-series">시리즈의 데이터 (The data in a series)</a></p>
+<ul>
+<li><a href="#1-%EC%88%AB%EC%9E%90-%EA%B0%92%EC%9D%98-%EB%AA%A9%EB%A1%9D">1. 숫자 값의 목록</a></li>
+<li><a href="#2-%EB%91%90-%EA%B0%9C-%EC%9D%B4%EC%83%81%EC%9D%98-%EA%B0%92%EC%9C%BC%EB%A1%9C-%EC%9D%B4%EB%A3%A8%EC%96%B4%EC%A7%84-%EB%B0%B0%EC%97%B4%EC%9D%98-%EB%AA%A9%EB%A1%9D">2. 두 개 이상의 값으로 이루어진 배열의 목록</a></li>
+<li><a href="#3-%EC%9D%B4%EB%A6%84%EC%9D%B4-%EC%A7%80%EC%A0%95%EB%90%9C-%EA%B0%92%EC%9D%84-%EA%B0%80%EC%A7%84-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%AA%A9%EB%A1%9D">3. 이름이 지정된 값을 가진 객체의 목록</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#%ED%8F%AC%EC%9D%B8%ED%8A%B8%EC%99%80-%EB%A7%88%EC%BB%A4-point-and-marker">포인트와 마커 (Point and marker)</a></p>
+</li>
+<li>
+<p><a href="#%EC%8B%9C%EB%A6%AC%EC%A6%88-%EC%98%B5%EC%85%98-series-options">시리즈 옵션 (Series options)</a></p>
+<ul>
+<li><a href="#animation-%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98">Animation (애니메이션)</a></li>
+<li><a href="#color-%EC%83%89%EC%83%81">Color (색상)</a></li>
+<li><a href="#point-selection-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%84%A0%ED%83%9D">Point selection (포인트 선택)</a></li>
+<li><a href="#line-width-%EB%9D%BC%EC%9D%B8-%EB%91%90%EA%BB%98">Line width (라인 두께)</a></li>
+<li><a href="#stacking-%EC%8A%A4%ED%83%9C%ED%82%B9">Stacking (스태킹)</a></li>
+<li><a href="#cursor-%EC%BB%A4%EC%84%9C">Cursor (커서)</a></li>
+<li><a href="#data-labels-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%A0%88%EC%9D%B4%EB%B8%94">Data labels (데이터 레이블)</a></li>
+<li><a href="#dash-style-%EB%8C%80%EC%8B%9C-%EC%8A%A4%ED%83%80%EC%9D%BC">Dash style (대시 스타일)</a></li>
+<li><a href="#zones-%EA%B5%AC%EC%97%AD">Zones (구역)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#tooltip">Tooltip</a></p>
+<ul>
+<li><a href="#%EC%99%B8%EA%B4%80-appearance">외관 (Appearance)</a></li>
+<li><a href="#%ED%88%B4%ED%8C%81-%ED%8F%AC%EB%A7%A4%ED%8C%85-tooltip-formatting">툴팁 포매팅 (Tooltip formatting)</a></li>
+<li><a href="#%EC%9C%84%EC%B9%98-%EC%A7%80%EC%A0%95-positioning">위치 지정 (Positioning)</a></li>
+<li><a href="#%ED%81%AC%EB%A1%9C%EC%8A%A4%ED%97%A4%EC%96%B4-crosshairs">크로스헤어 (Crosshairs)</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#legend-%EB%B2%94%EB%A1%80-1">Legend (범례)</a></p>
+</li>
+<li>
+<p><a href="#axes-%EC%B6%95-1">Axes (축)</a></p>
+<ul>
+<li>
+<p><a href="#%EC%B6%95-%EB%A0%88%EC%9D%B4%EB%B8%94-%EB%88%88%EA%B8%88-%EB%B0%8F-%EA%B2%A9%EC%9E%90%EC%84%A0-axis-labels-tickmarks-and-gridlines">축 레이블, 눈금 및 격자선 (Axis labels, tickmarks and gridlines)</a></p>
+<ul>
+<li><a href="#%EB%88%88%EA%B8%88-ticks">눈금 (Ticks)</a></li>
+<li><a href="#%EB%B3%B4%EC%A1%B0-%EB%88%88%EA%B8%88-minor-ticks">보조 눈금 (Minor ticks)</a></li>
+<li><a href="#highcharts%EC%97%90%EC%84%9C-%EB%88%88%EA%B8%88%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B3%84%EC%82%B0%EB%90%98%EB%82%98%EC%9A%94-how-are-ticks-calculated-in-highcharts">Highcharts에서 눈금은 어떻게 계산되나요? (How are ticks calculated in Highcharts?)</a></li>
+<li><a href="#%EB%A0%88%EC%9D%B4%EB%B8%94-labels">레이블 (Labels)</a></li>
+<li><a href="#%EA%B2%A9%EC%9E%90%EC%84%A0-grid-lines">격자선 (Grid lines)</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#%EB%8B%A4%EC%A4%91-%EC%B6%95-multiple-axes">다중 축 (Multiple axes)</a></p>
+<ul>
+<li><a href="#%EB%88%88%EA%B8%88-%EC%A0%95%EB%A0%AC-align-ticks">눈금 정렬 (Align ticks)</a></li>
+<li><a href="#%EC%9E%84%EA%B3%84%EA%B0%92-%EC%A0%95%EB%A0%AC-align-thresholds">임계값 정렬 (Align thresholds)</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#%EC%B6%95-%ED%83%80%EC%9D%B4%ED%8B%80-axis-title">축 타이틀 (Axis title)</a></p>
+</li>
+<li>
+<p><a href="#%EC%B6%95-%ED%83%80%EC%9E%85-axis-types">축 타입 (Axis types)</a></p>
+<ul>
+<li><a href="#%EC%84%A0%ED%98%95-linear">선형 (Linear)</a></li>
+<li><a href="#%EB%A1%9C%EA%B7%B8-logarithmic">로그 (Logarithmic)</a></li>
+<li><a href="#%EB%82%A0%EC%A7%9C%EC%8B%9C%EA%B0%84-datetime">날짜/시간 (Datetime)</a></li>
+<li><a href="#%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC-categories">카테고리 (Categories)</a></li>
+<li><a href="#%EC%96%B4%EB%96%A4-%EC%B6%95-%ED%83%80%EC%9E%85%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%95%BC-%ED%95%98%EB%82%98%EC%9A%94-what-axis-type-should-i-use">어떤 축 타입을 사용해야 하나요? (What axis type should I use?)</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#%EC%B6%95-%EB%8F%99%EC%A0%81-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-dynamically-updating-axes">축 동적 업데이트 (Dynamically updating axes)</a></p>
+</li>
+</ul>
+</li>
+</ul></div></div></div></div></div><div class="row contents-layout"><div class="col-content"><div class="post-authors"><div class="post-author"><img src="/member/aluvy.png" alt="songisu" class="post-author-photo"/><div class="post-author-info"><span class="post-author-name">songisu</span><p class="post-author-bio">Frontend Developer @ aluvy</p><a href="https://aluvy.github.io" target="_blank" rel="noopener noreferrer" class="post-author-link">https://aluvy.github.io</a></div></div></div><div class="post-prev-next"><a class="post-prev-item" href="/posts/highcharts/02_options/"><strong>Previous</strong><p>How to set options</p></a><a class="post-next-item" href="/posts/highcharts/04_other/"><strong>Next</strong><p>기타 (템플릿, 반응형 차트)</p></a></div><div class="comment-wrapper"></div></div><div class="col-rnb">-</div></div></div><footer id="footer">© 2026 aluvy. Some rights reserved.</footer></div><div class="aside-mask"></div></div><aside aria-label="Scroll to Top"><button type="button" id="btn-scroll-top" class="btn-scroll-top"><svg data-prefix="fas" data-icon="arrow-up" class="svg-inline--fa fa-arrow-up ico" role="img" viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3 160 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-370.7 105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path></svg></button></aside></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZH3VPHLL97"></script><script>
+      
+      
+      if(true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZH3VPHLL97', {"send_page_view":false});
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/highcharts/03_concepts/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-31e7227d4988e4e23a81.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-9591c8b5b3e7efcc8893.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-8fa697a09276ffd35ebf.js\"],\"component---src-templates-post-template-tsx\":[\"/component---src-templates-post-template-tsx-4abc5517391ead2f4db9.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="d50fb9f89c123e44f76f";</script><script src="/webpack-runtime-9c49c2a97d1cf246cf7f.js" async></script><script src="/framework-741f52c966803b1ae563.js" async></script><script src="/c16184b3-f2dce3b928c40bde87be.js" async></script><script src="/app-31e7227d4988e4e23a81.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
