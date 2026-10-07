@@ -274,7 +274,7 @@ const model = {
 
 웹팩 개발서버를 띄우고 화면을 확인해 보자. 잘 나오는가? 브라우져 개발자 도구에 보면 다음과 같은 오류 메세지가 출력된다.
 
-![alt text](/assets/images/posts/study/development-environment/05-01.png)
+![alt text](image01.png)
 _https://jeonghwan-kim.github.io/_
 
 localhost:8080에서 localhost:8081 로 ajax 호출을 하지 못하는데 이유는 CORS 정책 때문이라는 메세지다. 요청하는 리소스에 "Access-Control-Allow-Origin" 헤더가 없다는 말도 한다.
@@ -382,11 +382,11 @@ devServer.hot 옵션을 켜면 웹팩 개발 서버 위에서 module.hot 객체�
 
 웹팩 개발 서버를 재 시작하면 브라우져에 다음과 같이 로그가 찍힌다.
 
-![alt text](/assets/images/posts/study/development-environment/05-02.png)
+![alt text](image02.png)
 
 후에 view.js 파일을 수정하면 다음 로그가 찍히는 것을 확인할 수 있다.
 
-![alt text](/assets/images/posts/study/development-environment/05-03.png)
+![alt text](image03.png)
 
 이 콜백 함수 안에서 변경된 view 모듈을 이용하면 view 모듈을 교체할 수 있을 것 같다. model로 데이터를 부르고 다시 변경된 view 모듈로 렌더 함수를 실행했다.
 
@@ -401,14 +401,14 @@ if (module.hot) {
 
 view.js 코드를 변경하고 저장하면 브라우져 갱신 없이 화면이 변경된다.
 
-![alt text](/assets/images/posts/study/development-environment/05-04.gif)
+![alt text](image04.gif)
 
 
 ### 3-3. 핫로딩을 지원하는 로더
 
 이러한 HMR 인터페이스를 구현한 로더만이 핫 로딩을 지원하는데 웹팩 기본편에서 보았던 style-loader가 그렇다. 잠깐 코드를 보면 hot.accept() 함수를 사용한 것을 알 수 있다.
 
-![alt text](/assets/images/posts/study/development-environment/05-05.png)
+![alt text](image05.png)
 
 참고: style-loader 코드
 
@@ -472,7 +472,7 @@ start는 개발 서버를 구동하기 때문에 환경변수를 설정하지 �
 $ npm run build
 ````
 
-![alt text](/assets/images/posts/study/development-environment/05-06.png)
+![alt text](image06.png)
 
 왼쪽에 development로 설정해서 빌드한 결과물과 비교해 보면 오른쪽에 production으로 빌드한 결과물의 확연한 차이를 볼 수 있다.
 
@@ -561,13 +561,13 @@ module.exports = {
 
 빌드하면 엔트리가 두 개 생성되고 물론 하나의 엔트이일 때보다 용량이 조금 줄었다.
 
-![alt text](/assets/images/posts/study/development-environment/05-07.png)
+![alt text](image07.png)
 
 모듈을 어떻게 분리하는냐에 따라 이 결과물의 크기를 조절할 수 있는데 지금은 거의 변화가 없다. HtmlWebpackPlugin에 의해 html 코드에소 두 파일을 로딩하는 코드도 추가된다.
 
 하지만 두 파일을 비교해 보면 중복코드가 있다.
 
-![alt text](/assets/images/posts/study/development-environment/05-08.png)
+![alt text](image08.png)
 
 axios 모듈인데 main, controller 둘 다 axios를 사용하기 때문이다.
 
@@ -586,7 +586,7 @@ module.exports = {
 
 다시 빌드해보자.
 
-![alt text](/assets/images/posts/study/development-environment/05-09.png)
+![alt text](image09.png)
 
 main.js, controller.js외에도 vendors~~controller_main.js 파일도 생겼다. 마지막 파일은 두 엔트리의 중복 코드를 담은 파일이다. axios로 검색하면 main.js와 controller.js에서는 없고 vendors~~controller~main.js에만 있다.
 
@@ -628,7 +628,7 @@ getController() 함수를 정의했는데 컨트롤러 모듈을 가져는 함�
 
 빌드하면 자동으로 파일이 분리되었다.
 
-![alt text](/assets/images/posts/study/development-environment/05-10.png)
+![alt text](image10.png)
 
 엔트리를 분리하지 않아도 controller와 app의 중복코드를 vendors~controller.js 파일로 분리한다. 다이나믹 임포트로 모듈을 가져오면 단일 엔트리를 유지하면서 코드를 분리할 수 있다.
 
@@ -648,7 +648,7 @@ module.exports = {
 
 externals에 추가하면 웹팩은 코드에서 axios를 사용하더라도 번들에 포함하지 않고 빌드한다. 대신 이를 전역 변수로 접근하도록하는데 키로 설정한 axios가 그 이름이다.
 
-![alt text](/assets/images/posts/study/development-environment/05-11.png)
+![alt text](image11.png)
 
 axios는 이미 node_modules에 위치해 있기 때문에 이를 웹팩 아웃풋 폴더에 옮기고 index.html에서 로딩해야한다. 파일을 복사하는 **CopyWebpackPlugin**을 설치한다.
 
@@ -687,7 +687,7 @@ axios는 이렇게 직접 추가했지만 번들링한 결과물은 htmlwebpacPl
 
 다시 빌드해 보면......
 
-![alt text](/assets/images/posts/study/development-environment/05-12.png)
+![alt text](image12.png)
 
 axios는 빌드하지 않고 복사만 한다. controller와 main이 분리되었다. 이전에는 공통의 코드인 axios가 vender~.js로 분리되었는데 지금은 파일조차 없다. 만약 써드파티 라이브러리 외에 공통의 코드가 있다면 이 파일로 분리되었을 것이다.
 
