@@ -1,6 +1,6 @@
 ---
 date: '2022-11-12 00:16:00 +0900'
-title: '18. 상태관리 라이브러리 Redux'
+title: '[REACT] 18. 상태관리 라이브러리 Redux'
 summary: 'Redux Redux는 props 없이 state를 공유할 수 있게 도와주는 라이브러리다. Redux를 설치하면 JS 파일 하나에 state를 보관할 수 있는데, 이걸 모든 컴포넌트가 직접 꺼내 쓸 수 있다. 그래서 props 문법이 필요없어진다.'
 author: ['aluvy']
 categories: ['REACT']

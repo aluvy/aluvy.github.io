@@ -1,6 +1,6 @@
 ---
 date: '2022-11-11 23:08:00 +0900'
-title: '13. public, src 이미지 사용 시 경로, 사용법'
+title: '[REACT] 13. public, src 이미지 사용 시 경로, 사용법'
 summary: 'React 에서 이미지 파일 사용하기 - JSX에서 src폴더 내의 이미지를 사용하려면 상단에서 미리 import 해야 한다. - public 폴더 내의 자료들은 절대경로로 자유롭게 사용할 수 있다. - CSS 내에서 사용할때는 기존처럼'
 author: ['aluvy']
 categories: ['REACT']

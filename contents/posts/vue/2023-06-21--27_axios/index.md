@@ -1,6 +1,6 @@
 ---
 date: '2023-06-21 11:27:00 +0900'
-title: '27. axios'
+title: '[VUE] 27. axios'
 summary: '서버로 데이터를 요청하려면 (ajax를 요청하려면) axios 라이브러리를 사용하는 방법과, 기본 fetch 함수쓰는 방법이 있습니다. fetch 브라우저 기본 기능 비교적 최신 문법이기 때문에 최신 브라우저에서만 이용할 수 있다. 그래서 호환성 문제 때문에 보통은 axios 라이브러리를 사용한다.'
 author: ['aluvy']
 categories: ['VUE']

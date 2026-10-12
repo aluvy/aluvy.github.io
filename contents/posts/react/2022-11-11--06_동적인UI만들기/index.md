@@ -1,6 +1,6 @@
 ---
 date: '2022-11-11 21:51:00 +0900'
-title: '06. React 환경에서 동적인 UI 만들기 (삼항 연산자)'
+title: '[REACT] 06. React 환경에서 동적인 UI 만들기 (삼항 연산자)'
 summary: '동적인 UI 만드는 3 step 1. html CSS로 미리 디자인을 완성한다. 2. UI의 현재 상태를 state로 저장한다. 3. state에 따라 UI가 어떻게 보일지 조건문 등으로 작성한다.'
 author: ['aluvy']
 categories: ['REACT']

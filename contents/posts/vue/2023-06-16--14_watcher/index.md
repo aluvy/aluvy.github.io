@@ -1,6 +1,6 @@
 ---
 date: '2023-06-16 11:08:00 +0900'
-title: '14. 데이터 감시 watcher'
+title: '[VUE] 14. 데이터 감시 watcher'
 summary: 'watcher 데이터를 감시하는 함수 데이터가 제대로 들어왔는지 검사한다, 특히 사용자의 input을 받는 페이지에서는 필수적이다. 문법 <script> export default { name: ModalDetail, data(){ return { month: 1, } }, watch: { month(a, b){  // 감시할 데이터 이름으로 함수를 만든다. (a:변경후 데이터, b:변경 전 데이터)'
 author: ['aluvy']
 categories: ['VUE']

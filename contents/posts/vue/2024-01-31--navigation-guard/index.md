@@ -1,6 +1,6 @@
 ---
 date: '2024-01-31 14:58:00 +0900'
-title: 'Navigation Guard'
+title: '[VUE] Navigation Guard'
 summary: 'Navigation Guard 네비게이션 가드는 특정 URL에 접근(Navigation) 하기 전에 불려지는 (Hook)의 일종으로, 다른 페이지로 우회 하거나 접근 자체를 취소시킬 수 있기 때문에 네비게이션 가드라고 불립니다. 사용자의 권한에 따라 페이지 접근을 막거나 페이지를 로딩하기 전에 데이터를 미리 불러올 때 사용하기 좋은 기술입니다. 사실상 싱글 페이지 어플리케이션을 구현할 때는 거의 필수로 구현해야 합니다.'
 author: ['aluvy']
 categories: ['VUE']

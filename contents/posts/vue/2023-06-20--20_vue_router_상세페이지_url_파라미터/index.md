@@ -1,6 +1,6 @@
 ---
 date: '2023-06-20 11:21:00 +0900'
-title: '20. vue-router 상세페이지 /:id, URL파라미터'
+title: '[VUE] 20. vue-router 상세페이지 /:id, URL파라미터'
 summary: '/detail/:id /detail/:작명 로 접속하면 **작명**번 게시물 보여주기 /detail/0 이런식으로 접속하면 detail 페이지가 보여진다. (router.js) import { createWebHistory, createRouter } from vue-router; import compDetail from ./components/compDetail.vue'
 author: ['aluvy']
 categories: ['VUE']

@@ -1,6 +1,6 @@
 ---
 date: '2023-06-21 15:43:00 +0900'
-title: '30. 게시글 등록'
+title: '[VUE] 30. 게시글 등록'
 summary: '$emit 사용 시 emits: [write] 등록을 안했더니 계속 에러가 남..! <div class="header"> <h1 class="logo"><a href="#" title="vue-stagram"></a></h1> <div class="header-button-left"> <a href="#" v-if="tab==1 || tab==2" @click="tab=0">'
 author: ['aluvy']
 categories: ['VUE']

@@ -1,6 +1,6 @@
 ---
 date: '2026-01-01 08:05:00 +0900'
-title: '주요 이벤트'
+title: '[Highcharts] 05. 주요 이벤트'
 summary: 'Understanding Common Highcharts Events (Highcharts 주요 이벤트 이해하기) Highcharts는 차트와 그 구성 요소에 인터랙티비티(interactivity)와 커스텀 동작을 추가할 수 있는 유연한 이벤트 시스템을 제공합니다. 이 가이드는 Highcharts에서 가장 일반적이고'
 author: ['aluvy']
 categories: ['Highcharts']

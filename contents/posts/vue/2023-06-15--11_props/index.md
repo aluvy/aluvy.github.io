@@ -1,6 +1,6 @@
 ---
 date: '2023-06-15 15:22:00 +0900'
-title: '11. props (v-bind)'
+title: '[VUE] 11. props (v-bind)'
 summary: 'props {{ 데이터바인딩 }} 은 밑에 script 에 데이터가 있어야 가능하다. App.vue 에 있는 데이터들을 ModalDetail.vue 컴포넌트에서 사용하려면 props를 사용해야 한다. 보통 App.vue에 모든 데이터를 몰아놓고 props를 이용해 필요한 곳에 가져다 쓴다.'
 author: ['aluvy']
 categories: ['VUE']

@@ -1,6 +1,6 @@
 ---
 date: '2023-10-04 11:09:00 +0900'
-title: '39. methods, computed / vueX mapState, mapMutations'
+title: '[VUE] 39. methods, computed / vueX mapState, mapMutations'
 summary: 'computed vue에서 함수 만들 때 methods 또는 computed 함수 안에 만들 수 있다. methods와 computed가 다른 점 methods에 선언된 함수는 호출될 때 마다 실행됨 computed에 선언된 함수는 호출해도 다시 실행되지 않음. 컴포넌트 로드 시 한번 실행 후 그 값을 계속 저장해서'
 author: ['aluvy']
 categories: ['VUE']

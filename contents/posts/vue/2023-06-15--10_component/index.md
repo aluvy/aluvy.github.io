@@ -1,6 +1,6 @@
 ---
 date: '2023-06-15 11:42:00 +0900'
-title: '10. component'
+title: '[VUE] 10. component'
 summary: 'component 문법을 사용하면 긴 HTML을 한 단어로 깔끔하게 줄일 수 있다. 생성, 작성, import, 등록, 사용의 스텝으로 한다. 1. src 폴더 안에 DiscountBanner.vue 파일을 생성한다 2. Discount.vue 에 html작성 ( `<` 열고 엔터치면 vue 템플릿 자동생성)'
 author: ['aluvy']
 categories: ['VUE']

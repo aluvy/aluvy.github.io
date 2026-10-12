@@ -1,6 +1,6 @@
 ---
 date: '2023-06-20 11:42:00 +0900'
-title: '21. vue-router 404 페이지'
+title: '[VUE] 21. vue-router 404 페이지'
 summary: '/:anyting(.*) 404페이지 정규식 문법을 이용하여 아무 문자나 입력했을때는 404 페이지를 보여줄 수 있다. 이때 순서가 중요하다, 가장 하단에 배치하는 것이 좋다. (router.js) import { createWebHistory, createRouter } from vue-router'
 author: ['aluvy']
 categories: ['VUE']

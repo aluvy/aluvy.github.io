@@ -1,6 +1,6 @@
 ---
 date: '2023-06-27 10:18:00 +0900'
-title: '32. Vue3 global(전역) 함수 사용하기'
+title: '[VUE] 32. Vue3 global(전역) 함수 사용하기'
 summary: '1. JS 파일 생성 const methods = { globalFuncTest(){ console.log(global function test); } } export default { install(Vue) { Vue.config.globalProperties.$globalFuncTest = methods.globalFuncTest; } }'
 author: ['aluvy']
 categories: ['VUE']

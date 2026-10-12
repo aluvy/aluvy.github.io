@@ -1,6 +1,6 @@
 ---
 date: '2022-11-11 23:39:00 +0900'
-title: '14. react router dom'
+title: '[REACT] 14. react router dom'
 summary: '/detail 로 접속하면 상세페이지를, /cart 로 접속하면 장바구니 페이지를 보여주자. 1. React에서 페이지를 나누는 방법 1. 컴포넌트를 만들어서 상세페이지 내용을 만든다. 2. /detail 로 접속하면 그 컴포넌트를 보여준다. 3. React-router-dom 라이브러리로 쉽게 구현할 수 있다.'
 author: ['aluvy']
 categories: ['REACT']

@@ -1,6 +1,6 @@
 ---
 date: '2023-06-20 14:24:00 +0900'
-title: '24. build & github pages 배포'
+title: '[VUE] 24. build & github pages 배포'
 summary: 'vue로 작업한 사이트는 build용 파일을 생성 후 올려야 합니다. 왜냐면 . vue 파일은 브라우저가 해석할 수 없어서, HTML CSS JS 파일로 변환해줘야 하기 떄문입니다. build npm run build yarn build Vue 프로젝트에서 터미널을 연 후 위의 명령어를 입력합니다.'
 author: ['aluvy']
 categories: ['VUE']

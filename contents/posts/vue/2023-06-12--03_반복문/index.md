@@ -1,6 +1,6 @@
 ---
 date: '2023-06-12 20:59:00 +0900'
-title: '03. 반복문 v-for'
+title: '[VUE] 03. 반복문 v-for'
 summary: 'v-for v-for="작명 in 몇번반복" :key="작명" :key 속성은 반복문 돌릴 때 꼭 필요하다. 반복한 요소들을 각각 구분짓기 위한 속성이다. <a v-for="작명 in 3" :key="작명">Home</a> data를 활용한 v-for 3의 자리에는 데이터를 넣을 수가 있음 메뉴들의 갯수만큼 반복됨 작명한 변수는 데이터 안의 자료가 됨'
 author: ['aluvy']
 categories: ['VUE']

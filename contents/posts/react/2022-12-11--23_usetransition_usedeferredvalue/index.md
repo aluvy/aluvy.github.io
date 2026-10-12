@@ -1,6 +1,6 @@
 ---
 date: '2022-12-11 17:45:00 +0900'
-title: '23. 느린 컴포넌트 성능 향상 useTransition, useDeferredValue'
+title: '[REACT] 23. 느린 컴포넌트 성능 향상 useTransition, useDeferredValue'
 summary: 'react 18 버전에서 새롭게 추가된 hook이 있다. useTransition useTransition을 사용하면 동작이 느린 컴포넌트들을 혁신적으로 빠르게 동작시킬 수가 있다.'
 author: ['aluvy']
 categories: ['REACT']

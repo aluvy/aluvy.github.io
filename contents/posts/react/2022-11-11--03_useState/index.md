@@ -1,6 +1,6 @@
 ---
 date: '2022-11-11 18:53:00 +0900'
-title: '03. useState()'
+title: '[REACT] 03. useState()'
 summary: 'useState() 사용하기 useState를 사용하려면 우선 상단에 useState를 import 해야 한다. useState라고 입력 후 엔터를 치면 상단에 자동으로 import 된다. state는 최상위 컴포넌트에 만드는게 좋다. 부모>자식 간 props 전송은 가능하지만 반대는 안되기 때문이다.'
 author: ['aluvy']
 categories: ['REACT']

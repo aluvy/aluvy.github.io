@@ -1,6 +1,6 @@
 ---
 date: '2026-01-01 08:04:00 +0900'
-title: '기타 (템플릿, 반응형 차트)'
+title: '[Highcharts] 04. 기타 (템플릿, 반응형 차트)'
 summary: 'Templating (템플릿) Highcharts는 포맷 문자열에서 템플릿을 지원합니다. v11.1(2023)부터 템플릿은 논리 연산을 [지원](https://www.highcharts.com/docs/chart-concepts/labels-and-string-formatting#format-strings)하며, 설정이 보안 및 JSON 호환이'
 author: ['aluvy']
 categories: ['Highcharts']

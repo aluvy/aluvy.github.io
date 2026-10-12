@@ -1,6 +1,6 @@
 ---
 date: '2024-01-25 16:01:00 +0900'
-title: 'Vuex, 헬퍼, 모듈화'
+title: '[VUE] Vuex, 헬퍼, 모듈화'
 summary: 'Vuex Vuex는 vuejs에서 컴포넌트들의 상태(state)를 관리하는 라이브러리이다. (React의 Flux 패턴에서 차용한 것이라고 한다.) Vuex 설치하기 $ npm i vuex --save Vuex 세팅하기 Vuex는 상태(state)를 저장하고 있는 저장소(store)를 가지고 있다. Vuex가 설치되었다면 이 저장소를 관리하는 파일을 생성해주자.'
 author: ['aluvy']
 categories: ['VUE']

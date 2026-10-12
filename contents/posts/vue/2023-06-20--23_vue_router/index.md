@@ -1,6 +1,6 @@
 ---
 date: '2023-06-20 14:14:00 +0900'
-title: '23. vue-router (hash mode, guards)'
+title: '[VUE] 23. vue-router (hash mode, guards)'
 summary: 'Hash mode vs HTML5 mode 우리가 맨 처음 셋팅해놨던 코드는 이렇습니다. (router.js) import { createRouter, createWebHistory } from vue-router const router = []; const router = createRouter({ history: createWebHistory(), routes, })'
 author: ['aluvy']
 categories: ['VUE']

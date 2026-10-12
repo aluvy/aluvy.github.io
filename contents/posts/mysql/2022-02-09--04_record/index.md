@@ -1,0 +1,90 @@
+---
+date: '2022-02-09 10:56:00 +0900'
+title: '[MySQL] 04. 레코드 관련 명령(insert, select, update, delete)'
+summary: '레코드 삽입 명령 insert into 테이블명 (필드명1, 필드명2,....) values (필드값1, 필드값2, ..); 문자, 숫자에 유의하여 입력해야한다. c:\>mysql -usong -p1234 song_db mysql>desc friend2; mysql>insert into friend2 (num,name,address,tel) values '
+author: ['aluvy']
+categories: ['MySQL']
+tags: ['']
+thumbnail: ''
+---
+
+
+
+## 레코드 삽입 명령
+
+````sql
+insert into 테이블명 (필드명1, 필드명2,....) values (필드값1, 필드값2, ..);
+````
+
+문자, 숫자에 유의하여 입력해야한다.
+
+````sql
+c:\>mysql -usong -p1234 song_db
+mysql>desc friend2;
+mysql>insert into friend2 (num,name,address,tel) values (1,'홍길동','서울 동작구 노량진동','123-456');
+mysql>select * from friend2;
+mysql>insert into friend2 values (2,'이순신','서울 동작구 노량진동','123-000');
+mysql>select * from friend2;
+````
+
+
+<hr>
+
+## DB 캐릭터셋 확인
+
+기본이 라틴어로 되어있기 때문에 한글이 깨진다! utf8로 변경해야한다.
+
+> **참고**   
+> [MySQL 한글 깨짐 현상 해결하기(UTF8)](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=whitehacker&logNo=221160698936 )
+{: .prompt-tip}
+
+
+아래 3가지 방법으로 확인 가능하다
+
+````sql
+mysql>show variables like 'character_set%';
+
+mysql>\s
+
+mysql>show variables like 'c%';
+````
+
+
+![방법1](image01.png)
+_[방법1] show variables like 'character_set%';_
+
+![방법2](image02.png)
+_[방법2] \s_
+
+![방법3](image03.png)
+_[방법3] show variables like 'c%';_
+
+
+<hr>
+
+## Shell창 언어설정 후 작업
+
+DB셋팅이 utf8이어도 작업하는 Shell창의 언어설정이 한국어이기 때문에 깨진다.
+때문에 레코드 관련 명령어를 실행할때 언어셋을 세팅해주는 아래 명령어를 먼저 실행한다.
+
+````sql
+mysql>set names euckr;
+````
+
+````sql
+c:\>mysql -usong -p1234 song_db
+mysql>desc friend2;
+mysql>set names euckr;
+mysql>insert into friend2 (num,name,address,tel) values (1,'홍길동','서울 동작구 노량진동','123-456');
+mysql>select * from friend2;
+mysql>insert into friend2 values (2,'이순신','서울 동작구 노량진동','123-000'); // 필드순서대로 입력 시 필드명 생략가능
+mysql>select * from friend2;
+````
+
+![언어설정](image04.png)
+
+![한글이 깨지지 않고 들어갔음을 확인](image05.png)
+_한글이 깨지지 않고 들어갔음을 확인_
+
+![한글이 깨지지 않고 등록됨](image06.png)
+_한글이 깨지지 않고 등록됨_

@@ -1,6 +1,6 @@
 ---
 date: '2023-06-26 22:21:00 +0900'
-title: '31. 인스타그램 필터 cssgram'
+title: '[VUE] 31. 인스타그램 필터 cssgram'
 summary: 'cssgram - [CSSgram](https://una.github.io/CSSgram/) index.html <head> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cssgram/0.1.10/cssgram.min.css"> </head> 나는 cssgram.css 파일을 다운로드하여 /assets/css 폴더에 넣고'
 author: ['aluvy']
 categories: ['VUE']

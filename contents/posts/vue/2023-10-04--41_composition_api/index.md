@@ -1,6 +1,6 @@
 ---
 date: '2023-10-04 15:17:00 +0900'
-title: '41. Composition API'
+title: '[VUE] 41. Composition API'
 summary: 'Compositon API 프로젝트가 커지고 코드가 길어지면 작업하기가 어려워지는데 관련된 코드들을 찢어놓지 않고 개발하는 방법으로 composition API라는걸 제공한다. Options API 지금까지 했던 방법 : component에서 data()만들고 life cycle hook, components, computed 등'
 author: ['aluvy']
 categories: ['VUE']

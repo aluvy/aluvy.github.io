@@ -1,6 +1,6 @@
 ---
 date: '2023-06-16 10:14:00 +0900'
-title: '13. @input, @change, v-model'
+title: '[VUE] 13. @input, @change, v-model'
 summary: '@input 사용자가 해당 input에 입력할 때마다 스크립트가 실행된다. <input @input=""> @change= 사용자가 해당 input에 값을 입력하고 커서를 다른 곳에 옮겼을 때 실행된다. <input @change=""> 사용자가 input에 입력한 값을 month 데이터에 반영하기'
 author: ['aluvy']
 categories: ['VUE']

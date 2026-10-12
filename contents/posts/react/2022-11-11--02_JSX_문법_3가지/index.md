@@ -1,6 +1,6 @@
 ---
 date: '2022-11-11 18:24:00 +0900'
-title: '02. JSX 문법 3가지'
+title: '[REACT] 02. JSX 문법 3가지'
 summary: 'App.js 이 우리의 메인 페이지다. App.js에 div 하나만 남기고 삭제해보자. JS파일인데도 동작하는 이유는 HTML이 아니라 JSX이기 때문이다. JSX란 JavaScript 안에서 HTML을 쉽게 작성할 수 있게 도와주는 부가기능 혹은 언어라고 생각하면 된다.'
 author: ['aluvy']
 categories: ['REACT']

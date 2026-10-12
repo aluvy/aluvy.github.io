@@ -1,6 +1,6 @@
 ---
 date: '2022-11-11 21:07:00 +0900'
-title: '04. Array, Object State 변경하기'
+title: '[REACT] 04. Array, Object State 변경하기'
 summary: '복사, 수정, 적용 array나 Object로 된 state를 변경할 때는 기존 state를 copy하여 수정 한 후 setState 해줘야 한다. setState(변경할 값) 함수의 동작 특징 기존 state와 변경될 state를 비교 후 다를때에만 state 변경을 해준다. array, object의 특징'
 author: ['aluvy']
 categories: ['REACT']

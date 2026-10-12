@@ -1,6 +1,6 @@
 ---
 date: '2023-06-16 16:19:00 +0900'
-title: '19. vue-router 설치와 기본 라우팅'
+title: '[VUE] 19. vue-router 설치와 기본 라우팅'
 summary: 'vue-router [https://v3.router.vuejs.org/kr/](https://v3.router.vuejs.org/kr/) npm 설치 npm install vue-router router 사용 세팅 src/main.js에 import router from ./router.js createApp(App).use(라우터만든거).mount(#app)'
 author: ['aluvy']
 categories: ['VUE']

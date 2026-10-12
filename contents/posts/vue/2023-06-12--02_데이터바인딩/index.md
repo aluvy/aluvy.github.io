@@ -1,6 +1,6 @@
 ---
 date: '2023-06-12 17:52:00 +0900'
-title: '02. vuedongsan 데이터 바인딩'
+title: '[VUE] 02. vuedongsan 데이터 바인딩'
 summary: 'Vue Data binding 뷰의 실시간 자동 렌더링 기능을 이용하려면 데이터 바인딩을 적극 활용하면 된다. Vue는 data가 변경되면 data와 관련된 HTML도 실시간으로 반영(재 랜더링)된다. 자주 변하는 데이터들은 데이터로 보관하고 HTML에 {{꽂아넣는다}}'
 author: ['aluvy']
 categories: ['VUE']

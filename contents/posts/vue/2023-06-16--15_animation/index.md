@@ -1,6 +1,6 @@
 ---
 date: '2023-06-16 11:40:00 +0900'
-title: '15. animation, Transition (class명 조건부로 넣기)'
+title: '[VUE] 15. animation, Transition (class명 조건부로 넣기)'
 summary: 'Transition vue에서는 <Transition>을 이용하면 애니메이션을 쉽게 줄 수 있다. <Transition name="fade"><!-- 애니메이션 주고 싶은 요소 --> </Transition> /* 등장 */ .fade-enter-from{ opacity:0; } /* 시작 스타일 */ .fade-enter-active{ transition: all .5s;'
 author: ['aluvy']
 categories: ['VUE']

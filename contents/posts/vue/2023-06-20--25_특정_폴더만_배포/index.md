@@ -1,6 +1,6 @@
 ---
 date: '2023-06-20 14:51:00 +0900'
-title: '25. github pages 특정 폴더만 배포 시키기 (subtree), 경로설정'
+title: '[VUE] 25. github pages 특정 폴더만 배포 시키기 (subtree), 경로설정'
 summary: 'vue.config.js 수정 const { defineConfig } = require(@vue/cli-service) module.exports = defineConfig({ transpileDependencies: true, publicPath: process.env.NODE_ENV === production ? /vue-stagram/dist : /, assetsDir: ./, })'
 author: ['aluvy']
 categories: ['VUE']

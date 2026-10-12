@@ -1,6 +1,6 @@
 ---
 date: '2024-02-02 15:38:00 +0900'
-title: 'Custom Plugin'
+title: '[VUE] Custom Plugin'
 summary: '여러 번 사용되는 라이브러리의 경우 컴포넌트마다 import 해오지 말고 plugin으로 만들어 사용하면 좋다. plugin으로 등록하면 전역에서 사용할 수 있다. Chart.js 라이브러리 plugin 제작 import ChartPlugin from ./plugins/ChartPlugin.js; Vue.use(ChartPlugin);'
 author: ['aluvy']
 categories: ['VUE']

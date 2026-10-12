@@ -1,6 +1,6 @@
 ---
 date: '2022-11-11 21:42:00 +0900'
-title: '05. Component 생성, 파일분리'
+title: '[REACT] 05. Component 생성, 파일분리'
 summary: '복잡한 html을 한 단어로 치환할 수 있는 Component 문법 리액트는 긴 HTML을 한 단어로 깔끔하게 치환해서 넣을 수 있는 문법을 제공합니다. component라고 합니다. 이걸 이용하면 함수나 변수를 만들듯이 HTML을 깔끔하게 한 단어로 치환해서 원하는 곳에 넣을 수 있습니다.'
 author: ['aluvy']
 categories: ['REACT']

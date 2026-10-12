@@ -1,6 +1,6 @@
 ---
 date: '2022-11-11 22:47:00 +0900'
-title: '11. build & GitHub Pages로 배포'
+title: '[REACT] 11. build & GitHub Pages로 배포'
 summary: 'build는 왜해? 우리가 만든 react 프로젝트를 웹에 배포하려면 build용 파일을 생성 후 그걸 웹에 올려야 한다. 왜냐면, 브라우저는 HTML, CSS, JS 3개의 언어만 해석할 수 있다. 리액트의 이상한 state, JSX 같은 문법은 해석할 수 없다.'
 author: ['aluvy']
 categories: ['REACT']

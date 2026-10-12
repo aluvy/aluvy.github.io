@@ -1,6 +1,6 @@
 ---
 date: '2022-11-12 00:10:00 +0900'
-title: '17. React Axios'
+title: '[REACT] 17. React Axios'
 summary: 'Ajax란? 서버에 GET, POST 요청을 할 때 새로고침 없이 비동기적으로 데이터를 주고받을 수 있게 도와주는 간단한 브라우저 기능이다. 방법 3가지 Ajax로 GET/POST를 요청하는 방법은 3가지가 있다. 1. XMLHttpRequest 라는 옜날 문법 쓰기 2. fetch() 라는 최신 문법 쓰기 3. axios 같은 외부 라이브러리 쓰기 (추천)'
 author: ['aluvy']
 categories: ['REACT']

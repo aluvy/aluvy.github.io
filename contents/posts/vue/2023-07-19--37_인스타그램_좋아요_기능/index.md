@@ -1,6 +1,6 @@
 ---
 date: '2023-07-19 22:09:00 +0900'
-title: '37. Vuex를 이용한 인스타그램 좋아요 기능'
+title: '[VUE] 37. Vuex를 이용한 인스타그램 좋아요 기능'
 summary: ' @숙제 피드 사진을 누르면 Likes가 1 증가하고, 다시 누르면 Likes가 1 감소한다. (store.js) import { createStore } from "vuex"; const store = createStore({ state () { return { likes: 36, } }, mutations: { changeLikes(state, data){ const isLikes'
 author: ['aluvy']
 categories: ['VUE']

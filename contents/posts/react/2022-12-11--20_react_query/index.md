@@ -1,6 +1,6 @@
 ---
 date: '2022-12-11 16:42:00 +0900'
-title: '20. 실시간 데이터가 중요하다면 react-query'
+title: '[REACT] 20. 실시간 데이터가 중요하다면 react-query'
 summary: 'react-query? react-query는 서버의 값을 클라이언트에 가져오거나, 캐싱, 값 업데이트, 에러 핸들링 등 비동기 과정을 더욱 편하게 하는데 사용된다. 여러가지 장점이 있지만 주로 아래와 같이 프론트 개발자가 구현하기 귀찮은 일들을 수행한다. - 몇초마다 자동으로 데이터를 다시 가져온다.'
 author: ['aluvy']
 categories: ['REACT']

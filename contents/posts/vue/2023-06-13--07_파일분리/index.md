@@ -1,6 +1,6 @@
 ---
 date: '2023-06-13 10:30:00 +0900'
-title: '07. 파일분리 import / export'
+title: '[VUE] 07. 파일분리 import / export'
 summary: 'oneroom.js 파일에 있는 데이터를 App.vue내 data()로 가져오기 oneroom.js 파일에서 App.vue로 변수를 보내고 싶을때 import / export 문법을 사용한다. export default 내보내기 할 파일에서 내보내기 할 변수를 export 한다.'
 author: ['aluvy']
 categories: ['VUE']

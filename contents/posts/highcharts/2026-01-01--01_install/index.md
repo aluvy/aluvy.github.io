@@ -1,6 +1,6 @@
 ---
 date: '2026-01-01 08:01:00 +0900'
-title: 'Installation'
+title: '[Highcharts] 01. Installation'
 summary: 'Highcharts 초기 설정 방법 공식 문서 기준으로 설치/로딩 방법은 크게 5가지입니다. 1. npm (권장 — 실무 표준) React/Vue/Angular 등 모던 프레임워크 환경에서는 이 방식이 기본입니다. npm install highcharts // ES Module 방식 import Highcharts from'
 author: ['aluvy']
 categories: ['Highcharts']

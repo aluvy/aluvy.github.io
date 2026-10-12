@@ -1,6 +1,6 @@
 ---
 date: '2023-06-12 21:22:00 +0900'
-title: '04. 이벤트 바인딩 v-on, @, 함수'
+title: '[VUE] 04. 이벤트 바인딩 v-on, @, 함수'
 summary: 'click event binding - v-on:click="script" - @click="script" 두 가지 문법 <button v-on:click="자바스크립트~~">허위매물신고</button> <button @click="자바스크립트~~">허위매물신고</button> 버튼을 클릭하면 신고수 증가하기'
 author: ['aluvy']
 categories: ['VUE']

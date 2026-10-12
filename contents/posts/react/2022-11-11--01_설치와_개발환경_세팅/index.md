@@ -1,6 +1,6 @@
 ---
 date: '2022-11-11 17:26:00 +0900'
-title: '01. 설치와 개발환경 셋팅'
+title: '[REACT] 01. 설치와 개발환경 셋팅'
 summary: '1. 개발환경 셋팅 1-1. node JS 다운로드 및 설치 node JS (LTS 버전)을 다운받아 설치한다. https://nodejs.org/ko/ 1-2. VS Code 다운로드 및 설치 VS Code Editor를 다운받아 설치한다. [VS Code]https://code.visualstudio.com/'
 author: ['aluvy']
 categories: ['REACT']

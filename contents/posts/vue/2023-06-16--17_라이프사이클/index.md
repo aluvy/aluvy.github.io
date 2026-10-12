@@ -1,6 +1,6 @@
 ---
 date: '2023-06-16 14:22:00 +0900'
-title: '17. 라이프사이클 Lifecycle, Hook'
+title: '[VUE] 17. 라이프사이클 Lifecycle, Hook'
 summary: '라이프사이클 (생명주기) 컴포넌트는 웹페이지에 표시되기까지 일련의 step을 거친다.    이것을 라이프사이클이라고 한다. 1. create 단계 : 데이터만 존재하는 단계 2. mount 단계 : 컴포넌트 안의 HTML을 실제 HTML로 바꿔주는 단계 3. 컴포넌트 생성 : HTML에 장착하는'
 author: ['aluvy']
 categories: ['VUE']

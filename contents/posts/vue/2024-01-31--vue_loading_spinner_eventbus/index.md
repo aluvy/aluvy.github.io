@@ -1,6 +1,6 @@
 ---
 date: '2024-01-31 15:29:00 +0900'
-title: 'LoadingSpinner | EventBus'
+title: '[VUE] LoadingSpinner | EventBus'
 summary: 'src/components/LoadingSpinner.vue <template> <div class="loading" v-if="loading"> <div></div> <div></div> <div></div> </div> </template> <script> export default { props: { loading: { type: Boolean, required: true, } } } </script>'
 author: ['aluvy']
 categories: ['VUE']

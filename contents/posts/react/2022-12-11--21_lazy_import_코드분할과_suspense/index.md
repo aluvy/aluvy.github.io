@@ -1,6 +1,6 @@
 ---
 date: '2022-12-11 17:19:00 +0900'
-title: '21. lazy import 코드분할과 Suspense'
+title: '[REACT] 21. lazy import 코드분할과 Suspense'
 summary: '리액트에서 빌드를 하게되면 html, js 파일이 1개만 생성된다. 그 안에 지금까지 만든 컴포넌트 내용들이 들어있어 파일 사이즈가 크다. 그래서 리액트 사이트들은 첫 페이지 로딩속도가 매우 느릴 수 있는데, 이 현상을 해결하려면 JS파일을 잘게 쪼개면 된다. 쪼개는 방법은 import 문법을 약간 수정하면 된다'
 author: ['aluvy']
 categories: ['REACT']

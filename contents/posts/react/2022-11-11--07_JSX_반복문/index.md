@@ -1,6 +1,6 @@
 ---
 date: '2022-11-11 22:01:00 +0900'
-title: '07. JSX 안에서 반복문 : map()'
+title: '[REACT] 07. JSX 안에서 반복문 : map()'
 summary: 'map 함수를 이용한 JSX 내 반복문 JSX 내에서는 for문을 사용할 수 없다. map()함수를 이용하여 반복문을 사용할 수 있다. map() 안에 콜백함수에는 파라미터를 2개까지 사용할 수 있는데, 첫번째 파라미터는 해당 array 의 자료, 두번째 파라미터는 해당 array의 index번호다.'
 author: ['aluvy']
 categories: ['REACT']

@@ -1,6 +1,6 @@
 ---
 date: '2023-06-28 22:15:00 +0900'
-title: '33. props 말고 slot'
+title: '[VUE] 33. props 말고 slot'
 summary: '부모 컴포넌트로부터 자식컴포넌트로 데이터를 받아오는 방법으로 props 말고 slot이 있다. props를 보내고 받고 사용하는 과정 없이도 직관적으로 데이터를 컴포넌트로 보낼 수 있다. slot은 데이터 바인딩을 HTML에다가 할 때 사용한다. 속성 등에는 사용할 수 없다.'
 author: ['aluvy']
 categories: ['VUE']

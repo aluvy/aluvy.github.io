@@ -1,6 +1,6 @@
 ---
 date: '2023-06-28 22:24:00 +0900'
-title: '34. slot props'
+title: '[VUE] 34. slot props'
 summary: '자식데이터 -> 부모 컴포넌트에서 사용 자식 컴포넌트의 데이터를 부모 컴포넌트에서 사용하고 싶을 때 slot props 문법이 있다. 자식 컴포넌트에 데이터가 있다고 가정하자. <slot :msg="msg"></slot> (FilterBox.vue) <template> <div class="filter-item" :class="${filter}"'
 author: ['aluvy']
 categories: ['VUE']

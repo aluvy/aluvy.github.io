@@ -1,6 +1,6 @@
 ---
 date: '2023-06-20 14:00:00 +0900'
-title: '22. Nested routes & push()'
+title: '[VUE] 22. Nested routes & push()'
 summary: 'Nested routes /detail/0/author 로 접속하면 detail 내에 작가소개 란을 보여주고 /detail/0/comment 로 접속하면 detail 내에 댓글란을 보여주고 싶을 때 이런식으로 /detail/ 페이지 안에서 또 페이지를 쪼개고 싶을 때 쓸 수 있는것이 Nested routes 다. Nested routes'
 author: ['aluvy']
 categories: ['VUE']

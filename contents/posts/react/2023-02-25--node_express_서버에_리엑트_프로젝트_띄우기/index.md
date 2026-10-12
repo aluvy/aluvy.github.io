@@ -1,6 +1,6 @@
 ---
 date: '2023-02-25 21:35:00 +0900'
-title: 'node + Express 서버에 리엑트 프로젝트 띄우기'
+title: '[REACT] node + Express 서버에 리엑트 프로젝트 띄우기'
 summary: 'node.js로 웹 서버 만들기 1. node.js 설치 2. 작업폴더 만든 후 에디터로 오픈 3. server.js 파일 만들고 아래 코드 작성 4. 터미널 열어서 npm init -y 입력 5. npm install express 입력'
 author: ['aluvy']
 categories: ['REACT']

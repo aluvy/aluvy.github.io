@@ -1,6 +1,6 @@
 ---
 date: '2023-06-21 11:00:00 +0900'
-title: '26. Vue에서 style 속성 데이터바인딩 하는 법'
+title: '[VUE] 26. Vue에서 style 속성 데이터바인딩 하는 법'
 summary: '작업을 하다보면 :style="" 안에 자바스크립트 데이터를 집어넣을 일이 많습니다. 그냥 콜론 붙이고 데이터 바인딩 해도 되는데, Object 형태로도 CSS 속성을 넣을 수 있습니다. <div :style="{ fontSize : 20px, marginTop : 10px }"> <div :style="{ color : red }">'
 author: ['aluvy']
 categories: ['VUE']

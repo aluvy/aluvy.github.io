@@ -1,6 +1,6 @@
 ---
 date: '2023-07-15 12:10:00 +0900'
-title: '36. Vuex'
+title: '[VUE] 36. Vuex'
 summary: 'Vuex 컴포넌트 별로 데이터를 주고 받기 어렵다. 하위 컴포넌트 전송은 props, 상위 컴포넌트로의 전송은 custom event, mitt 라이브러리를 써야 한다. 이 때 쓸 수 있는 라이브러리가 Vuex다. Vuex는 모든 컴포넌트들이 데이터를 공유할 수 있는 하나의 자바스크립트 파일이다.'
 author: ['aluvy']
 categories: ['VUE']

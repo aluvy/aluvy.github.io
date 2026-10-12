@@ -1,6 +1,6 @@
 ---
 date: '2023-06-28 22:56:00 +0900'
-title: '35. 원하는 컴포넌트에 데이터 전송 mitt'
+title: '[VUE] 35. 원하는 컴포넌트에 데이터 전송 mitt'
 summary: 'FilterBox.vue 의 데이터를 Container.vue 를 넘어 App.vue로 전송하기 mitt mitt라는 라이브러리를 사용하면 원하는 컴포넌트로 데이터를 보내줄 수 있다. 부모 컴포넌트 뿐 아니래 형제 컴포넌트에게도 보낼 수 있다. 1. 설치 npm install mitt sudo npm install mitt'
 author: ['aluvy']
 categories: ['VUE']

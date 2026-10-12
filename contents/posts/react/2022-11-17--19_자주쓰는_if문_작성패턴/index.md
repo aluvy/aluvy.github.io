@@ -1,6 +1,6 @@
 ---
 date: '2022-11-17 22:45:00 +0900'
-title: '19. React에서 자주 쓰는 if문 작성패턴 5가지'
+title: '[REACT] 19. React에서 자주 쓰는 if문 작성패턴 5가지'
 summary: 'component 안에서 쓰는 if else component에서 JSX를 조건부로 보여주고 싶으면 이렇게 쓴다. JSX안에서 쓰는 3항 연산자 ternary operator 조건문 ? 조건문 참일때 실행할 코드 : 거짓일 때 실행할 코드'
 author: ['aluvy']
 categories: ['REACT']

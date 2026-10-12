@@ -1,6 +1,6 @@
 ---
 date: '2026-01-01 08:03:00 +0900'
-title: 'Highcharts 이해하기 (title, series, tooltip, legend, axes)'
+title: '[Highcharts] 03. Highcharts 이해하기 (title, series, tooltip, legend, axes)'
 summary: 'Highcharts 이해하기 Highcharts가 어떻게 동작하는지 이해하려면 차트의 다양한 구성 요소, 즉 개념들을 이해하는 것이 중요합니다. 아래 이미지는 차트의 주요 개념들을 설명합니다.'
 author: ['aluvy']
 categories: ['Highcharts']

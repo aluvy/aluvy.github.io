@@ -1,6 +1,6 @@
 ---
 date: '2022-11-11 22:57:00 +0900'
-title: '12. react Bootstrap'
+title: '[REACT] 12. react Bootstrap'
 summary: 'React-Bootstrap 라이브러리 https://react-bootstrap.github.io/ React-Bootstrap을 사용하면 HTML CSS로 직접 디자인하지 않고, 예제코드를 복사/붙여넣기 하여 레이아웃을 쉽게 생성할 수 있다.'
 author: ['aluvy']
 categories: ['REACT']

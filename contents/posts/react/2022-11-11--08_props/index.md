@@ -1,6 +1,6 @@
 ---
 date: '2022-11-11 22:08:00 +0900'
-title: '08. props'
+title: '[REACT] 08. props'
 summary: 'props 부모 component의 state를 자식 component에서도 사용하려면 props로 전송해서 써야한다. props 전송은 부모->자식 만 가능하다. props로 부모>자식 state 전송하는 법 1. 부모 component 에서 <Modal 작명={state이름}> 2. 자식 component function에 props 파라미터 등록'
 author: ['aluvy']
 categories: ['REACT']

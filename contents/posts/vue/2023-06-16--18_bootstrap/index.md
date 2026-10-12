@@ -1,6 +1,6 @@
 ---
 date: '2023-06-16 16:01:00 +0900'
-title: '18. Bootstrap 라이브러리'
+title: '[VUE] 18. Bootstrap 라이브러리'
 summary: 'BootStrap - [BootStrap](https://getbootstrap.com/) - 참고 : Bootstrap 5.0 버전 이상은 IE에서 정상적으로 동작하지 않는다. (IE를 고려한다면 4.1버전 사용) 설치 방법 1. CDN [Get started with Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)'
 author: ['aluvy']
 categories: ['VUE']

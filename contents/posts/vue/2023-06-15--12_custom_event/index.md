@@ -1,6 +1,6 @@
 ---
 date: '2023-06-15 16:24:00 +0900'
-title: '12. custom event (부모 데이터 변경하기) $emit()'
+title: '[VUE] 12. custom event (부모 데이터 변경하기) $emit()'
 summary: '자식 컴포넌트에서 props를 수정하고 싶으면  custom event를 사용한다. 자식 컴포넌트에서 부모 컴포넌트로 메세지를 보내 부모 컴포넌트에 있는 데이터를 수정해야 한다. 자식 컴포넌트에서 부모 컴포넌트로 메시지를 보내고, 부모 컴포넌트에서 메시지를 수신해야 한다.'
 author: ['aluvy']
 categories: ['VUE']

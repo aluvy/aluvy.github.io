@@ -1,6 +1,6 @@
 ---
 date: '2023-07-26 21:03:00 +0900'
-title: '38. Vuex actions 게시물 더보기 버튼 (feat. ajax)'
+title: '[VUE] 38. Vuex actions 게시물 더보기 버튼 (feat. ajax)'
 summary: 'Vuex에서는 state를 수정할 때 mutations 함수를 만들어서 수정하라고 배워봤는데, 가끔 서버에서 데이터를 가져와서 수정하고 싶을 때가 있다. 그럴때 당연히 서버로 ajax 요청을 날리면 되는데 그런건 mutations에서 직접 하지 않고 actions라는 항목에 적어야 한다. 왜나하면'
 author: ['aluvy']
 categories: ['VUE']

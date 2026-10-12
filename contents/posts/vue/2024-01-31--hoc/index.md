@@ -1,6 +1,6 @@
 ---
 date: '2024-01-31 14:29:00 +0900'
-title: 'HOC | high order component | Component recycling'
+title: '[VUE] HOC | high order component | Component recycling'
 summary: 'HOC (high order component) 뷰의 하이 오더 컴포넌트는 리액트의 하이 오더 컴포넌트에서 기원된 것입니다. 리액트의 하이 오더 컴포넌트 소개 페이지를 보면 아래와 같이 정확한 정의가 나와 있습니다. _A higher-order component (HOC) is an advanced technique iin React for reusing component logic._ 이 말을 정리해보면 다음과 같습니다.'
 author: ['aluvy']
 categories: ['VUE']

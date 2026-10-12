@@ -1,6 +1,6 @@
 ---
 date: '2023-06-16 11:45:00 +0900'
-title: '16. 데이터 정렬과 데이터 보존 sort() [...array]'
+title: '[VUE] 16. 데이터 정렬과 데이터 보존 sort() [...array]'
 summary: 'sort() sort() 함수는 문자를 알파벳순으로 정렬해준다. 숫자를 정렬하고 싶으면 아래와 같이 써준다. sort() 함수는 원본 데이터를 변형한다. 원본데이터를 보존하고 싶으면 map, filter 함수를 써준다. [1,5,8,6].sort(function(a,b){ return a-b; });'
 author: ['aluvy']
 categories: ['VUE']

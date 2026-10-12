@@ -1,6 +1,6 @@
 ---
 date: '2023-05-31 13:43:00 +0900'
-title: '접근성'
+title: '[REACT] 접근성'
 summary: '접근성이 필요한 이유 웹 접근성(별칭: [a11y](https://en.wiktionary.org/wiki/a11y))은 모두가 사용할 수 있도록 웹사이트를 디자인, 개발하는 것을 의미합니다. 보조과학기술(assistive technology)들이 웹페이지들을 해석할 수 있도록 접근성을 갖추는 것이 필요합니다. React는 접근성을 갖춘 웹사이트를 만들 수 있도록 모든 지원을 하고 있으며, 대부분은 표준 HTML 기술이 사용됩니다.'
 author: ['aluvy']
 categories: ['REACT']

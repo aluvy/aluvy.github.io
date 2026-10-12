@@ -1,6 +1,6 @@
 ---
 date: '2022-11-11 22:29:00 +0900'
-title: '10. Component 만드는 또 다른 문법 class'
+title: '[REACT] 10. Component 만드는 또 다른 문법 class'
 summary: 'Component 만드는 또 다른 문법 class 현재는 컴포넌트를 만들 때 function을 사용하지만 예전에는 class문법도 사용했다. 그냥 알아두자 1. class 에 component 이름을 작명한다. 2. constructor, super, render 함수 3개를 채워 넣는다. (기본 템플릿 같은 것) 3. render return () 안에 JSX를 작성한다.'
 author: ['aluvy']
 categories: ['REACT']

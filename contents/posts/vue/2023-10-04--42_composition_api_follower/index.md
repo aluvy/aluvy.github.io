@@ -1,6 +1,6 @@
 ---
 date: '2023-10-04 16:50:00 +0900'
-title: '42. Composition API follower 검색기능'
+title: '[VUE] 42. Composition API follower 검색기능'
 summary: '/components/MyPage.vue <template> <div class="mypage"> <ul class="tab"> <li class="on"><button type="button">{{ follower.length }} 팔로워</button></li> <li><button type="button">60 팔로잉</button></li> </ul> <div class="search">'
 author: ['aluvy']
 categories: ['VUE']

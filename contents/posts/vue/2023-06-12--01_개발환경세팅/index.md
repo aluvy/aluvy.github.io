@@ -1,6 +1,6 @@
 ---
 date: '2023-06-12 16:58:00 +0900'
-title: '01. 개발환경 셋팅 + 프로젝트 생성'
+title: '[VUE] 01. 개발환경 셋팅 + 프로젝트 생성'
 summary: '다운로드 - node js - vs code node.js 를 설치하면 npm을 이용할 수 있다. npm은 각종 웹 개발 라이브러리들을 쉽게 이용할 수 있게 도와주는 패키지 매니저다. (yarn도 마찬가지) npm으로 vue cli를 설치한다. (vue 프로젝트 생성을 빠르게 도와주는 라이브러리)'
 author: ['aluvy']
 categories: ['VUE']

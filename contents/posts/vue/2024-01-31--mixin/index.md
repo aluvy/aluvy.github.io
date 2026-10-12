@@ -1,6 +1,6 @@
 ---
 date: '2024-01-31 14:32:00 +0900'
-title: 'mixin | Component recycling'
+title: '[VUE] mixin | Component recycling'
 summary: 'mixin 믹스인은 여러 컴포넌트 간에 공통으로 사용하고 있는 로직, 기능들을 재사용하는 방법입니다. 믹스인에 정의할 수 있는 재사용 로직은 data, methods, create 등과 같은 컴포넌트 옵션입니다. 믹스인 코드 형식 믹스인을 주입 할 컴포넌트에 mixins 속성을 선언하고 배열 [] 안에 주입할 믹스인들을 추가합니다.'
 author: ['aluvy']
 categories: ['VUE']

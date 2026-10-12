@@ -1,6 +1,6 @@
 ---
 date: '2022-11-12 00:04:00 +0900'
-title: '16. Lifecycle과 useEffect'
+title: '[REACT] 16. Lifecycle과 useEffect'
 summary: 'Component의 인생 Component는 Lifecycle이라는 개념이 있다. 이 Lifecycle에 맞춰 코드를 실행할 수 있다. 1. 생성 mount 2. 재 렌더링 update 3. 삭제 unmount'
 author: ['aluvy']
 categories: ['REACT']

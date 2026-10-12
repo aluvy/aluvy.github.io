@@ -1,6 +1,6 @@
 ---
 date: '2023-06-15 10:17:00 +0900'
-title: '08. 모달창 내에 상세페이지 만들기'
+title: '[VUE] 08. 모달창 내에 상세페이지 만들기'
 summary: '누른거 라는 변수를 데이터에 넣고 리스트의 제목을 누를때마다 누른거의 값을 바꿔주고 모달을 띄워준다. <template> <div class="black-bg" v-if="모달창열렸니==1"> <div class="white-bg"> <img :src="원룸들[누른거].image" class="room-img"> <h4>{{ 원룸들[누른거].title }}</h4>'
 author: ['aluvy']
 categories: ['VUE']

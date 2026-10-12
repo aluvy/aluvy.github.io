@@ -1,6 +1,6 @@
 ---
 date: '2026-01-01 08:02:00 +0900'
-title: 'How to set options'
+title: '[Highcharts] 02. How to set options'
 summary: 'How to set options (옵션 설정 방법) Highcharts는 JavaScript 객체 구조를 사용하여 차트의 옵션 또는 설정을 정의합니다. 이 문서는 옵션 객체가 어떻게 동작하는지, 그리고 어떻게 사용하는지를 설명합니다.'
 author: ['aluvy']
 categories: ['Highcharts']

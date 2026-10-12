@@ -1,6 +1,6 @@
 ---
 date: '2022-11-11 23:49:00 +0900'
-title: '15. react-router-dom URL parameter'
+title: '[REACT] 15. react-router-dom URL parameter'
 summary: 'URL parameter react-router-dom URL parameter를 이용하면 URL에 입력한 파라미터 값을 가져올 수 있다. 상품페이지 3개를 만든다고 생각해보자. 아래와 같이 Route를 3개 만드는 방법을 쓸 수 있다. 하지만 상품이 100만개라면..?'
 author: ['aluvy']
 categories: ['REACT']
