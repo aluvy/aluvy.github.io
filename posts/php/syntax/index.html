@@ -48,7 +48,7 @@
         }
       }
     })
-  </script><style>.svg-inline--fa{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;width:1.25em}</style><title data-gatsby-head="true">[PHP] php 기본문법</title><link rel="icon" href="/favicon.png" data-gatsby-head="true"/><link rel="shortcut icon" href="/favicon.png" data-gatsby-head="true"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div id="wrap" class=""><div class="post-head"><div class="post-topbar"><div class="section"><div class="inner"><button type="button" class="btn-back"><svg data-prefix="fas" data-icon="angle-left" class="svg-inline--fa fa-angle-left ico" role="img" viewBox="0 0 256 512" aria-hidden="true"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></button><button type="button" class="btn-home"><svg data-prefix="far" data-icon="house" class="svg-inline--fa fa-house ico" role="img" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M240 6.1c9.1-8.2 22.9-8.2 32 0l232 208c9.9 8.8 10.7 24 1.8 33.9s-24 10.7-33.9 1.8l-8-7.2 0 205.3c0 35.3-28.7 64-64 64l-288 0c-35.3 0-64-28.7-64-64l0-205.3-8 7.2c-9.9 8.8-25 8-33.9-1.8s-8-25 1.8-33.9L240 6.1zm16 50.1L96 199.7 96 448c0 8.8 7.2 16 16 16l48 0 0-104c0-39.8 32.2-72 72-72l48 0c39.8 0 72 32.2 72 72l0 104 48 0c8.8 0 16-7.2 16-16l0-248.3-160-143.4zM208 464l96 0 0-104c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24l0 104z"></path></svg></button><div class="title"><h1>[PHP] php 기본문법</h1></div><button type="button" class="btn-toc"><svg data-prefix="fas" data-icon="list-ul" class="svg-inline--fa fa-list-ul ico" role="img" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M48 144a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM48 464a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM96 256a48 48 0 1 0 -96 0 48 48 0 1 0 96 0z"></path></svg></button></div></div></div><div class="post-head-info"><div class="inner"><div class="btn-wrap"><button type="button" class="btn-back"><svg data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left ico" role="img" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 105.4-105.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></button><button type="button" class="btn-home"><svg data-prefix="far" data-icon="house" class="svg-inline--fa fa-house ico" role="img" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M240 6.1c9.1-8.2 22.9-8.2 32 0l232 208c9.9 8.8 10.7 24 1.8 33.9s-24 10.7-33.9 1.8l-8-7.2 0 205.3c0 35.3-28.7 64-64 64l-288 0c-35.3 0-64-28.7-64-64l0-205.3-8 7.2c-9.9 8.8-25 8-33.9-1.8s-8-25 1.8-33.9L240 6.1zm16 50.1L96 199.7 96 448c0 8.8 7.2 16 16 16l48 0 0-104c0-39.8 32.2-72 72-72l48 0c39.8 0 72 32.2 72 72l0 104 48 0c8.8 0 16-7.2 16-16l0-248.3-160-143.4zM208 464l96 0 0-104c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24l0 104z"></path></svg></button></div><div class="text-wrapper"><div class="post-title">[PHP] php 기본문법</div><div class="post-info"><div class="post-dates"><span>Posted <strong>Feb 4, 2022</strong></span></div><div class="post-category"><span>PHP</span></div></div></div></div></div></div><div id="container" class="post-page"><div id="contents"><div class="row contents-layout"><div class="col-content contents-left"><div class="post-contents"><h2 id="1-echo--print" style="position:relative;">1. echo / print<a href="#1-echo--print" aria-label="1 echo  print permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+  </script><style>.svg-inline--fa{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;width:1.25em}</style><title data-gatsby-head="true">[PHP] php 기본문법</title><link rel="icon" href="/favicon.png" data-gatsby-head="true"/><link rel="shortcut icon" href="/favicon.png" data-gatsby-head="true"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div id="wrap" class=""><div class="post-head"><div class="post-topbar"><div class="section"><div class="inner"><button type="button" class="btn-back"><svg data-prefix="fas" data-icon="angle-left" class="svg-inline--fa fa-angle-left ico" role="img" viewBox="0 0 256 512" aria-hidden="true"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></button><button type="button" class="btn-home"><svg data-prefix="far" data-icon="house" class="svg-inline--fa fa-house ico" role="img" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M240 6.1c9.1-8.2 22.9-8.2 32 0l232 208c9.9 8.8 10.7 24 1.8 33.9s-24 10.7-33.9 1.8l-8-7.2 0 205.3c0 35.3-28.7 64-64 64l-288 0c-35.3 0-64-28.7-64-64l0-205.3-8 7.2c-9.9 8.8-25 8-33.9-1.8s-8-25 1.8-33.9L240 6.1zm16 50.1L96 199.7 96 448c0 8.8 7.2 16 16 16l48 0 0-104c0-39.8 32.2-72 72-72l48 0c39.8 0 72 32.2 72 72l0 104 48 0c8.8 0 16-7.2 16-16l0-248.3-160-143.4zM208 464l96 0 0-104c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24l0 104z"></path></svg></button><div class="title"><h1>[PHP] php 기본문법</h1></div><button type="button" class="btn-toc"><svg data-prefix="fas" data-icon="list-ul" class="svg-inline--fa fa-list-ul ico" role="img" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M48 144a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM48 464a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM96 256a48 48 0 1 0 -96 0 48 48 0 1 0 96 0z"></path></svg></button></div></div></div><div class="post-head-info"><div class="inner"><div class="btn-wrap"><button type="button" class="btn-back"><svg data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left ico" role="img" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 105.4-105.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></button><button type="button" class="btn-home"><svg data-prefix="far" data-icon="house" class="svg-inline--fa fa-house ico" role="img" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M240 6.1c9.1-8.2 22.9-8.2 32 0l232 208c9.9 8.8 10.7 24 1.8 33.9s-24 10.7-33.9 1.8l-8-7.2 0 205.3c0 35.3-28.7 64-64 64l-288 0c-35.3 0-64-28.7-64-64l0-205.3-8 7.2c-9.9 8.8-25 8-33.9-1.8s-8-25 1.8-33.9L240 6.1zm16 50.1L96 199.7 96 448c0 8.8 7.2 16 16 16l48 0 0-104c0-39.8 32.2-72 72-72l48 0c39.8 0 72 32.2 72 72l0 104 48 0c8.8 0 16-7.2 16-16l0-248.3-160-143.4zM208 464l96 0 0-104c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24l0 104z"></path></svg></button></div><div class="text-wrapper"><div class="post-title">[PHP] php 기본문법</div><div class="post-info"><div class="post-dates"><span>Posted <strong>Feb 4, 2022</strong></span><span>Updated <strong>Oct 12, 2026</strong></span></div><div class="post-category"><span>PHP</span></div></div></div></div></div></div><div id="container" class="post-page"><div id="contents"><div class="row contents-layout"><div class="col-content contents-left"><div class="post-contents"><h2 id="1-echo--print" style="position:relative;">1. echo / print<a href="#1-echo--print" aria-label="1 echo  print permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <p>echo 와 print 는 스크린에 데이터를 출력하는 역할을 합니다. 둘의 차이점은 리턴값이 존재하느냐, 존재하지 않느냐인데<br>
 echo는 리턴값이 존재하지 않고, print는 리턴값이 존재하는 차이가 있습니다.</p>
 <ul>
@@ -538,7 +538,48 @@ echo는 리턴값이 존재하지 않고, print는 리턴값이 존재하는 차
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
-<p><img src="/assets/images/posts/2022/02/04/php-syntax-01.png" alt="게시판 목록 출력 결과물">
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 613px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/409d3b541a172aa6b2071168408c3d10/ac863/image01.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 58.854166666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAIAAADtbgqsAAAACXBIWXMAAAsTAAALEwEAmpwYAAABqElEQVR42o2QSW/bMBCF9f//ToEegqZAsyCNU1gUJYo7JVObtVaLZedkZxT1UNQ+9MOAIIkZzHvPyfNcCSk4RwgFJJzn+XK5nM/ny3/gmEgaIxMbxbGKY53nSVFkcFpriiL9p9I0/mxIrY3atnJeN4+vmyeENh5+c92fYYgo9TD+9fz8nRAXnmutn3d3X348fHt5ebi//0qI5/T9UO4rIaQyJgjDcTrM8xHqdHpfL2sdT+9d15EwIIRwJuM4Mto4+3JvbUJDyqVAPm6aZhiG35/0fzEMY1WW2+0bREMI5ZwqqZyqKtMk5VyoSOMg6NpumqbxiulwaOraxx72fUq5UlIr7bRtW2TFIjvShIZD30PghytAOHT6GMEwY0JrFZnIqesqSzMhYLPxSQDGoHW6ApJomybwQVzAGIfhxXNd11mWccaFVjAMVm/LnhbZnudiHzPKpIJ245QQ2M5SSoWSCKOmqSGw/ophXAJz3S3yvJBQIdgSWLkE9kd2EBIwdtPzETw3DV48Y0qZ1nLdXBXFfgck1sSmqurxFuCla1spIVgZRbG1uyxNPwDrSYUqoM9BlQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/409d3b541a172aa6b2071168408c3d10/a59e9/image01.webp 192w,
+/static/409d3b541a172aa6b2071168408c3d10/0ca9f/image01.webp 384w,
+/static/409d3b541a172aa6b2071168408c3d10/5c2f3/image01.webp 613w"
+              sizes="(max-width: 613px) 100vw, 613px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/409d3b541a172aa6b2071168408c3d10/3b721/image01.png 192w,
+/static/409d3b541a172aa6b2071168408c3d10/66595/image01.png 384w,
+/static/409d3b541a172aa6b2071168408c3d10/ac863/image01.png 613w"
+            sizes="(max-width: 613px) 100vw, 613px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/409d3b541a172aa6b2071168408c3d10/ac863/image01.png"
+            alt="게시판 목록 출력 결과물"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span>
 <em>출력 결과물</em></p>
 <h3 id="게시판-목록-페이지-출력-2" style="position:relative;">게시판 목록 페이지 출력 2<a href="#%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%AA%A9%EB%A1%9D-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%B6%9C%EB%A0%A5-2" aria-label="게시판 목록 페이지 출력 2 permalink" class="anchor custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
 <div class="gatsby-highlight" data-language="php"><pre style="counter-reset: linenumber NaN" class="language-php line-numbers"><code class="language-php"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
@@ -615,7 +656,48 @@ echo는 리턴값이 존재하지 않고, print는 리턴값이 존재하는 차
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
-<p><img src="/assets/images/posts/2022/02/04/php-syntax-02.png" alt="구구단 표">
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 610px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f160c2ae48a6a3e0dd0289fa4f1ae1cb/5d5ad/image02.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54.166666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAABe0lEQVR42o2Ra1LjMBCEff8r7Q82KcAmbJEAP5BkvUYvk62cIeGTsgdYlculVve0ekbT+fw3xqi1uVwut9vter3e/ntNIj4EG6KL0baWW0ulxG0r/NkPKANKZ+s/NudwPrfpeHyZl93Hx59l3r+9vRxen4Cn99fnpweow+FxnnfvHf4+nQ7Lsp+XPXC/+/X5eZySSM4YV8K3toUQJKWMsw+1NufcQFVgt29rbZIsKbvVllqnELx3nmq7rqiMMSHgE60FJqWVxNGYXVMWIKZYaGMQT+hEpJbivGutYVFy4ZA7odfVSOcFNqWENX/YFVmpFAdE0i+LtVZnHVL23Mb5yNkXae7wrlydpdmJPOTkwwxX3ox6773Rmkxaa+5EbbTpUClkhFJKE2gU+954T5igtbWwDjXDo0nUbLqL80op+rLOqi91L7ZY3ttIOY2B9YkZ071HEDtYIx2qcZHjnBn3gfXHSMn7wMBIkcYiOTR/9mW8HIMkEYecsNm29gORMkEYBg2xXgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/f160c2ae48a6a3e0dd0289fa4f1ae1cb/a59e9/image02.webp 192w,
+/static/f160c2ae48a6a3e0dd0289fa4f1ae1cb/0ca9f/image02.webp 384w,
+/static/f160c2ae48a6a3e0dd0289fa4f1ae1cb/2e913/image02.webp 610w"
+              sizes="(max-width: 610px) 100vw, 610px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/f160c2ae48a6a3e0dd0289fa4f1ae1cb/3b721/image02.png 192w,
+/static/f160c2ae48a6a3e0dd0289fa4f1ae1cb/66595/image02.png 384w,
+/static/f160c2ae48a6a3e0dd0289fa4f1ae1cb/5d5ad/image02.png 610w"
+            sizes="(max-width: 610px) 100vw, 610px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/f160c2ae48a6a3e0dd0289fa4f1ae1cb/5d5ad/image02.png"
+            alt="구구단 표"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span>
 <em>출력 결과물</em></p></div></div><div class="col-rnb contents-right"><div class="cont-wrap toc-wrapper" aria-label="목차"><div class="cont-ttl"><h3>Contents</h3></div><div class="cont-box"><div class="toc"><ul>
 <li>
 <p><a href="#1-echo--print">1. echo / print</a></p>
