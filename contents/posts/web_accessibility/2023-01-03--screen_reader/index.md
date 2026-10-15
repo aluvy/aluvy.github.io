@@ -1,0 +1,40 @@
+---
+date: '2023-01-03 23:31:00 +0900'
+title: '[Accessibility] 스크린리더가 이미지를 무시하는 방법 4가지'
+summary: 'CSS의 background 속성 사용 .image { background-image: url(bg.gif); } 2. 태그에 alt 속성을 빈 값으로 사용 <img src="spacer.git" alt=""> 1. aria-hidden="true" 사용 <img src="bg.jpg" aria-hidden="true"> <div aria-hidden="true"></div>'
+author: ['aluvy']
+categories: ['Web Accessibility']
+tags: ['']
+thumbnail: ''
+---
+
+## 1. CSS의 background 속성 사용
+````css
+.image {
+  background-image: url(bg.gif);
+}
+````
+
+## 2. 태그에 alt 속성을 빈 값으로 사용
+````html
+<img src="spacer.git" alt="">
+````
+
+## 3. aria-hidden="true" 사용
+````html
+<img src="bg.jpg" aria-hidden="true">
+
+<div aria-hidden="true"></div>
+````
+
+## 4. role="presentation" 사용
+````html
+<img src="bg.jpg" role="presentation">
+````
+
+---
+<br>
+
+##### 참고
+- [스크린리더가 이미지를 무시하는 가장 좋은 방법](https://aoa.gitbook.io/skymimo/aoa-2019/tips-2/ignore#less-than-img-greater-than-aria-hidden)
+- [\[HTML&CSS\] 스크린 리더가 이미지를 무시하는 방법들](https://y00eunji.tistory.com/entry/HTMLCSS-스크린-리더가-이미지를-무시하는-방법들)
